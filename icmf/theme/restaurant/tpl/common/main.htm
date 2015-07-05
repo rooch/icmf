@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<![endif]-->
+<html lang="fa">
+<head>
+	{nocache}
+	<title>{$title}</title>
+	<base href="http://{$settings.domain}/">
+	<meta charset="utf-8">
+	
+	{$description = $description|strip_tags:false|truncate:150:'':true}
+	<meta name="Description" content="{$description}">
+	<meta name="Publisher" content="{$settings.author}">
+	<meta name="Generator" content="{$settings.author}">
+	<meta name="Keywords" content="{$keywords}">
+	<meta name="Robots" content="{$settings.robots}">
+	<meta name="Author"	content="{$settings.author}">
+	
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://{$settings.domain}{$smarty.server.REQUEST_URI}">
+	<meta property="og:image" content="{$thumbnail}">
+	<meta property="og:title" content="{$title}">
+	<meta property="og:description" content="{$description}">
+	{/nocache}
+	
+	<link rel="shortcut icon" href="theme/{$settings.theme}/img/icon/favicons/favicon.png">
+	
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/style.php" type="text/css">
+	{$googleAnalytic}
+	{$zopim}
+	<!--[if lt IE 9]>
+   	<script src="kernel/lib/xorg/global/fixHtml5.js" async></script>
+   	<script src="kernel/lib/xorg/global/fixPng.js" async></script>
+	<![endif]-->
+</head>
+<body id="body" style="direction: ltr;">
+<div id="modalMask" class="modalMask"></div>  
+<div id="modalWindow" class="modalWindow"></div>
+<div id="temp"></div>
+<div id="goTop" class="goTop curvedLeft boxShadow">^</div>
+<div id="halal" class="halal">
+	<img src="theme/{$settings.theme}/img/halal.png" width="100" height="100" alt="halal products">
+</div>
+<aside id="leftBox" class="leftBox">{$leftBox}</aside>
+<!-- Wrapper -->
+<section id="wrapper" class="wrapper">
+	<h2 class="zeroDis">wrapper</h2>
+	<section id="container" class="container">
+		<h2 class="zeroDis">container</h2>
+		<div id="menu" class="menu">{$menu}</div>
+		<div id="slider" class="slider">{$slider}</div>
+		<section id="content" class="content">
+			<h2 class="zeroDis">content</h2>
+			{nocache}{$main}{/nocache}
+		</section>
+	</section>
+</section>
+<!--/Wrapper-->
+<footer id="footer" class="footer">{$footer}</footer>
+{nocache}
+<script src="theme/{$settings.theme}/js/js.php"></script>
+{if isset($smarty.session.uid)}
+<script src="kernel/lib/xorg/editor/ckeditor.js"></script>
+<script src="kernel/lib/xorg/finder/ckfinder.js"></script>
+{/if}
+</body>
+</html>

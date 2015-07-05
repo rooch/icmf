@@ -1,0 +1,198 @@
+{nocache}
+{if $sysVar.browserType == 'MSIE'}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+{else}
+<html>
+{/if}
+{/nocache}
+<head>
+	<title>{$settings.siteName}</title>
+	
+	<meta name="Generator" content="{$settings.author}"></meta>
+	<meta name="Keywords" content="تشریفات،روابط عمومی،هنر،گالری،استودیو،خدمات آنلاین، عروسی،فروشگاه،وب سایت،پورتال،پرتال،طراحی وب، تخفیف، طراحی, ارائه, سایت, بعد, خدمات, جهت, چهارم, شرکت, مدیا, سازی, اطلاعاتی, زمینه, مناسب, تبلیغات, پیاده, ساخت, مالتی, تحت, تولید, نرم, هاي, محصولات, مختلف, مدرن, داخلی, توسعه, افزارهای, چاپ, تبلیغاتی, ویژه, بین, رسانی, اطلاع, المللی, آوری, بخش, اداری, پیشرفته, چند, رسانه, زیبا, ای،, مشاوره،, اهداف, گرافیک, اطلاعات, نمایشگاهی, شركت, سیستم, كاتالوگ, غرفه, قابل, مالتي, عبارتند, بانک, نوعی, آورد, تعامل, مخاطبین, معرفي, فروش, افزایش, بخشهای, اقتصادی, اساس, جدید, دنیا, بهینه‌سازی, تخصصی, روز, حرفه, مدیریت, داخل, شركتها،, مراكز, فعالیت, مديا, اجرا, استانداردهای, سالن, معرفی, طریق, یکی, گرافیست, توان, سیستم‌های, استاندارد, جهانی, بستری, اشاعه, فراگیر, سامانه, خارجی, جامع, تجربه, ابزارهای, روش, بهترین, پلات, بهره"></meta>
+	<meta name="Description" content=" GemGroup.irپیشرو در ارائه خدمات هنری "></meta>
+	<meta name="Robots" content="{$settings.robots}"></meta>
+	<meta name="Author"	content="{$settings.author}"></meta>
+	<meta name="Copyright" content="{$settings.copyright}"></meta>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+	
+	<link rel="SHORTCUT ICON" href="theme/{$settings.theme}/img/icon/favicon.gif"></link>
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/global.css" type="TEXT/CSS"></link>
+	<!-- superfish Menu -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/superFishMenu/superfish.css" type="TEXT/CSS"></link>
+	<!-- /superfish Menu -->
+	<!-- simple Tree Menu -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/simpleTreeMenu/jquery-simpleTreeMenu-1.2.0.css" type="TEXT/CSS"></link>
+	<!-- /simple Tree Menu -->
+	<!-- micro Gallery
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/microGallery/style.css" type="TEXT/CSS"></link>
+	micro Gallery -->
+	<!-- nivo slider -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/nivoSlider/themes/default/default.css" type="TEXT/CSS"></link>
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/nivoSlider/themes/nivo-slider.css" type="TEXT/CSS"></link>
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/nivoSlider/themes/style.css" type="TEXT/CSS"></link>
+	<!-- /nivo slider -->
+	<!-- Commet Chat -->
+	<link rel="stylesheet" href="{$settings.libraryAddress}/xorg/cometchat/cometchatcss.php" type="TEXT/CSS"></link>
+	<!-- /Commet Chat -->
+	<!-- TipTip -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/tipTip/tipTip.css" type="TEXT/CSS"></link>
+	<!-- /TipTip -->
+	<!-- newsTicker -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/newsTicker/style.css" type="TEXT/CSS"></link>
+	<!-- /newsTicker -->
+	<!-- colorBox -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/colorBox/colorBox.css" type="text/css"></link>
+	<!-- /colorBox -->
+	<!-- print -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/print.css" media="print" type="TEXT/CSS"></link>
+	<!-- /print -->
+	<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/google.js"></script>
+	<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/ajax/ajax.js"></script>
+	<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/global/global.js"></script>
+	<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/cometchat/cometchatjs.php"></script>
+	<!--[if lte IE 6]>
+	<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/global/fixPng.js"></script>
+	<![endif]-->
+</head>
+<body id="body">
+<div style="position:absolute; top:opx; left:5px; z-index:9999999;"><img src="theme/{$settings.theme}/img/betaLogo.png"></div>
+<div id="loading" class="loading opacity7">
+	<img src="theme/{$settings.theme}/img/loading.gif"></img>
+</div>       
+<div id="temp" class="temp"></div>
+<div style="text-align: center;">
+{nocache}
+	{if $smarty.session.uid != 1}
+	<ul id="css3menu1" class="topmenu" style="margin: 0px auto;">
+		<li class="topfirst"><a href="#" onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=main');{literal}$.scrollTo('#content', {duration:3000});{/literal}"><strong>www.GemGroup.ir</strong></a></li> 
+		<li class="topmenu"><a href="#" onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=webDesign'); {literal}$.scrollTo('#content', {duration:3000});{/literal}">طراحی وب سایت</a></li>
+		<li class="topmenu"><a href="#" onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=adv'); {literal}$.scrollTo('#content', {duration:3000});{/literal}">تبلیغات و رسانه</a></li>
+		<li class="topmenu"><a href="#" onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=photo'); {literal}$.scrollTo('#content', {duration:3000});{/literal}">آتلیه عکاسی</a></li>
+		<li class="topmenu"><a href="#" onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=print'); {literal}$.scrollTo('#content', {duration:3000});{/literal}">طراحی و چاپ</a></li>
+		<li class="topmenu"><a href="#" onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=decor'); {literal}$.scrollTo('#content', {duration:3000});{/literal}">دکوراسیون داخلی</a></li>
+         <li class="topmenu"><a href="#" onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=formality'); {literal}$.scrollTo('#content', {duration:3000});{/literal}">تشریفات</a></li>
+		<li class="toplast"><a href="#">&nbsp;</a></li>
+	</ul>
+	{/if}
+	<!-- Login -->
+	<div id="login" class="login curvedBottom opacity7"></div>
+	<div id="down" onclick="$('#login').slideDown(); loader('POST', '', 'login', 'op=userMan&mode=c_loginContent'); this.style.display='none'; document.getElementById('up').style.display='';"><img src="theme/{$settings.theme}/img/login.png" /></div>
+	<div id="up" onclick="$('#login').slideUp(); this.style.display='none'; document.getElementById('down').style.display='';" style="display: none;"><img src="theme/{$settings.theme}/img/login.png" /></div>
+	<!-- /Login -->
+</div>
+{if $smarty.session.uid == 1}
+<!-- Bar -->
+<div id="bar" class="bar">
+	<div class="row cell95">
+		<!-- Menu -->
+		<div id="menu" class="menu">{$menu}</div>
+		<!-- /Menu -->
+	</div>
+	<div class="row cell5">
+		<div id="loading" class="loading opacity7">
+			<img src="theme/{$settings.theme}/img/loading.gif"></img>
+		</div>
+	</div>
+</div>
+<!-- /Bar -->
+{/if}
+{/nocache}
+	<!-- Date Sign -->
+	<!-- <div id="dateSign" class="dateSign"></div> -->
+	<!-- /Date Sign -->
+	<!-- Header -->
+    
+	<div id="header" class="header">
+		<div class="slider-wrapper theme-default">
+			{nocache}
+			{if $smarty.session.uid == 1}
+			<div style="position: absolute; left: 145px; z-index: 9999999999">
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/plus.png" onclick="BrowseServer();"></img>
+			</div>
+			{/if}
+			{/nocache}
+			<div class="ribbon"></div>
+			<div class="nivoSlider">
+				<div id="slider" class="nivoSlider">{$slider}</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Header -->
+<!-- Wrapper -->
+<div id="wrapper" class="wrapper">
+	<!-- News -->
+	<div id="newsTicker" class="newsTicker curvedFull"></div>
+	<!-- /News -->
+	<!-- Container -->
+	<div id="container" class="container">
+		<!-- Content -->
+		<div id="content" class="content">{$main}</div>
+		<!-- /Content -->
+	</div>
+	<!-- /Container -->
+	<!-- Footer -->
+	<div class="footer">
+    <div id="links"><a onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=contactUs'); {literal}$.scrollTo('#content', {duration:3000});{/literal}" href="#">تماس با ما</a> | <a onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=aboutUs'); {literal}$.scrollTo('#content', {duration:3000});{/literal}" href="#">درباره ما</a> | قوانین و مقررات</div>
+		<div class="copyright">
+			Copyright © 2012 <a href="http://www.gemgroup.ir"><b>GemGroup.ir</b></a> Inc. All rights reserved<br>
+			<a href="http://www.icmf.ir"><b>Fara Portal</b></a>
+			version:{$settings.version}
+            </p>
+		</div>
+		</div>
+	<!-- Footer -->
+</div>
+<!--/Wrapper-->
+<!-- jQuery -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/jquery-1.5.2.min.js"></script>
+<!-- /jQuery -->
+<!-- menu -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/superFishMenu/hoverIntent.js"></script>
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/superFishMenu/superfish.js"></script>
+<!-- /menu -->
+<!-- k3Carousel -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/k3Carousel/jquery.k3dCarousel.min.js"></script>
+<!-- /k3Carousel -->
+<!-- tab -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/idTab/jquery.idTabs.min.js"></script>
+<!-- /tab -->
+<!-- scrollTo -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/scrollTo/jquery.scrollTo-min.js"></script>
+<!-- /scrollTo -->
+<!-- nivo slider -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/nivoSlider/jquery.nivo.slider.pack.js"></script>
+<!-- /nivo slider -->
+<!-- simple Tree Menu -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/simpleTreeMenu/jquery-simpleTreeMenu-1.2.0.js"></script>
+<!-- /simple Tree Menu -->
+<!-- sticky -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/stickyFloat/stickyFloat.js"></script>
+<!-- /sticky -->
+<!-- microGallery -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/microGallery/jquery.microGallery.js"></script>
+<!-- /microGallery -->
+<!-- tipTip -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/tipTip/jquery.tipTip.minified.js"></script>
+<!-- /tipTip -->
+<!-- newsTicker -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/newsTicker/jquery.newsTicker.js"></script>
+<!-- /newsTicker -->
+<!-- colorBox -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/colorBox/jquery.colorbox-min.js"></script>
+<!-- /colorBox -->
+<!-- Custom -->
+<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/custom.js"></script>
+<!-- /Custom -->
+<!-- StartUp -->
+<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/startUp.js"></script>
+<!-- /StartUp -->
+{nocache}
+<img src="theme/{$settings.theme}/img/icon/s.png" onload="startUp({$sysVar.op}, {$sysVar.mode}, {$sysVar.RefNum}, {$sysVar.MID}, {$sysVar.State}, {$sysVar.ResNum});">
+{/nocache}
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/coding/base64.js"></script>
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/editor/ckeditor.js"></script>
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/finder/ckfinder.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<base href="http://{$settings.domain}/"></base>
+	{nocache}
+	<title>{$title}</title>
+	{/nocache}
+	<meta name="Generator" content="{$settings.author}"></meta>
+	<meta name="Keywords" content="{$keywords}"></meta>
+	<meta name="Description" content="{$description}"></meta>
+	<meta name="Robots" content="{$settings.robots}"></meta>
+	<meta name="Author"	content="{$settings.author}"></meta>
+	<meta name="Copyright" content="{$settings.copyright}"></meta>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+	
+	<link rel="shorcut icon" href="theme/{$settings.theme}/img/icon/favicon.gif"></link>
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/global.css" type="text/css"></link>
+	<!-- superfish Menu -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/superFishMenu/superfish.css" type="text/css"></link>
+	<!-- /superfish Menu -->
+	<!-- simple Tree Menu -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/simpleTreeMenu/jquery-simpleTreeMenu-1.2.0.css" type="text/css"></link>
+	<!-- /simple Tree Menu -->
+	<!-- micro Gallery -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/microGallery/style.css" type="text/css"></link>
+	<!-- /micro Gallery -->
+	<!-- nivo slider -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/nivoSlider/themes/default/default.css" type="text/css"></link>
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/nivoSlider/themes/nivo-slider.css" type="text/css"></link>
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/nivoSlider/themes/style.css" type="text/css"></link>
+	<!-- /nivo slider -->
+	<!-- Commet Chat -->
+	<!-- <link rel="stylesheet" href="{$settings.libraryAddress}/xorg/cometchat/cometchatcss.php" type="text/css"></link> -->
+	<!-- /Commet Chat -->
+	<!-- TipTip -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/tipTip/tipTip.css" type="text/css"></link>
+	<!-- /TipTip -->
+	<!-- newsTicker -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/newsTicker/style.css" type="text/css"></link>
+	<!-- /newsTicker -->
+	<!-- jqplot -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/jqplot/jquery.jqplot.css" type="text/css"></link>
+	<!-- /jqplot -->
+	<!-- print -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/print.css" media="print" type="text/css"></link>
+	<!-- /print -->
+	<!-- <script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/google.js"></script> -->
+	<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/global/global.js"></script>
+</head>
+<body id="body">
+<div id="modalMask" class="modalMask"></div>  
+<div id="modalWindow" class="modalWindow"></div>
+<div id="bar" class="bar">
+	<div class="row cell80">
+		<!-- Menu -->
+		{nocache}
+		<div id="menu" class="menu h70">{$menu}</div>
+		{/nocache}
+		<!-- /Menu -->
+		<!-- Login -->
+		{nocache}
+		<div id="login" class="login h20">{$login}</div>
+		{/nocache}
+		<!-- /Login -->
+	</div>
+	<div class="row cell20">
+		<!-- Logo -->
+		<div id="logo" class="logo">
+			<div style="text-align: left; width: 100px;">&nbsp;</div>
+			<div style="text-align: right;"><img alt="" title="" src="theme/{$settings.theme}/img/logo.png""></img></div>
+		</div>
+		<!-- /Logo -->
+	</div>
+</div>
+<!-- Wrapper -->
+<div id="wrapper" class="wrapper">
+	<div id="headBox" class="headBox">
+		<!-- Toolbar -->
+		<div id="toolbar" class="toolbar shadowBottom opacity8">{$toolbar}</div>
+		<!-- /Toolbar -->
+		<!-- Header -->
+		<div id="header" class="header">
+			<div class="slider-wrapper theme-default">
+				<div class="ribbon"></div>
+				<div class="nivoSlider">
+					<div id="slider" class="nivoSlider">{$slider}</div>
+				</div>
+				<div id="htmlcaption" class="nivo-html-caption">&nbsp;</div>
+			</div>
+		</div>
+		<!-- /Header -->
+	</div>
+	<!-- Container -->
+	<div id="container" class="container">
+		<!-- Content -->
+		{nocache}
+		<div id="content" class="content">{$main}</div>
+		{/nocache}
+		<!-- /Content -->
+	</div>
+    <br/>
+    <div id="relations" class="relations">
+    	<a href="ymsgr:sendim?doctor.sniff" rel="download"><img class="tip" border="0" src="theme/{$settings.theme}/img/icon/yahoo.png" alt="گفتگو در یاهو" title="گفتگو در یاهو" /></a>
+    	<img class="tip" src="theme/{$settings.theme}/img/icon/contact.png" alt="تلفن تماس (برای تهران رایگان)" title="تلفن تماس (برای تهران رایگان)" />
+    </div>
+	<!-- linkList -->
+	<div id="linkList" class="linkList">{$linkList}</div>
+	<!-- /linkList -->
+	<!-- /Container -->
+</div>
+<!--/Wrapper-->
+<!-- Footer -->
+<div id="footer" class="footer" style="direction: ltr;">
+	<div>
+		کلیه حقوق این نرم افزار متعلق به شرکت <a href="" onclick="window.open('{$settings.authorWebsite}');"><b>{$settings.author}</b></a> میباشد<br>
+	</div>
+</div>
+<!-- Footer -->
+<!-- jQuery -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/jquery-1.7.1.min.js"></script>
+<!-- /jQuery -->
+<!-- jQueryUI -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/jqueryUI/jquery-ui-1.8.21.custom.min.js"></script>
+<!-- /jQueryUI -->
+<!-- Address -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/address/jquery.address-1.4.min.js"></script>
+<!-- /Address -->
+<!-- Ajax -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/ajax/ajax.js"></script>
+<!-- /Ajax -->
+<!-- menu -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/superFishMenu/hoverIntent.js"></script>
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/superFishMenu/superfish.js"></script>
+<!-- /menu -->
+<!-- k3Carousel -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/k3Carousel/jquery.k3dCarousel.min.js"></script>
+<!-- /k3Carousel -->
+<!-- tab -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/idTab/jquery.idTabs.min.js"></script>
+<!-- /tab -->
+<!-- scrollTo -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/scrollTo/jquery.scrollTo-min.js"></script>
+<!-- /scrollTo -->
+<!-- modalWindow -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/modal/modal.js"></script>
+<!-- /modalWindow -->
+<!-- nivo slider -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/nivoSlider/jquery.nivo.slider.pack.js"></script>
+<!-- /nivo slider -->
+<!-- simple Tree Menu -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/simpleTreeMenu/jquery-simpleTreeMenu-1.2.0.js"></script>
+<!-- /simple Tree Menu -->
+<!-- microGallery -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/microGallery/jquery.microGallery.js"></script>
+<!-- /microGallery -->
+<!-- tipTip -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/tipTip/jquery.tipTip.minified.js"></script>
+<!-- /tipTip -->
+<!-- Ajax Downloader -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/ajaxDownloader/ajaxDownloader.js"></script>
+<!-- /Ajax Downloader -->
+<!-- Popup -->
+<!-- <script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/popup/jquery.popupWindow.js"></script> -->
+<!-- /Popup -->
+<!-- Flex Paper -->
+<!-- <script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/flexPaper/flexpaper_flash.js"></script>
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/flexPaper/starter.js"></script> -->
+<!-- /Flex Paper -->
+<!-- newsTicker -->
+<!-- <script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/newsTicker/jquery.newsTicker.js"></script> -->
+<!-- /newsTicker -->
+<!-- jqplot -->
+<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/jqplot/excanvas.js"></script><![endif]-->
+<!-- <script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/jqplot/jquery.jqplot.min.js"></script>
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/jqplot/plugins/jqplot.cursor.min.js"></script>
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/jqplot/plugins/jqplot.dateAxisRenderer.min.js"></script> -->
+<!-- /jqplot -->
+<!-- Cometchat -->
+<!-- <script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/cometchat/cometchatjs.php"></script> -->
+<!-- Cometchat -->
+<!-- Custom -->
+<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/custom.js"></script>
+<!-- /Custom -->
+<!-- StartUp -->
+<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/startUp.js"></script>
+<!-- /StartUp -->
+<!-- <script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/coding/base64.js"></script>
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/editor/ckeditor.js"></script> -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/finder/ckfinder.js"></script>
+</body>
+</html>

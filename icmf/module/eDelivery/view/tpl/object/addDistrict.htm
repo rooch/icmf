@@ -1,0 +1,32 @@
+<div class="paddy1 clearFix">
+	<div class="row cell20">{$lang.state}:</div>
+	<div class="row cell80">{$state}</div>
+</div>
+<div class="paddy1 clearFix">
+	<div class="row cell20">{$lang.city}:</div>
+	<div id="citySection1" class="row cell80">&nbsp;</div>
+</div>
+<div class="paddy1 clearFix">
+	<div class="row cell20">{$lang.region}:</div>
+	<div id="regionSection" class="row cell80">{$region}</div>
+</div>
+<div class="paddy1 clearFix">
+	<div class="row cell20">{$lang.district}:</div>
+	<div class="row cell80"><input id="district" name="district" placeholder="{$lang.name} {$lang.district}" maxlength="45" required></div>
+</div>
+<div class="paddy1 clearFix">
+	<div class="row cell20">{$lang.zipcode}:</div>
+	<div class="row cell80"><input id="zipcode" name="zipcode" placeholder="{$lang.zipcode}" maxlength="10"></div>
+</div>
+<div class="paddy1">
+	<button onclick="
+		$('#content').farajax('loader', '/eDelivery/c_addDistrict',
+			   'city=' + document.getElementById('city1').value + '::{$lang.city}<>Number<>1<>ce<>6' +
+			   '&region=' + document.getElementById('region').value + '::{$lang.region}<>Number<>1<>ce<>2' +
+			   '&district=' + document.getElementById('district').value + '::{$lang.district}<>Multi<>1<>ce<>100' +
+			   '&zipcode=' + document.getElementById('zipcode').value + '::{$lang.zipcode}<>Number<>1<>ce<>10'
+		);
+	">
+		<span>{$lang.submit}</span>
+	</button>
+</div>

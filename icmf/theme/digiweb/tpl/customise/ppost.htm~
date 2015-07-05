@@ -1,0 +1,13 @@
+<section id="containerpost" class="container curvedFull relative clearFix">
+	<section id="rightBox" class="row cell69">
+		{nocache}
+		{$post}
+		{/nocache}
+	</section>
+	<section id="leftBox" class="row cell29">
+		<h2 class="zeroDis">leftBox</h2>
+		<aside id="asideContent" class="asideContent">
+			{nocache}{include file="theme/`$settings.theme`/tpl/customise/leftBox.htm"}{/nocache}
+		</aside>
+	</section>
+</section>

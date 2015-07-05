@@ -1,0 +1,191 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.shopBasket}</h1>
+	<table id="resultBox" class="listFull">
+		<tr>
+			<td>
+				<table id="level1" class="listFull">
+					<tr>
+						<td>{$lang.level1}- {$lang.yourShopping}</td>
+					</tr>
+					{nocache}
+					{foreach name=entity key=entityKey item=entityItem from=$entityList}
+					<td class="blackGradient" width="10%" id="td{$entityItem.num}">
+						<div style="padding: 3px 3px;">
+							<a href="/shop/c_addToBasket" data="objectId={$entityItem.objectId}::{$lang.id}<>Number<>1<>ce<>11&count=0::{$lang.productCount}<>Number<>1<>nce<>6<>0<>999999" target="resultBox"><img src="theme/{$settings.theme}/img/icon/delete.png" style="cursor: pointer;" onclick="$('#td{$entityItem.num}').fadeOut(300, function() { $(this).remove(); }); $('#invoiceRecord{$entityItem.num}').fadeOut('slow'); $('#finalInvoice').farajax('loader', '/shop/c_finalInvoice');"></a>
+						</div>
+						<div>
+							<ul>
+								<li>
+									<img src="theme/{$settings.theme}/img/icon/s.png" onload="$('#paymentType').farajax('loader', '/financial/v_ePay');">
+								</li>
+								<li>
+									<div style="text-align: center;">
+										<a href="/shop/v_shopProductDescription" data="filter=base.id={$entityItem.objectId}::{$lang.filter}<>Multi<>1<>nce<>200'"><img width="80" height="70" src="{$entityItem.imagePath}"></a>
+									</div>
+								</li>
+								<li>&nbsp;</li>
+								<li><b>{$entityItem.name}</b></li>
+								<li><b>{$lang.model}:</b> {$entityItem.model}</li>
+								<li>
+									<label><b>{$lang.count}: </b></label>
+									<input id="productCount{$entityItem.num}" name="productCount{$entityItem.num}" class="input" type="text" size="5" maxlength="4" value="{$entityItem.count}" onchange="
+																																																		  this.value = parseInt(this.value);
+																																																		  document.getElementById('invoiceProductCount{$entityItem.num}').innerHTML = parseInt(this.value); 
+																																																		  document.getElementById('invoiceTotalMulPrice{$entityItem.num}').innerHTML = parseInt(this.value)*parseInt(document.getElementById('totalOnePrice{$entityItem.num}').innerHTML); 
+																																																		  document.getElementById('totalMulPrice{$entityItem.num}').innerHTML = parseInt(this.value)*parseInt(document.getElementById('totalOnePrice{$entityItem.num}').innerHTML);
+																																																		  $('#td{$entityItem.num}').farajax('loader', '/shop/c_addToBasket', 'objectId={$entityItem.objectId}&count=' + parseInt(this.value) + '::{$lang.productCount}<>Number<>1<>nce<>6<>0<>999999'); 
+																																																		  $('#finalInvoice').farajax('loader', '/shop/c_finalInvoice');
+																																																		 ">
+								</li>
+								<li>
+									<b>{$lang.price}: </b>
+									<span id="totalOnePrice{$entityItem.num}">{$entityItem.totalOnePrice}</span>
+								</li>
+								<li>
+									<b>{$lang.totalPrice}: </b><br>
+									<span id="totalMulPrice{$entityItem.num}" style="color: red; font-weight: bold;">
+										{$entityItem.totalMulPrice}
+									</span><br>{$lang.currencySign}
+								</li>
+								<li>&nbsp;</li>
+							</ul>
+						</div>
+					</td>
+					{if $entityKey is div by 10}
+				  	<tr>
+					{/if}
+					{/foreach}
+					{/nocache}
+				</table>
+			</td>
+		</tr>
+		</tr>
+		<tr>
+			<td colspan="10">
+				<table id="level2" class="listFull">
+					<tr>
+						<td>{$lang.level2}- {$lang.selectTransfer}</td>
+					</tr>
+					<tr>
+						<td>
+							<h2>
+								هزینه حمل برای تهران رایگان و برای خارج از تهران در محل از خریدار دریافت میگردد.
+							</h2>
+						</td>
+					</tr>
+					<!-- 
+					<tr>
+						<td height="200" align="center" class="blackGradient" onclick="{literal}$.scrollTo('#level3', {duration:3000});{/literal} document.getElementById('level3').style.border = '1px solid #ff0000';">
+							<img src="{$settings.moduleAddress}/{$settings.moduleName}/view/img/vanguardPost.png"><br>
+							<div>پست پیشتاز</div>
+						</td>
+						<td height="200" align="center" class="blackGradient" onclick="{literal}$.scrollTo('#level3', {duration:3000});{/literal} document.getElementById('level3').style.border = '1px solid #ff0000';">
+							<img src="{$settings.moduleAddress}/{$settings.moduleName}/view/img/iriPost.png"><br>
+							<div>پست ایران</div>
+						</td>
+						<td height="200" align="center" class="blackGradient" onclick="{literal}$.scrollTo('#level3', {duration:3000});{/literal} document.getElementById('level3').style.border = '1px solid #ff0000';">
+							<img src="{$settings.moduleAddress}/{$settings.moduleName}/view/img/tipax.png"><br>
+							<div>تیپاکس</div>
+						</td>
+						<td height="200" align="center" class="blackGradient" onclick="{literal}$.scrollTo('#level3', {duration:3000});{/literal} document.getElementById('level3').style.border = '1px solid #ff0000';">
+							<img src="{$settings.moduleAddress}/{$settings.moduleName}/view/img/airPost.png"><br>
+							<div>هوایی</div>
+						</td>
+						<td height="200" align="center" class="blackGradient" onclick="{literal}$.scrollTo('#level3', {duration:3000});{/literal} document.getElementById('level3').style.border = '1px solid #ff0000';">
+							<img src="{$settings.moduleAddress}/{$settings.moduleName}/view/img/motorCyclePost.png"><br>
+							<div>پیک موتوری</div>
+						</td>
+					</tr>
+					-->
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="10">
+				<table id="level3" class="listFull">
+					<tr>
+						<td>{$lang.level3}- {$lang.preInvoice}</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" cellpadding="2" cellspacing="0" border="0">
+								<tr>
+									<td colspan="6" align="center">(( {$lang.preInvoice} ))</td>
+								</tr>
+								<tr>
+									<td colspan="6" align="center"><b>{$settings.siteName}</b></td>
+								</tr>
+								<tr>
+									<td colspan="6" align="center">&nbsp;</td>
+								</tr>
+								<tr>
+									<td><b>{$lang.userName}/{$lang.code}: </b></td>
+									<td></td>
+									<td><b>{$lang.date}: </b></td>
+									<td>{$currentTime}</td>
+									<td><b>{$lang.id}: </b></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td colspan="6" align="center">&nbsp;</td>
+								</tr>
+							</table>
+							<table width="100%" cellpadding="2" cellspacing="0" border="0">
+								<tr align="center">
+									<td style="border: 1px solid #000;" width="5%"><b>{$lang.row}</b></td>
+									<td style="border: 1px solid #000;" width="10%"><b>{$lang.id}</b></td>
+									<td style="border: 1px solid #000;" width="20%"><b>{$lang.name}</b></td>
+									<td style="border: 1px solid #000;" width="20%"><b>{$lang.model}</b></td>
+									<td style="border: 1px solid #000;" width="5%"><b>{$lang.count}</b></td>
+									<td style="border: 1px solid #000;" width="20%"><b>{$lang.price} ({$lang.currencySign})</b></td>
+									<td style="border: 1px solid #000;" width="20%"><b>{$lang.totalPrice} ({$lang.currencySign})</b></td>
+								</tr>
+								{nocache}
+								{foreach name=entity key=entityKey item=entityItem from=$entityList}
+								<tr id="invoiceRecord{$entityItem.num}">
+									<td style="border: 1px solid #000;" align="center">{$entityItem.num}</td>
+									<td style="border: 1px solid #000;" align="center">{$entityItem.id}</td>
+									<td style="border: 1px solid #000;">{$entityItem.name}</td>
+									<td style="border: 1px solid #000;" align="center">{$entityItem.model}</td>
+									<td id="invoiceProductCount{$entityItem.num}" style="border: 1px solid #000;" align="center">{$entityItem.count}</td>
+									<td style="border: 1px solid #000;" align="center">{$entityItem.totalOnePrice}</td>
+									<td id="invoiceTotalMulPrice{$entityItem.num}" style="border: 1px solid #000; padding-right: 30px;" align="right">{$entityItem.totalMulPrice}</td>
+								</tr>
+								{/foreach}
+								<tr>
+									<td colspan="6" style="padding-left: 6px;" align="left"><b>{$lang.sum}</b></td>
+									<td style="border: 1px solid #000; padding-right: 30px;" align="right"><div id="finalInvoice">{$entityItem.totalAllPrice}</div></td>
+								</tr>
+								{/nocache}
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="10" style="vertical-align: top;">
+				<table id="level4" class="listFull">
+					<tr>
+						<td>{$lang.level4}- {$lang.payType}</td>
+					</tr>
+					<tr>
+						<td><div id="paymentType"></div></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="10" style="vertical-align: top;">
+				<table id="level5" class="listFull">
+					<tr>
+						<td>{$lang.level5}- {$lang.spend}</td>
+					</tr>
+					<tr>
+						<td><div id="spend"></div></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</div>

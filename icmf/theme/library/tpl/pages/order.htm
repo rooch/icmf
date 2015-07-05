@@ -1,0 +1,85 @@
+<div id="pageIn" class="pageIn" style="background: url('{$settings.moduleAddress}/pageLoader/{$settings.viewAddress}/img/services.jpg') no-repeat bottom left;">
+	<h1 class="title">خدمات</h1>
+	<table class="listFull">
+		<tr>
+			<td width="15%">نام و نام خانوادگی: *</td>
+			<td width="85%"><input id="name" name="name" class="input" type="text" size="40" maxlength="100"></td>
+		</tr>
+		<tr>
+			<td>نام شرکت: </td>
+			<td><input id="company" name="company" class="input" type="text" size="40" maxlength="45"></td>
+		</tr>
+		<tr>
+			<td>نوع صنعت: *</td>
+			<td><input id="industType" name="industType" class="input" type="text" size="40" maxlength="45"></td>
+		</tr>
+		<tr>
+			<td>تلفن تماس: *</td>
+			<td><input id="phone" name="phone" class="input" type="text" size="40" maxlength="45"></td>
+		</tr>
+		<tr>
+			<td>فاکس: </td>
+			<td><input id="fax" name="fax" class="input" type="text" size="40" maxlength="45"></td>
+		</tr>
+		<tr>
+			<td>آدرس: </td>
+			<td><textarea id="address" name="address" rows="10" cols="30"></textarea></td>
+		</tr>
+		<tr>
+			<td>آدرس پست الکترونیکی: *</td>
+			<td><input id="email" name="email" class="input" type="text" size="40" maxlength="45"></td>
+		</tr>
+		<tr>
+			<td>نام محصول: *</td>
+			<td>
+				<select id="productName" name="productName">
+					<option value=" ... "> ... </option>
+					<option value="ارائه خدمات در محيط مشتري ساعتي">ارائه خدمات در محيط مشتري ساعتي</option>
+					<option value="بسته  حسابداري پايه">بسته  حسابداري پايه</option>
+					<option value="بسته اداري">بسته اداري </option>
+					<option value="بسته اداري و  تامين كنندگان و انبار">بسته اداري و  تامين كنندگان و انبار  </option>
+					<option value="بسته اداري و دريافت و پرداخت">بسته اداري و دريافت و پرداخت </option>
+					<option value="بسته بازرگاني">بسته بازرگاني</option>
+					<option value="بسته بازرگاني و حقوق و دستمزد">بسته بازرگاني و حقوق و دستمزد</option>
+					<option value="بسته توليدي">بسته توليدي </option>
+					<option value="بسته توليدي و حقوق و دستمزد">بسته توليدي و حقوق و دستمزد</option>
+					<option value="بسته جامع">بسته جامع</option>
+					<option value="بسته حسابداري پايه و  تامين كنندگان و انبار">بسته حسابداري پايه و  تامين كنندگان و انبار</option>
+					<option value="بسته خدماتي">بسته خدماتي</option>
+					<option value="بسته خدماتي و حقوق و دستمزد">بسته خدماتي و حقوق و دستمزد</option>
+					<option value="بسته مالي و تامين كنندگان و انبار">بسته مالي و تامين كنندگان و انبار</option>
+					<option value="بسته نرم افزاري مالي">بسته نرم افزاري مالي</option>
+					<option value="چند شركت همزمان">چند شركت همزمان</option>
+					<option value="زير سيستم ارزي">زير سيستم ارزي</option>
+					<option value="زير سيستم دو واحدي كالا">زير سيستم دو واحدي كالا</option>
+					<option value="زير سيستم رديابي">زير سيستم رديابي</option>
+					<option value="سيستم خرده فروشي">سيستم خرده فروشي</option>
+					<option value="قفل مشاهده">قفل مشاهده </option>
+					<option value="نسخه زبان دوم">نسخه زبان دوم</option>
+					<option value="نسخه شبكه 12 كاربره">نسخه شبكه 12 كاربره</option>
+					<option value="نسخه شبكه 4 كاربره">نسخه شبكه 4 كاربره</option>
+					<option value="نسخه شبكه 8 كاربره">نسخه شبكه 8 كاربره</option>
+					<option value="نصب سيستم در محيط شبكه">نصب سيستم در محيط شبكه</option>
+					<option value="نصب سيستم نسخه تك كاربره">نصب سيستم نسخه تك كاربره</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<button onclick="
+					loader('POST', '', 'content', 'op=mta&mode=c_sendMail' +
+							'&mailText=mailTextProductRequest' +
+							'&name=' + document.getElementById('name').value + '::نام و نام خانوادگی<>Multi<>1<>ce<>100' +
+							'&company=' + document.getElementById('company').value + '::کمپانی<>Multi<>1<>ce<>45' +
+						   	'&industType=' + document.getElementById('industType').value	+ '::نوع صنعت<>Multi<>1<>ce<>100' +
+						   	'&phone=' + document.getElementById('phone').value + '::شماره تماس<>Multi<>1<>ce<>45' +
+						   	'&fax=' + document.getElementById('fax').value + '::فاکس<>Number<>1<>nce<>45' +
+						   	'&email=' + document.getElementById('email').value + '::ایمیل<>Mail<>1<>ce<>100' +
+						   	'&address=' + document.getElementById('address').value + '::آدرس<>Multi<>1<>nce<>1000' +
+						   	'&productName=' + document.getElementById('productName').value + '::نام محصول<>Multi<>1<>ce<>100'
+					);
+				"></img>
+			</td>
+		</tr>
+	</table>
+</div>

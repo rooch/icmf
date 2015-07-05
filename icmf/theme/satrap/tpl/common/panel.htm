@@ -1,0 +1,27 @@
+{nocache}
+<div class="row cell40 center">
+	&nbsp;
+</div>
+<div class="row cell35">
+	&nbsp;
+</div>
+<div class="row cell20 center">
+	<a href="http://{$settings.domain}">
+		<img src="theme/{$settings.theme}/img/logo.png">
+	</a>
+</div>
+<div class="row cell5 left" style="padding-top: 10px;">
+	{if isset($smarty.session.uid) && $smarty.session.uid != 2}
+		<img src="theme/{$settings.theme}/img/icon/User24.png" style="cursor: pointer;" onclick="$('#cPanel').slideToggle('slow');">
+	{else}
+		<img src="theme/{$settings.theme}/img/icon/Login_in24.png" style="cursor: pointer;" onclick="$('#cPanel').slideToggle('slow');">
+	{/if}
+</div>
+<br style="clear: both;">
+<!-- cPanel -->
+<div id="cPanel" class="cPanel">
+	<div id="login" class="login" style="padding-right: 10px;">{nocache}{$login}{nocache}</div>
+	<div id="accessories" class="accessories" style="display: none; padding-right: 10px;"></div>
+</div>
+<!-- /cPanel -->
+{/nocache}

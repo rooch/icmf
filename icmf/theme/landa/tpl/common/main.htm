@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	{nocache}
+	<base href="http://{$settings.domain}/" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Generator" content="{$settings.author}" />
+	<meta name="Keywords" content="{$keywords}" />
+	<meta name="Description" content="{$description}" />
+	<meta name="Robots" content="{$settings.robots}" />
+	<meta name="Author"	content="{$settings.author}" />
+	<meta name="Copyright" content="{$settings.copyright}" />
+	<title>{$title}</title>
+	{/nocache}
+	
+	<link rel="shorcut icon" href="theme/{$settings.theme}/img/icon/favicons/favicon.png">
+	<!-- Call all CSS files -->
+	{$css}
+	<!-- /Call all CSS files -->
+	<!-- Google Analytic -->
+	{$googleAnalytic}
+	<!-- /Google Analytic -->
+</head>
+<body id="body" style="direction: {$lang.direction};">
+<div id="massMail"></div>
+<div id="modalMask" class="modalMask"></div>  
+<div id="modalWindow" class="modalWindow"></div>
+<!-- <div style="position:fixed; width:130px; height:150px; left:2px; top:35px;">
+	<a href="/userMan/v_signUp"><img src="theme/{$settings.theme}/img/Member.png" /></a>
+</div>
+----------------اطلاعیه سایت--------------
+<div class="shifting">
+<marquee direction = right scrollamount="3"> 
+<b style="color:#030">بازدید کنندگان گرامی لاندا الکترونیک با عرض تبریک سال نو به شما عزیزان </b>، به اطلاع می رسانیم که به علت اصلاحات مخابرات بعد از اقدام به خرید آنلاین خود  
+  باشماره تلفن های
+<b style="color:#C30"> 66728472 ,66708504 </b> 
+، تماس و درخواست خود را تایید نمایید،</marquee>
+</div> -->
+
+<!--
+<div class="shifting" style="position: absolute;right:50px; top:0px;">
+<center>
+<blink>
+بازدید کنندگان عزیز لاندا الکترونیک
+</blink>
+</center>
+</div>-->
+
+
+<!--<div style="position:fixed;right:0px; top:0px;">
+<img border="0" src="theme/{$settings.theme}/img/Note1.png">
+</div>
+-->
+
+
+<!--<div style="position:fixed; width:200px; height:260px; left:0; bottom:0;">
+	<img src="theme/{$settings.theme}/img/note.png" />
+</div>-->
+<div id="temp"></div>
+
+<!-- Basket -->
+<div id="basket" class="basket boxShadow">{nocache}{$basket}{/nocache}</div>
+<!-- / Basket -->
+<!-- Wrapper -->
+<div id="wrapper" class="wrapper">
+	<!-- Logo -->
+	{nocache}
+	<div id="logo" class="logo">
+		<div class="row cell10">
+			{if $lang.direction == 'rtl'}
+			<a href="/pageLoader/v_load/main">
+				<img alt="Landa Electronic" title="Landa Electronic" src="theme/{$settings.theme}/img/websiteLogo.png"></img>
+			</a>
+			{else}
+			&nbsp;
+			{/if}
+		</div>
+		<div class="row cell80">&nbsp;</div>
+		<div class="row cell10">
+			{if $lang.direction == 'ltr'}
+			<a href="/pageLoader/v_load/main">
+				<img alt="Landa Electronic" title="Landa Electronic" src="theme/{$settings.theme}/img/websiteLogo.png"></img>
+			</a>
+			{else}
+			&nbsp;
+			{/if}
+		</div>
+	</div>
+	{/nocache}
+	<!-- /Logo -->
+	<!-- Panel -->
+	<div id="panel" class="panel cell70 boxShadow">{nocache}{$panel}{/nocache}</div>
+	<!-- /Panel -->
+	<!-- Menu -->
+	<div id="menu" class="menu curvedTop">{nocache}{$menu}{/nocache}</div>
+	<!-- /Menu -->
+	<!-- Header -->
+	<div id="header" class="header">{nocache}{$header}{/nocache}</div>
+	<!-- /Header -->
+	<!-- Toolbar -->
+	<div id="toolbar" class="toolbar curvedBottom">{nocache}{$toolbar}{/nocache}</div>
+	<!-- /Toolbar -->
+	<!-- Container -->
+	<div id="container" class="container">
+		<!-- Content -->
+		<div id="content" class="content curvedFull boxShadow">{nocache}{$main}{/nocache}</div>
+		<!-- /Content -->
+	</div>
+	<!-- /Container -->
+	<!-- Footer -->
+	<div id="footer" class="footer curvedFull boxShadow">{$footer}</div>
+	<!-- Footer -->
+	<div>
+		<p class="center" style="direction: ltr;">
+			Copyright © 2011 Landa Ariya Electronic Inc. All rights reserved.
+		</p>
+		<p class="center">
+			بهترین وضوح در مرورگرهای فایرفاکس، کروم و IE9+
+		</p>
+	</div>
+</div>
+<!--/Wrapper-->
+<!-- Call all JS files -->
+{$js}
+<!-- /Call all JS files -->
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿                    <tr><font style="color:#eaff36">جدید ترین رویداد های وب :</font>
+                        <td colspan="2" style="text-shadow:1px 1px 1px #fff;height: 20px; background-color: #91241f; color: #ffffff; text-align: center;font-size: 11px">
+                           <span id="vijeNews" ><a id="lVijeNews" style="color:#ffffff"></a></span>
+                           <select name="ctl00$awt_simulate_marq" id="ctl00_awt_simulate_marq" style="display:none">
+				<option value="#">برای بهترین حالت نمایش وبسایت ،از مرورگر فایرفاکس استفاده نمایید </option>
+				<option value="#">برای دریافت برنامه زمانبندی انتخاب واحد به پروفایل خود مراجعه نمایید</option>
+				<option value="#"> ثبت نام کلاس های PLC,MTCNA,CCNA </option>
+				<option value="#">امام رضا(ع)دوست هرکسی عقل اوست ودشمن هر کس نادانی اوست </option>
+				<option value="#">انتخاب واحد نیمسال دوم 92-91 از تاریخ 91/11/14 </option>
+</select>
+                           <script type="text/javascript">
+                             <!--
+                               function type(k) {
+                                   var pic = document.getElementById('ctl00_awt_simulate_marq');
+                                   if (pic.options.length > 0) {
+                                       if (k < pic.options.length) {
+                                           typing(0, k);
+                                       }
+                                       else {
+                                           type(0)
+                                       }
+                                   }
+                               }
+
+                               function typing(i, k) {
+                                   var content = document.getElementById('ctl00_awt_simulate_marq');
+                                   var strVal = content.options[k].value;
+                                   var strText = content.options[k].text;
+
+                                   if (i <= strText.length) {
+
+                                       if (i == 0) {
+
+                                           if (strVal == "")
+                                               document.getElementById('lVijeNews').href = document.URL + "#";
+                                           else
+                                               document.getElementById('lVijeNews').href = strVal;
+                                           document.getElementById('lVijeNews').innerHTML = strText.substring(0, i);
+
+                                       }
+                                       else if (i < strText.length)
+                                           document.getElementById('lVijeNews').innerHTML = strText.substring(0, i) + '_';
+                                       else if (i == strText.length)
+                                           document.getElementById('lVijeNews').innerHTML = strText.substring(0, i);
+
+                                       i += 1;
+                                       window.setTimeout('typing(' + i + ',' + k + ')', 100);
+                                   }
+                                   else {
+                                       k += 1;
+                                       window.setTimeout('type(' + k + ')', 5000);
+                                   }
+                               }
+
+                               type(0); 
+                               //-->
+                           </script>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>

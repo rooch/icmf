@@ -1,0 +1,270 @@
+/************************/
+/*         Main         */
+/************************/
+.specialFont {
+	font-family: yekan;	
+}
+
+.wrapper { 
+	position: relative;
+	width: 950px;
+	background-color:#EEE0EF;
+	margin: 20px auto;
+}
+
+.fsNetwork {
+	font-family: yekan;
+	background: #000;
+	color: #fff;	
+}
+
+.panel {
+	top: 0px;
+	width: 100%; 
+	z-index: 1002;
+}
+
+.panel .cPanel {
+	display: none;
+}
+
+.panel button {
+	background: none repeat scroll 0 0 rgba(233, 11, 3, 0.7);
+}
+
+.panel button:HOVER {
+	-webkit-box-shadow: 1px 1px 5px 0px #4a4a4a;
+	-moz-box-shadow: 1px 1px 5px 0px #4a4a4a;
+	box-shadow: 1px 1px 5px 0px #4a4a4a;
+}
+
+.cPanel {
+	padding: 10px;
+}
+
+.accessories {
+	padding: 10px;
+	display: none;
+}
+
+.login {
+	height: 26px;
+	padding: 4px 0px 1px 0px;
+}
+
+.header {
+	background: url('../img/header.jpg');
+	height: 256px;
+	position: relative;
+}
+
+.menu {
+	position:absolute;
+	bottom: 2px; 
+	height: 30px;
+	margin: 0px auto;
+}
+
+.marquee {
+
+}
+
+.news {
+	
+}
+
+.newsBox {
+	display: none;
+	right: 0px;
+	width: 517px;
+	min-height: 200px; 
+	position: absolute; 
+	background: #DFB5D6; 
+	border: 2px dashed #6F226D; 
+	z-index: 1009; 
+	padding: 5px;
+}
+
+.liveSupport {
+	position: fixed;
+	background: #fff;
+	top: 50px;
+	left: 0px;
+	z-index: 1011;
+}
+
+.dock {
+	z-index: 1005;
+}
+
+.toolbar {
+	vertical-align: top;
+	background: #000;
+	padding: 3px;
+	height: 22px;
+}
+
+.tools {
+	float: right;
+	text-align: left;
+	width: 80%;
+	color: #000;
+}
+
+.lang {
+	padding: 0px 5px;
+}
+
+.search {
+	width: 20%;
+	color: #fff;
+}
+
+.container {
+	padding: 10px;
+	background:#EDE0EF;
+}
+
+.rightBox {
+	background:#FEEFFF; 
+	padding: 7px;	
+}
+
+.content {
+	min-height: 160px;
+	padding-top: 0px;
+	margin-bottom: 10px;
+}
+
+.leftBox {
+	background:#FEEFFF; 
+	padding: 7px;
+}
+
+.box {
+	padding: 10px;
+	background: #DFB5D6;
+	margin-bottom: 10px; 
+}
+
+.relatedContent {
+	display: none;
+	min-width: 300px;
+	background: #fff;	
+	z-index: 1010;
+}
+
+.funnel a {
+	color: #000;
+}
+
+.funnel a:VISITED {
+	color: #cecece;
+}
+
+.bgBox {
+	position: relative;
+	border-top: 1px solid f2f2f2;
+	-webkit-box-shadow: rgba(0,0,0,.15) 0 1px 3px;
+	-moz-box-shadow: rgba(0,0,0,.15) 0 1px 3px;
+	box-shadow: rgba(0,0,0,.15) 0 1px 3px;
+	box-shadow: rgba(0,0,0,.15) 0 1px 6px url(0/IE9);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #f6f6f6;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(249,249,249,1)), color-stop(100%, rgba(240,240,240,1)));
+	background: -webkit-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	background: -moz-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	background: -ms-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	background: -o-linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	background: linear-gradient(top, rgba(249,249,249,1) 50%, rgba(240,240,240,1) 100%);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 -3px 1px rgba(255,255,255,.6), inset 0 2px 1px rgba(255,255,255,.97), 0 0 3px -1px rgba(0,0,0,.7);
+	-moz-box-shadow: 0 -3px 1px rgba(255,255,255,.6), inset 0 2px 1px rgba(255,255,255,.97), 0 0 3px -1px rgba(0,0,0,.7);
+	box-shadow: 0 -3px 1px rgba(255,255,255,.6), inset 0 2px 1px rgba(255,255,255,.97), 0 0 3px -1px rgba(0,0,0,.7);
+}
+
+.bgBox h1 {
+	color: #0077A8;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+
+.linkList {
+	clear: both;
+	padding: 5px;
+	background: #EEE;
+	text-align: right;
+}
+
+.tagCloud {
+	height: 400px;
+	padding: 30px;	
+}
+
+.footer {
+	color: #999;
+	background: #dfb5d6;
+	padding: 10px;
+}
+
+.copyright {
+	color: #808080;
+	text-align: center;
+	padding: 10px;
+	background: #1c1e1f;
+}
+
+.goTop {
+	display: none;
+	right: 10px;
+	bottom: 10px;
+	position: fixed;
+	padding: 10px;
+	background: #66aabb;
+	border: 1px solid #448899;
+	border-style: solid none none solid;
+	font-size: 2em;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.goTop:hover {
+	background: #44aa66;
+	border: 1px solid #228844;
+	border-style: solid none none solid;
+	color: #ffffff;
+}
+
+@media screen and (max-width:2560px) {
+	
+}
+
+@media screen and (max-width:1920px) {
+	
+}
+
+@media screen and (max-width:1536px) {
+
+}
+
+@media screen and (max-width:1366px) {
+
+}
+
+@media screen and (max-width:1024px) {
+
+}
+
+@media screen and (max-width:768px) {
+	
+}
+
+@media screen and (max-width:640px) {
+	
+}

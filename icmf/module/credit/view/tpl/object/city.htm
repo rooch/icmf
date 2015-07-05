@@ -1,0 +1,13 @@
+<select id="city{$num}" name="city{$num}">
+	{foreach name=city key=cityKey item=cityItem from=$city}
+	{if $cityKey == $city.selected}
+	<option value="{$cityKey}" selected="selected">{$cityItem}</option>
+	{else}
+	{if $cityKey == "selected" || !isset($cityItem)}
+	<option value=""> ... </option>
+	{else}
+  	<option value="{$cityKey}">{$cityItem}</option>
+  	{/if}
+  	{/if}
+ 	{/foreach}
+</select>

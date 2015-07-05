@@ -1,0 +1,38 @@
+{nocache}
+<h2>{$lang.list}</h2>
+<div class="listHeader clearFix center">
+	<div class="row cell5">#</div>
+	<div class="row cell5">{$lang.id}</div>
+	<div class="row cell20">{$lang.timeStamp}</div>
+	<div class="row cell10">{$lang.user}</div>	
+	<div class="row cell10">{$lang.operation}&nbsp;</div>
+	<div class="row cell10">{$lang.action}</div>
+	<div class="row cell15">{$lang.filter}</div>
+	<div class="row cell10">{$lang.score}</div>
+	<div class="row cell15">{$lang.properties}</div>
+</div>
+{foreach name=entity key=entityKey item=entityItem from=$entityList}
+<div class="blockquote clearFix" id="row{$entityItem.id}">
+	<div class="row cell5">{$entityItem.num}</div>
+	<div class="row cell5">{$entityItem.id}</div>
+	<div class="row cell20">{$entityItem.timeStamp}</div>
+	<div class="row cell10 center">{$entityItem.uid}&nbsp;</div>
+	<div class="row cell10 center">{$entityItem.op}&nbsp;</div>
+	<div class="row cell10 center">{$entityItem.mode}&nbsp;</div>
+	<div class="row cell15 center">{$entityItem.filter}&nbsp;</div>
+	<div class="row cell10 center">{$entityItem.score}</div>
+	<div class="row cell15 center">
+		<ul>
+			<li class="fa fa-remove pointer" onclick="$('#content').farajax('loader', 'credit/v_delObject', 'id={$entityItem.id}');"></li>
+			{if $entityItem.active == 1} 
+			<li class="green fa fa-power-off pointer" onclick="$('#content').farajax('loader', 'credit/c_deactivateObject', 'id={$entityItem.id}')">
+			{else}
+			<li class="fa fa-power-off pointer" onclick="$('#content').farajax('loader', 'credit/c_activateObject', 'id={$entityItem.id}')">
+			{/if}
+		</ul>
+	</div>
+</div>
+{/foreach}
+<br>
+<div class="blockquote">{$navigation}</div>
+{/nocache}

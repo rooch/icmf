@@ -1,0 +1,22 @@
+<div class="clearFix">
+	<div class="row cell20 right">
+		<hgroup>
+			<h1 class="LH20" style="color: white">بازار بزرگ ایده آل</h1>
+			<h2 class="LH20" style="color: black">ارائه دهنده محصولات برتر و خدمات ایده آل</h2>
+		</hgroup>
+	</div>
+	<div class="row cell60 right">
+		<input id="shopSearchList" name="shopSearchList" class="h20" type="search" placeholder="{$lang.search}" required style="width:730px;">
+		<div id="shopSearchResult" class="shopSearchResult curvedBottom boxShadow" style="width:738px;"></div>
+	</div>
+	<div class="row cell2 center relative">&nbsp;</div>	
+	<div id="shopSearchText" class="row cell9 LH35 center relative pointer">جستجوی حرفه‌ای
+		<div id="shopSearchMenu" class="search curvedBottom boxShadow" style="margin-right: -96px; background: #6f9cbe;">{$search}</div>
+	</div>
+	<div id="shopCategoryText" class="row cell9 LH35 center relative pointer">جستجوی شاخه‌ها
+		<div id="shopCategoryMenu" class="category1 curvedBottom boxShadow" style="margin-right: -96px; background: #6f9cbe;">
+			{$tree}
+			<div onclick="$('#shopCategoryMenu').slideUp('slow');" style="background: red;">بستن</div>
+		</div>
+	</div>
+</div>

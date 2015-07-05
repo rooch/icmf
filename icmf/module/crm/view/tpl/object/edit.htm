@@ -1,0 +1,338 @@
+{nocache}
+<div class="clearFix">
+		<div class="row cell30">
+		<div class="paddy2">
+			<div id="taskInfoSelector" class="greyFrame curvedTop paddy10 center specialFont">
+				اطلاعات کار
+			</div>
+		</div>
+	</div>
+	<div class="row cell30">
+		<div class="paddy2">
+			<div id="clientInfoSelector" class="greyFrame curvedTop paddy10 center specialFont">
+				اطلاعات کاربر
+			</div>
+		</div>
+	</div>
+	<div class="row cell40">
+		<div class="paddy2">
+			<div id="clientHistorySelector" class="greyFrame curvedTop paddy10 center specialFont">
+				سوابق کاربر
+			</div>
+		</div>
+	</div>
+</div>
+<div id="taskContent" class="whiteFrame" style="margin-top: -3px;">
+	<div id="taskInfo" class="clearFix LH35">
+		<div class="clearFix paddy4">
+			<h2 style="font-size: 1.6em; border-style: dashed;" class="whiteFrame center">{$taskInfo.subject}</h2>
+			<div class="row cell50">
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.clinetType}:</div>
+					<div class="row cell75">{$taskInfo.clientType}</div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.priority}:</div>
+					<div class="row cell75">{$priority}</div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.status}:</div>
+					<div class="row cell75">{$status}</div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.department}:</div>
+					<div class="row cell75">{$department}</div>
+				</div>
+			</div>
+			<div class="row cell50">
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.clinetId}:</div>
+					<div class="row cell75">{$taskInfo.clientId}</div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.deadline}:</div>
+					<div class="row cell75">
+						<select id="deadlineDay" name="deadlineDay">
+							{section name=deadlineDay start=1 loop=32}
+							{if $smarty.section.deadlineDay.iteration == $deadlineDay}
+							<option value="{$smarty.section.deadlineDay.iteration}" selected="selected">{$smarty.section.deadlineDay.iteration}</option>
+							{else}
+							<option value="{$smarty.section.deadlineDay.iteration}">{$smarty.section.deadlineDay.iteration}</option>
+							{/if}
+							{/section}
+						</select>
+						<select id="deadlineMonth" name="deadlineMonth">
+							{section name=deadlineMonth start=1 loop=13}
+							{if $smarty.section.deadlineMonth.iteration == $deadlineMonth}
+							<option value="{$smarty.section.deadlineMonth.iteration}" selected="selected">{$smarty.section.deadlineMonth.iteration}</option>
+							{else}
+							<option value="{$smarty.section.deadlineMonth.iteration}">{$smarty.section.deadlineMonth.iteration}</option>
+							{/if}
+							{/section}
+						</select>
+						<select id="deadlineYear" name="deadlineYear">
+							{section name=deadlineYear start=1393 loop=1401}
+							{if $smarty.section.deadlineYear.index == $deadlineYear}
+							<option value="{$smarty.section.deadlineYear.index}" selected="selected">{$smarty.section.deadlineYear.index}</option>
+							{else}
+							<option value="{$smarty.section.deadlineYear.index}">{$smarty.section.deadlineYear.index}</option>
+							{/if}
+							{/section}
+						</select><br>
+						{$lang.hour}: 
+						<select id="deadlineMinute" name="deadlineMinute">
+							{section name="deadlineMinute" loop=60}
+							{if $smarty.section.deadlineMinute.index == $deadlineMinute}
+							<option value="{$smarty.section.deadlineMinute.index}" selected="selected">{$smarty.section.deadlineMinute.index}</option>
+							{else}
+							<option value="{$smarty.section.deadlineMinute.index}">{$smarty.section.deadlineMinute.index}</option>
+							{/if}
+							{/section}
+						</select>
+						:
+						<select id="deadlineHour" name="deadlineHour">
+							{section name="deadlineHour" loop=24}
+							{if $smarty.section.deadlineHour.index == $deadlineHour}
+							<option value="{$smarty.section.deadlineHour.index}" selected="selected">{$smarty.section.deadlineHour.index}</option>
+							{else}
+							<option value="{$smarty.section.deadlineHour.index}">{$smarty.section.deadlineHour.index}</option>
+							{/if}
+							{/section}
+						</select>
+					</div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.progress}:</div>
+					<div class="row cell75">{$progress} %</div>
+				</div>
+			</div>
+		</div>
+		<div class="paddy5 clearFix">
+			<div class="paddy1 clearFix">
+				<div class="row cell10">{$lang.agent}:</div>
+				<div class="row cell45">
+					<select id="agent" name="agent">
+						{foreach name=agent key=agentKey item=agentItem from=$agent}
+							{if $agentKey == $agent.selected}
+								<option value="{$agentKey}" selected="selected">{$agentItem}</option>
+							{else}
+								{if $agentKey == "selected" || !isset($agentItem)}
+									<option value=""> ... </option>
+								{else}
+						  			<option value="{$agentKey}">{$agentKey} - {$agentItem}</option>
+						  		{/if}
+						  	{/if}
+					  	{/foreach}
+			  		</select>
+				</div>
+				<div class="row cell20">
+					<div class="clearFix">
+						<div class="row cell70"> {$lang.sendEmail}:</div>
+						<div class="row cell30"><input id="sendEmail" name="sendEmail" class="input" type="checkbox" checked="checked" value="1" onclick="checkBoxToggle('sendEmail');"></div>
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="clearFix">
+						<div class="row cell70"> {$lang.sendSms}:</div>
+						<div class="row cell30"><input id="sendSms" name="sendSms" class="input" type="checkbox" checked="checked" value="1" onclick="checkBoxToggle('sendEmail');"></div>
+					</div>
+				</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell10">{$lang.description}:</div>
+				<div class="row cell90">
+					<p class="whiteFrame">{$taskInfo.description}</p>
+				</div>
+			</div>
+		</div>
+		<div class="paddy5 clearFix">
+			<ul>
+				<li id="commentSelector" class="fa fa-2x fa-comments pointer paddy3 curvedFull greyFrame" title="{$lang.comment}"></li>
+				<li id="attachSelector" class="fa fa-2x fa-file-archive-o pointer paddy3 curvedFull greyFrame" title="{$lang.attach}"></li>
+				<li id="historySelector" class="fa fa-2x fa-history pointer paddy3 curvedFull greyFrame" title="{$lang.history}"></li>
+				<li class="fa fa-2x fa-send pointer paddy3 curvedFull greyFrame" onclick="
+						$('#content').farajax('loader', '/crm/c_editObject', 
+							   'id={$taskInfo.id}' +
+							   '&type=task' +
+							   '&priority=' + $('#priority').val() + '::{$lang.priority}<>Number<>1<>nce<>2<>0<>10' +
+							   '&status=' + $('#status').val() + '::{$lang.status}<>Number<>1<>ce<>3' +
+							   '&department=' + $('#department').val() + '::{$lang.department}<>Number<>1<>nce<>2' +
+							   '&agent=' + $('#agent').val() + '::{$lang.agent}<>Number<>1<>nce<>5' +
+							   '&deadlineDay=' + $('#deadlineDay').val() + '::{$lang.day}<>Number<>1<>ce<>2' +
+							   '&deadlineMonth=' + $('#deadlineMonth').val() + '::{$lang.month}<>Number<>1<>ce<>2' +
+							   '&deadlineYear=' + $('#deadlineYear').val() + '::{$lang.year}<>Number<>1<>ce<>4' +
+							   '&deadlineMinute=' + $('#deadlineMinute').val() + '::{$lang.minute}<>Number<>1<>ce<>2' +
+							   '&deadlineHour=' + $('#deadlineHour').val() + '::{$lang.hour}<>Number<>1<>ce<>2' +
+							   '&progress=' + $('#progress').val() + '::{$lang.progress}<>Number<>1<>nce<>3'
+						);
+					"><span class="specialFont" style="padding-right: 5px; font-size: 13px;">{$lang.submit}</span>
+				</li>
+			</ul>
+			<div id="commentBox" class="commentBox displayNone whiteFrame paddy5 LH20" style="margin-top: 4px;">
+				<div id="addCommentBox">
+					{include file="module/comment/view/tpl/object/add.htm" op='crm' opid=$taskInfo.id}
+				</div>
+				<div id="listCommentBox" style="max-height: 150px; overflow: auto;">
+					{$comments}
+				</div>
+			</div>
+			<div id="attachBox" class="attachBox displayNone whiteFrame paddy5 LH20" style="margin-top: 4px;">
+				attachBox
+			</div>
+			<div id="historyBox" class="historyBox displayNone whiteFrame paddy5 LH20" style="margin-top: 4px;">
+				{$history}
+			</div>
+		</div>
+	</div>
+	<div id="clientInfo" class="displayNone LH35">
+		<div class="clearFix paddy10">
+			<div class="row cell32">
+				<div class="paddy1 clearFix">
+					<div class="row cell25">* {$lang.firstName}:</div>
+					<div class="row cell75"><input id="firstName" name="firstName" maxlength="45" value="{$clientInfo.firstName}"></div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.birthday}:</div>
+					<div class="row cell75">
+						<select id="day" name="day">
+							<option value=""> ... </option>
+							{section name=day start=1 loop=32}
+							<option value="{$smarty.section.day.iteration}">{$smarty.section.day.iteration}</option>
+							{/section}
+						</select>
+						<select id="month" name="month">
+							<option value=""> ... </option>
+							{section name=month start=1 loop=13}
+							<option value="{$smarty.section.month.iteration}">{$smarty.section.month.iteration}</option>
+							{/section}
+						</select>
+						<select id="year" name="year">
+							<option value=""> ... </option>
+							{section name=year start=1310 loop=1381}
+							<option value="{$smarty.section.year.index}">{$smarty.section.year.index}</option>
+							{/section}
+						</select>
+					</div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.mobile}:</div>
+					<div class="row cell75"><input id="mobile" name="mobile" maxlength="11" value="{$clientInfo.mobile}"></div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.eduBranch}:</div>
+					<div class="row cell75">{$eduBranch}</div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.company}:</div>
+					<div class="row cell75">{$company}</div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.email}:</div>
+					<div class="row cell75"><input id="email" name="email" maxlength="100" value="{$clientInfo.email}"></div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25"> {$lang.receiveEmail}:</div>
+					<div class="row cell75"><input id="receiveEmail" name="receiveEmail" type="checkbox" checked="checked" value="1" onclick="checkBoxToggle('receiveEmail0');"></div>
+				</div>
+			</div>
+			<div class="row cell1">&nbsp;</div>
+			<div class="row cell33">
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.lastName}:</div>
+					<div class="row cell75"><input id="lastName" name="lastName" maxlength="45" value="{$clientInfo.lastName}"></div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.state}:</div>
+					<div class="row cell75">{$state}</div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.phone}:</div>
+					<div class="row cell75"><input id="phoneNumber" name="phoneNumber" size="12" maxlength="8" value="{$clientInfo.phoneNumber}"> - <input id="phoneCode" name="phoneCode" class="input" type="text" size="3" maxlength="4" value="{$clientInfo.phoneCode}"></div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.level}:</div>
+					<div class="row cell75">{$eduLevel}</div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.jobTitle}:</div>
+					<div class="row cell75">{$jobTitle}</div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.website}:</div>
+					<div class="row cell75"><input id="website" name="website" maxlength="100" value="{$clientInfo.website}"></div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25"> {$lang.receiveSms}:</div>
+					<div class="row cell75"><input id="receiveSms" name="receiveSms" type="checkbox" checked="checked" value="1" onclick="checkBoxToggle('receiveEmail0');"></div>
+				</div>
+			</div>
+			<div class="row cell1">&nbsp;</div>
+			<div class="row cell33">
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.gender}: </div>
+					<div class="row cell75">{$gender}</div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.city}: </div>
+					<div id="citySelector" class="row cell75">
+						<input id="city" name="city" class="input" type="hidden" maxlength="8" value="{$clientInfo.city}">
+					</div>
+				</div>
+			  	<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.fax}:</div>
+					<div class="row cell75"><input id="fax" name="fax" maxlength="8" value="{$clientInfo.fax}"></div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.post}:</div>
+					<div class="row cell75">{$position}</div>	
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell25">{$lang.address}:</div>
+					<div class="row cell75"><textarea id="address" name="address" class="cell98" rows="8">{$clientInfo.address}</textarea></div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<button class="centerObject" onclick="
+				$('#content').farajax('loader', '/crm/c_addObject', 
+					   'type=' + $('#signUpType').val() + '::{$lang.type}<>Multi<>1<>ce<>100' +
+					   '&firstName=' + $('#firstName').val() + '::{$lang.firstName}<>Multi<>1<>ce<>100' +
+					   '&lastName=' + $('#lastName').val() + '::{$lang.lastName}<>Multi<>1<>nce<>100' +
+					   '&gender=' + $('#gender').val() + '::{$lang.gender}<>Number<>1<>nce<>1' +
+					   '&day=' + $('#day').val() + '::{$lang.day}<>Number<>1<>nce<>2' +
+					   '&month=' + $('#month').val() + '::{$lang.month}<>Number<>1<>nce<>2' +
+					   '&year=' + $('#year').val() + '::{$lang.year}<>Number<>1<>nce<>4' +
+					   '&state=' + $('#state').val() + '::{$lang.state}<>Number<>1<>nce<>6' +
+					   '&city=' + $('#city').val() + '::{$lang.city}<>Number<>1<>nce<>6' +
+					   '&mobile=' + $('#mobile').val() + '::{$lang.mobile}<>Number<>1<>nce<>11<>09100000000<>09999999999' +
+					   '&receiveSms=' + $('#receiveSms').val() + '::{$lang.receiveSms}<>Number<>1<>nce<>1' +
+					   '&phoneCode=' + $('#phoneCode').val() + '::{$lang.phoneCode}<>Number<>1<>nce<>5' +
+					   '&phoneNumber=' + $('#phoneNumber').val() + '::{$lang.phoneNumber}<>Number<>1<>nce<>8' +
+					   '&fax=' + $('#fax').val() + '::{$lang.fax}<>Number<>1<>nce<>8' +
+					   '&eduBranch=' + $('#eduBranch').val() + '::{$lang.eduBranch}<>Number<>1<>nce<>2' +
+					   '&eduLevel=' + $('#eduLevel').val() + '::{$lang.eduLevel}<>Number<>1<>nce<>1' +
+					   '&company=' + $('#company').val() + '::{$lang.company}<>Multi<>1<>nce<>200' +
+					   '&jobTitle=' + $('#jobTitle').val() + '::{$lang.jobTitle}<>Multi<>1<>nce<>200' +
+					   '&position=' + $('#position').val() + '::{$lang.position}<>Multi<>1<>nce<>200' +
+					   '&email=' + $('#email').val() + '::{$lang.email}<>Mail<>1<>nce<>100' +
+					   '&receiveEmail=' + $('#receiveEmail').val() + '::{$lang.receiveEmail}<>Number<>1<>nce<>1' +
+					   '&website=' + $('#website').val() + '::{$lang.website}<>Multi<>1<>nce<>200'  +
+					   '&address=' + $('#address').val() + '::{$lang.address}<>Multi<>1<>nce<>4000' +
+					   '&description=' + $('#description').val() + '::{$lang.description}<>Multi<>1<>nce<>10000'
+				);
+			">
+			<span>{$lang.submit}</span>
+			</button>
+		</div>
+	</div>
+	<div id="clientHistory" class="displayNone clearFix">
+		clientHistory
+		<div class="row cell50">
+		
+		</div>
+		<div class="row cell50">
+		
+		</div>
+	</div>
+</div>
+{/nocache}

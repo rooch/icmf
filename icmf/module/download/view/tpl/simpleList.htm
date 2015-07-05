@@ -1,0 +1,10 @@
+<div id="pageIn" class="pageIn" style="text-align: left;">
+	<h1 class="title">{$lang.download}</h1>
+	{nocache}
+	<ul>
+		{foreach name=entity key=entityKey item=entityItem from=$entityList}
+		<li><a href="{$entityItem}" target="_blank">{$entityItem|replace: "$downloadDir/" : ''|capitalize}</a></li>
+		{/foreach}
+	</ul>
+	{/nocache}
+</div>

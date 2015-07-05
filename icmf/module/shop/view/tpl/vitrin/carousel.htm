@@ -1,0 +1,6 @@
+{nocache}
+{foreach name=carousel key=carouselKey item=carouselItem from=$carouselList}
+<a href="/shop/v_shopProductDescription" title="{$lang.carousel}" data="objectId={$carouselItem.objectId}::{$lang.id}<>Number<>1<>ce<>11&filter=base.id={$carouselItem.objectId}::{$lang.filter}<>Multi<>1<>nce<>200"><img width="140" height="120" alt="{$carouselItem.name}" src="{$carouselItem.imagePath}"></a>
+{/foreach}
+<img src="theme/{$settings.theme}/img/icon/s.png" onload="{literal}$('#k3dCarousel').k3dCarousel();{/literal}">
+{/nocache}

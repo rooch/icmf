@@ -1,0 +1,10 @@
+<div class="clearFix">
+	<div class="row cell5 pointer" onclick="$('#basketContent').farajax('loader', '/basket/v_object'); $('#basketContent').fadeToggle('slow')">
+		<img src="theme/{$settings.theme}/img/greenBasket.png" alt="{$lang.basket}" width="32" height="260">
+	</div>
+	<div class="row cell95">
+		<div id="basketContent" class="basketContent paddy5">
+			{$basketContent}
+		</div>
+	</div>
+</div>

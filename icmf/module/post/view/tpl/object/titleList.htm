@@ -1,0 +1,7 @@
+<ul class="listStyleNone">
+	{nocache}
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	    <li><a href="post/c_showListObject/{$entityItem.id}_{$entityItem.title|replace:' ':'-'}" title="{$entityItem.title}">{$entityItem.title}</a></li>
+	{/foreach}
+	{/nocache}
+</ul>

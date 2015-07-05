@@ -1,0 +1,107 @@
+{nocache}
+{if $sysVar.browserType == 'MSIE'}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+{else}
+<html>
+{/if}
+{/nocache}
+<head>
+	<TITLE>{$settings.siteName}</TITLE>
+	
+	<META NAME="Generator" CONTENT="{$settings.author}">
+	<META NAME="Keywords" CONTENT="{$settings.keywords}">
+	<META NAME="Robots" CONTENT="{$settings.robots}">
+	<META NAME="Author"	CONTENT="{$settings.author}">
+	<META NAME="Copyright" CONTENT="{$settings.copyright}">
+	<META HTTP-EQUIV="Content-Type" content="text/html; charset=UTF-8">
+	
+	<LINK REL="SHORTCUT ICON" HREF="theme/{$settings.theme}/img/icon/favicon.ico">
+	<LINK REL="STYLESHEET" HREF="theme/{$settings.theme}/style/global.css" TYPE="TEXT/CSS">
+	<!-- superfish Menu -->
+	<LINK REL="STYLESHEET" HREF="theme/{$settings.theme}/style/superFishMenu/superfish.css" TYPE="TEXT/CSS">
+	<!-- /superfish Menu -->
+	<!-- print -->
+	<LINK REL="STYLESHEET" HREF="theme/{$settings.theme}/style/print.css" MEDIA="PRINT" TYPE="TEXT/CSS">
+	<!-- /print -->
+	
+	<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="{$settings.libraryAddress}/xorg/ajax/ajax.js"></SCRIPT>
+	<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="{$settings.libraryAddress}/xorg/global/global.js"></SCRIPT>
+	<!--[if lte IE 6]>
+	<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="{$settings.libraryAddress}/xorg/global/fixPng.js"></SCRIPT>
+	<![endif]-->
+</head>
+<body id="body">
+<div id="loading" class="loading">
+	<img src="theme/{$settings.theme}/img/loading.gif"></img>
+</div>
+<div id="temp" class="temp"></div>
+<!-- Wrapper -->
+<div id="wrapper" class="wrapper">
+	<!-- Login -->
+	<div id="login" class="login"></div>
+	<!-- /Login -->
+	<!-- Menu -->
+	<div id="menu" class="menu">{$menu}</div>
+	<!-- /Menu -->
+	<!-- Logo -->
+	<div id="logo" class="logo">
+		<div style="text-align: left;"><img alt="BakhteAval" title="BakhteAval" src="theme/{$settings.theme}/img/leftLogo.png"></img></div>
+		<div style="text-align: right;"><a href="http://sepas.org" target="_blank"><img alt="BakhteAval&Sepas" title="BakhteAval&Sepas" border="0" src="theme/{$settings.theme}/img/rightLogo.jpg"></img></a></div>
+	</div>
+	<!-- /Logo -->
+	<!-- Container -->
+	<div id="container" class="container">
+		<!-- Content -->
+		<div id="content" class="content"></div>
+		<!-- /Content -->
+	</div>
+	<!-- Ticker -->
+	<div id="ticker" class="ticker">
+		<marquee direction="right" scrollamount="2">
+			<a id="news" class="news" style="font-size:14px; font-weight: bolder;">
+					اگه ۳ بار تو مسابقات پایین شرکت کردی، ۱ بار تو جایزه ویژه رایگان شرکت میکنی	
+			</a>
+		</marquee>
+	</div>
+	<!-- /Ticker -->
+	<!-- k3dCarousel -->
+	<div id="k3dCarousel" class="k3dCarousel" style="height: 170px; clear: both;"></div>
+	<!-- /k3dCarousel -->
+	<!-- /Container -->
+	<!-- Footer -->
+	<div id="footer" class="footer">
+		کلیه حقوق این نرم افزار متعلق به شرکت <a href="{$settings.authorWebsite}"><b>{$settings.author}</b></a> میباشد. <br>
+		نرم افزار <a href="http://www.icmf.ir"><b>فرا پورتال</b></a>
+		نسخه: {$settings.version}
+	</div>
+	<!-- Footer -->
+</div>
+<!--/Wrapper-->
+<!-- jQuery -->
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="{$settings.libraryAddress}/xorg/jQuery/jquery-1.6.3.min.js"></SCRIPT>
+<!-- /jQuery -->
+<!-- menu -->
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="{$settings.libraryAddress}/xorg/jQuery/plugin/superFishMenu/hoverIntent.js"></SCRIPT>
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="{$settings.libraryAddress}/xorg/jQuery/plugin/superFishMenu/superfish.js"></SCRIPT>
+<!-- /menu -->
+<!-- k3Carousel -->
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="{$settings.libraryAddress}/xorg/jQuery/plugin/k3Carousel/jquery.k3dCarousel.min.js"></SCRIPT>
+<!-- /k3Carousel -->
+<!-- tab -->
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="{$settings.libraryAddress}/xorg/jQuery/plugin/idTab/jquery.idTabs.min.js"></SCRIPT>
+<!-- /tab -->
+<!-- scrollTo -->
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="{$settings.libraryAddress}/xorg/jQuery/plugin/scrollTo/jquery.scrollTo-min.js"></SCRIPT>
+<!-- /scrollTo -->
+<!-- StartUp -->
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="theme/{$settings.theme}/js/startUp.js"></SCRIPT>
+<!-- /StartUp -->
+{nocache}
+<img src="theme/{$settings.theme}/img/icon/s.png" onload="startUp({$sysVar.op}, {$sysVar.mode}, {$sysVar.RefNum}, {$sysVar.MID}, {$sysVar.State}, {$sysVar.ResNum});">
+{/nocache}
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="{$settings.libraryAddress}/coding/base64.js"></SCRIPT>
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="{$settings.libraryAddress}/xorg/editor/ckeditor.js"></SCRIPT>
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="{$settings.libraryAddress}/xorg/finder/ckfinder.js"></SCRIPT>
+</body>
+</html>

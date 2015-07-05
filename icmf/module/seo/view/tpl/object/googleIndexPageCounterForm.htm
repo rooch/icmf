@@ -1,0 +1,16 @@
+<h1>محاسبه تعداد صفحات ایندکس شده در گوگل</h1>
+<br><br><br><br>
+<div class="blockquote paddy40 cell60 centerObject center">
+	<br><br>
+	<h2 class="dastnevisFont x2">
+		می‌خواهید تعداد صفحات ایندکس شده سایت خود در گوگل را بدانید؟
+	</h2>
+	<br><br><br>
+	<input id="googleIndexPageCounter" name="googleIndexPageCounter" class="cell90 centerObject LH45 h60 x2" placeholder="نام سایت خود را اینجا وارد کنید">
+	<br><br><br>
+	<button class="cell30 h50 x1_5 dastnevisFont" onclick="$('#googleIndexPageCounterResultScope').farajax('loader', '/seo/c_googleIndexPageCounter', 'domain=' + $('#googleIndexPageCounter').val() + '::{$lang.domain}<>Multi<>1<>ce<>200');">
+		محاسبه کن
+	</button>
+	<br>
+	<div id="googleIndexPageCounterResultScope" class="whiteFrame x2 paddy10 curvedFull cell60 centerObject"></div>
+</div>

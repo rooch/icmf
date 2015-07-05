@@ -1,0 +1,31 @@
+<div style="direction: rtl;">{$lang.lastName}: {$lastName}</div>
+<div style="direction: rtl;">{$lang.userName}: {$userName}</div>
+<br>
+<table id="resultBox" style="direction: rtl;width: 700px;border-collapse: separate;border-spacing: 2px;font-size: 10px;text-indent: 5px;border: 1px solid #828BA4;">
+	<tr style="height: 20px;font-weight: bold;background: #828BA4;color: #fff;">
+		<td>#</td>
+		<td>{$lang.id}</td>
+		<td>{$lang.name}</td>
+		<td>{$lang.model}</td>
+		<td>{$lang.count}</td>
+		<td>{$lang.price}</td>
+	</tr>
+	{nocache}
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	<tr style="position: relative;background: url(http://landaelectronic.com/theme/landa/img/bq.jpg) repeat-x top;padding: 2px 5px 2px 2px;border: 1px solid #eee;vertical-align: top;min-height: 30px;" id="{nocache}row{$entityItem.id}{/nocache}">
+		<td>{nocache}{$entityItem.count}{/nocache}</td>
+		<td>{nocache}{$entityItem.id}{/nocache}</td>
+		<td>
+			<div style="cursor: pointer;" onclick="$('#productInfo').fadeIn('slow'); $('#productInfo').farajax('loader', '/shop/v_descriptionVitrin/objectId={nocache}{$entityItem.objectId}{/nocache}');">{nocache}{$entityItem.objectEntityName}{/nocache}</div>
+			<div id="productInfo" class="curvedFull boxShadow" style="position: absolute; width: 700px;" onclick="$(this).fadeOut('slow');"></div>
+		</td>
+		<td>{nocache}{$entityItem.model}{/nocache}</td>
+		<td>{nocache}{$entityItem.count}{/nocache}</td>
+		<td>{nocache}{$entityItem.price}{/nocache}</td>
+	</tr>
+	{/foreach}
+	{/nocache}
+</table>
+<br>
+<div style="direction: rtl;">{$lang.mobile}: {nocache}{$mobile}{/nocache}</div>
+<div style="direction: rtl;">{$lang.address}: {nocache}{$address}{/nocache}</div>

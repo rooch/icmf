@@ -1,0 +1,18 @@
+{nocache}
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	{if not $smarty.foreach.entity.last}
+	<div class="searchResultItem blockquote clearFix">
+	{else}
+	<div class="searchResultItem blockquote curvedBottom boxShadow clearFix">
+	{/if}
+		<div class="row cell25">
+			<img class="tip" src="{$settings.phpThumbLibraryAddress}/usage.php?file={$entityItem.singleImage}&width=60&height=60" alt="{$entityItem.name|truncate:30:'...':true}" title="{$entityItem.name|truncate:30:'...':true}">
+		</div>
+		<div class="row cell75">
+			<a href="/shop/v_descriptionVitrin/objectId={$entityItem.id}" title="{$entityItem.name} {$entityItem.model}">
+				<b>{$entityItem.name|truncate:30:'...':true}</b>
+			</a>
+		</div>
+	</div>
+	{/foreach}
+{/nocache}

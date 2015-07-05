@@ -1,0 +1,7 @@
+<div id="pageIn" class="pageIn" style="text-align: center">
+	<h1 class="title">{$lang.specialLottery}</h1>
+	<img class="slideImage" title="{$slideInfo.name}" alt="{$slideInfo.name}" height="470px" src="{$slideInfo.imagePath}" onclick="loader('POST', '', 'content', 'op=lottery&mode=v_join&lotteryId={$slideInfo.id}', 1);">
+	<div id="slideBar" class="slideBar">
+		<div style="padding: 20px 10px 10px 10px;">{$slideInfo.description} [{$slideInfo.stat}] [{$lang.price}: {$slideInfo.price} {$lang.currencySign}]</div>
+	</div>
+</div>

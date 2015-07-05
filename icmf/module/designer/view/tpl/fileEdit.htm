@@ -1,0 +1,18 @@
+<div id="pageIn" class="pageIn">
+	<h1>{$lang.fileEdit}</h1>
+	<textarea id="description" rows="30" cols="40" wrap="off" style="direction: ltr; text-align: left;" onclick="$('#save').fadeIn('slow');">
+		{nocache}
+		{$fileContent}
+		{/nocache}
+	</textarea>
+	<br><br>
+	{nocache}
+	<button id="save" style="display: none; height: 40px; width: 180px;" onclick="$('#content').farajax('loader', '/designer/c_edit', 
+																																'description=' + encodeURIComponent($('#description').val()) + '::{$lang.description}<>Multi<>1<>ce<>1000000000' +
+																																'&dir={$dir}::{$lang.dir}<>Multi<>1<>ce<>45' +
+																																'&file={$file}::{$lang.file}<>Multi<>1<>ce<>200'
+																																);">
+		<span>{$lang.save}</span>
+	</button>
+	{/nocache}
+</div>

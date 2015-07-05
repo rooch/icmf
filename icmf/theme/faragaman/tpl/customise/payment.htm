@@ -1,0 +1,72 @@
+<article class="greyBlueFrame paddy10 curvedFull">
+	<h1>روش‌های پرداخت</h1>
+	<div class="clearFix">
+		<div class="row cell50">
+			<div class="paddy10">
+				<div class="relative paddy10 boxShadow h385" style="background: url('theme/{$settings.theme}/img/Saman-Bank.jpg') no-repeat center bottom #fff">
+					<div class="cell100 center h385 boxShadow" style="padding: 10px 0px; position: absolute; top: 0px; left: 0px; background: rgba(0,0,0,0.7); z-index: 1033; color: #fff;">بزودی</div>
+					<h2>پرداخت آنلاین</h2>
+					<div class="paddy1">
+						<input id="firstName" name="firstName" class="cell96" maxlength="45" placeholder="{$lang.firstName}">
+					</div>
+					<div class="paddy1">
+						<input id="lastName" name="lastName" class="cell96" maxlength="45" placeholder="{$lang.lastName}">
+					</div>
+					<div class="paddy1">
+						<input id="email" name="email" class="cell96" maxlength="100" placeholder="{$lang.email}">
+					</div>
+					<div class="paddy1">
+						<input id="mobile" name="mobile" class="cell96" maxlength="20" placeholder="{$lang.mobile}">
+					</div>
+					<div class="paddy1">
+						<input id="amount" name="amount" class="cell96" maxlength="20" placeholder="مبلغ به ریال">
+					</div>
+					<div class="paddy10">
+						<button style="margin: 0 auto; padding: 20px 60px;" onclick="
+							$('#content').farajax('loader', 'humanResource/c_addObject', 
+								   '&firstName=' + document.getElementById('firstName').value + '::{$lang.firstName}<>Multi<>1<>ce<>45' +
+								   '&lastName=' + document.getElementById('lastName').value + '::{$lang.lastName}<>Multi<>1<>nce<>45' +
+								   '&email=' + document.getElementById('email').value + '::{$lang.email}<>Mail<>1<>ce<>100' +
+								   '&mobile=' + document.getElementById('mobile').value + '::{$lang.mobile}<>Mobile<>1<>ce<>100' +
+								   '&amount=' + document.getElementById('amount').value + '::{$lang.amount}<>Mail<>1<>nce<>100'						);
+						">
+						<span>پرداخت</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row cell50">
+			<div class="paddy10">
+				<div class="whiteFrame paddy10 boxShadow h100">
+					<h2>شماره کارت</h2>
+					<span>
+						شماره کارت: ۶۲۱۹۸۶۱۰۰۸۴۰۹۸۸۹<br>
+						بانک: سامان<br>
+						بنام: سید علی حسینی
+					</span>
+				</div>
+			</div>
+			<div class="paddy10">
+				<div class="whiteFrame paddy10 boxShadow h100">
+					<h2>شماره حساب</h2>
+					<span>
+						شماره حساب: ۸۲۴۸۰۰۸۸۲۱۳۸۱<br>
+						بانک: سامان<br>
+						بنام: سید علی حسینی
+					</span>
+				</div>
+			</div>
+			<div class="paddy10">
+				<div class="whiteFrame paddy10 boxShadow h100">
+					<h2>شبا</h2>
+					<span>
+						شماره شبا: IR۶۸۰۵۶۰۰۸۲۴۸۰۰۰۰۹۹۲۱۳۸۰۰۱<br>
+						بانک: سامان<br>
+						بنام: سید علی حسینی
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>

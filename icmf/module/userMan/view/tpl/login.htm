@@ -1,0 +1,21 @@
+{nocache}
+<div class="row cell20">
+	<input id="loginUserName" name="loginUserName" placeholder="{$lang.userName}/{$lang.email}" maxlength="100" required>
+</div>
+<div class="row cell20">
+	<input id="loginPassword" name="loginPassword" placeholder="{$lang.password}" type="password" maxlength="20" required>
+</div>
+<div class="row cell10">
+	<button onclick="
+			$('#login').farajax('loader', '/userMan/c_login',
+				   'userName=' + document.getElementById('loginUserName').value + '::{$lang.userName}<>Multi<>1<>ce<>100' +
+				   '&amp;password=' + document.getElementById('loginPassword').value + '::{$lang.password}<>Multi<>1<>ce<>20'			   
+			);
+			$('#loginGate').farajax('loader', '/pageLoader/v_load/loginGate');
+	 	"><span>{$lang.login}</span></button>
+</div>
+<div class="row cell50" style="line-height: 45px;">
+	[<a href="/userMan/v_signUp" rel="nofollow">{$lang.signUp}</a>] [<a href="/userMan/v_changePass" rel="nofollow">{$lang.forgetPassword}</a>] 
+</div>
+<br class="clear">
+{/nocache}

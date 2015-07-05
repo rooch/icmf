@@ -1,0 +1,37 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.lotteryMemberList}</h1>
+	<table id="resultBox" class="listFull">
+		<tr class="listHeader">
+			<td width="5%">#</td>
+			<td width="10%">{$lang.transactionCode}</td>
+			<td width="20%">{$lang.lotteryName}</td>
+			<td width="15%">{$lang.userName}</td>
+			<td width="20%">{$lang.bankCode}</td>
+			<td width="10%">{$lang.properties}</td>
+		</tr>
+	{foreach name=member key=memberKey item=memberItem from=$memberList}
+		<tr class="blockquote">
+			<td>{$memberItem.count}</td>
+			<td>{$memberItem.id}</td>
+			<td>{$memberItem.lName}</td>
+			<td>{$memberItem.uName}</td>
+			<td>{$memberItem.bankCode}</td>
+			<td>
+				{if $memberItem.winner == '1'} 
+				<img id="winner" style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/cup.png" onclick="loader('POST', '{$settings.libraryAddress}/xorg/ajax/ajax.php', '', 'op=lottery&mode=c_unSetWinner&id={$memberItem.id}', 1); this.src='theme/{$settings.theme}/img/icon/cupGrey.png'">
+				{else}
+				<img id="winner" style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/cupGrey.png" onclick="loader('POST', '{$settings.libraryAddress}/xorg/ajax/ajax.php', '', 'op=lottery&mode=c_setWinner&id={$memberItem.id}', 1); this.src='theme/{$settings.theme}/img/icon/cup.png'">
+				{/if}
+				{if $memberItem.actvie == '1'} 
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/powerOn.png">
+				{else}
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/powerOff.png">
+				{/if}
+			</td>
+		</tr>
+	{/foreach}
+	</table>
+	<br>
+	<div class="blockquote">{$navigation}</div>
+	
+</div>

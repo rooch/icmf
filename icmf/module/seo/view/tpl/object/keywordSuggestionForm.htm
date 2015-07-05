@@ -1,0 +1,16 @@
+<h1>کشف کلمات کلیدی</h1>
+<br><br><br><br>
+<div class="blockquote paddy40 cell60 centerObject center">
+	<br><br>
+	<h2 class="dastnevisFont x2">
+		می‌خواهید کلید واژه های مرتبط با کسب و کار خود را کشف کنید؟
+	</h2>
+	<br><br><br>
+	<input id="keywordSuggestion" name="keywordSuggestion" class="cell90 centerObject LH45 h60 x2" placeholder="کلید واژه خود را اینجا وارد کنید">
+	<br><br><br>
+	<button class="cell30 h50 x1_5 dastnevisFont" onclick="$('#keywordSuggestionResultScope').farajax('loader', '/seo/c_keywordSuggestion', 'keyword=' + $('#keywordSuggestion').val() + '::{$lang.keyword}<>Multi<>1<>ce<>200');">
+		پیدا کن
+	</button>
+	<br>
+	<div id="keywordSuggestionResultScope"></div>
+</div>

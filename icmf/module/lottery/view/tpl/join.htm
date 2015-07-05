@@ -1,0 +1,29 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.lotteryMembership}</h1>
+	<ul>
+		<li>
+			<span style="cursor: pointer; font-weight: bolder;" onclick="loader('POST', '', 'content', 'op=lottery&mode=v_help', 1);">{$lang.help}</span>
+		</li>
+		{nocache}
+		<li>
+			<table class="listFull">
+				<tr>
+					<td id="lotteryInfo" width="50%" style="vertical-align: top;">
+						<h1>{$info.lName}</h1><br>
+						<div class="listFull"><p>{$info.description}</p></div>
+						<div id="payment" class="listFull" style="text-align: center;">
+							<button style="padding: 0px 120px;" onclick="loader('POST', '', 'payment', 'op=financial&mode=v_ePay', 1); loader('POST', '', 'lotteryInfo', 'op=lottery&mode=v_addToBasket' + '&objectId={$info.id}' + '::{$lang.id}<>Number<>1<>ce<>11');">{$lang.pay}</button>
+						</div>
+						<div id="totalAllPrice" class="listFull">{$info.sellPrice}</div>
+						<div id="invoice" class="listFull"></div>
+					</td>
+					<td width="50%" align="center" style="vertical-align: top;">
+						<img width="400" height="250" src="{$info.imagePath}">
+					</td>
+				</tr>
+			</table>
+			
+		</li>
+		{/nocache}
+	</ul>
+</div>

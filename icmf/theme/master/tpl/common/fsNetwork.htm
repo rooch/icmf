@@ -1,0 +1,43 @@
+<div class="row cell90">
+	<ul class="row inlineDisplay">
+		<li><b><a href="http://fsnet.ir" class="tip" title="شبکه تجارت الکترونیک متن باز ایران">&#174;شتاما</a></b></li>
+		<li><b><a href="http://brand-saz.com" class="tip" title="اولین نرم افزار فروشگاه ساز متن باز کاملا ایرانی">برند ساز</a></b></li>
+		<li style="color: #fff;"><b>آی کسب</b></li>
+	</ul>
+</div>
+<div class="row cell10">
+	{nocache}
+	{if isset($smarty.session.uid) && $smarty.session.uid != 2}
+		<div>
+			<div class="row cell30">
+				<div style="padding-top: 2px;">
+					<img src="theme/{$settings.theme}/img/icon/User24.png" style="cursor: pointer;" alt="{$smarty.session.uid}" onclick="$('#cPanel').slideToggle('slow');" width="24" height="24">
+				</div>
+			</div>
+			<div class="row cell70" style="line-height: 27px;">
+				<a href="/userMan/c_logout" rel="nofollow" onclick="setTimeout('location.href=\'/\';', 5000);">{$lang.logout}</a>
+			</div>
+			<br class="clear">
+		</div>
+	{else}
+		<div>
+			<div class="row cell30">
+				<div style="padding-top: 2px;">
+					<img class="tip" src="theme/{$settings.theme}/img/icon/Login_in24.png" style="cursor: pointer;" alt="{$lang.login}" title="{$lang.login}" onclick="$('#cPanel').slideToggle('slow');"  width="24" height="24">
+				</div>
+			</div>
+			<div class="row cell70" style="line-height: 27px;">
+				<a class="tip" href="/userMan/v_signUp" title="{$lang.signUpHere}">{$lang.signUp}</a>
+			</div>
+			<br class="clear">
+		</div>		
+	{/if}
+	{/nocache}
+</div>
+<br class="clear">
+<!-- cPanel -->
+<div id="cPanel" class="cPanel paddy5">
+	<div id="login" class="login" style="padding-right: 10px;">{nocache}{$login}{nocache}</div>
+	<div id="accessories" class="accessories" style="display: none; padding-right: 10px;"></div>
+</div>
+<!-- /cPanel -->

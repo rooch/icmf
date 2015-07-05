@@ -1,0 +1,29 @@
+<img src="theme/{$settings.theme}/img/icon/s.png" onload="$('#messageBar').draggable();"> 
+{nocache}
+<div id="messageBar" class="messageBar curvedFull shadowFull">
+	<div class="curvedTop" style="cursor: move; text-align:right; padding: 5px; height: 20px; background-color: {$color};">
+		<div class="row cell90">
+			{if isset($icon)}
+			<img src='theme/{$settings.theme}/img/icon/{$icon}'>&nbsp;
+			{/if}
+			<h3>{$title}</h3><span style="display: none;">- {$code}</span>
+		</div>
+		<div class="row cell10" style="text-align: left;">
+			<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/close.png" alt="{$lang.close}" title="{$lang.close}" onclick="$('#modalWindow').faraModal('closeModal', 'modalWindow');">
+		</div>
+	</div>
+	<div style="text-align:right; padding: 10px; clear: both;">
+		<ol>
+			{foreach key=messageKey item=messageItem from=$message}
+ 				<li>{$messageItem}</li>
+ 			{/foreach}
+ 		</ol>
+ 		<div style="text-align: center;">
+ 		{if isset($button)}
+  			{foreach key=buttonKey item=buttonItem from=$button}
+  			{/foreach}
+ 		{/if}
+ 		</div>
+	</div>
+</div> 
+{/nocache}

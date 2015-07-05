@@ -1,0 +1,48 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.pollList}</h1>
+	<table id="resultBox" class="listFull">
+		<tr class="listHeader">
+			<td width="5%">#</td>
+			<td width="10%">{$lang.user}</td>
+			<td width="5%">{$lang.agent}</td>
+			<td width="5%">{$lang.version}</td>
+			<td width="10%">{$lang.ip}</td>
+			<td width="20%">{$lang.reffer}</td>
+			<td width="10%">{$lang.host}</td>
+			<td width="5%">{$lang.os}</td>
+			<td width="5%">{$lang.op}</td>
+			<td width="5%">{$lang.mode}</td>
+			<td width="10%">{$lang.title}</td>
+			<td width="15%">{$lang.properties}</td>
+		</tr>
+		{nocache}
+		{foreach name=entity key=entityKey item=entityItem from=$entityList}
+		<tr class="blockquote" id="row{$entityItem.id}">
+			<td>{$entityItem.num}</td>
+			<td>{$entityItem.user}</td>
+			<td>{$entityItem.agent}</td>
+			<td>{$entityItem.version}</td>
+			<td>{$entityItem.ip}</td>
+			<td>{$entityItem.reffer}</td>
+			<td>{$entityItem.host}</td>
+			<td>{$entityItem.os}</td>
+			<td>{$entityItem.op}</td>
+			<td>{$entityItem.mode}</td>
+			<td>{$entityItem.title}</td>
+			<td align="center">
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/information.png">
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/delete.png">
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/edit.png">
+				{if $entityItem.active == 1} 
+				<img style="cursor: pointer;" alt="{$deAtivate}" alt="{$deAtivate}" src="theme/{$settings.theme}/img/icon/powerOn.png">
+				{else}
+				<img style="cursor: pointer;" alt="{$ativate}" alt="{$ativate}" src="theme/{$settings.theme}/img/icon/powerOff.png">
+				{/if}
+			</td>
+		</tr>
+		{/foreach}
+		{/nocache}
+	</table>
+	<br>
+	<div class="blockquote">{$navigation}</div>
+</div>

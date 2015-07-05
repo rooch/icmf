@@ -1,0 +1,20 @@
+.newsTicker {
+    background: url('../../img/header_bg.png') #772953;
+    padding: 2px 7px 1px 7px;
+    height: 16px;
+    overflow: hidden;
+}
+
+.newsTicker ul {
+	margin: 0px 10px;
+	list-style-image: url('../../img/icon/prevPage.gif');	
+}
+
+.newsTicker a, #ticker a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+.newsTicker a:hover {
+    color: #FF3300;
+}

@@ -1,0 +1,39 @@
+{if $smarty.session.uid == 2}
+<div class="paddy1 clearFix">
+	<div class="row cell80"><input id="userName" name="userName" maxlength="45"></div>
+	<div class="row cell20 LH35">Username:</div>
+</div>
+<div class="paddy1 clearFix">
+	<div class="row cell80"><input id="email" name="email" maxlength="100"></div>
+	<div class="row cell20 LH35">Email:</div>
+</div>
+{/if}
+<div class="paddy1 clearFix">
+	<div class="row cell80"><input id="subject" name="subject" maxlength="100"></div>
+	<div class="row cell20 LH35">Subject:</div>
+</div>
+<div class="paddy1 clearFix">
+	<div class="row cell80"><textarea id="message" name="message" class="input" rows="5" cols="40"></textarea></div>
+	<div class="row cell20 LH35">
+		Message:
+		<br>
+		{if $smarty.session.uid == 2}
+		<div class="paddy5">
+			<button style="height: 50px; width: 60px;" onclick="$('#content').farajax('loader', '/contact/c_sendMessage', 'userName=' + document.getElementById('userName').value + '::{$lang.userName}<>Multi<>1<>nce<>45' + '&email=' + document.getElementById('email').value + '::{$lang.email}<>Mail<>1<>nce<>45' + '&subject=' + document.getElementById('subject').value	+ '::{$lang.subject}<>Multi<>1<>ce<>100' + '&message=' + document.getElementById('message').value + '::{$lang.message}<>Multi<>1<>ce<>1000');">
+				<span>Send</span>
+			</button>
+		</div>
+		{else}
+		<div class="paddy5">
+			<button style="height: 50px; width: 60px;" onclick="$('#content').farajax('loader', '/contact/c_sendMessage', 'subject=' + document.getElementById('subject').value	+ '::{$lang.subject}<>Multi<>1<>ce<>100' + '&message=' + document.getElementById('message').value + '::{$lang.message}<>Multi<>1<>ce<>1000');">
+				<span>Send</span>
+			</button>
+		</div>
+		{/if}
+	</div>
+</div>
+<!-- 
+<div class="paddy1 clearFix">
+	{$lang.carbonCopy}: <input id="carbonCopy" name="carbonCopy" class="input" type="checkbox" value="0" onchange="checkBoxToggle('carbonCopy');">
+</div>
+-->

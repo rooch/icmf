@@ -1,0 +1,14 @@
+<div class="blockquote">
+	{nocache}
+	{$text}
+	<div class="center">
+		<button onclick="$('#content').farajax('loader', '/product/c_delCategory', 
+			'id={$entity.id}::{$lang.id}<>Number<>1<>ce<>11'	
+			);
+			$('#list').farajax('loader', '/product/c_listCategory');
+			">
+			<span>{$lang.approve}</span>
+		</button>
+	</div>
+	{nocache}
+</div>

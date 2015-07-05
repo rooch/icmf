@@ -1,0 +1,46 @@
+<div class="formArranger" style="padding-left: 220px; background: url('theme/{$settings.theme}/img/contact.jpg') left no-repeat;">
+	<ul>
+		<li>
+			&nbsp;
+		</li>
+		{if $smarty.session.uid == 2}
+		<li>
+			<label>{$lang.userName}:</label><br>
+			<input id="userName" name="userName" class="input" type="text" size="40" maxlength="45">
+		</li>
+		<li>
+			<label>{$lang.email}:</label><br>
+			<input id="email" name="email" class="input" type="text" size="40" maxlength="100">
+		</li>
+		{/if}
+		<li>
+			<label>{$lang.subject}:</label><br>
+			<input id="subject" name="subject" class="input" type="text" size="40" maxlength="100">
+		</li>
+		<li>
+			<label>{$lang.message}:</label><br>
+			<textarea id="message" name="message" class="input" rows="5" cols="40"></textarea>
+		</li>
+		<li>
+			<label>{$lang.carbonCopy}:</label><br>
+			<input id="carbonCopy" name="carbonCopy" class="input" type="checkbox" value="0" onchange="checkBoxToggle('carbonCopy');">
+		</li>
+		<li>
+			&nbsp;
+		</li>
+		{if $smarty.session.uid == 2}
+		<li>
+			<button onclick="$('#content').farajax('loader', '/contact/c_sendMessage', 'userName=' + document.getElementById('userName').value + '::{$lang.userName}<>Multi<>1<>nce<>45' + '&email=' + document.getElementById('email').value + '::{$lang.email}<>Mail<>1<>nce<>45' + '&subject=' + document.getElementById('subject').value	+ '::{$lang.subject}<>Multi<>1<>ce<>100' + '&message=' + document.getElementById('message').value + '::{$lang.message}<>Multi<>1<>ce<>1000' + '&carbonCopy=' + document.getElementById('carbonCopy').value + '::{$lang.carbonCopy}<>Number<>1<>nce<>1');">
+				<span>{$lang.submit}</span>
+			</button>
+		</li>
+		{else}
+		<li>
+			<button onclick="$('#content').farajax('loader', '/contact/c_sendMessage', 'subject=' + document.getElementById('subject').value	+ '::{$lang.subject}<>Multi<>1<>ce<>100' + '&message=' + document.getElementById('message').value + '::{$lang.message}<>Multi<>1<>ce<>1000' + '&carbonCopy=' + document.getElementById('carbonCopy').value + '::{$lang.carbonCopy}<>Number<>1<>nce<>1'">
+				<span>{$lang.submit}</a>
+				</span>
+			</button>
+		</li>
+		{/if}
+	</ul>
+</div>

@@ -1,0 +1,60 @@
+{include file="theme/`$settings.theme`/tpl/common/schema.htm"}
+<body id="body" style="direction: {$lang.direction};">
+{include file="theme/`$settings.theme`/tpl/common/modal.htm"}
+<div id="temp"></div>
+<div id="goTop" class="goTop curvedFull boxShadow fa fa-arrow-up"></div>
+{nocache}
+{if $sections.basket}
+<section id="basket" class="basket">{nocache}{include file="theme/`$settings.theme`/tpl/common/basket.htm"}{/nocache}</section>
+{/if}
+{if $sections.panel}
+<section>{nocache}{include file="theme/`$settings.theme`/tpl/common/panel.htm"}{/nocache}</section>
+{/if}
+{/nocache}
+<!-- Wrapper -->
+<div id="wrapper" class="wrapper">
+	{nocache}
+	{if $sections.header}
+	<header class="header center">{include file="theme/`$settings.theme`/tpl/common/header.htm"}</header>
+	{/if}
+	{/nocache}
+	<div id="container" class="container curvedFull relative clearFix">
+		<!-- <div id="minimizer" class="minimizer minimizerSprite minimizer-tab-collapsed-left"></div> -->
+		<h2 class="zeroDis">container</h2>
+		{nocache}
+		{if $sections.right}
+		<section id="rightBox" class="row cell{$sections.rightWidth}">
+			<h2 class="zeroDis">rightBox</h2>
+			<aside id="rightAsideContent" class="asideContent">
+				{nocache}{include file="theme/`$settings.theme`/tpl/customise/rightBox.htm"}{/nocache}
+			</aside>
+		</section>
+		{/if}
+		{if $sections.center}
+		<section id="centerBox" class="row cell{$sections.centerWidth}">
+			<h2 class="zeroDis">content</h2>
+			<div id="content" class="content">
+				{nocache}{$center}{/nocache}
+			</div>
+		</section>
+		{/if}
+		{if $sections.left}
+		<section id="leftBox" class="row cell{$sections.leftWidth}">
+			<h2 class="zeroDis">leftBox</h2>
+			<aside id="leftAsideContent" class="asideContent">
+				{nocache}{include file="theme/`$settings.theme`/tpl/customise/leftBox.htm"}{/nocache}
+			</aside>
+		</section>
+		{/if}
+		{/nocache}
+	</div>
+</div>
+<!--/Wrapper-->
+<footer id="footer" class="footer">{include file="theme/`$settings.theme`/tpl/common/footer.htm"}</footer>
+<section id="copyright" class="copyright"><h2 class="zeroDis">copyright</h2>{include file="theme/`$settings.theme`/tpl/common/copyright.htm"}</section>
+{nocache}
+<script src="theme/{$settings.theme}/js/js.php"></script>
+<script src="kernel/lib/xorg/editor/ckeditor.js"></script>
+<script src="kernel/lib/xorg/finder/ckfinder.js"></script>
+</body>
+</html>

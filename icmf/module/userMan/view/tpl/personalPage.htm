@@ -1,0 +1,17 @@
+{nocache}
+<div id="editorFullText"></div>
+<div>
+	<div id="textcontents" class="displayNone">
+		<!-- This div will be used to display the editor contents. -->
+		<div id="pageSource">{$pageSource}</div>
+	</div>
+	<textarea id="fullText" name="fullText" rows="50" class="cell100">{$pageSource}</textarea>
+</div>
+<button class="cell40" onclick="
+	$('#content').farajax('loader', '/userMan/c_personalPage', 
+		'&pageSource=' + getText('pageSource') + '::{$lang.pageSource}<>Multi<>1<>ce<>1000000000'
+	);
+	">{$lang.submit}
+</button>
+{/nocache}
+<commands value="removeEditor(); createEditor('pageSource', 'editorFullText'); $('#fullText').fadeOut();">

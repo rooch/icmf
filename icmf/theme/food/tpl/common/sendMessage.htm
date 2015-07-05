@@ -1,0 +1,40 @@
+<icmf>
+{if $smarty.session.uid == 2}
+<div class="paddy1 clearFix">
+	<div class="row cell20">{$lang.userName}:</div>
+	<div class="row cell80"><input class="curvedFull" id="userName" name="userName" maxlength="45"></div>
+</div>
+<div class="paddy1 clearFix">
+	<div class="row cell20">{$lang.email}:</div>
+	<div class="row cell80"><input class="curvedFull" id="email" name="email" maxlength="100"></div>
+</div>
+{/if}
+<div class="paddy1 clearFix">
+	<div class="row cell20">{$lang.subject}:</div>
+	<div class="row cell80"><input class="curvedFull" id="subject" name="subject" maxlength="100"></div>
+</div>
+<div class="paddy1 clearFix">
+	<div class="row cell20">
+		{$lang.message}:
+	</div>
+	<div class="row cell80"><textarea id="message" name="message" class="input curvedFull" rows="5" cols="20"></textarea></div>
+</div>
+{if $smarty.session.uid == 2}
+<div class="footBtnSendpaddy5">
+	<button class="footBtn" style="height: 50px;" onclick="$('#content').farajax('loader', '/contact/c_sendMessage', 'userName=' + document.getElementById('userName').value + '::{$lang.userName}<>Multi<>1<>nce<>45' + '&amp;email=' + document.getElementById('email').value + '::{$lang.email}<>Mail<>1<>nce<>45' + '&amp;subject=' + document.getElementById('subject').value	+ '::{$lang.subject}<>Multi<>1<>ce<>100' + '&amp;message=' + document.getElementById('message').value + '::{$lang.message}<>Multi<>1<>ce<>1000');">
+		<span>{$lang.send}</span>
+	</button>
+</div>
+{else}
+<div style="padding: 5px;">
+	<button style="height: 50px; width: 60px;" onclick="$('#content').farajax('loader', '/contact/c_sendMessage', 'subject=' + document.getElementById('subject').value	+ '::{$lang.subject}<>Multi<>1<>ce<>100' + '&amp;message=' + document.getElementById('message').value + '::{$lang.message}<>Multi<>1<>ce<>1000');">
+		<span>{$lang.send}</span>
+	</button>
+</div>
+{/if}
+<!-- 
+<div class="paddy1">
+	{$lang.carbonCopy}: <input id="carbonCopy" name="carbonCopy" class="input" type="checkbox" value="0" onchange="checkBoxToggle('carbonCopy');">
+</div>
+-->
+</icmf>

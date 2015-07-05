@@ -1,0 +1,22 @@
+#menu1 {
+	width: 100%;
+	display: none;
+}
+
+/*dock styling...*/
+/*...centre the dock...*/
+#menu1 div.jqDockWrap {
+	margin: 0 auto;
+}
+
+/*label styling...*/
+div.jqDockLabel {
+	font-weight: bold;
+	font-style: italic;
+	white-space: nowrap;
+	color: #fff;
+	cursor: default;
+	padding: 0px 1px;
+	background: #000;
+	z-index: 1004;
+}

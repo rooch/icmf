@@ -1,0 +1,25 @@
+{if $smarty.session.uid == 2}
+<div class="clearFix">
+	<div class="row cell50">
+		<input class="curvedFull" id="userName" name="userName" maxlength="45" placeholder="{$lang.userName}" style="width:150px">
+	</div>
+	<div class="row cell50">
+		<input class="curvedFull" id="email" name="email" maxlength="100" placeholder="{$lang.email}" style="width:150px">
+	</div>
+</div>
+{/if}
+<textarea id="message" name="message" class="curvedFull" rows="7" cols="30" style="width:417px"></textarea>
+{if $smarty.session.uid == 2}
+<button class="curvedFull" onclick="$('#content').farajax('loader', '/contact/c_sendMessage', 'userName=' + document.getElementById('userName').value + '::{$lang.userName}<>Multi<>1<>nce<>45' + '&email=' + document.getElementById('email').value + '::{$lang.email}<>Mail<>1<>nce<>45' + '&subject=' + document.getElementById('subject').value	+ '::{$lang.subject}<>Multi<>1<>ce<>100' + '&message=' + document.getElementById('message').value + '::{$lang.message}<>Multi<>1<>ce<>1000');">
+	<span>{$lang.send}</span>
+</button>
+{else}
+<button class="curvedFull" onclick="$('#content').farajax('loader', '/contact/c_sendMessage', 'subject=' + document.getElementById('subject').value	+ '::{$lang.subject}<>Multi<>1<>ce<>100' + '&message=' + document.getElementById('message').value + '::{$lang.message}<>Multi<>1<>ce<>1000');">
+	<span>{$lang.send}</span>
+</button>
+{/if}
+<!-- 
+<div style="padding: 1px;">
+	{$lang.carbonCopy}: <input id="carbonCopy" name="carbonCopy" class="input" type="checkbox" value="0" onchange="checkBoxToggle('carbonCopy');">
+</div>
+-->

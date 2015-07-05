@@ -1,0 +1,38 @@
+{include file="theme/`$settings.theme`/tpl/common/schema.htm"}
+<body id="body" style="direction: {$lang.direction};">
+<div class="search-hide">
+	<input type="text" dir="rtl" name="h-search" id="h-search" placeholder="جست و جو ..." />
+</div>
+<div id="modalMask" class="modalMask"></div>  
+<div id="modalWindow" class="modalWindow"></div>
+<div id="temp"></div>
+<div id="goTop" class="goTop curvedLeft boxShadow">^</div>
+<section id="panel" class="panel">{nocache}{include file="theme/`$settings.theme`/tpl/common/panel.htm"}{/nocache}</section>
+<br /><br /><br /><br /><br />
+<section id="slider">{include file="theme/`$settings.theme`/tpl/common/slider.htm"}</section>
+<!-- Wrapper -->
+<section id="wrapper" class="wrapper">
+	<h2 class="zeroDis">wrapper</h2>
+	<section id="container" class="container curvedFull relative clearFix">
+		<h2 class="zeroDis">container</h2>
+		<section id="rightBox" class="row cell100">
+			<h2 class="zeroDis">content</h2>
+			<div id="content" class="content">
+				{nocache}{$main}{/nocache}
+			</div>
+		</section>
+		<section id="leftBox" class="row cell0 displayNone">
+			<h2 class="zeroDis">leftBox</h2>
+			<aside id="asideContent" class="asideContent">
+				{nocache}{include file="theme/`$settings.theme`/tpl/customise/leftBox.htm"}{/nocache}
+			</aside>
+		</section>
+	</section>
+</section>
+<!--/Wrapper-->
+<footer id="footer" class="footer">{include file="theme/`$settings.theme`/tpl/common/footer.htm"}</footer>
+{nocache}
+<script src="theme/{$settings.theme}/js/js.php" ansync:true async></script>
+{include file="theme/`$settings.theme`/tpl/common/googlePlus.htm"}
+</body>
+</html>

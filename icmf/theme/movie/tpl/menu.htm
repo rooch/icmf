@@ -1,0 +1,19 @@
+<ul class="sf-menu">
+	{if $smarty.session.uid == 2}
+	<li class="current">
+		<a onclick="{literal}$('#content').slideUp();{/literal} loader('POST', '', 'content', 'op=userMan&mode=v_signUp'); {literal}$('#content').slideDown(1000);{/literal}" href="#">ثبت نام</a>
+	</li>
+	{/if}	
+	<li class="current">
+		<a onclick="{literal}$('#content').slideUp();{/literal} loader('POST', '', 'content', 'op=contact&mode=v_contactUs'); {literal}$('#content').slideDown(1000);{/literal}" href="#">تماس با ما</a>
+	</li>
+	<li class="current">
+		<a onclick="{literal}$('#content').slideUp();{/literal} loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=aboutUs'); {literal}$('#content').slideDown(1000);{/literal}" href="#">درباره ما</a>
+	</li>
+	<li class="current">
+		<a onclick="{literal}$('#content').slideUp();{/literal} loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=FAQ'); {literal}$('#content').slideDown(1000);{/literal}" href="#">{$lang.FAQ}</a>
+	</li>
+	<li class="current">
+		<a onclick="{literal}$('#content').slideUp();{/literal} loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=main'); {literal}$('#content').slideDown(1000);{/literal}" href="#">صفحه اول</a>
+	</li>
+</ul>

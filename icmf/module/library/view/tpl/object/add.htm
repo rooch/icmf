@@ -1,0 +1,88 @@
+<table class="listFull">
+	<tr>
+		<td width="60%">
+			<div>
+			<div class="row cell30">
+				{$lang.name}:
+			</div>
+			<div class="row cell70">
+				<input id="name" name="name" class="input" type="text" size="30" maxlength="100">
+			</div>
+		</div>
+		<div>
+			<div class="row cell30">
+				{$lang.author}:
+			</div>
+			<div class="row cell70">
+				<input id="author" name="author" class="input" type="text" size="30" maxlength="100">
+			</div>
+		</div>
+		<div>
+			<div class="row cell30">
+				{$lang.price}:
+			</div>
+			<div class="row cell70">
+				<input id="price" name="price" class="input" type="text" size="30" maxlength="9"> {$lang.currencySign}
+			</div>
+		</div>
+		<div>
+			<div class="row cell30">
+				{$lang.category}:
+			</div>
+			<div class="row cell70">
+				<select id="category" name="category">
+					{nocache}
+					{foreach name=category key=categoryKey item=categoryItem from=$category}
+						{if $categoryKey == $category.selected}
+							<option value="{$categoryKey}" selected="selected">{$categoryItem}</option>
+						{else}
+							{if $categoryKey == "selected" || !isset($categoryItem)}
+								<option value=""> ... </option>
+							{else}
+					  			<option value="{$categoryKey}">{$categoryItem}</option>
+					  		{/if}
+					  	{/if}
+				  	{/foreach}
+				  	{/nocache}
+		  		</select>
+		  	</div>
+		</div>
+		<div>
+			<div class="row cell30">
+				{$lang.abstract}:
+			</div>
+			<div class="row cell70">
+				<textarea id="abstract" name="abstract" rows="5" cols="40"></textarea>
+			</div>
+		</div>
+		<div>
+			<div class="row cell30">
+				&nbsp;
+			</div>
+			<div class="row cell70">
+				<div id="fileLister">
+					<img src="theme/{$settings.theme}/img/goldButton.png" onclick="createUploader('file', 'fileLister');">
+					<input id="FilePath" name="FilePath" type="hidden" size="15"><br>
+				</div>
+			</div>
+		</div>
+		</td>
+		<td width="20%" style="vertical-align: top;">
+			<img class="curvedFull simpleFrame shadowFull" style="cursor: pointer;" id="srcImagePath" width="120" height="150" src="theme/{$settings.theme}/img/icon/lesson.png" onclick="BrowseServer('ImagePath');">
+			<input id="ImagePath" name="ImagePath" type="hidden" size="15" value="{$entity.imagePath}"><br>
+		</td>
+		<td width="20%" style="vertical-align: top;">
+			<button class="curvedFull shadowFull" style="width: 140px; height: 160px" onclick="$('#content').farajax('loader', '/library/c_addObject' +
+				   'name=' + document.getElementById('name').value + '::{$lang.name}<>Multi<>1<>ce<>100' +
+				   '&author=' + document.getElementById('author').value + '::{$lang.author}<>Multi<>1<>nce<>100' +
+				   '&price=' + document.getElementById('price').value + '::{$lang.price}<>Number<>1<>ce<>9' +
+				   '&category=' + document.getElementById('category').value + '::{$lang.category}<>Number<>1<>ce<>3' +
+				   '&abstract=' + document.getElementById('abstract').value + '::{$lang.abstract}<>Multi<>1<>nce<>5000' +
+				   '&filePath=' + document.getElementById('FilePath').value + '::{$lang.filePath}<>Multi<>1<>ce<>1000' +
+				   '&imagePath=' + document.getElementById('ImagePath').value + '::{$lang.imagePath}<>Multi<>1<>nce<>1000'
+			);">
+				<span>{$lang.submit}</span>
+			</button>
+		</td>
+	</tr>
+</table>

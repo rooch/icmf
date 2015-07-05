@@ -1,0 +1,39 @@
+<div class="row cell90">
+	<ul class="topnav">
+		{nocache}
+		{if $lang.direction == 'rtl'}
+		<li>
+			<a href="http://{$settings.domain}" title="{$lang.home}" style="color:#F90; font-size:14px">{$lang.home}</a>
+		</li>
+		{/if}
+		<li>
+			<a href="/shop/v_vitrin" title="{$lang.shop}" style="color:#F90; font-size:14px">{$lang.shop}</a>
+		</li>
+		<li>
+			<a href="/pageLoader/v_load/aboutUs" title="{$lang.aboutUs}" style="color:#F90; font-size:14px">{$lang.aboutUs}</a>
+		</li>
+	   <!-- <li>
+			<a href="/pageLoader/v_load/siteMap" title="{$lang.siteMap}" style="color:#F90; font-size:14px">{$lang.sitmap}</a>
+		</li>-->
+		<li>
+			<a href="/contact/v_contactUs" title="{$lang.contactUs}" style="color:#F90; font-size:14px">{$lang.contactUs}</a>
+		</li>
+		<li>
+			<a href="/pageLoader/v_load/FAQ" title="{$lang.FAQ}" style="color:#F90; font-size:14px">{$lang.FAQ}</a>
+		</li>
+		{if $lang.direction == 'ltr'}
+		<li>
+			<a href="http://{$settings.domain}" title="{$lang.home}" style="color:#F90; font-size:14px">{$lang.home}</a>
+		</li>
+		{/if}
+		{/nocache}
+	</ul>
+</div>
+<div id="search" class="row cell10" style="position: inherit;" onmouseover="$('#advancedSearch').fadeIn('slow'); $('#advancedSearch').animate({ height:'170px' }, { queue:false, duration:500 }); $('#closeAdvanceSearch').fadeIn('slow');">
+	<div style="color:#F90; font-size:14px; text-align: center; cursor: pointer;">{$lang.search}</div>
+	<div id="advancedSearch" class="advancedSearch curvedBottom">
+		{$search}
+		<div id="closeAdvanceSearch" class="left" style="font-weight: bolder; color: red; cursor: pointer; padding: 4px; display: none;" onclick="$('#advancedSearch').animate({ height:'0px' }, { queue:false, duration:500 }); $('#advancedSearch').fadeOut('slow'); $('#openCategoryBox').fadeIn('slow'); ">{$lang.close}</div>
+	</div>
+</div>
+<br class="clear">

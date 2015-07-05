@@ -1,0 +1,61 @@
+{nocache}
+<div class="clearFix paddy1">
+	<div class="row cell20">{$lang.receiver}:</div>
+	{if isset($receiverMail)}
+	<div class="row cell80">
+		<b>&nbsp;{$receiverMail}</b>
+		<input id="receiverMail" name="receiverMail" type="hidden" maxlength="500" value="{$receiverMail}">
+	</div>
+	{else}
+	<div class="row cell80">
+		<input id="receiverMail" name="receiverMail" type="text" maxlength="500" placeholder="{$lang.email}">
+	</div>
+	{/if}
+</div>
+<div class="clearFix paddy1">
+	<div class="row cell20">{$lang.firstName} {$lang.lastName}:</div>
+	{if isset($firstName) && isset($lastName)}
+	<div class="row cell80">
+		{if isset($firstName)}
+		<b>&nbsp;{$firstName}</b>
+		<input id="firstName" name="firstName" type="hidden" maxlength="100" value="{$firstName}">
+		{/if}
+		{if isset($lastName)}
+		<b>&nbsp;{$lastName}</b>
+		<input id="lastName" name="lastName" type="hidden" maxlength="100" value="{$lastName}">
+		{/if}
+	</div>
+	{else}
+	<div class="row cell80">
+		<input id="firstName" name="firstName" type="text" maxlength="100" placeholder="{$lang.firstName}"> <input id="lastName" name="lastName" type="text" maxlength="100" placeholder="{$lang.lastName}">
+	</div>
+	{/if}
+</div>
+<div class="clearFix paddy1">
+	<div class="row cell20">
+		{$lang.message}:
+	</div>
+	<div class="row cell80">
+		<input id="subject" name="subject" type="text" maxlength="100" placeholder="{$lang.subject}">
+	</div>
+</div>
+<div class="clearFix paddy1">
+	<div class="row cell20">
+		{$lang.message}:
+	</div>
+	<div class="row cell80">
+		<textarea id="message" name="message" rows="15" cols="80"></textarea>
+	</div>
+</div>
+<button class="curvedFull boxShadow" onclick="
+		$('#content').farajax('loader', 'mta/c_addObject',
+	   'receiverMail=' + $('#receiverMail').val() + '::{$lang.to}<>Multi<>1<>ce<>500' +
+	   '&firstName=' + $('#firstName').val() + '::{$lang.firstName}<>Multi<>1<>nce<>100' +
+	   '&lastName=' + $('#lastName').val() + '::{$lang.lastName}<>Multi<>1<>nce<>100' +
+	   '&subject=' + $('#subject').val() + '::{$lang.subject}<>Multi<>1<>ce<>100' +
+	   '&message=' + $('#message').val() + '::{$lang.message}<>Multi<>1<>ce<>10000'
+	); 
+	$('#modalWindow').faraModal('closeModal', 'modalWindow');">
+	<span>{$lang.send}</span>
+</button>
+{/nocache}

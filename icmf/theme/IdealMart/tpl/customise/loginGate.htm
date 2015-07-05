@@ -1,0 +1,23 @@
+{if isset($smarty.session.uid) && $smarty.session.uid != 2}
+	<div class="clearFix">
+		<div class="row cell30">
+			<div style="padding-top: 2px;">
+				<div class="toolsSpriteWhite white24-User24 pointer centerObject" onclick="$('#cPanel').slideToggle('slow');">&nbsp;</div>
+			</div>
+		</div>
+		<div class="row cell70" style="line-height: 27px;">
+			<a href="/userMan/c_logout" rel="nofollow" onclick="setTimeout('location.href=\'/\';', 5000);">{$lang.logout}</a>
+		</div>
+	</div>
+{else}
+	<div class="clearFix">
+		<div class="row cell30">
+			<div style="padding-top: 2px;">
+				<div class="toolsSpriteWhite white24-Login_in24 pointer centerObject" onclick="$('#cPanel').slideToggle('slow');">&nbsp;</div>
+			</div>
+		</div>
+		<div class="row cell70" style="line-height: 27px;">
+			<a class="tip" href="/userMan/v_signUp" title="{$lang.signUpHere}">{$lang.signUp}</a>
+		</div>
+	</div>		
+{/if}

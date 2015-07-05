@@ -1,0 +1,40 @@
+<form name="direct2Bank" action="https://sep.shaparak.ir/Payment.aspx" method="post">
+{nocache}
+<div>
+	<div><input type="hidden" name="MID" value="{$MID}"></div>
+	<div><input type="hidden" name="RedirectURL" value="{$RedirectURL}"></div>		
+	<div><input type="hidden" name="TableBorderColor" value="488DCC"></div>	
+	<div><input type="hidden" name="TableBGColor" value="488DCC"></div>
+	<div><input type="hidden" name="PageBGColor" value="B6CBEA"></div>
+	<div><input type="hidden" name="PageBorderColor" value="6C788B"></div>
+	<div><input type="hidden" name="TitleFont" value="Tahoma"></div>
+	<div><input type="hidden" name="TitleColor" value="000000"></div>
+	<div><input type="hidden" name="TitleSize" value="5"></div>
+	<div><input type="hidden" name="TextFont" value="Tahoma"></div>
+	<div><input type="hidden" name="TextColor" value="000000"></div>
+	<div><input type="hidden" name="TextSize" value="2"></div>
+	<div><input type="hidden" name="TypeTextFont" value="Tahoma"></div>
+	<div><input type="hidden" name="TypeTextColor" value="000000"></div>
+	<div><input type="hidden" name="TypeTextSize" value="2"></div>
+	<div><input type="hidden" name="LogoURL" value="{$LogoURL}"></div>
+	<div><input type="hidden" name="Amount" value="{$amount}"></div>
+	<div><input type="hidden" name="ResNum" value="{$ResNum}"></div>
+</div>
+<div>
+	<div class="row cell20">{$lang.payCost}: </div>
+	<div class="row cell80"><font color="red"><b>{$amount} {$lang.currencySign}</b></font></div>
+	<br style="clear: both;">
+</div>
+<div>
+	{$lang.postDataBankAgreement}
+</div>
+<div>
+	({$lang.postDataBankNote})
+</div>
+<div class="center">
+	<button>
+		<span>{$lang.submit}</span>
+	</button>
+</div>
+{/nocache}
+</form>

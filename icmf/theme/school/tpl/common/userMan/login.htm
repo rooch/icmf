@@ -1,0 +1,19 @@
+<div style="padding: 1px;">
+	{nocache}{$lang.userName}{/nocache}: <input id="loginUserName" name="loginUserName" class="input" type="text" size="10" maxlength="45">
+</div>
+<div style="padding: 1px;">
+	{nocache}{$lang.password}{/nocache}: <input id="loginPassword" name="loginPassword" class="input" type="password" size="10" maxlength="20">
+</div>
+<div style="padding: 1px;">
+	<button onclick="
+			$('#login').farajax('loader', '/userMan/c_login',
+				   'userName=' + document.getElementById('loginUserName').value + '::{$lang.userName}<>Multi<>1<>ce<>45' +
+				   '&password=' + document.getElementById('loginPassword').value + '::{$lang.password}<>Multi<>1<>ce<>20'			   
+			);
+	 	"><span>{nocache}{$lang.login}{/nocache}</span></button>
+</div>
+<div style="line-height: 20px;">
+	[<a href="/userMan/v_signUp">{nocache}{$lang.signUp}{/nocache}</a>]
+	<br>
+	[<a href="/userMan/v_changePass">{nocache}{$lang.forgetPassword}{/nocache}</a>] 
+</div>

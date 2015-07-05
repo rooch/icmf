@@ -1,0 +1,16 @@
+<h1>گزارش سئو</h1>
+<br><br><br><br>
+<div class="blockquote paddy40 cell60 centerObject center">
+	<br><br>
+	<h2 class="dastnevisFont x2">
+		می‌خواهید سایت خود را از نظر سئو on-page بررسی کنید؟
+	</h2>
+	<br><br><br>
+	<input id="pageSpeedUrl" name="pageSpeedUrl" class="cell90 centerObject LH45 h60 x2" placeholder="نام سایت خود را اینجا وارد کنید">
+	<br><br><br>
+	<button class="cell30 h50 x1_5 dastnevisFont" onclick="$('#pageSpeedResultScope').farajax('loader', '/seo/c_pageSpeed', 'url=' + $('#pageSpeedUrl').val() + '::{$lang.url}<>Multi<>1<>ce<>200');">
+		پیدا کن
+	</button>
+	<br>
+	<div id="pageSpeedResultScope"></div>
+</div>

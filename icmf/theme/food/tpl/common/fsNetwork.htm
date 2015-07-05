@@ -1,0 +1,55 @@
+{nocache}
+{if isset($smarty.session.uid) && $smarty.session.uType != 1}
+	<div class="clearFix">
+		<div class="row cell30 icon">
+			<div style="padding-top: 2px;">
+				<div class="fa fa-user fa-1_5x pointer centerObject" onclick="$('#cPanel').slideToggle('slow');"></div>
+			</div>
+		</div>
+		<div class="row cell70 LH30 text">
+			<a href="/userMan/c_logout" rel="nofollow" onclick="setTimeout('location.href=\'/\';', 5000);">{$lang.logout}</a>
+		</div>
+	</div>
+{else}
+	<section id="boxes" class="boxes">
+		<h2 class="zeroDis">ورود اعضا</h2>
+		<div class="clearFix">
+			<div class="row cell10">&nbsp;</div>
+			<div class="row cell20">
+				<div class="whiteFrame paddy10 curvedFull boxShadow hover green pointer" onclick="$('#cPanel').slideToggle('slow');">
+					<div class="center paddy10">
+						<span class="fa-2x fa fa-group"></span>
+					</div>
+					<div class="center">ورود اعضا</div>
+				</div>
+			</div>
+			<div class="row cell10">&nbsp;</div>
+			<div class="row cell20">
+				<div class="whiteFrame paddy10 curvedFull boxShadow hover orange pointer" onclick="$('#cPanel').slideToggle('slow');">
+					<div class="center paddy10">
+						<span class="fa-2x fa fa-print"></span>
+					</div>
+					<div class="center">ورود صندوقدار</div>
+				</div>
+			</div>
+			<div class="row cell10">&nbsp;</div>
+			<div class="row cell20">
+				<div class="whiteFrame paddy10 curvedFull boxShadow hover gold pointer" onclick="$('#cPanel').slideToggle('slow');">
+					<div class="center paddy10">
+						<span class="fa-2x fa fa-user"></span>
+					</div>
+					<div class="center">ورود مدیر</div>
+				</div>
+			</div>
+			<div class="row cell10">&nbsp;</div>
+		</div>
+	</section>
+{/if}
+{/nocache}
+<br>
+<!-- cPanel -->
+<div id="cPanel" class="displayNone cPanel paddy5">
+	<div id="login" class="login" style="padding-right: 10px;">{nocache}{$login}{nocache}</div>
+	<div id="accessories" class="accessories displayNone" style="padding-right: 10px;"></div>
+</div>
+<!-- /cPanel -->

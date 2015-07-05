@@ -1,0 +1,174 @@
+<div class="pageIn">
+	<div style="padding: 1px 0px;">
+		<div class="row cell10">
+			<b>{$lang.image}:</b>
+		</div>
+		<div class="row cell90" style="border: 1px solid #000; height: 150px; width: 200px;">
+			<img style="cursor: pointer;" id="srcImagePath" width="100%" height="100%" src="theme/{$settings.theme}/img/defaultUserPic.jpg" onclick="BrowseServer('ImagePath');">
+			<input id="ImagePath" name="ImagePath" type="hidden" size="15">
+		</div>
+		<br style="clear: both">
+	</div>
+	<div style="padding: 1px 0px;">
+		<div class="row cell10">
+			<b>{$lang.title}:</b>
+		</div>
+		<div class="row cell90">
+			<input id="title" name="title" class="input" type="text" size="86" maxlength="500">
+		</div>
+		<br style="clear: both">
+	</div>
+	<div style="padding: 1px 0px;">
+		<div class="row cell10">
+			<b>{$lang.category}:</b>
+		</div>
+		<div class="row cell90">
+			<select id="category" name="category">
+				{nocache}
+				{foreach name=category key=categoryKey item=categoryItem from=$category}
+					{if $categoryKey == $category.selected}
+						<option value="{$categoryKey}" selected="selected">{$categoryItem}</option>
+					{else}
+						{if $categoryKey == "selected" || !isset($categoryItem)}
+							<option value=""> ... </option>
+						{else}
+				  			<option value="{$categoryKey}">{$categoryItem}</option>
+				  		{/if}
+				  	{/if}
+			  	{/foreach}
+			  	{/nocache}
+	  		</select>
+		</div>
+		<br style="clear: both">
+	</div>
+	<div style="padding: 1px 0px;">
+		<div class="row cell10">
+			<b>{$lang.message}:</b>
+		</div>
+		<div class="row cell90">
+			<div id="editorFullText"></div>
+			<div id="textcontents" style="display: none">
+				<!-- This div will be used to display the editor contents. -->
+				<div id="description"></div>
+			</div>
+			<textarea id="fullText" name="fullText" rows="10" cols="84" onclick=" this.style.display='none';" onfocus="createEditor('description', 'editorFullText'); this.style.display='none';"></textarea>
+		</div>
+		<br style="clear: both;">
+	</div>
+	<div style="padding: 1px 0px;">
+		<div class="row cell10">
+			<b>{$lang.startTime}:</b>
+		</div>
+		<div class="row cell90">
+			<select id="startDay" name="startDay">
+				{section name=startDay start=1 loop=32}
+				<option value="{$smarty.section.startDay.iteration}">{$smarty.section.startDay.iteration}</option>
+				{/section}
+			</select>
+			<select id="startMonth" name="startMonth">
+				{section name=startMonth start=1 loop=13}
+				<option value="{$smarty.section.startMonth.iteration}">{$smarty.section.startMonth.iteration}</option>
+				{/section}
+			</select>
+			<select id="startYear" name="startYear">
+				{section name=startYear start=1391 loop=1401}
+				<option value="{$smarty.section.startYear.index}">{$smarty.section.startYear.index}</option>
+				{/section}
+			</select>
+			<b>{$lang.hour}:</b> 
+			<select id="startMinute" name="startMinute">
+				{section name="startMinute" loop=60}
+				<option value="{$smarty.section.startMinute.index}">{$smarty.section.startMinute.index}</option>
+				{/section}
+			</select>
+			:
+			<select id="startHour" name="startHour">
+				{section name="startHour" loop=24}
+				<option value="{$smarty.section.startHour.index}">{$smarty.section.startHour.index}</option>
+				{/section}
+			</select>
+		</div>
+		<br style="clear: both;">
+	</div>
+	<div style="padding: 1px 0px;">
+		<div class="row cell10">
+			<b>{$lang.endTime}:</b>
+		</div>
+		<div class="row cell90">
+			<select id="endDay" name="endDay">
+				{section name=endDay start=1 loop=32}
+				<option value="{$smarty.section.endDay.iteration}">{$smarty.section.endDay.iteration}</option>
+				{/section}
+			</select>
+			<select id="endMonth" name="endMonth">
+				{section name=endMonth start=1 loop=13}
+				<option value="{$smarty.section.endMonth.iteration}">{$smarty.section.endMonth.iteration}</option>
+				{/section}
+			</select>
+			<select id="endYear" name="endYear">
+				{section name=endYear start=1391 loop=1401}
+				<option value="{$smarty.section.endYear.index}">{$smarty.section.endYear.index}</option>
+				{/section}
+			</select>
+			<b>{$lang.hour}:</b> 
+			<select id="endMinute" name="endMinute">
+				{section name="endMinute" loop=60}
+				<option value="{$smarty.section.endMinute.index}">{$smarty.section.endMinute.index}</option>
+				{/section}
+			</select>
+			:
+			<select id="endHour" name="endHour">
+				{section name="endHour" loop=24}
+				<option value="{$smarty.section.endHour.index}">{$smarty.section.endHour.index}</option>
+				{/section}
+			</select>
+		</div>
+		<br style="clear: both">
+	</div>
+	<div style="padding: 1px 0px;">
+		<div class="row cell10">
+			<b>{$lang.resources}:</b>
+		</div>
+		<div class="row cell90">
+			<textarea id="resources" rows="5" cols="84"></textarea>
+		</div>
+		<br style="clear: both">
+	</div>
+	<div style="padding: 1px 0px;">
+		<div class="row cell10">
+			<b>{$lang.attach}:</b>
+		</div>
+		<div class="row cell90">
+			<div id="fileLister">
+				<img src="theme/{$settings.theme}/img/goldButton.png" onclick="createUploader('file', 'fileLister');">
+				<input id="FilePath" name="FilePath" type="hidden" size="15"><br>
+			</div>
+		</div>
+		<br style="clear: both">
+	</div>
+	<br>
+	<center>
+	<button style="padding: 20px 60px;" onclick="
+		$('#content').farajax('loader', '/post/c_addObject', 
+			   'title=' + document.getElementById('title').value + '::{$lang.title}<>Multi<>1<>ce<>200' +
+			   '&category=' + document.getElementById('category').value + '::{$lang.category}<>Number<>1<>nce<>11' +
+			   '&description=' + getText('description') + '::{$lang.description}<>Multi<>1<>ce<>1000000000' +
+			   '&startDay=' + document.getElementById('startDay').value + '::{$lang.startTime}<>Number<>1<>nce<>11' +
+			   '&startMonth=' + document.getElementById('startMonth').value + '::{$lang.startTime}<>Number<>1<>nce<>11' +
+			   '&startYear=' + document.getElementById('startYear').value + '::{$lang.startTime}<>Number<>1<>nce<>11' +
+			   '&startMinute=' + document.getElementById('startMinute').value + '::{$lang.startTime}<>Number<>1<>nce<>11' +
+			   '&startHour=' + document.getElementById('startHour').value + '::{$lang.startTime}<>Number<>1<>nce<>11' +
+			   '&endDay=' + document.getElementById('endDay').value + '::{$lang.endTime}<>Number<>1<>nce<>11' +
+			   '&endMonth=' + document.getElementById('endMonth').value + '::{$lang.endTime}<>Number<>1<>nce<>11' +
+			   '&endYear=' + document.getElementById('endYear').value + '::{$lang.endTime}<>Number<>1<>nce<>11' +
+			   '&endMinute=' + document.getElementById('endMinute').value + '::{$lang.endTime}<>Number<>1<>nce<>11' +
+			   '&endHour=' + document.getElementById('endHour').value + '::{$lang.endTime}<>Number<>1<>nce<>11' +
+			   '&resources=' + document.getElementById('resources').value + '::{$lang.resources}<>Multi<>1<>nce<>2000' +
+			   '&FilePath=' + document.getElementById('FilePath').value + '::{$lang.attach}<>Multi<>1<>nce<>200' +
+			   '&ImagePath=' + document.getElementById('ImagePath').value + '::{$lang.image}<>Multi<>1<>nce<>200'
+		);
+	">
+	<span>{$lang.submit}</span>
+	</button>
+	</center>
+</div>

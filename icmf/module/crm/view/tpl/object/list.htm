@@ -1,0 +1,213 @@
+{nocache}
+<div class="clearFix">
+	<div class="row cell10"><h2>{$lang.list}</h2></div>
+	<div class="row cell90 LH35">
+		{if $smarty.get.filter == ''}
+		{assign var='allClass' value='red'}
+		{else if $smarty.get.filter == 'status=7'}
+		{assign var='unknownClass' value='red'}
+		{else if $smarty.get.filter == 'status=13'}
+		{assign var='sentClass' value='red'}
+		{else if $smarty.get.filter == 'status=100'}
+		{assign var='closedClass' value='red'}
+		{else if $smarty.get.filter == 'priority=0'}
+		{assign var='noPriorityClass' value='red'}
+		{else if $smarty.get.filter == 'agent=0'}
+		{assign var='noAgentClass' value='red'}
+		{else if $smarty.get.filter == 'sort=timeStamp DESC'}
+		{assign var='newestClass' value='red'}
+		{/if}
+		
+		[<a href="crm/c_listObject" class="{$allClass}">{$lang.all}</a>]
+		[<a href="crm/c_listObject/status=7" class="{$unknownClass}">{$lang.unknown}</a>] 
+		[<a href="crm/c_listObject/status=13" class="{$sentClass}">{$lang.sent}</a>] 
+		[<a href="crm/c_listObject/status=100" class="{$closedClass}">{$lang.closed}</a>] 
+		[<a href="crm/c_listObject/priority=0" class="{$noPriorityClass}">{$lang.noPriority}</a>] 
+		[<a href="crm/c_listObject/agent=0" class="{$noAgentClass}">{$lang.noAgent}</a>]
+		[<a href="crm/c_listObject/sort=timeStamp DESC" class="{$newestClass}">{$lang.newest}</a>]
+	</div>
+</div>
+<br>
+<div class="listHeader clearFix center">
+	<div class="row cell5">#</div>
+	<div class="row cell5">{$lang.id}</div>
+	<div class="row cell15">{$lang.regTime}</div>
+	<div class="row cell10">{$lang.subject}&nbsp;</div>
+	<div class="row cell10">{$lang.agent}</div>
+	<div class="row cell10">{$lang.user}</div>
+	<div class="row cell10">{$lang.status}</div>
+	<div class="row cell15">{$lang.lastEditTime}</div>
+	<div class="row cell10">{$lang.access}</div>
+	<div class="row cell10">{$lang.properties}</div>
+</div>
+{foreach name=entity key=entityKey item=entityItem from=$entityList}
+<div class="blockquote clearFix" id="row{$entityItem.id}">
+	<div class="row cell5">{$entityItem.num}</div>
+	<div class="row cell5">{$entityItem.id}</div>
+	<div class="row cell15">{$entityItem.timeStamp}</div>
+	<div class="row cell10">{$entityItem.subject}&nbsp;</div>
+	<div class="row cell10">{$entityItem.agent}&nbsp;</div>
+	<div class="row cell10">{$entityItem.firstName} {$entityItem.lastName}&nbsp;</div>
+	<div class="row cell10">{$entityItem.status}</div>
+	<div class="row cell15">{$entityItem.lastEditTime}</div>
+	<div class="row cell10">
+		<ul>
+			{if $entityItem.commentCount > 0}
+			<li class="details pointer fa fa-comment-o">
+				<span class="blackFrame white curvedFull paddy2">{$entityItem.commentCount}</span>
+				<div id="crmCommentShow{$entityItem.id}" class="displayNone curvedFull paddy5" style="z-index: 2045">
+					<div class="blockquote boxShadow">{$entityItem.lastComment}</div>
+					<br>
+					<div onclick="$('#crmCommentShow{$entityItem.id}').farajax('loader', 'comment/c_showListObjectSimple/op=crm,opid={$entityItem.id}')" class="pointer fa fa-chevron-circle-down">{$lang.more}</div>
+				</div>
+			</li>
+			{/if}
+			{if $entityItem.website != ''}
+			<li class="details pointer fa fa-globe" onclick='window.open("{$entityItem.website}");'>
+				<div class="displayNone curvedFull paddy5">{$entityItem.website}</div>
+			</li>
+			{/if}
+			{if $entityItem.email != ''}
+			<li class="details pointer fa fa-envelope-o" onclick="$('#content').farajax('loader', 'mta/v_addObject', 'receiverMail={$entityItem.email}&firstName={$entityItem.firstName}&lastName={$entityItem.lastName}');">
+				<div class="displayNone curvedFull paddy5">{$entityItem.email}</div>
+			</li>
+			{/if}	
+			{if $entityItem.mobile != ''}
+			<li class="details pointer fa fa-mobile" onclick="$('#content').farajax('loader', 'sms/v_addObject', 'to={$entityItem.mobile}&firstName={$entityItem.firstName}&lastName={$entityItem.lastName}');">
+				<div class="displayNone curvedFull paddy5">{$entityItem.mobile}</div>
+			</li>
+			{/if}
+			{if $entityItem.priority == 1}
+			{assign var="priorityColor" value="#FBEFEF"}
+			{elseif $entityItem.priority == 2}
+			{assign var="priorityColor" value="#F8E0E0"}
+			{elseif $entityItem.priority == 3}
+			{assign var="priorityColor" value="#F6CECE"}
+			{elseif $entityItem.priority == 4}
+			{assign var="priorityColor" value="#F5A9A9"}
+			{elseif $entityItem.priority == 5}
+			{assign var="priorityColor" value="#F78181"}
+			{elseif $entityItem.priority == 6}
+			{assign var="priorityColor" value="#FA5858"}
+			{elseif $entityItem.priority == 7}
+			{assign var="priorityColor" value="#FE2E2E"}
+			{elseif $entityItem.priority == 8}
+			{assign var="priorityColor" value="#FF0000"}
+			{elseif $entityItem.priority == 9}
+			{assign var="priorityColor" value="#DF0101"}
+			{elseif $entityItem.priority == 10}
+			{assign var="priorityColor" value="#B40404"}
+			{/if}
+			<li class="details fa fa-unsorted" title="{$lang.priority}" style="color: {$priorityColor}">
+				<div class="displayNone curvedFull paddy5">{$lang.priority}: {$entityItem.priority}</div>
+			</li>
+			{if $entityItem.timeRemainingPercent >= 90 && $entityItem.timeRemainingPercent <= 100}
+			{assign var="timeColor" value="#0A2A0A"}
+			{elseif $entityItem.timeRemainingPercent >= 80 && $entityItem.timeRemainingPercent < 90}
+			{assign var="timeColor" value="#0B3B0B"}
+			{elseif $entityItem.timeRemainingPercent >= 70 && $entityItem.timeRemainingPercent < 80}
+			{assign var="timeColor" value="#0B610B"}
+			{elseif $entityItem.timeRemainingPercent >= 60 && $entityItem.timeRemainingPercent < 70}
+			{assign var="timeColor" value="#088A08"}
+			{elseif $entityItem.timeRemainingPercent >= 50 && $entityItem.timeRemainingPercent < 60}
+			{assign var="timeColor" value="#04B404"}
+			{elseif $entityItem.timeRemainingPercent >= 40 && $entityItem.timeRemainingPercent < 50}
+			{assign var="timeColor" value="#01DF01"}
+			{elseif $entityItem.timeRemainingPercent >= 30 && $entityItem.timeRemainingPercent < 40}
+			{assign var="timeColor" value="#F78181"}
+			{elseif $entityItem.timeRemainingPercent >= 20 && $entityItem.timeRemainingPercent < 30}
+			{assign var="timeColor" value="#FA5858"}
+			{elseif $entityItem.timeRemainingPercent >= 10 && $entityItem.timeRemainingPercent < 20}
+			{assign var="timeColor" value="#FE2E2E"}
+			{elseif $entityItem.timeRemainingPercent >= 0 && $entityItem.timeRemainingPercent < 10}
+			{assign var="timeColor" value="#FF0000"}
+			{/if}
+			<li class="details fa fa-clock-o" title="{$lang.time}" style="color: {$timeColor}">
+				<div class="displayNone curvedFull paddy5">
+					<div class="greyFrame">
+						<ul style="list-style: circle; padding-right: 20px;">
+							<li>{$lang.startTime}: {$entityItem.timeStamp}</li>
+							<li>{$lang.endTime}: {$entityItem.deadline}</li>
+							<li>{$lang.timeSpent}: {math equation="x - y" x=100 y=$entityItem.timeRemainingPercent}%</li>
+							<li>{$lang.timeRemainingPercent}: {$entityItem.timeRemainingPercent}%</li>
+							{if $entityItem.remainFlag < 0}
+							<li>{$entityItem.remainingDateTime} {$lang.pastTime}</li>
+							{else}
+							<li>{$lang.timeSpent}: {$entityItem.spentDateTime} {$lang.spentTime}</li>
+							<li>{$entityItem.remainingDateTime} {$lang.remainTime}</li>
+							{/if}
+							<li>{$lang.lastEditTime}: {$entityItem.lastEditTime}</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			{if $entityItem.progress >= 90 && $entityItem.progress <= 100}
+			{assign var="progressColor" value="#0A2A0A"}
+			{elseif $entityItem.progress >= 80 && $entityItem.progress < 90}
+			{assign var="progressColor" value="#0B3B0B"}
+			{elseif $entityItem.progress >= 70 && $entityItem.progress < 80}
+			{assign var="progressColor" value="#0B610B"}
+			{elseif $entityItem.progress >= 60 && $entityItem.progress < 70}
+			{assign var="progressColor" value="#088A08"}
+			{elseif $entityItem.progress >= 50 && $entityItem.progress < 60}
+			{assign var="progressColor" value="#04B404"}
+			{elseif $entityItem.progress >= 40 && $entityItem.progress < 50}
+			{assign var="progressColor" value="#01DF01"}
+			{elseif $entityItem.progress >= 30 && $entityItem.progress < 40}
+			{assign var="progressColor" value="#F78181"}
+			{elseif $entityItem.progress >= 20 && $entityItem.progress < 30}
+			{assign var="progressColor" value="#FA5858"}
+			{elseif $entityItem.progress >= 10 && $entityItem.progress < 20}
+			{assign var="progressColor" value="#FE2E2E"}
+			{elseif $entityItem.progress >= 0 && $entityItem.progress < 10}
+			{assign var="progressColor" value="#FF0000"}
+			{/if}
+			<li class="details fa fa-tasks" title="{$lang.progress}" style="color: {$progressColor}">
+				<div class="displayNone curvedFull paddy5">{$lang.progress}: {$entityItem.progress}</div>
+			</li>
+			<li class="details fa fa-dashboard" title="{$lang.dashbord}">
+				<div class="displayNone curvedFull paddy5">
+					<div class="fa-unsorted greyFrame paddy5" style="margin-bottom: 1px; color: {$priorityColor}"><span style="margin-right: 5px;">{$lang.priority}: {$entityItem.priority}</span></div>
+					<div class="fa-clock-o greyFrame paddy5" style="margin-bottom: 1px; color: {$timeColor}"><span style="margin-right: 5px;">{$lang.deadline}</span>
+						<ul style="list-style: circle; padding-right: 20px;">
+							<li>{$lang.startTime}: {$entityItem.timeStamp}</li>
+							<li>{$lang.endTime}: {$entityItem.deadline}</li>
+							<li>{$lang.timeSpent}: {math equation="x - y" x=100 y=$entityItem.timeRemainingPercent}%</li>
+							<li>{$lang.timeRemainingPercent}: {$entityItem.timeRemainingPercent}%</li>
+							{if $entityItem.remainFlag < 0}
+							<li>{$entityItem.remainingDateTime} {$lang.pastTime}</li>
+							{else}
+							<li>{$lang.timeSpent}: {$entityItem.spentDateTime} {$lang.spentTime}</li>
+							<li>{$entityItem.remainingDateTime} {$lang.remainTime}</li>
+							{/if}
+							<li>{$lang.lastEditTime}: {$entityItem.lastEditTime}</li>
+						</ul>
+					</div>
+					<div class="fa-tasks greyFrame paddy5" style="margin-bottom: 1px;"><span style="margin-right: 5px;">{$lang.progress}: {$entityItem.progress}%</span></div>
+					<div class="fa-building greyFrame paddy5" style="margin-bottom: 1px;"><span style="margin-right: 5px;">{$lang.department}: {$entityItem.department}</span></div>
+					<div class="fa-male greyFrame paddy5" style="margin-bottom: 1px;"><span style="margin-right: 5px;">{$lang.agent}: {$entityItem.agent}</span></div>
+					<div class="fa-line-chart greyFrame paddy5" style="margin-bottom: 1px;"><span style="margin-right: 5px;">{$lang.status}: {$entityItem.status}</span></div>
+				</div>
+			</li>
+			<li class="fa fa-gears pointer" title="{$lang.settings}" onclick= "$('#content').farajax('loader', 'crm/v_editObject', 'clientId={$entityItem.clientId}&taskId={$entityItem.id}');"></li>
+		</ul>
+	</div>
+	<div class="row cell10 center">
+		<ul>
+			<li class="details right fa fa-info-circle pointer" href="post/c_showObject/id={$entityItem.id}">
+				<div class="displayNone curvedFull paddy5">{$entityItem.weight}</div>
+			</li>
+			<li class="fa fa-remove pointer" onclick="$('#content').farajax('loader', 'crm/v_delObject', 'id={$entityItem.id}');"></li>
+			<li class="fa fa-edit pointer" href="post/v_editObject/id={$entityItem.id}"></li>
+			{if $entityItem.active == 1} 
+			<li class="green fa fa-power-off pointer">
+			{else}
+			<li class="fa fa-power-off pointer">
+			{/if}
+		</ul>
+	</div>
+</div>
+{/foreach}
+<br>
+<div class="blockquote">{$navigation}</div>
+{/nocache}

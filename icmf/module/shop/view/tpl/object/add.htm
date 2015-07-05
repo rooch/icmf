@@ -1,0 +1,67 @@
+<div class="blockquote">
+	<h2>{$lang.addProductToShop}</h2>
+	<br>
+	<div class="listHeader center">
+		<div class="row cell5">#</div>
+		<div class="row cell5">{nocache}{$lang.id}{/nocache}</div>
+		<!-- <div class="row cell10">{nocache}{$lang.image}{/nocache}</div> -->
+		<div class="row cell10">{nocache}{$lang.name}{/nocache}</div>
+		<div class="row cell5">{nocache}{$lang.model}{/nocache}</div>
+		<!-- <div class="row cell9">{nocache}{$lang.company}{/nocache}</div> -->
+		<div class="row cell10">{nocache}{$lang.buyPrice}{/nocache}</div>
+		<div class="row cell10">{nocache}{$lang.category}{/nocache}</div>
+		<div class="row cell5">{nocache}{$lang.count}{/nocache}</div>
+		<div class="row cell15">{nocache}{$lang.basePrice}{/nocache}</div>
+		<div class="row cell5">{nocache}{$lang.discount}%{/nocache}</div>
+		<div class="row cell5">{nocache}{$lang.tax}%{/nocache}</div>
+		<div class="row cell15">{nocache}{$lang.shopProfile}{/nocache}</div>
+		<div class="row cell10">{nocache}{$lang.properties}{/nocache}</div>
+		<br class="clear">
+	</div>
+	{nocache}
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	<div class="blockquote" id="row{$entityItem.id}">
+		<div class="row cell5">{$entityItem.num}</div>
+		<div class="row cell5">{$entityItem.id}</div>
+		<!-- <div class="row cell10"><img width="80" height="60" src="{$entityItem.imagePath}"></div> -->
+		<div class="row cell10">{$entityItem.name}</div>
+		<div class="row cell5">{$entityItem.model}</div>
+		<!-- <div class="row cell9">{$entityItem.company}</div> -->
+		<div class="row cell10 center">{$entityItem.buyPrice}</div>
+		<div class="row cell10">{$entityItem.category}</div>
+		<div class="row cell5">{$entityItem.count}</div>
+		<div class="row cell15"><input id="basePrice{$entityItem.id}" name="sellPrice{$entityItem.id}" maxlength="45" value="{$entityItem.basePrice}"></div>
+		<div class="row cell5"><input id="discount{$entityItem.id}" name="discount{$entityItem.id}" maxlength="2" value="{$entityItem.discount}"></div>
+		<div class="row cell5"><input id="tax{$entityItem.id}" name="tax{$entityItem.id}" maxlength="2" value="{$entityItem.tax}"></div>
+		<div class="row cell15 center">
+			<select id="shopCategory{$entityItem.id}" name="shopCategory{$entityItem.id}">
+				{foreach name=shopCategory key=shopCategoryKey item=shopCategoryItem from=$entityItem.shopCategory}
+					{if $shopCategoryKey == $entityItem.shopCategory.selected}
+						<option value="{$shopCategoryKey}" selected="selected">{$shopCategoryItem}</option>
+					{else}
+						{if $shopCategoryKey == "selected" || !isset($shopCategoryItem)}
+							<option value=""> ... </option>
+						{else}
+				  			<option value="{$shopCategoryKey}">{$shopCategoryItem}</option>
+				  		{/if}
+				  	{/if}
+			  	{/foreach}
+	  		</select>
+		</div>
+		<div class="row cell10 center">
+			<button onclick="$('#row{$entityItem.id}').farajax('loader', '/shop/c_addObject',
+																								'objectId={$entityItem.id}' + '::{$lang.id}<>Number<>1<>ce<>11' +
+																								'&objectName={$entityItem.name}' + '::{$lang.name}<>Multi<>1<>nce<>100' +
+																							   	'&basePrice=' + document.getElementById('basePrice{$entityItem.id}').value + '::{$lang.sellPrice}<>Number<>1<>ce<>11' +
+																							   	'&discount=' + document.getElementById('discount{$entityItem.id}').value + '::{$lang.discount}<>Number<>1<>nce<>5' +
+																							   	'&tax=' + document.getElementById('tax{$entityItem.id}').value + '::{$lang.tax}<>Number<>1<>nce<>5' +
+																							   	'&shopCategory=' + document.getElementById('shopCategory{$entityItem.id}').value + '::{$lang.shopProfile}<>Number<>1<>ce<>5'
+																						);">{$lang.submit}</button>
+		</div>	
+		<br class="clear">
+	</div>
+	{/foreach}
+	<br>
+	<div class="blockquote">{$navigation}</div>
+	{/nocache}
+</div>

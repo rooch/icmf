@@ -1,0 +1,45 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.pollList}</h1>
+	<ul id="chartTopic" style="height: 30px;">
+			<li id="chart1" style="float: right; list-style: none; padding: 6px; width: 150px;"><div class="curvedFull rollOver" style="font-weight: bolder; text-align: center; background: #80AAC9; padding: 5px;">کاربران</div></li>
+			<li id="chart2" style="float: right; list-style: none; padding: 6px; width: 150px;"><div class="curvedFull rollOver" style="font-weight: bolder; text-align: center; background: #80AAC9; padding: 5px;">سیستم عامل ها</div></li>
+			<li id="chart3" style="float: right; list-style: none; padding: 6px; width: 150px;"><div class="curvedFull rollOver" style="font-weight: bolder; text-align: center; background: #80AAC9; padding: 5px;">مرورگرها</div></li>
+			<li id="chart4" style="float: right; list-style: none; padding: 6px; width: 150px;"><div class="curvedFull rollOver" style="font-weight: bolder; text-align: center; background: #80AAC9; padding: 5px;">عمل ها</div></li>
+	</ul>
+	{$chart}
+	<br><br>
+	<table id="resultBox" class="listFull">
+		<tr class="listHeader">
+			<td width="5%">#</td>
+			<td width="7%">{$lang.user}</td>
+			<td width="5%">{$lang.agent}</td>
+			<td width="5%">{$lang.version}</td>
+			<td width="10%">{$lang.ip}</td>
+			<td width="18%">{$lang.reffer}</td>
+			<td width="12%">{$lang.host}</td>
+			<td width="10%">{$lang.os}</td>
+			<td width="7%">{$lang.op}</td>
+			<td width="11%">{$lang.mode}</td>
+			<td width="15%">{$lang.title}</td>
+		</tr>
+		{nocache}
+		{foreach name=entity key=entityKey item=entityItem from=$entityList}
+		<tr class="blockquote" id="row{$entityItem.id}">
+			<td>{$entityItem.num}</td>
+			<td>{$entityItem.user}</td>
+			<td>{$entityItem.agent}</td>
+			<td>{$entityItem.version}</td>
+			<td>{$entityItem.ip}</td>
+			<td>{$entityItem.reffer}</td>
+			<td>{$entityItem.host}</td>
+			<td>{$entityItem.os}</td>
+			<td>{$entityItem.op}</td>
+			<td>{$entityItem.mode}</td>
+			<td>{$entityItem.title}</td>
+		</tr>
+		{/foreach}
+		{/nocache}
+	</table>
+	<br>
+	<div class="blockquote">{$navigation}</div>
+</div>

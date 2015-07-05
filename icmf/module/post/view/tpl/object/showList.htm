@@ -1,0 +1,168 @@
+{nocache}
+<ul>
+{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	{assign var=title value=$entityItem.title|replace:' ':'-'}
+	{assign var=description value=$entityItem.description}
+	<li>
+		<article class="blockquote curvedFull" id="row{$entityItem.id}" style="margin-bottom: 5px;">
+			<header class="clearFix paddy5" style="border-bottom: 1px dashed #cecece">
+				<div class="row cell10">
+					{if isset($entityItem.authorPic)}
+					<a class="author" href="{$entityItem.googlePlus}?rel=author">
+					{iimg src=$entityItem.authorPic width=50 height=50 class=tip alt=$entityItem.authorLastName title=$entityItem.authorLastName caption=$entityItem.authorLastName}
+					</a>
+					{/if}
+				</div>
+				<div class="row cell70 LH35 right">
+					<div class="paddy5">
+						<h1 class="title"><a href="/post/c_showListObject/{$entityItem.id}_{$title}" title="{$entityItem.title}">{$entityItem.title}</a></h1>
+					</div>
+				</div>
+				<div class="row cell20">
+					<div style="padding-top: 15px;font-size: 10px; color: #cecece;">
+						{if $smarty.get.filter|strstr:"_"}
+						<time datetime="{$entityItem.startTimeDateTime}">{$entityItem.startTime}</time>
+						{else}
+						&nbsp;
+						{/if}
+					</div>
+				</div>
+			</header>
+			<div class="clearFix paddy3">
+				{if $smarty.get.filter|strstr:"_"}
+				<div id="media" class="center">
+					{if $entityItem.contentType == 'video'}
+					<div class="leanback-player-video cell100">
+					    <video width="640" height="360" preload="none" poster="{$entityItem.contentPath|replace:'webm':'jpg'}" controls>
+					        <source src="{$entityItem.contentPath}" type='video/webm; codecs="vp8, vorbis"'>
+					    </video>			   
+					</div>
+					<div>
+						[<a title="دانلود {$entityItem.contentPath}" href="{$entityItem.contentPath}">دانلود</a>]
+					</div>
+					{elseif $entityItem.contentType == 'voice'}
+					<div class="leanback-player-audio cell100">
+						<audio preload="none" controls>
+							<source src="{$entityItem.contentPath}" type='audio/ogg; codecs="vorbis"'>
+						</audio>
+						<div class="right">
+							<a title="دانلود {$entityItem.contentPath}" href="{$entityItem.contentPath}">دانلود</a>
+						</div>
+					</div>
+					{elseif $entityItem.contentType == 'image'}
+						{iimg src=$entityItem.contentPath class=mainImage alt=$entityItem.title title=$entityItem.title caption=$entityItem.title}
+					{else}
+					&nbsp;
+					{/if}
+				</div>
+				<div id="article-main" style="margin-top: 10px;">
+					{$entityItem.description}
+				</div>
+				<br>
+				{if $entityItem.resources != ''}
+				<div id="article-resources">
+					<h3>{$lang.resources}</h3>
+					<div style="direction: ltr">
+						{$entityItem.resources}
+					</div>
+				</div>
+				<br>
+				{/if}
+				{if $entityItem.filePath != ''}
+				<div id="article-attachments">
+					<h3>{$lang.file}</h3>
+					<div style="direction: ltr">
+						{$entityItem.filePath}
+					</div>
+				</div>
+				{/if}				
+				{else}
+				<div class="clearFix">
+					<div class="row cell30">
+						<div class="paddy5">
+							{if $entityItem.contentType == 'video'}
+								{assign var=poster value=$entityItem.contentPath|replace:'webm':'jpg'}
+								{if file_exists($poster)}
+									{iimg src="`$poster`" width=160 height=160 class=tip alt=$entityItem.title title=$entityItem.title caption=$entityItem.title}
+								{else}
+									{iimg src="http://`$settings.domainName`/theme/`$settings.theme`/img/movie.png" width=160 height=160 class=tip alt=$entityItem.title title=$entityItem.title caption=$entityItem.title}
+								{/if}
+							{elseif $entityItem.contentType == 'voice'}
+							{iimg src="http://`$settings.domainName`/theme/`$settings.theme`/img/music.png" width=160 height=160 class=tip alt=$entityItem.title title=$entityItem.title caption=$entityItem.title}
+							{elseif $entityItem.contentType == 'image'}
+							{iimg src=$entityItem.contentPath width=160 height=160 class=tip alt=$entityItem.title title=$entityItem.title caption=$entityItem.title}
+							{else}
+							&nbsp;				
+							{/if}
+						</div>
+					</div>
+					<div class="row cell70">
+						<div class="paddy10">
+							<p>{$entityItem.brief|strip_tags:false}</p>
+							<div style="padding-top: 10px;">
+								<a href="post/c_showListObject/{$entityItem.id}_{$title}" title="{$entityItem.title}">{$lang.readMore}</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				{/if}
+				{if $settings.shareComment == 1 || !isset($settings.shareComment)}
+				<aside class="blockquote">
+					<div id="shareBox" class="shareBox clearFix curvedFull paddy5 displayNone">						
+						<div id="facebookShare" class="facebook share" data-url="http://{$settings.domain}/post/c_showListObject/{$entityItem.id}_{$title}" data-text="" data-title=""></div>
+						<div id="googleplusShare" class="googleplus share" data-url="http://{$settings.domain}/post/c_showListObject/{$entityItem.id}_{$title}" data-text="" data-title=""></div>
+						<div id="twitterShare" class="twitter share" data-url="http://{$settings.domain}/post/c_showListObject/{$entityItem.id}_{$title}" data-text="" data-title=""></div>
+						<div id="stumbleuponShare" class="stumbleupon share" data-url="http://{$settings.domain}/post/c_showListObject/{$entityItem.id}_{$title}" data-text="" data-title=""></div>
+						<div id="deliciousShare" class="delicious share" data-url="http://{$settings.domain}/post/c_showListObject/{$entityItem.id}_{$title}" data-text="" data-title=""></div>
+						<div id="linkedinShare" class="linkedin share" data-url="http://{$settings.domain}/post/c_showListObject/{$entityItem.id}_{$title}" data-text="" data-title=""></div>
+						<div id="pinterestShare" class="pinterest share" data-url="http://{$settings.domain}/post/c_showListObject/{$entityItem.id}_{$title}" data-text="" data-title=""></div>
+					</div>
+					{if $smarty.get.filter|strstr:"_"}
+					<br>
+					<div class="clearFix">
+						<div class="row cell75">مطالب مرتبط</div>
+						<div class="row cell5"><span class="LH35"><img id="openCommentBox" src="theme/{$settings.theme}/img/icon/mini/chat24.png" title="ارسال نظر" alt="ارسال نظر" width="24" height="24" class="tip"></span></div>
+						<div class="row cell5"><span class="LH35"><img id="openShareBox" src="theme/{$settings.theme}/img/icon/mini/starHalfFull24.png" title="اشتراک گذاری" alt="اشتراک گذاری" width="24" height="24" class="tip"></span></div>
+						<div class="row cell5"><span class="LH35"><a title="این مقاله تحت مجوز CC تولید و انتشار یافته است. لطفا به منظور حمایت از این مقاله، آنرا لایک و به اشتراگ بگذارید." href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" class="tip"><img src="theme/{$settings.theme}/img/icon/mini/Prohibit24.png" alt="این مقاله تحت مجوز CC تولید و انتشار یافته است. لطفا به منظور حمایت از این مقاله، آنرا لایک و به اشتراگ بگذارید." width="24" height="24"></a></span></div>
+						<div class="row cell10 center"><span class="LH30 bold">{nocache}{$entityItem.viewCount}{/nocache} بازدید</span></div>
+					</div>
+					<div class="bold">ارسال نظر</div>
+					<div id="commentBox" class="commentBox">
+						<div id="addCommentBox">
+							{nocache}
+							{include file="module/comment/view/tpl/object/add.htm" op='post' opid=$entityItem.id}
+							{/nocache}
+						</div>
+						<div id="listCommentBox">
+							{nocache}
+							{$entityItem.comments}
+							{/nocache}
+						</div>
+					</div>
+					{else}
+					<div class="clearFix">
+						<div class="row cell75">&nbsp;</div>
+						<div class="row cell5">&nbsp;</div>
+						<div class="row cell5"><span class="LH35"><img src="theme/{$settings.theme}/img/icon/mini/starHalfFull24.png" title="اشتراک گذاری" alt="اشتراک گذاری" width="24" height="24" class="tip"></span></div>
+						<div class="row cell5"><span class="LH35"><a title="این مقاله تحت مجوز CC تولید و انتشار یافته است. لطفا به منظور حمایت از این مقاله، آنرا لایک و به اشتراگ بگذارید." href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" class="tip"><img src="theme/{$settings.theme}/img/icon/mini/Prohibit24.png" alt="این مقاله تحت مجوز CC تولید و انتشار یافته است. لطفا به منظور حمایت از این مقاله، آنرا لایک و به اشتراگ بگذارید." width="24" height="24"></a></span></div>
+						<div class="row cell10 center"><span class="LH30 bold">{nocache}{$entityItem.viewCount}{/nocache} بازدید</span></div>
+					</div>
+					{/if}
+				</aside>
+				{/if}
+			</div>
+			{if $smarty.get.filter|strstr:"_"}
+			<footer class="specialFont">
+				<p>اسپانسر این مقاله شوید: </p>
+			</footer>
+			{/if}	
+		</article>
+	</li>
+{/foreach}
+</ul>
+{if $smarty.get.filter|strstr:"_"}
+<br>
+{else}
+<div class="blockquote pageNav">{$navigation}</div>
+{/if}
+{/nocache}

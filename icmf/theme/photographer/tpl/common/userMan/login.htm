@@ -1,0 +1,14 @@
+<div class="paddy1">
+	<input id="loginUserName" name="loginUserName" placeholder="{$lang.userName}" maxlength="45" required>
+</div>
+<div class="paddy1">
+	<input id="loginPassword" name="loginPassword" placeholder="{$lang.password}" type="password" maxlength="20" required>
+</div>
+<div class="paddy1">
+	<button onclick="
+			$('#login').farajax('loader', '/userMan/c_login',
+				   'userName=' + document.getElementById('loginUserName').value + '::{$lang.userName}<>Multi<>1<>ce<>45' +
+				   '&amp;password=' + document.getElementById('loginPassword').value + '::{$lang.password}<>Multi<>1<>ce<>20'			   
+			);
+	 	">{$lang.login}</button>
+</div>

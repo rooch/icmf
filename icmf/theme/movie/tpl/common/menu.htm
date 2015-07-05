@@ -1,0 +1,19 @@
+<ul class="sf-menu">
+	{if $smarty.session.uid == 2}
+	<li class="current">
+		<a href="/userMan/v_signUp" target="content" title="{$lang.signUp}">{$lang.signUp}</a>
+	</li>
+	{/if}	
+	<li class="current">
+		<a href="/contact/v_contactUs" target="content" title="{$lang.contactUs}">{$lang.contactUs}</a>
+	</li>
+	<li class="current">
+		<a href="/pageLoader/v_load/aboutUs" target="content" title="{$lang.aboutUs}">{$lang.aboutUs}</a>
+	</li>
+	<li class="current">
+		<a href="/pageLoader/v_load/FAQ" target="content" title="{$lang.FAQ}">{$lang.FAQ}</a>
+	</li>
+	<li class="current">
+		<a href="/pageLoader/v_load/main" target="content" title="{$lang.home}">{$lang.home}</a>
+	</li>
+</ul>

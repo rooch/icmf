@@ -1,0 +1,29 @@
+<div class="clearFix">
+	<div class="row cell30">{$lang.to}:</div>
+	{if isset($to)}
+	<div class="row cell70">
+		<b>&nbsp;{$to}</b>
+		<input id="to" name="to" type="hidden" maxlength="500" value="{$to}">
+	</div>
+	{else}
+	<div class="row cell70">
+		<input id="to" name="to" type="text" maxlength="500">
+	</div>
+	{/if}
+</div>
+<div class="clearFix">
+	<div class="row cell30">
+		{$lang.message}:
+	</div>
+	<div class="row cell70">
+		<textarea id="message" name="message" rows="5" cols="30"></textarea>
+	</div>
+</div>
+<button class="curvedFull boxShadow" onclick="
+		$('#content').farajax('loader', '/sms/c_addObject',
+	   'to=' + document.getElementById('to').value + '::{$lang.to}<>Multi<>1<>ce<>500' +
+	   '&message=' + document.getElementById('message').value + '::{$lang.message}<>Multi<>1<>ce<>5000'
+	); 
+	$('#modalWindow').faraModal('closeModal', 'modalWindow');">
+	<span>{$lang.send}</span>
+</button>

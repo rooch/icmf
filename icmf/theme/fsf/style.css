@@ -1,0 +1,47 @@
+body {
+	background-color: #f6f8f8;	
+}
+
+.slogon {
+	
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 35px;
+	font-family: "AShams";
+	letter-spacing: 0px;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	-webkit-transition-property: color;
+	-moz-transition-property: color;
+	-ms-transition-property: color;
+	-o-transition-property: color;
+	transition-property: color;
+	-webkit-transition-duration: .5s;
+	-moz-transition-duration: .5s;
+	-ms-transition-duration: .5s;
+	-o-transition-duration: .5s;
+	transition-duration: .5s;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+	color: #b51f28;
+}
+
+.whiteFrame {
+	border: 1px solid #f1f1f1;
+	background: #fff;
+}
+
+.paddy10 {
+	padding: 10px;
+}
+
+.center {
+	text-align: center;
+}
+
+.curvedFull {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}

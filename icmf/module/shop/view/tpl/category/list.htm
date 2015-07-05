@@ -1,0 +1,50 @@
+<div class="blockquote">
+	<h2>{$lang.listShop}</h2>
+	<br>
+	<div class="listHeader center">
+		<div class="row cell5">#</div>
+		<div class="row cell5">{$lang.id}</div>
+		<div class="row cell15">{$lang.name}</div>
+		<div class="row cell15">{$lang.increase}</div>
+		<div class="row cell15">{$lang.decrease}</div>
+		<div class="row cell10">{$lang.discount}</div>
+		<div class="row cell10">{$lang.tax}</div>
+		<div class="row cell25">{$lang.properties}</div>
+		<br class="clear">
+	</div>
+	{nocache}
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	<div class="blockquote" id="row{$entityItem.id}">
+		<div class="row cell5">{$entityItem.num}</div>
+		<div class="row cell5">{$entityItem.id}</div>
+		<div class="row cell15"><input id="name{$entityItem.id}" name="name{$entityItem.id}" maxlength="45" value="{$entityItem.name}"></div>
+		<div class="row cell15"><input id="increase{$entityItem.id}" name="increase{$entityItem.id}" maxlength="45" value="{$entityItem.increase}"> {$lang.currencySign}</div>
+		<div class="row cell15"><input id="decrease{$entityItem.id}" name="decrease{$entityItem.id}" maxlength="45" value="{$entityItem.decrease}"> {$lang.currencySign}</div>
+		<div class="row cell10"><input id="discount{$entityItem.id}" name="discount{$entityItem.id}" maxlength="45" value="{$entityItem.discount}"> %</div>
+		<div class="row cell10"><input id="tax{$entityItem.id}" name="tax{$entityItem.id}" maxlength="45" value="{$entityItem.tax}"> %</div>
+		<div class="row cell25 center">
+			<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/information.png">
+			<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/delete.png">
+			{if $entityItem.active == 1} 
+			<img style="cursor: pointer;" alt="{$deAtivate}" src="theme/{$settings.theme}/img/icon/powerOn.png">
+			{else}
+			<img style="cursor: pointer;" alt="{$ativate}" src="theme/{$settings.theme}/img/icon/powerOff.png">
+			{/if}
+			<button onclick="$('#resultBox').farajax('loader', '/shop/c_editCategory',
+																								'id={$entityItem.id}' + '::{$lang.id}<>Number<>1<>ce<>11' +
+																								'&name=' + document.getElementById('name{$entityItem.id}').value + '::{$lang.name}<>Multi<>1<>nce<>45' +
+																							   	'&increase=' + document.getElementById('increase{$entityItem.id}').value + '::{$lang.increase}<>Number<>1<>nce<>10' +
+																							   	'&decrease=' + document.getElementById('decrease{$entityItem.id}').value + '::{$lang.decrease}<>Number<>1<>nce<>10' +
+																							   	'&discount=' + document.getElementById('discount{$entityItem.id}').value + '::{$lang.discount}<>Number<>1<>nce<>3' +
+																							   	'&tax=' + document.getElementById('tax{$entityItem.id}').value + '::{$lang.tax}<>Number<>1<>nce<>3'
+																						);">
+																							<span>{$lang.submit}</span>
+																						</button>
+		</div>
+		<br class="clear">
+	</div>
+	{/foreach}
+	<br>
+	<div class="blockquote">{$navigation}</div>
+	{/nocache}
+</div>

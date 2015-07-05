@@ -1,0 +1,49 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.transport}</h1>
+	<table id="resultBox" class="listFull">
+		<tr class="listHeader">
+			<td width="5%">#</td>
+			<td width="10%">{$lang.id}</td>
+			<td width="13%">{$lang.number} {$lang.invoice}</td>
+			<td width="19%">{$lang.location}</td>
+			<td width="19%">{$lang.courier}</td>
+			<td width="19%">{$lang.status}</td>
+			<td width="15%">{$lang.properties}</td>
+		</tr>
+		{nocache}
+		{foreach name=entity key=entityKey item=entityItem from=$entityList}
+		<tr class="blockquote" id="row{$entityItem.id}">
+			<td>{$entityItem.count}</td>
+			<td>{$entityItem.id}</td>
+			<td>{$entityItem.invoiceNumber}</td>
+			<td><input style="display: none;" id="inputLocation{$entityItem.id}" name="inputLocation{$entityItem.id}" class="input" type="text" size="12" maxlength="150" value="{$entityItem.location}"><span id="textLocation{$entityItem.id}">{$entityItem.location}</span></td>
+			<td><input style="display: none;" id="inputCourier{$entityItem.id}" name="inputCourier{$entityItem.id}" class="input" type="text" size="12" maxlength="150" value="{$entityItem.courier}"><span id="textCourier{$entityItem.id}">{$entityItem.courier}</span></td>
+			<td><input style="display: none;" id="inputStatus{$entityItem.id}" name="inputStatus{$entityItem.id}" class="input" type="text" size="12" maxlength="150" value="{$entityItem.status}"><span id="textStatus{$entityItem.id}">{$entityItem.status}</span></td>
+			<td align="center">
+				<img src="theme/{$settings.theme}/img/icon/information.png">
+				<a href="/transport/c_del/id={$entityItem.id}"><img src="theme/{$settings.theme}/img/icon/delete.png" onclick="$('#content').farajax('loader', '/transport/c_list');"></a>
+				{if $entityItem.active == 1} 
+				<img src="theme/{$settings.theme}/img/icon/edit.png" onclick="$('#button{$entityItem.id}').fadeIn('slow'); $('#inputLocation{$entityItem.id}').fadeIn('slow'); $('#inputCourier{$entityItem.id}').fadeIn('slow'); $('#inputStatus{$entityItem.id}').fadeIn('slow'); $('#textLocation{$entityItem.id}').fadeOut('slow'); $('#textCourier{$entityItem.id}').fadeOut('slow'); $('#textStatus{$entityItem.id}').fadeOut('slow');">
+				<a href="/transport/c_deactivate/id={$entityItem.id}">
+					<img alt="{$deAtivate}" src="theme/{$settings.theme}/img/icon/powerOn.png" onclick="$('#content').farajax('loader', '/transport/c_list');">
+				</a>
+				{else}
+				<a href="/transport/c_activate/id={$entityItem.id}">
+					<img alt="{$ativate}" src="theme/{$settings.theme}/img/icon/powerOff.png" onclick="$('#content').farajax('loader', '/transport/c_list');">
+				</a>
+				{/if}
+				<br>
+				<button id="button{$entityItem.id}" style="display: none;" onclick="$('#row{$entityItem.id}').farajax('loader', '/transport/c_edit',
+																							'invoiceNumber={$entityItem.invoiceNumber}::{$lang.number} {$lang.invoice}<>Number<>1<>ce<>11' +
+																							'&location=' + document.getElementById('inputLocation{$entityItem.id}').value + '::{$lang.location}<>Multi<>1<>nce<>150' +
+																							'&courier=' + document.getElementById('inputCourier{$entityItem.id}').value + '::{$lang.courier}<>Multi<>1<>nce<>150' +
+																							'&status=' + document.getElementById('inputStatus{$entityItem.id}').value + '::{$lang.status}<>Multi<>1<>nce<>150'
+				)">{$lang.submit}</button>
+			</td>
+		</tr>
+		{/foreach}
+		{/nocache}
+	</table>
+	<br>
+	<div class="blockquote">{$navigation}</div>
+</div>

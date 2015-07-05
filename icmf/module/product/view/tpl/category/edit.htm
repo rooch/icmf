@@ -1,0 +1,37 @@
+<div class="blockquote">
+	<div class="row cell10">{$lang.categoryName}:</div>
+	<div class="row cell20"><input id="name" name="name" maxlength="100" value="{$entity.name}"></div>
+	<div class="row cell20">{$lang.categoryParent}:</div>
+	<div class="row cell40">
+		<select id="category" name="category">
+			{nocache}
+			{foreach name=category key=categoryKey item=categoryItem from=$category}
+				{if $categoryKey == $category.selected}
+					<option value="{$categoryKey}" selected="selected">{$categoryItem}</option>
+				{else}
+					{if $categoryKey == "selected" || !isset($categoryItem)}
+						<option value=""> ... </option>
+					{else}
+			  			<option value="{$categoryKey}">{$categoryItem}</option>
+			  		{/if}
+			  	{/if}
+		  	{/foreach}
+		  	{/nocache}
+  		</select>
+	</div>
+	<!-- <div class="row cell10">{$lang.categoryDescription}:</div>
+	<div class="row cell20"><textarea id="description" name="description" rows="3" cols="20"></textarea></div> --> 
+	<div class="row cell10">
+		<button onclick="
+			$('#content').farajax('loader', '/product/c_addCategory', 
+				   'name=' + document.getElementById('name').value + '::{$lang.name}<>Multi<>1<>ce<>200' +
+				   '&category=' + document.getElementById('category').value + '::{$lang.category}<>Number<>1<>nce<>11'	   				   
+			); 
+		$('#add').farajax('loader', '/product/v_addCategory');	
+		$('#list').farajax('loader', '/product/c_listCategory');
+		">
+		<span>{$lang.submit}</span>
+		</button>
+	</div>
+	<br class="clear">
+</div>

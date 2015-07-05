@@ -1,0 +1,263 @@
+<div class="whiteFrame paddy5">
+	<h1>{$lang.productAdd}</h1>
+	<div class="clearFix">
+		<div class="row cell20">
+			<div class="paddy5">
+				<div id="imgLister" class="blockquote center" style="max-height: 250px; overflow: auto;">
+					<img src="theme/{$settings.theme}/img/yellowButton.png" onclick="createUploader('img', 'imgLister');">
+					<input id="imagePath" name="imagePath" type="hidden">
+				</div>
+				<br>
+				<div id="fileLister" class="blockquote center" style="max-height: 200px; overflow: auto;">
+					<img src="theme/{$settings.theme}/img/goldButton.png" onclick="createUploader('file', 'fileLister');">
+					<input id="filePath" name="filePath" type="hidden">
+				</div>
+			</div>
+		</div>
+		<div class="row cell80">
+			<div class="paddy5">
+				<div class="greyFrame h450">
+					<h2 class="center">اطلاعات ضروری</h2>
+					<div id="importantInfo" class="paddy5">
+						<div class="whiteFrame curvedFull paddy5">					
+							<div class="clearFix">
+								<div class="row cell15 LH35">
+									{$lang.name}:
+								</div>
+								<div class="row cell35">
+									<input id="name" name="name" class="input cell90" type="text" maxlength="100">
+								</div>
+								<div class="row cell15 LH35">
+									{$lang.model}:
+								</div>
+								<div class="row cell35">
+									<input id="model" name="model" class="input cell90" type="text" maxlength="100">
+								</div>
+							</div>
+							<div class="clearFix">
+								<div class="row cell15 LH35">
+									{$lang.company}:
+								</div>
+								<div class="row cell35">
+									<div class="clearFix">
+										<div class="row cell80">
+											{nocache}
+											{$company}
+											{/nocache}
+										</div>
+										<div class="row cell20 LH35">
+											<a href="directory/v_object">
+												<img src="theme/{$settings.theme}/img/icon/mini/Add16.png">
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="row cell15 LH35">
+									{$lang.dimension}:
+								</div>
+								<div class="row cell35">
+									<input id="dimension" name="dimension" class="input cell70" type="text" maxlength="100"> سانتیمتر
+								</div>
+							</div>
+							<div class="clearFix">
+								<div class="row cell15 LH35">
+									{$lang.weight}:
+								</div>
+								<div class="row cell35">
+									<input id="weight" name="weight" class="input cell70" type="text" maxlength="100"> گرم
+								</div>
+								<div class="row cell15 LH35">
+									{$lang.color}:
+								</div>
+								<div class="row cell35">
+									<input id="color" name="color" class="input cell90" type="text"maxlength="100">
+								</div>
+							</div>
+							<div class="clearFix">
+								<div class="row cell15 LH35">
+									{$lang.link}:
+								</div>
+								<div class="row cell35">
+									<input id="link" name="link" class="input cell90" type="text" maxlength="100">
+								</div>
+								<div class="row cell15 LH35">
+									{$lang.warranty}:
+								</div>
+								<div class="row cell35">
+									<input id="warranty" name="warranty" class="input cell70" type="text" maxlength="2"> {$lang.month}
+								</div>
+							</div>
+							<div class="clearFix">
+								<div class="row cell15 LH35">
+									{$lang.buyPrice}:
+								</div>
+								<div class="row cell35">
+									<input id="buyPrice" name="buyPrice" class="input cell70" type="text" maxlength="10"> {$lang.currencySign}
+								</div>
+								<div class="row cell15 LH35">
+									{$lang.count}:
+								</div>
+								<div class="row cell35">
+									<input id="productCount" name="productCount" class="input cell90" type="text" maxlength="10">
+								</div>
+							</div>
+							<div class="clearFix">
+								<div class="row cell15 LH35">
+									{$lang.category}:
+								</div>
+								<div class="row cell35">
+									{$category}
+									<input type="text" name="category" id="category" value="">
+								</div>
+								<div class="row cell15 LH35">
+									{$lang.keyWords}:
+								</div>
+								<div class="row cell35">
+									<input id="keyWords" name="keyWords" class="input cell90" type="text" maxlength="200">
+								</div>
+							</div>
+							<br>
+							<div class="clearFix">
+								<div class="row cell15 LH35">
+									{$lang.description}:
+								</div>
+								<div class="row cell73">
+									<div id="editor"></div>
+									<div id="textcontents" style="display: none">
+										<!-- This div will be used to display the editor contents. -->
+										<div id="editorcontents1"></div>
+									</div>
+									<textarea id="description" name="description" class="cell95" rows="5" cols="40" onclick=" this.style.display='none';" onfocus="createEditor('editorcontents1'); this.style.display='none';"></textarea>							
+								</div>
+								<div class="row cell2">&nbsp;</div>
+							</div>
+						</div>
+					</div>
+					<h2 class="center pointer" onclick="$('#slaveInfo').fadeIn('slow')">اطلاعات جانبی</h2>
+					<div id="slaveInfo" class="paddy5 displayNone">
+						<div class="whiteFrame curvedFull paddy5">					
+							<div class="clearFix">
+								<div class="row cell15 LH35">
+									{$lang.cpu}:
+								</div>
+								<div class="row cell35">
+									<input id="cpu" name="cpu" class="input cell70" type="text" maxlength="45"> گیگا هرتز 
+								</div>
+								<div class="row cell15 LH35">
+									{$lang.cache}:
+								</div>
+								<div class="row cell35">
+									<input id="cache" name="cache" class="input cell70" type="text" maxlength="10"> مگابایت
+								</div>
+							</div>
+							<div class="clearFix">
+								<div class="row cell15 LH35">
+									{$lang.ram}:
+								</div>
+								<div class="row cell35">
+									<input id="ram" name="ram" class="input cell70" type="text" maxlength="10"> گیگا بایت 
+								</div>
+								<div class="row cell15 LH35">
+									{$lang.hdd}:
+								</div>
+								<div class="row cell35">
+									<input id="hdd" name="hdd" class="input cell70" type="text" maxlength="10"> گیگا بایت
+								</div>
+							</div>
+							<div class="clearFix">
+								<div class="row cell15 LH35">
+									{$lang.screen}:
+								</div>
+								<div class="row cell35">
+									<input id="screen" name="screen" class="input cell90" type="text" maxlength="20">
+								</div>
+								<div class="row cell15 LH35">
+									{$lang.vga}:
+								</div>
+								<div class="row cell35">
+									<input id="vga" name="vga" class="input cell90" type="text" maxlength="45">
+								</div>
+							</div>
+							<div class="clearFix">
+								<div class="row cell15 LH35">
+									{$lang.modem}:
+								</div>
+								<div class="row cell35">
+									<input id="modem" name="modem" class="input" type="checkbox" value="0" onchange="checkBoxToggle('modem');">
+								</div>
+								<div class="row cell15 LH35">
+									{$lang.os}:
+								</div>
+								<div class="row cell35">
+									<input id="os" name="os" class="input cell90" type="text" maxlength="45">
+								</div>
+							</div>
+							<div class="clearFix">
+								<div class="row cell15 LH35">
+									{$lang.wireless}:
+								</div>
+								<div class="row cell35">
+									<input id="wireless" name="wireless" class="input" type="checkbox" value="0" onchange="checkBoxToggle('wireless');">
+								</div>
+								<div class="row cell15 LH35">
+									{$lang.range}:
+								</div>
+								<div class="row cell35">
+									<input id="range" name="range" class="input cell70" type="text" maxlength="30"> متر
+								</div>
+							</div>
+							<div class="clearFix">
+								<div class="row cell15 LH35">
+									{$lang.chargeable}:
+								</div>
+								<div class="row cell35">
+									<input id="chargeable" name="chargeable" class="input" type="checkbox" value="0" onchange="checkBoxToggle('chargeable');">
+								</div>
+								<div class="row cell15 LH35">
+									{$lang.chargeLife}:
+								</div>
+								<div class="row cell35">
+									<input id="chargeLife" name="chargeLife" class="input cell70" type="text" maxlength="10"> ساعت
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div>
+					<button class="centerObject" onclick="
+						$('#content').farajax('loader', '/product/c_addObject',
+							   'imagePath=' + document.getElementById('imagePath').value + '::{$lang.fileName}<>Alphabet<>1<>nce<>500' +
+							   '&filePath=' + document.getElementById('filePath').value + '::{$lang.fileName}<>Alphabet<>1<>nce<>500' +
+							   '&name=' + document.getElementById('name').value + '::{$lang.name}<>Multi<>1<>ce<>100' +
+							   '&model=' + document.getElementById('model').value + '::{$lang.model}<>Multi<>1<>ce<>100' +
+							   '&company=' + document.getElementById('company').value + '::{$lang.company}<>Number<>1<>ce<>5' +
+							   '&dimension=' + document.getElementById('dimension').value + '::{$lang.dimension}<>Multi<>1<>nce<>45' +
+							   '&weight=' + document.getElementById('weight').value + '::{$lang.weight}<>Number<>1<>nce<>10' +
+							   '&color=' + document.getElementById('color').value + '::{$lang.color}<>Multi<>1<>nce<>45' +
+							   '&link=' + document.getElementById('link').value + '::{$lang.link}<>Multi<>1<>nce<>200' +
+							   '&keyWords=' + document.getElementById('keyWords').value + '::{$lang.keyWords}<>Multi<>1<>nce<>200' +
+							   '&buyPrice=' + document.getElementById('buyPrice').value + '::{$lang.buyPrice}<>Number<>1<>nce<>11' +
+							   '&count=' + document.getElementById('productCount').value + '::{$lang.count}<>Number<>1<>ce<>5' +
+							   '&category=' + document.getElementById('category').value + '::{$lang.category}<>Number<>1<>ce<>5' +
+							   '&description=' + getText('editorcontents1')	+ '::{$lang.description}<>Multi<>1<>nce<>70000' +
+							   '&cpu=' + document.getElementById('cpu').value	+ '::{$lang.cpu}<>Multi<>1<>nce<>45' +
+							   '&cache=' + document.getElementById('cache').value	+ '::{$lang.cache}<>Multi<>1<>nce<>45' +
+							   '&ram=' + document.getElementById('ram').value	+ '::{$lang.ram}<>Multi<>1<>nce<>45' +
+							   '&hdd=' + document.getElementById('hdd').value	+ '::{$lang.hdd}<>Multi<>1<>nce<>45' +
+							   '&screen=' + document.getElementById('screen').value	+ '::{$lang.screen}<>Multi<>1<>nce<>45' +
+							   '&vga=' + document.getElementById('vga').value	+ '::{$lang.vga}<>Multi<>1<>nce<>45' +
+							   '&os=' + document.getElementById('os').value	+ '::{$lang.os}<>Multi<>1<>nce<>45' +
+							   '&modem=' + document.getElementById('modem').value	+ '::{$lang.modem}<>Number<>1<>nce<>1' +
+							   '&chargeable=' + document.getElementById('chargeable').value	+ '::{$lang.chargeable}<>Multi<>1<>nce<>45' +
+							   '&chargeLife=' + document.getElementById('chargeLife').value	+ '::{$lang.chargeLife}<>Multi<>1<>nce<>45' +
+							   '&wireless=' + document.getElementById('wireless').value	+ '::{$lang.wireless}<>Multi<>1<>nce<>45' +
+							   '&range=' + document.getElementById('range').value	+ '::{$lang.range}<>Multi<>1<>nce<>45'
+						);
+					">{$lang.submit}</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<commands value="{literal}$('#category').mcDropdown('#productCategory', {allowParentSelect: true});{/literal}">

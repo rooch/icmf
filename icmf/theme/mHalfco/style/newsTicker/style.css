@@ -1,0 +1,14 @@
+.newsTicker {
+	margin: 0px auto;
+    padding: 1px 5px;
+    overflow: hidden;
+}
+
+.newsTicker a, #ticker a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+.newsTicker a:hover {
+    color: #3A9BFC;
+}

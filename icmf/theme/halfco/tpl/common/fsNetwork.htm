@@ -1,0 +1,30 @@
+<div class="clearFix">
+	<div class="row cell5">&nbsp;</div>
+	<div class="row cell5">
+		{nocache}
+		{if isset($smarty.session.uid) && $smarty.session.uid != 2}
+			<div style="padding-top: 2px;">
+				<img src="theme/{$settings.theme}/img/icon/User24.png" style="cursor: pointer;" alt="{$smarty.session.uid}" onclick="$('#cPanel').slideToggle('slow');" width="24" height="24">
+			</div>
+		{else}
+			<div style="padding-top: 2px;">
+				<img class="tip pointer" src="theme/{$settings.theme}/img/icon/Login_in24.png" alt="{$lang.login}" title="{$lang.login}" onclick="$('#cPanel').slideToggle('slow');"  width="24" height="24">
+			</div>	
+		{/if}
+		{/nocache}
+	</div>
+	<div class="row cell55">
+		<a href="userMan/c_setSettings/name=lang,value=1"><img src="theme/{$settings.theme}/img/icon/flags/24/Iran.png" class="tip" alt="فارسی" title="فارسی" width="32" height="32"></a>
+		<a href="userMan/c_setSettings/name=lang,value=2"><img src="theme/{$settings.theme}/img/icon/flags/24/United Kingdom(Great Britain).png" class="tip" alt="انگلیسی" title="انگلیسی" width="32" height="32"></a>
+		<a href="userMan/c_setSettings/name=lang,value=3"><img src="theme/{$settings.theme}/img/icon/flags/24/Saudi Arabia.png" class="tip" alt="عربی" title="عربی" width="32" height="32"></a>
+		<a href="userMan/c_setSettings/name=lang,value=4"><img src="theme/{$settings.theme}/img/icon/flags/24/Kurdestan.png" class="tip" alt="کردی" title="کردی" width="32" height="32"></a>
+	</div>
+	<div class="row cell30">
+		<h3>{$lang.contactNumber}</h3>
+	</div>
+	<div class="row cell5">&nbsp;</div>
+</div>
+<div id="cPanel" class="cPanel paddy5">
+	<div id="login" class="login" style="padding-right: 10px;">{nocache}{$login}{nocache}</div>
+	<div id="accessories" class="accessories"></div>
+</div>

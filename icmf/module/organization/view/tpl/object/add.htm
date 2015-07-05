@@ -1,0 +1,2348 @@
+<div class="pageIn">
+	<div id="organization">
+		<div class="boxShadow curvedFull paddy" style="background: #e7e7e7;">
+			<h2>سازمان</h2>
+			<br>
+			<div class="odd curvedTop">
+				<div class="row cell10">
+					<div class="paddy">
+						* نام سازمان:
+						<a href="" title="نام سازمانی که پورتال مورد نظر در آن نصب شده است." class="tip">(؟)</a>
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="oName" name="oName" class="input" type="text" size="20" maxlength="200">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						سازمان تابعه:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="oParent" name="oParent" class="input" type="text" size="20" maxlength="200">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						وزارتخانه:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<select id="oMinistry" name="oMinistry">
+							<option> ... </option>
+							<option>نهاد ریاست جمهوری</option>
+							<option>مجلس</option>
+							<option>رهبری</option>
+							<option>قوه قضاییه</option>
+				  		</select>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+			
+			<div class="even">
+				<div class="row cell10">
+					<div class="paddy">
+						زمینه کاری:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="oField" name="oField" class="input" type="text" size="20" maxlength="400">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						شناسه ملی:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="oNationalCode" name="oNationalCode" class="input" type="text" size="20" maxlength="20">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						آدرس:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<textarea id="oAddress" name="oAddress" rows="3" cols="20"></textarea>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+			
+			<div class="odd">
+				<div class="row cell10">
+					<div class="paddy">
+						استان:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<select id="oState" name="oState">
+							{foreach name=state key=stateKey item=stateItem from=$state}
+								{if $stateKey == $state.selected}
+									<option value="{$stateKey}" selected="selected">{$stateItem}</option>
+								{else}
+									{if $stateKey == "selected" || !isset($stateItem)}
+										<option value=""> ... </option>
+									{else}
+							  			<option value="{$stateKey}">{$stateItem}</option>
+							  		{/if}
+							  	{/if}
+						  	{/foreach}
+				  		</select>
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						شهر:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<select id="oCity" name="oCity">
+							{foreach name=city key=cityKey item=cityItem from=$city}
+								{if $cityKey == $city.selected}
+									<option value="{$cityKey}" selected="selected">{$cityItem}</option>
+								{else}
+									{if $cityKey == "selected" || !isset($cityItem)}
+										<option value=""> ... </option>
+									{else}
+							  			<option value="{$cityKey}">{$cityItem}</option>
+							  		{/if}
+							  	{/if}
+						  	{/foreach}
+				  		</select>
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						کدپستی:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="oZipCode" name="oZipCode" class="input" type="text" size="20" maxlength="10">
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+			
+			<div class="even curvedBottom">
+				<div class="row cell10">
+					<div class="paddy">
+						* مدیر:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<span style="cursor: pointer; color: blue;" onclick="$('#manager').fadeIn('slow'); {literal}$.scrollTo('#manager', {duration:3000});{/literal}">اطلاعات مدیر</span>
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						* کارشناس:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<span style="cursor: pointer; color: blue;" onclick="$('#expert').fadeIn('slow'); {literal}$.scrollTo('#expert', {duration:3000});{/literal}">اطلاعات کارشناس</span>
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						* پورتال ها:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<span style="cursor: pointer; color: blue;" onclick="$('#portals').fadeIn('slow'); {literal}$.scrollTo('#portals', {duration:3000});{/literal}">اطلاعات پورتال‌ها</span>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+		</div>
+		<img src="theme/{$settings.theme}/img/shadow.png">
+	</div>
+	<div id="manager" style="display: none;">
+		<div class="boxShadow curvedFull paddy" style="background: #e7e7e7;">
+			<h2>مدیر</h2>
+			<br>
+			<div class="odd curvedTop">
+				<div class="row cell10">
+					<div class="paddy">
+						* نام:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="mName" name="mName" class="input" type="text" size="20" maxlength="100">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						* نام خانوادگی:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="mLastName" name="mLastName" class="input" type="text" size="20" maxlength="100">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						نام پدر:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="mFatherName" name="mFatherName" class="input" type="text" size="20" maxlength="100">
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+			
+			<div class="even">
+				<div class="row cell10">
+					<div class="paddy">
+						ش.ش:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="mIdNo" name="mIdNo" class="input" type="text" size="20" maxlength="11">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						* کد ملی:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="mNationalNumber" name="mNationalNumber" class="input" type="text" size="20" maxlength="11">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						تاریخ تولد:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<select id="mStartDay" name="mStartDay">
+							<option value=""> ... </option>
+							{section name=startDay start=1 loop=32}
+							<option value="{$smarty.section.startDay.iteration}">{$smarty.section.startDay.iteration}</option>
+							{/section}
+						</select>
+						<select id="mStartMonth" name="mStartMonth">
+							<option value=""> ... </option>
+							{section name=startMonth start=1 loop=13}
+							<option value="{$smarty.section.startMonth.iteration}">{$smarty.section.startMonth.iteration}</option>
+							{/section}
+						</select>
+						<select id="mStartYear" name="mStartYear">
+							<option value=""> ... </option>
+							{section name=startYear start=1338 loop=1373}
+							<option value="{$smarty.section.startYear.index}">{$smarty.section.startYear.index}</option>
+							{/section}
+						</select>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+			
+			<div class="odd">
+				<div class="row cell10">
+					<div class="paddy">
+						محل تولد:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<select id="mIssue" name="mIssue">
+							{foreach name=city key=cityKey item=cityItem from=$city}
+								{if $cityKey == $city.selected}
+									<option value="{$cityKey}" selected="selected">{$cityItem}</option>
+								{else}
+									{if $cityKey == "selected" || !isset($cityItem)}
+										<option value=""> ... </option>
+									{else}
+							  			<option value="{$cityKey}">{$cityItem}</option>
+							  		{/if}
+							  	{/if}
+						  	{/foreach}
+				  		</select>
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						ملیت:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<select id="mNationality" name="mNationality">
+							{foreach name=nationality key=nationalityKey item=nationalityItem from=$countries}
+								{if $nationalityKey == $countries.selected}
+									<option value="{$nationalityKey}" selected="selected">{$nationalityItem}</option>
+								{else}
+									{if $nationalityKey == "selected" || !isset($nationalityItem)}
+										<option value=""> ... </option>
+									{else}
+							  			<option value="{$nationalityKey}">{$nationalityItem}</option>
+							  		{/if}
+							  	{/if}
+						  	{/foreach}
+				  		</select>
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						استان:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<select id="mProvience" name="mProvience">
+							{foreach name=state key=stateKey item=stateItem from=$state}
+								{if $stateKey == $state.selected}
+									<option value="{$stateKey}" selected="selected">{$stateItem}</option>
+								{else}
+									{if $stateKey == "selected" || !isset($stateItem)}
+										<option value=""> ... </option>
+									{else}
+							  			<option value="{$stateKey}">{$stateItem}</option>
+							  		{/if}
+							  	{/if}
+						  	{/foreach}
+				  		</select>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+			
+			<div class="even">
+				<div class="row cell10">
+					<div class="paddy">
+						شهر:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<select id="mCity" name="mCity">
+							{foreach name=city key=cityKey item=cityItem from=$city}
+								{if $cityKey == $city.selected}
+									<option value="{$cityKey}" selected="selected">{$cityItem}</option>
+								{else}
+									{if $cityKey == "selected" || !isset($cityItem)}
+										<option value=""> ... </option>
+									{else}
+							  			<option value="{$cityKey}">{$cityItem}</option>
+							  		{/if}
+							  	{/if}
+						  	{/foreach}
+				  		</select>
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						آدرس:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<textarea id="mAddress" name="mAddress" rows="3" cols="20"></textarea>
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						* رایانامه:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="mEmail" name="mEmail" class="input" type="text" size="20" maxlength="100">
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+			
+			<div class="odd curvedBottom">
+				<div class="row cell10">
+					<div class="paddy">
+						* تلفن:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="mPhoneNumber" name="mPhoneNumber" class="input" type="text" size="20" maxlength="8"> - <input id="mPhoneCode" name="mPhoneCode" class="input" type="text" size="3" maxlength="4">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						* موبایل:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="mMobile" name="mMobile" class="input" type="text" size="20" maxlength="11">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						فکس:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="mFax" name="mFax" class="input" type="text" size="20" maxlength="8">
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+		</div>
+		<img src="theme/{$settings.theme}/img/shadow.png">
+	</div>
+	<div id="expert" style="display: none;">
+		<div class="boxShadow curvedFull paddy" style="background: #e7e7e7;">
+			<h2>کارشناس</h2>
+			<br>
+			<div class="odd curvedTop">
+				<div class="row cell10">
+					<div class="paddy">
+						* نام:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="eName" name="eName" class="input" type="text" size="20" maxlength="100">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						* نام خانوادگی:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="eLastName" name="eLastName" class="input" type="text" size="20" maxlength="100">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						نام پدر:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="eFatherName" name="eFatherName" class="input" type="text" size="20" maxlength="100">
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+			
+			<div class="even">
+				<div class="row cell10">
+					<div class="paddy">
+						ش.ش:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="eIdNo" name="eIdNo" class="input" type="text" size="20" maxlength="11">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						* کد ملی:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="eNationalNumber" name="eNationalNumber" class="input" type="text" size="20" maxlength="11">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						تاریخ تولد:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<select id="eStartDay" name="eStartDay">
+							<option value=""> ... </option>
+							{section name=startDay start=1 loop=32}
+							<option value="{$smarty.section.startDay.iteration}">{$smarty.section.startDay.iteration}</option>
+							{/section}
+						</select>
+						<select id="eStartMonth" name="eStartMonth">
+							<option value=""> ... </option>
+							{section name=startMonth start=1 loop=13}
+							<option value="{$smarty.section.startMonth.iteration}">{$smarty.section.startMonth.iteration}</option>
+							{/section}
+						</select>
+						<select id="eStartYear" name="eStartYear">
+							<option value=""> ... </option>
+							{section name=startYear start=1338 loop=1373}
+							<option value="{$smarty.section.startYear.index}">{$smarty.section.startYear.index}</option>
+							{/section}
+						</select>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+			
+			<div class="odd">
+				<div class="row cell10">
+					<div class="paddy">
+						محل تولد:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<select id="eIssue" name="eIssue">
+							{foreach name=city key=cityKey item=cityItem from=$city}
+								{if $cityKey == $city.selected}
+									<option value="{$cityKey}" selected="selected">{$cityItem}</option>
+								{else}
+									{if $cityKey == "selected" || !isset($cityItem)}
+										<option value=""> ... </option>
+									{else}
+							  			<option value="{$cityKey}">{$cityItem}</option>
+							  		{/if}
+							  	{/if}
+						  	{/foreach}
+				  		</select>
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						ملیت:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<select id="eNationality" name="eNationality">
+							{foreach name=nationality key=nationalityKey item=nationalityItem from=$countries}
+								{if $nationalityKey == $countries.selected}
+									<option value="{$nationalityKey}" selected="selected">{$nationalityItem}</option>
+								{else}
+									{if $nationalityKey == "selected" || !isset($nationalityItem)}
+										<option value=""> ... </option>
+									{else}
+							  			<option value="{$nationalityKey}">{$nationalityItem}</option>
+							  		{/if}
+							  	{/if}
+						  	{/foreach}
+				  		</select>
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						استان:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<select id="eProvience" name="eProvience">
+							{foreach name=state key=stateKey item=stateItem from=$state}
+								{if $stateKey == $state.selected}
+									<option value="{$stateKey}" selected="selected">{$stateItem}</option>
+								{else}
+									{if $stateKey == "selected" || !isset($stateItem)}
+										<option value=""> ... </option>
+									{else}
+							  			<option value="{$stateKey}">{$stateItem}</option>
+							  		{/if}
+							  	{/if}
+						  	{/foreach}
+				  		</select>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+			
+			<div class="even">
+				<div class="row cell10">
+					<div class="paddy">
+						شهر:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<select id="eCity" name="eCity">
+							{foreach name=city key=cityKey item=cityItem from=$city}
+								{if $cityKey == $city.selected}
+									<option value="{$cityKey}" selected="selected">{$cityItem}</option>
+								{else}
+									{if $cityKey == "selected" || !isset($cityItem)}
+										<option value=""> ... </option>
+									{else}
+							  			<option value="{$cityKey}">{$cityItem}</option>
+							  		{/if}
+							  	{/if}
+						  	{/foreach}
+				  		</select>
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						آدرس:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<textarea id="oAddress" name="oAddress" rows="3" cols="20"></textarea>
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						* رایانامه:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="eEmail" name="eEmail" class="input" type="text" size="20" maxlength="100">
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+			
+			<div class="odd curvedBottom">
+				<div class="row cell10">
+					<div class="paddy">
+						* تلفن:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="ePhoneNumber" name="ePhoneNumber" class="input" type="text" size="20" maxlength="8"> - <input id="ePhoneCode" name="ePhoneCode" class="input" type="text" size="3" maxlength="4">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						* موبایل:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="eMobile" name="eMobile" class="input" type="text" size="20" maxlength="11">
+					</div>
+				</div>
+				<div class="row cell5">&nbsp;</div>
+				<div class="row cell10">
+					<div class="paddy">
+						فکس:
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="paddy">
+						<input id="eFax" name="eFax" class="input" type="text" size="20" maxlength="8">
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+		</div>
+		<img src="theme/{$settings.theme}/img/shadow.png">
+	</div>
+	<div id="portals" style="display: none;"> 
+		<div class="boxShadow curvedFull paddy" style="background: #e7e7e7;">
+			<h2>پورتال ها</h2>
+			<br>
+			<fieldset id="portal1" class="curvedFull">
+				<legend>پورتال ۱</legend>
+				<div class="odd curvedTop">
+					<div class="row cell10">
+						<div class="paddy">
+							* نام:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pName1" name="pName1" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							* آدرس وب:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pUrl1" name="pUrl1" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							* اولویت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pPriority1" name="pPriority1">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+								<option value="7"> 7 </option>
+								<option value="8"> 8 </option>
+								<option value="9"> 9 </option>
+								<option value="10"> 10 </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="even">
+					<div class="row cell10">
+						<div class="paddy">
+							* زمینه کاری:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pField1" name="pField1" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							* نوع خدمت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pServiceType1" name="pServiceType1">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							* نرم افزار:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pSoftware1" name="pSoftware1">
+								<option value=""> ... </option>
+								<option value="1"> پورتال </option>
+								<option value="2"> وبسایت </option>
+								<option value="3"> وبگاه </option>
+								<option value="4"> اتوماسیون </option>
+								<option value="5"> ایمیل </option>
+								<option value="6"> ارتباط با مشتریان </option>
+								<option value="7"> مالی و حسابداری </option>
+								<option value="8"> خدمات ابری </option>
+								<option value="9"> دیگر موارد </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="odd curvedBottom">
+					<div class="row cell10">
+						<div class="paddy">
+							* بانک اطلاعاتی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pDb1" name="pDb1">
+								<option value=""> ... </option>
+								<option value="1"> Oracle </option>
+								<option value="2"> DB2 </option>
+								<option value="3"> Mysql </option>
+								<option value="4"> Postgresql </option>
+								<option value="5"> Sqlserver </option>
+								<option value="6"> Other </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							* میزبانی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pHost1" name="pHost1">
+								<option value=""> ... </option>
+								<option value="1"> داخلی </option>
+								<option value="2"> خارجی </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+			</fieldset>
+			<fieldset id="portal2" class="curvedFull">
+				<legend>پورتال ۲</legend>
+				<div class="odd curvedTop">
+					<div class="row cell10">
+						<div class="paddy">
+							نام:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pName2" name="pName2" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							آدرس وب:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pUrl2" name="pUrl2" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							اولویت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pPriority2" name="pPriority2">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+								<option value="7"> 7 </option>
+								<option value="8"> 8 </option>
+								<option value="9"> 9 </option>
+								<option value="10"> 10 </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="even">
+					<div class="row cell10">
+						<div class="paddy">
+							زمینه کاری:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pField2" name="pField2" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نوع خدمت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pServiceType2" name="pServiceType2">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نرم افزار:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pSoftware2" name="pSoftware2">
+								<option value=""> ... </option>
+								<option value="1"> پورتال </option>
+								<option value="2"> وبسایت </option>
+								<option value="3"> وبگاه </option>
+								<option value="4"> اتوماسیون </option>
+								<option value="5"> ایمیل </option>
+								<option value="6"> ارتباط با مشتریان </option>
+								<option value="7"> مالی و حسابداری </option>
+								<option value="8"> خدمات ابری </option>
+								<option value="9"> دیگر موارد </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="odd curvedBottom">
+					<div class="row cell10">
+						<div class="paddy">
+							بانک اطلاعاتی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pDb2" name="pDb2">
+								<option value=""> ... </option>
+								<option value="1"> Oracle </option>
+								<option value="2"> DB2 </option>
+								<option value="3"> Mysql </option>
+								<option value="4"> Postgresql </option>
+								<option value="5"> Sqlserver </option>
+								<option value="6"> Other </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							میزبانی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pHost1" name="pHost1">
+								<option value=""> ... </option>
+								<option value="1"> داخلی </option>
+								<option value="2"> خارجی </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+			</fieldset>
+			<fieldset id="portal3" class="curvedFull">
+				<legend>پورتال ۳</legend>
+				<div class="odd curvedTop">
+					<div class="row cell10">
+						<div class="paddy">
+							نام:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pName3" name="pName3" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							آدرس وب:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pUrl3" name="pUrl3" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							اولویت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pPriority3" name="pPriority3">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+								<option value="7"> 7 </option>
+								<option value="8"> 8 </option>
+								<option value="9"> 9 </option>
+								<option value="10"> 10 </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="even">
+					<div class="row cell10">
+						<div class="paddy">
+							زمینه کاری:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pField3" name="pField3" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نوع خدمت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pServiceType3" name="pServiceType3">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نرم افزار:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pSoftware3" name="pSoftware3">
+								<option value=""> ... </option>
+								<option value="1"> پورتال </option>
+								<option value="2"> وبسایت </option>
+								<option value="3"> وبگاه </option>
+								<option value="4"> اتوماسیون </option>
+								<option value="5"> ایمیل </option>
+								<option value="6"> ارتباط با مشتریان </option>
+								<option value="7"> مالی و حسابداری </option>
+								<option value="8"> خدمات ابری </option>
+								<option value="9"> دیگر موارد </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="odd curvedBottom">
+					<div class="row cell10">
+						<div class="paddy">
+							بانک اطلاعاتی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pDb3" name="pDb3">
+								<option value=""> ... </option>
+								<option value="1"> Oracle </option>
+								<option value="2"> DB2 </option>
+								<option value="3"> Mysql </option>
+								<option value="4"> Postgresql </option>
+								<option value="5"> Sqlserver </option>
+								<option value="6"> Other </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							میزبانی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pHost1" name="pHost1">
+								<option value=""> ... </option>
+								<option value="1"> داخلی </option>
+								<option value="2"> خارجی </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+			</fieldset>
+			<fieldset id="portal4" class="curvedFull">
+				<legend>پورتال ۴</legend>
+				<div class="odd curvedTop">
+					<div class="row cell10">
+						<div class="paddy">
+							نام:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pName4" name="pName4" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							آدرس وب:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pUrl4" name="pUrl4" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							اولویت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pPriority4" name="pPriority4">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+								<option value="7"> 7 </option>
+								<option value="8"> 8 </option>
+								<option value="9"> 9 </option>
+								<option value="10"> 10 </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="even">
+					<div class="row cell10">
+						<div class="paddy">
+							زمینه کاری:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pField4" name="pField4" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نوع خدمت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pServiceType4" name="pServiceType4">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نرم افزار:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pSoftware4" name="pSoftware4">
+								<option value=""> ... </option>
+								<option value="1"> پورتال </option>
+								<option value="2"> وبسایت </option>
+								<option value="3"> وبگاه </option>
+								<option value="4"> اتوماسیون </option>
+								<option value="5"> ایمیل </option>
+								<option value="6"> ارتباط با مشتریان </option>
+								<option value="7"> مالی و حسابداری </option>
+								<option value="8"> خدمات ابری </option>
+								<option value="9"> دیگر موارد </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="odd curvedBottom">
+					<div class="row cell10">
+						<div class="paddy">
+							بانک اطلاعاتی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pDb4" name="pDb4">
+								<option value=""> ... </option>
+								<option value="1"> Oracle </option>
+								<option value="2"> DB2 </option>
+								<option value="3"> Mysql </option>
+								<option value="4"> Postgresql </option>
+								<option value="5"> Sqlserver </option>
+								<option value="6"> Other </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							میزبانی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pHost1" name="pHost1">
+								<option value=""> ... </option>
+								<option value="1"> داخلی </option>
+								<option value="2"> خارجی </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+			</fieldset>
+			<fieldset id="portal5" class="curvedFull">
+				<legend>پورتال ۵</legend>
+				<div class="odd curvedTop">
+					<div class="row cell10">
+						<div class="paddy">
+							نام:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pName5" name="pName5" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							آدرس وب:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pUrl5" name="pUrl5" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							اولویت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pPriority5" name="pPriority5">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+								<option value="7"> 7 </option>
+								<option value="8"> 8 </option>
+								<option value="9"> 9 </option>
+								<option value="10"> 10 </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="even">
+					<div class="row cell10">
+						<div class="paddy">
+							زمینه کاری:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pField5" name="pField5" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نوع خدمت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pServiceType5" name="pServiceType5">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نرم افزار:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pSoftware5" name="pSoftware5">
+								<option value=""> ... </option>
+								<option value="1"> پورتال </option>
+								<option value="2"> وبسایت </option>
+								<option value="3"> وبگاه </option>
+								<option value="4"> اتوماسیون </option>
+								<option value="5"> ایمیل </option>
+								<option value="6"> ارتباط با مشتریان </option>
+								<option value="7"> مالی و حسابداری </option>
+								<option value="8"> خدمات ابری </option>
+								<option value="9"> دیگر موارد </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="odd curvedBottom">
+					<div class="row cell10">
+						<div class="paddy">
+							بانک اطلاعاتی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pDb5" name="pDb5">
+								<option value=""> ... </option>
+								<option value="1"> Oracle </option>
+								<option value="2"> DB2 </option>
+								<option value="3"> Mysql </option>
+								<option value="4"> Postgresql </option>
+								<option value="5"> Sqlserver </option>
+								<option value="6"> Other </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							میزبانی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pHost1" name="pHost1">
+								<option value=""> ... </option>
+								<option value="1"> داخلی </option>
+								<option value="2"> خارجی </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+			</fieldset>
+			<fieldset id="portal6" class="curvedFull">
+				<legend>پورتال ۶</legend>
+				<div class="odd curvedTop">
+					<div class="row cell10">
+						<div class="paddy">
+							نام:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pName6" name="pName6" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							آدرس وب:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pUrl6" name="pUrl6" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							اولویت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pPriority6" name="pPriority6">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+								<option value="7"> 7 </option>
+								<option value="8"> 8 </option>
+								<option value="9"> 9 </option>
+								<option value="10"> 10 </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="even">
+					<div class="row cell10">
+						<div class="paddy">
+							زمینه کاری:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pField6" name="pField6" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نوع خدمت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pServiceType6" name="pServiceType6">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نرم افزار:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pSoftware6" name="pSoftware6">
+								<option value=""> ... </option>
+								<option value="1"> پورتال </option>
+								<option value="2"> وبسایت </option>
+								<option value="3"> وبگاه </option>
+								<option value="4"> اتوماسیون </option>
+								<option value="5"> ایمیل </option>
+								<option value="6"> ارتباط با مشتریان </option>
+								<option value="7"> مالی و حسابداری </option>
+								<option value="8"> خدمات ابری </option>
+								<option value="9"> دیگر موارد </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="odd curvedBottom">
+					<div class="row cell10">
+						<div class="paddy">
+							بانک اطلاعاتی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pDb6" name="pDb6">
+								<option value=""> ... </option>
+								<option value="1"> Oracle </option>
+								<option value="2"> DB2 </option>
+								<option value="3"> Mysql </option>
+								<option value="4"> Postgresql </option>
+								<option value="5"> Sqlserver </option>
+								<option value="6"> Other </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							میزبانی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pHost6" name="pHost6" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+			</fieldset>
+			<fieldset id="portal7" class="curvedFull">
+				<legend>پورتال ۷</legend>
+				<div class="odd curvedTop">
+					<div class="row cell10">
+						<div class="paddy">
+							نام:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pName7" name="pName7" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							آدرس وب:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pUrl7" name="pUrl7" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							اولویت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pPriority7" name="pPriority7">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+								<option value="7"> 7 </option>
+								<option value="8"> 8 </option>
+								<option value="9"> 9 </option>
+								<option value="10"> 10 </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="even">
+					<div class="row cell10">
+						<div class="paddy">
+							زمینه کاری:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pField7" name="pField7" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نوع خدمت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pServiceType7" name="pServiceType7">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نرم افزار:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pSoftware7" name="pSoftware7">
+								<option value=""> ... </option>
+								<option value="1"> پورتال </option>
+								<option value="2"> وبسایت </option>
+								<option value="3"> وبگاه </option>
+								<option value="4"> اتوماسیون </option>
+								<option value="5"> ایمیل </option>
+								<option value="6"> ارتباط با مشتریان </option>
+								<option value="7"> مالی و حسابداری </option>
+								<option value="8"> خدمات ابری </option>
+								<option value="9"> دیگر موارد </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="odd curvedBottom">
+					<div class="row cell10">
+						<div class="paddy">
+							بانک اطلاعاتی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pDb7" name="pDb7">
+								<option value=""> ... </option>
+								<option value="1"> Oracle </option>
+								<option value="2"> DB2 </option>
+								<option value="3"> Mysql </option>
+								<option value="4"> Postgresql </option>
+								<option value="5"> Sqlserver </option>
+								<option value="6"> Other </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							میزبانی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pHost7" name="pHost7" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+			</fieldset>
+			<fieldset id="portal8" class="curvedFull">
+				<legend>پورتال ۸</legend>
+				<div class="odd curvedTop">
+					<div class="row cell10">
+						<div class="paddy">
+							نام:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pName8" name="pName8" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							آدرس وب:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pUrl8" name="pUrl8" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							اولویت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pPriority8" name="pPriority8">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+								<option value="7"> 7 </option>
+								<option value="8"> 8 </option>
+								<option value="9"> 9 </option>
+								<option value="10"> 10 </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="even">
+					<div class="row cell10">
+						<div class="paddy">
+							زمینه کاری:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pField8" name="pField8" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نوع خدمت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pServiceType8" name="pServiceType8">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نرم افزار:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pSoftware8" name="pSoftware8">
+								<option value=""> ... </option>
+								<option value="1"> پورتال </option>
+								<option value="2"> وبسایت </option>
+								<option value="3"> وبگاه </option>
+								<option value="4"> اتوماسیون </option>
+								<option value="5"> ایمیل </option>
+								<option value="6"> ارتباط با مشتریان </option>
+								<option value="7"> مالی و حسابداری </option>
+								<option value="8"> خدمات ابری </option>
+								<option value="9"> دیگر موارد </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="odd curvedBottom">
+					<div class="row cell10">
+						<div class="paddy">
+							بانک اطلاعاتی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pDb8" name="pDb8">
+								<option value=""> ... </option>
+								<option value="1"> Oracle </option>
+								<option value="2"> DB2 </option>
+								<option value="3"> Mysql </option>
+								<option value="4"> Postgresql </option>
+								<option value="5"> Sqlserver </option>
+								<option value="6"> Other </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							میزبانی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pHost8" name="pHost8" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+			</fieldset>
+			<fieldset id="portal9" class="curvedFull">
+				<legend>پورتال ۹</legend>
+				<div class="odd curvedTop">
+					<div class="row cell10">
+						<div class="paddy">
+							نام:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pName9" name="pName9" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							آدرس وب:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pUrl9" name="pUrl9" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							اولویت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pPriority9" name="pPriority9">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+								<option value="7"> 7 </option>
+								<option value="8"> 8 </option>
+								<option value="9"> 9 </option>
+								<option value="10"> 10 </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="even">
+					<div class="row cell10">
+						<div class="paddy">
+							زمینه کاری:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pField9" name="pField9" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نوع خدمت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pServiceType9" name="pServiceType9">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نرم افزار:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pSoftware9" name="pSoftware9">
+								<option value=""> ... </option>
+								<option value="1"> پورتال </option>
+								<option value="2"> وبسایت </option>
+								<option value="3"> وبگاه </option>
+								<option value="4"> اتوماسیون </option>
+								<option value="5"> ایمیل </option>
+								<option value="6"> ارتباط با مشتریان </option>
+								<option value="7"> مالی و حسابداری </option>
+								<option value="8"> خدمات ابری </option>
+								<option value="9"> دیگر موارد </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="odd curvedBottom">
+					<div class="row cell10">
+						<div class="paddy">
+							بانک اطلاعاتی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pDb9" name="pDb9">
+								<option value=""> ... </option>
+								<option value="1"> Oracle </option>
+								<option value="2"> DB2 </option>
+								<option value="3"> Mysql </option>
+								<option value="4"> Postgresql </option>
+								<option value="5"> Sqlserver </option>
+								<option value="6"> Other </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							میزبانی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pHost9" name="pHost9" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+			</fieldset>
+			<fieldset id="portal10" class="curvedFull">
+				<legend>پورتال ۱۰</legend>
+				<div class="odd curvedTop">
+					<div class="row cell10">
+						<div class="paddy">
+							نام:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pName10" name="pName10" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							آدرس وب:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pUrl10" name="pUrl10" class="input" type="text" size="20" maxlength="200">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							اولویت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pPriority10" name="pPriority10">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+								<option value="7"> 7 </option>
+								<option value="8"> 8 </option>
+								<option value="9"> 9 </option>
+								<option value="10"> 10 </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="even">
+					<div class="row cell10">
+						<div class="paddy">
+							زمینه کاری:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pField10" name="pField10" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نوع خدمت:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pServiceType10" name="pServiceType10">
+								<option value=""> ... </option>
+								<option value="1"> 1 </option>
+								<option value="2"> 2 </option>
+								<option value="3"> 3 </option>
+								<option value="4"> 4 </option>
+								<option value="5"> 5 </option>
+								<option value="6"> 6 </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							نرم افزار:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pSoftware10" name="pSoftware10">
+								<option value=""> ... </option>
+								<option value="1"> پورتال </option>
+								<option value="2"> وبسایت </option>
+								<option value="3"> وبگاه </option>
+								<option value="4"> اتوماسیون </option>
+								<option value="5"> ایمیل </option>
+								<option value="6"> ارتباط با مشتریان </option>
+								<option value="7"> مالی و حسابداری </option>
+								<option value="8"> خدمات ابری </option>
+								<option value="9"> دیگر موارد </option>
+							</select>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+				
+				<div class="odd curvedBottom">
+					<div class="row cell10">
+						<div class="paddy">
+							بانک اطلاعاتی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<select id="pDb10" name="pDb10">
+								<option value=""> ... </option>
+								<option value="1"> Oracle </option>
+								<option value="2"> DB2 </option>
+								<option value="3"> Mysql </option>
+								<option value="4"> Postgresql </option>
+								<option value="5"> Sqlserver </option>
+								<option value="6"> Other </option>
+							</select>
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							میزبانی:
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							<input id="pHost10" name="pHost10" class="input" type="text" size="20" maxlength="400">
+						</div>
+					</div>
+					<div class="row cell5">&nbsp;</div>
+					<div class="row cell10">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<div class="row cell20">
+						<div class="paddy">
+							&nbsp;
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+			</fieldset>
+		</div>
+		<img src="theme/{$settings.theme}/img/shadow.png">
+	</div>
+	<div style="text-align: center;">
+	<button style="padding: 20px 60px;" onclick="
+		$('#content').farajax('loader', '/post/c_addObject', 
+			   'oName=' + document.getElementById('oName').value + '::نام سازمان<>Multi<>1<>ce<>200' +
+			   '&oParent=' + document.getElementById('oParent').value + '::سازمان تابعه<>Multi<>1<>nce<>200' +
+			   '&oMinistry=' + getText('oMinistry') + '::وزارتخانه<>Multi<>1<>nce<>200' +
+			   '&oField=' + document.getElementById('oField').value + '::زمینه کاری سازمان<>Multi<>1<>nce<>400' +
+			   '&oNationalCode=' + document.getElementById('oNationalCode').value + '::شناسه ملی<>Number<>1<>nce<>11' +
+			   '&oAddress=' + document.getElementById('oAddress').value + '::آدرس سازمان<>Multi<>1<>nce<>400' +
+			   '&oState=' + document.getElementById('oState').value + '::استان سازمان<>Number<>1<>nce<>11' +
+			   '&oCity=' + document.getElementById('oCity').value + '::شهر سازمان<>Number<>1<>nce<>11' +
+			   '&oZipCode=' + document.getElementById('oZipCode').value + '::کدپستی سازمان<>Number<>1<>nce<>10' +
+			   
+			   '&mName=' + document.getElementById('mName').value + '::نام مدیر<>Multi<>1<>ce<>100' +
+			   '&mLastName=' + document.getElementById('mLastName').value + '::نام خانوادگی مدیر<>Multi<>1<>ce<>100' +
+			   '&mFatherName=' + document.getElementById('mFatherName').value + '::نام پدر مدیر<>Multi<>1<>ce<>100' +
+			   '&mIdNo=' + document.getElementById('mIdNo').value + '::شماره شناسنامه مدیر<>Number<>1<>ce<>11' +
+			   '&mNationalNumber=' + document.getElementById('mNationalNumber').value + '::کدملی مدیر<>Number<>1<>ce<>11' +
+			   '&mStartDay=' + document.getElementById('mStartDay').value + '::روز تولد مدیر<>Multi<>1<>nce<>2' +
+			   '&mStartMonth=' + document.getElementById('mStartMonth').value + '::ماه تولد مدیر<>Multi<>1<>nce<>2' +
+			   '&mStartYear=' + document.getElementById('mStartYear').value + '::سال تولد مدیر<>Multi<>1<>nce<>4' +
+			   '&mCity=' + document.getElementById('mCity').value + '::شهر مدیر<>Number<>1<>nce<>11' +
+			   '&mIssue=' + document.getElementById('mIssue').value + '::محل تولد مدیر<>Number<>1<>nce<>10' +
+			   '&mNationality=' + document.getElementById('mNationality').value + '::ملیت مدیر<>Number<>1<>ce<>10' +
+			   '&mProvience=' + document.getElementById('mProvience').value + '::استان مدیر<>Number<>1<>ce<>10' +
+			   '&mCity=' + document.getElementById('mCity').value + '::شهر مدیر<>Multi<>1<>ce<>10' +
+			   '&mAddress=' + document.getElementById('mAddress').value + '::آدرس مدیر<>Multi<>1<>nce<>400' +
+			   '&mEmail=' + document.getElementById('mEmail').value + '::ایمیل مدیر<>Mail<>1<>ce<>100' +
+			   '&mPhoneNumber=' + document.getElementById('mPhoneNumber').value + '::تلفن مدیر<>Number<>1<>nce<>8' +
+			   '&mPhoneCode=' + document.getElementById('mPhoneCode').value + '::کد تلفن مدیر<>Number<>1<>nce<>4' +
+			   '&mMobile=' + document.getElementById('mMobile').value + '::موبایل مدیر<>Number<>1<>nce<>11' +
+			   '&mFax=' + document.getElementById('mFax').value + '::فکس مدیر<>Number<>1<>nce<>10' +
+			   
+			   '&eName=' + document.getElementById('eName').value + '::نام کارشناس<>Multi<>1<>ce<>100' +
+			   '&eLastName=' + document.getElementById('eLastName').value + '::نام خانوادگی کارشناس<>Multi<>1<>ce<>100' +
+			   '&eFatherName=' + document.getElementById('eFatherName').value + '::نام پدر کارشناس<>Multi<>1<>ce<>100' +
+			   '&eIdNo=' + document.getElementById('eIdNo').value + '::شماره شناسنامه کارشناس<>Number<>1<>ce<>11' +
+			   '&eNationalNumber=' + document.getElementById('eNationalNumber').value + '::کدملی کارشناس<>Number<>1<>ce<>11' +
+			   '&eStartDay=' + document.getElementById('eStartDay').value + '::روز تولد کارشناس<>Multi<>1<>nce<>2' +
+			   '&eStartMonth=' + document.getElementById('eStartMonth').value + '::ماه تولد کارشناس<>Multi<>1<>nce<>2' +
+			   '&eStartYear=' + document.getElementById('eStartYear').value + '::سال تولد کارشناس<>Multi<>1<>nce<>4' +
+			   '&eCity=' + document.getElementById('eCity').value + '::شهر کارشناس<>Number<>1<>nce<>11' +
+			   '&eIssue=' + document.getElementById('eIssue').value + '::محل تولد کارشناس<>Number<>1<>nce<>10' +
+			   '&eNationality=' + document.getElementById('eNationality').value + '::ملیت کارشناس<>Number<>1<>ce<>10' +
+			   '&eProvience=' + document.getElementById('eProvience').value + '::استان کارشناس<>Number<>1<>ce<>10' +
+			   '&eCity=' + document.getElementById('eCity').value + '::شهر کارشناس<>Multi<>1<>ce<>10' +
+			   '&eAddress=' + document.getElementById('eAddress').value + '::آدرس کارشناس<>Multi<>1<>nce<>400' +
+			   '&eEmail=' + document.getElementById('eEmail').value + '::ایمیل کارشناس<>Mail<>1<>ce<>100' +
+			   '&ePhoneNumber=' + document.getElementById('ePhoneNumber').value + '::تلفن کارشناس<>Number<>1<>nce<>8' +
+			   '&ePhoneCode=' + document.getElementById('ePhoneCode').value + '::کد تلفن کارشناس<>Number<>1<>nce<>4' +
+			   '&eMobile=' + document.getElementById('eMobile').value + '::موبایل کارشناس<>Number<>1<>nce<>11' +
+			   '&eFax=' + document.getElementById('eFax').value + '::فکس کارشناس<>Number<>1<>nce<>10' +
+			   
+			   '&pName1=' + document.getElementById('pName1').value + '::نام پورتال ۱<>Multi<>1<>ce<>200' +
+			   '&pUrl1=' + document.getElementById('pUrl1').value + '::آدرس وب پورتال ۱<>Multi<>1<>ce<>200' +
+			   '&pPriority1=' + document.getElementById('pPriority1').value + '::اولویت پورتال ۱<>Number<>1<>ce<>2' +
+			   '&pField1=' + document.getElementById('pField1').value + '::زمینه فعالیت پورتال ۱<>Multi<>1<>ce<>400' +
+			   '&pServiceType1=' + document.getElementById('pServiceType1').value + '::نوع خدمات رسانی پورتال ۱<>Number<>1<>ce<>2' +
+			   '&pSoftware1=' + document.getElementById('pSoftware1').value + '::نرم افزار پورتال ۱<>Number<>1<>ce<>2' +
+			   '&pDb1=' + document.getElementById('pDb1').value + '::بانک اطلاعات پورتال ۱<>Number<>1<>ce<>2' +
+			   '&pHost1=' + document.getElementById('pHost1').value + '::میزبانی پورتال ۱<>Multi<>1<>nce<>400' +
+			   
+			   '&pName2=' + document.getElementById('pName2').value + '::نام پورتال ۲<>Multi<>1<>ce<>200' +
+			   '&pUrl2=' + document.getElementById('pUrl2').value + '::آدرس وب پورتال ۲<>Multi<>1<>ce<>200' +
+			   '&pPriority2=' + document.getElementById('pPriority2').value + '::اولویت پورتال ۲<>Number<>1<>ce<>2' +
+			   '&pField2=' + document.getElementById('pField2').value + '::زمینه فعالیت پورتال ۲<>Multi<>1<>ce<>400' +
+			   '&pServiceType2=' + document.getElementById('pServiceType2').value + '::نوع خدمات رسانی پورتال ۲<>Number<>1<>ce<>2' +
+			   '&pSoftware2=' + document.getElementById('pSoftware2').value + '::نرم افزار پورتال ۲<>Number<>1<>ce<>2' +
+			   '&pDb2=' + document.getElementById('pDb2').value + '::بانک اطلاعات پورتال ۲<>Number<>1<>ce<>2' +
+			   '&pHost2=' + document.getElementById('pHost2').value + '::میزبانی پورتال ۲<>Multi<>1<>nce<>400' +
+			   
+			   '&pName3=' + document.getElementById('pName3').value + '::نام پورتال ۳<>Multi<>1<>ce<>200' +
+			   '&pUrl3=' + document.getElementById('pUrl3').value + '::آدرس وب پورتال ۳<>Multi<>1<>ce<>200' +
+			   '&pPriority3=' + document.getElementById('pPriority3').value + '::اولویت پورتال ۳<>Number<>1<>ce<>2' +
+			   '&pField3=' + document.getElementById('pField3').value + '::زمینه فعالیت پورتال ۳<>Multi<>1<>ce<>400' +
+			   '&pServiceType3=' + document.getElementById('pServiceType3').value + '::نوع خدمات رسانی پورتال ۳<>Number<>1<>ce<>2' +
+			   '&pSoftware3=' + document.getElementById('pSoftware3').value + '::نرم افزار پورتال ۳<>Number<>1<>ce<>2' +
+			   '&pDb3=' + document.getElementById('pDb3').value + '::بانک اطلاعات پورتال ۳<>Number<>1<>ce<>2' +
+			   '&pHost3=' + document.getElementById('pHost3').value + '::میزبانی پورتال ۳<>Multi<>1<>nce<>400' +
+			   
+			   '&pName4=' + document.getElementById('pName4').value + '::نام پورتال ۴<>Multi<>1<>ce<>200' +
+			   '&pUrl4=' + document.getElementById('pUrl4').value + '::آدرس وب پورتال ۴<>Multi<>1<>ce<>200' +
+			   '&pPriority4=' + document.getElementById('pPriority4').value + '::اولویت پورتال ۴<>Number<>1<>ce<>2' +
+			   '&pField4=' + document.getElementById('pField4').value + '::زمینه فعالیت پورتال ۴<>Multi<>1<>ce<>400' +
+			   '&pServiceType4=' + document.getElementById('pServiceType4').value + '::نوع خدمات رسانی پورتال ۴<>Number<>1<>ce<>2' +
+			   '&pSoftware4=' + document.getElementById('pSoftware4').value + '::نرم افزار پورتال ۴<>Number<>1<>ce<>2' +
+			   '&pDb4=' + document.getElementById('pDb4').value + '::بانک اطلاعات پورتال ۴<>Number<>1<>ce<>2' +
+			   '&pHost4=' + document.getElementById('pHost4').value + '::میزبانی پورتال ۴<>Multi<>1<>nce<>400' +
+			   
+			   '&pName5=' + document.getElementById('pName1').value + '::نام پورتال ۵<>Multi<>1<>ce<>200' +
+			   '&pUrl5=' + document.getElementById('pUrl5').value + '::آدرس وب پورتال ۵<>Multi<>1<>ce<>200' +
+			   '&pPriority5=' + document.getElementById('pPriority5').value + '::اولویت پورتال ۵<>Number<>1<>ce<>2' +
+			   '&pField5=' + document.getElementById('pField5').value + '::زمینه فعالیت پورتال ۵<>Multi<>1<>ce<>400' +
+			   '&pServiceType5=' + document.getElementById('pServiceType5').value + '::نوع خدمات رسانی پورتال ۵<>Number<>1<>ce<>2' +
+			   '&pSoftware5=' + document.getElementById('pSoftware5').value + '::نرم افزار پورتال ۵<>Number<>1<>ce<>2' +
+			   '&pDb5=' + document.getElementById('pDb5').value + '::بانک اطلاعات پورتال ۵<>Number<>1<>ce<>2' +
+			   '&pHost5=' + document.getElementById('pHost5').value + '::میزبانی پورتال ۵<>Multi<>1<>nce<>400' +
+			   
+			   '&pName6=' + document.getElementById('pName6').value + '::نام پورتال ۶<>Multi<>1<>ce<>200' +
+			   '&pUrl6=' + document.getElementById('pUrl6').value + '::آدرس وب پورتال ۶<>Multi<>1<>ce<>200' +
+			   '&pPriority6=' + document.getElementById('pPriority6').value + '::اولویت پورتال ۶<>Number<>1<>ce<>2' +
+			   '&pField6=' + document.getElementById('pField6').value + '::زمینه فعالیت پورتال ۶<>Multi<>1<>ce<>400' +
+			   '&pServiceType6=' + document.getElementById('pServiceType6').value + '::نوع خدمات رسانی پورتال ۶<>Number<>1<>ce<>2' +
+			   '&pSoftware6=' + document.getElementById('pSoftware6').value + '::نرم افزار پورتال ۶<>Number<>1<>ce<>2' +
+			   '&pDb6=' + document.getElementById('pDb6').value + '::بانک اطلاعات پورتال ۶<>Number<>1<>ce<>2' +
+			   '&pHost6=' + document.getElementById('pHost6').value + '::میزبانی پورتال ۶<>Multi<>1<>nce<>400' +
+			   
+			   '&pName7=' + document.getElementById('pName7').value + '::نام پورتال ۷<>Multi<>1<>ce<>200' +
+			   '&pUrl7=' + document.getElementById('pUrl7').value + '::آدرس وب پورتال ۷<>Multi<>1<>ce<>200' +
+			   '&pPriority7=' + document.getElementById('pPriority7').value + '::اولویت پورتال ۷<>Number<>1<>ce<>2' +
+			   '&pField7=' + document.getElementById('pField7').value + '::زمینه فعالیت پورتال ۷<>Multi<>1<>ce<>400' +
+			   '&pServiceType7=' + document.getElementById('pServiceType7').value + '::نوع خدمات رسانی پورتال ۷<>Number<>1<>ce<>2' +
+			   '&pSoftware7=' + document.getElementById('pSoftware7').value + '::نرم افزار پورتال ۷<>Number<>1<>ce<>2' +
+			   '&pDb7=' + document.getElementById('pDb7').value + '::بانک اطلاعات پورتال ۷<>Number<>1<>ce<>2' +
+			   '&pHost7=' + document.getElementById('pHost7').value + '::میزبانی پورتال ۷<>Multi<>1<>nce<>400' +
+			   
+			   '&pName8=' + document.getElementById('pName8').value + '::نام پورتال ۸<>Multi<>1<>ce<>200' +
+			   '&pUrl8=' + document.getElementById('pUrl8').value + '::آدرس وب پورتال ۸<>Multi<>1<>ce<>200' +
+			   '&pPriority8=' + document.getElementById('pPriority8').value + '::اولویت پورتال ۸<>Number<>1<>ce<>2' +
+			   '&pField8=' + document.getElementById('pField8').value + '::زمینه فعالیت پورتال ۸<>Multi<>1<>ce<>400' +
+			   '&pServiceType8=' + document.getElementById('pServiceType8').value + '::نوع خدمات رسانی پورتال ۸<>Number<>1<>ce<>2' +
+			   '&pSoftware8=' + document.getElementById('pSoftware8').value + '::نرم افزار پورتال ۸<>Number<>1<>ce<>2' +
+			   '&pDb8=' + document.getElementById('pDb8').value + '::بانک اطلاعات پورتال ۸<>Number<>1<>ce<>2' +
+			   '&pHost8=' + document.getElementById('pHost8').value + '::میزبانی پورتال ۸<>Multi<>1<>nce<>400' +
+			   
+			   '&pName9=' + document.getElementById('pName9').value + '::نام پورتال ۹<>Multi<>1<>ce<>200' +
+			   '&pUrl9=' + document.getElementById('pUrl9').value + '::آدرس وب پورتال ۹<>Multi<>1<>ce<>200' +
+			   '&pPriority9=' + document.getElementById('pPriority9').value + '::اولویت پورتال ۹<>Number<>1<>ce<>2' +
+			   '&pField9=' + document.getElementById('pField9').value + '::زمینه فعالیت پورتال ۹<>Multi<>1<>ce<>400' +
+			   '&pServiceType9=' + document.getElementById('pServiceType9').value + '::نوع خدمات رسانی پورتال ۹<>Number<>1<>ce<>2' +
+			   '&pSoftware9=' + document.getElementById('pSoftware9').value + '::نرم افزار پورتال ۹<>Number<>1<>ce<>2' +
+			   '&pDb9=' + document.getElementById('pDb9').value + '::بانک اطلاعات پورتال ۹<>Number<>1<>ce<>2' +
+			   '&pHost9=' + document.getElementById('pHost9').value + '::میزبانی پورتال ۹<>Multi<>1<>nce<>400' +
+			   
+			   '&pName10=' + document.getElementById('pName10').value + '::نام پورتال ۱۰<>Multi<>1<>ce<>200' +
+			   '&pUrl10=' + document.getElementById('pUrl10').value + '::آدرس وب پورتال ۱۰<>Multi<>1<>ce<>200' +
+			   '&pPriority10=' + document.getElementById('pPriority10').value + '::اولویت پورتال ۱۰<>Number<>1<>ce<>2' +
+			   '&pField10=' + document.getElementById('pField10').value + '::زمینه فعالیت پورتال ۱۰<>Multi<>1<>ce<>400' +
+			   '&pServiceType10=' + document.getElementById('pServiceType10').value + '::نوع خدمات رسانی پورتال ۱۰<>Number<>1<>ce<>2' +
+			   '&pSoftware10=' + document.getElementById('pSoftware10').value + '::نرم افزار پورتال ۱۰<>Number<>1<>ce<>2' +
+			   '&pDb10=' + document.getElementById('pDb10').value + '::بانک اطلاعات پورتال ۱۰<>Number<>1<>ce<>2' +
+			   '&pHost10=' + document.getElementById('pHost10').value + '::میزبانی پورتال ۱۰<>Multi<>1<>nce<>400'
+		);
+	">
+	<span>{$lang.submit}</span>
+	</button>
+</div>

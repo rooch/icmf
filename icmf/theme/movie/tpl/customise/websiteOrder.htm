@@ -1,0 +1,326 @@
+<div id="pageIn" class="pageIn" style="color: #000;">
+	<h1 class="title">{$lang.order}</h1>
+	
+	{if $smarty.session.uid == 2}
+	<div class="curvedFull" style="font-size: 14px; background-color: #F4B413; text-align: center; font-weight: bold; height: 24px;">اطلاعات تماس شما</div>
+	<br>
+	<img src="theme/{$settings.theme}/img/icon/s.png" onload="loader('POST', '', 'contactInfo', 'op=userMan&mode=v_signUp&viewMode=signUpHorizental');">
+	<div class="curvedFull shadowFull" style="height: 200px; padding: 7px;">
+		<p style="color: red;">در صورتی که عضو سایت می باشید نیازی به پر کردن این اطلاعات نیست فقط کافی است با نام کاربری خود به سایت وارد شوید.</p>
+		<p>لطفا به منظور برقراری ارتباط و سهولت در انجام امور قراردادی کلیه فیلدهای مربوطه را با دقت و کامل پر نمایید. به موجب تکمیل این فرم ثبت نام شما بطور اتوماتیک در سایت صورت خواهد گرفت.
+		فرم مذکور در همین قسمت تکمیل و پس از کلیک دکلمه ارسال توسط شما ثبت نام تکمیل شده و بصورت پنجره ای مجزا نمایش داده خواهد شد. پس از ثبت نام لطفا فرم سفارش را تکمیل نمایید و سپس دکمه ارسال فرم درخواست را کلیک نمایید.</p>
+		<div id="contactInfo"></div>
+	</div>
+	<br>
+	{/if}
+	<div class="curvedFull" style="font-size: 14px; background-color: #F4B413; text-align: center; font-weight: bold; height: 24px;">انتخاب بخشهای اصلی وبسایت</div>
+	<br>
+	<div class="h30 curvedTop" style="text-align: center; font-weight: bolder; background-color: #81B2C1;">
+		<div class="row cell10">عنوان</div>
+		<div class="row cell60">توضیحات</div>
+		<div class="row cell20">انتخاب</div>
+		<div class="row cell10">هزینه(ریال)</div>
+	</div>
+	
+	<div id="step1" class="h30 odd" style="clear: both;">
+		<div class="row cell10">ثبت دامنه</div>
+		<div class="row cell60">دامنه نام وب سایت شما میباشد. جهت بررسی آزاد بودن نام دامنه اینجا کلیک کنید.</div>
+		<div class="row cell20">
+			<input id="domain" name="domain" type="checkbox" class="checkBox" value="0" onchange="$('#domainName').fadeToggle('slow'); price('domain');">
+			<input id="domainCount" name="domainCount" type="text" size="15" maxlength="5" style="display: none;" value="1" onclick="this.value='';">
+			<input id="domainName" name="domainName" type="text" size="15" maxlength="200" style="display: none;" value="نام دامنه" onclick="this.value='';">
+		</div>
+		<div id="domainFI" class="row cell10">170000</div>
+	</div>
+	
+	<div id="step2" class="h30 even" style="clear: both;">
+		<div class="row cell10">ثبت هاست</div>
+		<div class="row cell60">هاست فضای سرور سایت می باشد. کلیه فایل های وب سایت شما بر روی این فضا در اینترنت ذخیره خواهد شد. هزینه هاست به صورت اجاره سالیانه بوده و هر سال نیاز به تمدید دارد. حداقل فضای قابل سفارش ۱۰۰ مگابایت می باشد.</div>
+		<div class="row cell20">
+			<input id="host" name="host" type="checkbox" class="checkBox" value="0" onchange="price('host');">
+			<input id="hostCount" name="hostCount" type="text" size="15" maxlength="5" style="display: none;" value="1">
+		</div>
+		<div id="hostFI" class="row cell10">1000000</div>
+	</div>
+	<br>
+	<div class="curvedFull" style="font-size: 14px; background-color: #F4B413; text-align: center; font-weight: bold; height: 24px;">انتخاب قابلیتها و امکانات</div>
+	<br>
+	<div class="h30 curvedTop" style="text-align: center; font-weight: bolder; background-color: #81B2C1;">
+		<div class="row cell10">عنوان</div>
+		<div class="row cell70">توضیحات</div>
+		<div class="row cell10">انتخاب</div>
+		<div class="row cell10">هزینه(ریال)</div>
+	</div>
+	
+	<div id="step3" class="h30 odd" style="clear: both;">
+		<div class="row cell10">هدر انیمیشن</div>
+		<div class="row cell70">هدر انیمیشن به شما قابلیت افزودن و تغییر هدرهای سایت را داده و شما می توانید در هر زمان که خواستید هدر سایت خود را تغییر دهید.</div>
+		<div class="row cell10">
+			<input id="sliderMdoule" name="sliderMdoule" type="checkbox" class="checkBox" value="0" onchange="price('sliderMdoule');">
+			<input id="sliderMdouleCount" name="sliderMdouleCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="sliderMdouleFI" class="row cell10">200000</div>
+	</div>
+	
+	<div id="step4" class="h30 even" style="clear: both;">
+		<div class="row cell10">چند قالبی</div>
+		<div class="row cell70">با داشتن این امکان شما می توانید چندین قالب بر روی سایت خود داشته و بنابر سلیقه و مناسبت های مختلف آنرا تغییر دهید.</div>
+		<div class="row cell10">
+			<input id="multiTheme" name="multiTheme" type="checkbox" class="checkBox" value="0" onchange="price('multiTheme');">
+			<input id="multiThemeCount" name="multiThemeCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="multiThemeFI" class="row cell10">500000</div>
+	</div>
+	
+	<div id="step5" class="h30 odd" style="clear: both;">
+		<div class="row cell10">طراحی قالب</div>
+		<div class="row cell70">طراحی قالب دلخواه، قابلیت انتخاب چند قالب در صورت انتخاب امکان چند قالبی مسیر می باشد. در شرایط عادی فقط یک قالب اختصاصی طراحی میگردد.</div>
+		<div class="row cell10">
+			<input id="customTheme" name="customTheme" type="checkbox" class="checkBox" value="0" onchange="price('customTheme');">
+			<input id="customThemeCount" name="customThemeCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="customThemeFI" class="row cell10">500000</div>
+	</div>
+	
+	<div id="step6" class="h30 even" style="clear: both;">
+		<div class="row cell10">ویرایش قالب</div>
+		<div class="row cell70">بوسیله این قابلیت شما امکان ویرایش قالب خود را خودتان بدست میگیرد تا هر طرح دلخواه را پیاده سازید.</div>
+		<div class="row cell10">
+			<input id="editTheme" name="editTheme" type="checkbox" class="checkBox" value="0" onchange="price('editTheme');">
+			<input id="editThemeCount" name="editThemeCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="editThemeFI" class="row cell10">200000</div>
+	</div>
+	
+	<div id="step7" class="h30 odd" style="clear: both;">
+		<div class="row cell10">امکان عضو گیری</div>
+		<div class="row cell70">بوسیله این ماژول قابلیت ثبت نام کاربران بصورت اتوماتیک میسر می شود.</div>
+		<div class="row cell10">
+			<input id="signUp" name="signUp" type="checkbox" class="checkBox" value="0" onchange="price('signUp');">
+			<input id="signUpCount" name="signUpCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="signUpFI" class="row cell10">300000</div>
+	</div>
+	
+	<div id="step8" class="h30 even" style="clear: both;">
+		<div class="row cell10">پروفایل کاربران</div>
+		<div class="row cell70">امکان نمایش لیست کاربران و ویرایش پروفایل آنها توسط مدیر و خود کاربران</div>
+		<div class="row cell10">
+			<input id="profile" name="profile" type="checkbox" class="checkBox" value="0" onchange="price('profile');">
+			<input id="profileCount" name="profileCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="profileFI" class="row cell10">300000</div>
+	</div>
+	
+	<div id="step9" class="h30 odd" style="clear: both;">
+		<div class="row cell10">دسته بندی کاربران</div>
+		<div class="row cell70">بوسیله این ماژول امکان گروه بندی و اعمال حقوق دسترسی کاربران به صفحات و ماژول های مختلف سایت فراهم می آید.</div>
+		<div class="row cell10">
+			<input id="access" name="access" type="checkbox" class="checkBox" value="0" onchange="price('access');">
+			<input id="accessCount" name="accessCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="accessFI" class="row cell10">1500000</div>
+	</div>
+	
+	<div id="step10" class="h30 even" style="clear: both;">
+		<div class="row cell10">فروشگاه ساز</div>
+		<div class="row cell70">ماژول فروشگاه ساز قابلیت دسته بندی و فروش محصولات را به شما می هد. این ماژول قابلیت اتصال به کلیه بانکهای کشور را دارا و امکان نمایش وضعیت مالی را نیز دارد.</div>
+		<div class="row cell10">
+			<input id="shop" name="shop" type="checkbox" class="checkBox" value="0" onchange="price('shop');">
+			<input id="shopCount" name="shopCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="shopFI" class="row cell10">8000000</div>
+	</div>
+	
+	<div id="step10" class="h30 odd" style="clear: both;">
+		<div class="row cell10">پروفایل فروش</div>
+		<div class="row cell70">با قابلیت پروفایل فروش شما می توانید بطور همزمان چندین تعرفه فروش و غرفه های فروش داشته باشید. بطور مثال فروش عید با تخفیف ۲۰ درصدی و فروش نرمال بدون تخفیف و یا حتی امکان تعیین افزایش قیمت، کاهش و دیگر تعرفه های مالی بر روی هر پروفایل فروش</div>
+		<div class="row cell10">
+			<input id="shopProfile" name="shopProfile" type="checkbox" class="checkBox" value="0" onchange="price('shopProfile');">
+			<input id="shopProfileCount" name="shopProfileCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="shopProfileFI" class="row cell10">2000000</div>
+	</div>
+	
+	<div id="step11" class="h30 even" style="clear: both;">
+		<div class="row cell10">ماژول حمل و نقل</div>
+		<div class="row cell70">ماژول حمل و نقل یک ماژول اختیاری بوده که قابلیت نمایش محصولات آماده ارسال برای کاربران را بر عهده داشته و همچنین می تواند وضعیت کنونی حمل و نقل کالا را به مشتری اعلام دارد.</div>
+		<div class="row cell10">
+			<input id="transport" name="transport" type="checkbox" class="checkBox" value="0" onchange="price('transport');">
+			<input id="transportCount" name="transportCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="transportFI" class="row cell10">2000000</div>
+	</div>
+	
+	<div id="step12" class="h30 odd" style="clear: both;">
+		<div class="row cell10">گالری محصولات</div>
+		<div class="row cell70">امکان نمایش گالری تصاویر برای محصولات. این قابلیت به شما امکان نمایش چندین عکس برای یک محصول را به شما میدهد.</div>
+		<div class="row cell10">
+			<input id="gallery" name="gallery" type="checkbox" class="checkBox" value="0" onchange="price('gallery');">
+			<input id="galleryCount" name="galleryCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="galleryFI" class="row cell10">400000</div>
+	</div>
+	
+	<div id="step13" class="h30 even" style="clear: both;">
+		<div class="row cell10">قرعه کشی</div>
+		<div class="row cell70">امکان برگزاری مسابقه، فروش اعتبار و انجام قرعه کشی برای شرکت کنندگان</div>
+		<div class="row cell10">
+			<input id="lottery" name="lottery" type="checkbox" class="checkBox" value="0" onchange="price('lottery');">
+			<input id="lotteryCount" name="lotteryCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="lotteryFI" class="row cell10">2000000</div>
+	</div>
+	
+	<div id="step14" class="h30 odd" style="clear: both;">
+		<div class="row cell10">مقالات</div>
+		<div class="row cell70">بوسیله این ماژول وبسایت شما امکان درج، ویرایش و نمایش مقالات را دارا می باشد.</div>
+		<div class="row cell10">
+			<input id="article" name="article" type="checkbox" class="checkBox" value="0" onchange="price('article');">
+			<input id="articleCount" name="articleCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="articleFI" class="row cell10">1000000</div>
+	</div>
+	
+	<div id="step15" class="h30 even" style="clear: both;">
+		<div class="row cell10">اخبار</div>
+		<div class="row cell70">بوسیله این ماژول وبسایت شما امکان درج، ویرایش و نمایش اخبار را دارا می باشد.</div>
+		<div class="row cell10">
+			<input id="news" name="news" type="checkbox" class="checkBox" value="0" onchange="price('news');">
+			<input id="newsCount" name="newsCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="newsFI" class="row cell10">1000000</div>
+	</div>
+	
+	<div id="step16" class="h30 odd" style="clear: both;">
+		<div class="row cell10">دانلود</div>
+		<div class="row cell70">قابلیت قرار دادن فایل برای کاربران به منظور دانلود توسط این ماژول امکان پذیر می باشد.</div>
+		<div class="row cell10">
+			<input id="download" name="download" type="checkbox" class="checkBox" value="0" onchange="price('download');">
+			<input id="downloadCount" name="downloadCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="downloadFI" class="row cell10">500000</div>
+	</div>
+	
+	<div id="step17" class="h30 even" style="clear: both;">
+		<div class="row cell10">نظرسنجی</div>
+		<div class="row cell70">با تعیین سئوال با جوابهای از پیش تعیین شده میتوانید برای ساخت خود نظرسنجی های متفاوتی داشته باشید.</div>
+		<div class="row cell10">
+			<input id="poll" name="poll" type="checkbox" class="checkBox" value="0" onchange="price('poll');">
+			<input id="pollCount" name="pollCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="pollFI" class="row cell10">300000</div>
+	</div>
+	
+	<div id="step18" class="h30 odd" style="clear: both;">
+		<div class="row cell10">مترجم</div>
+		<div class="row cell70">با افزودن این قابلیت به وبسایت خود میتوانید عبارت موجود در سایت را تغییر داده و ترجمه مجدد نمایید. ضمنا با وجود این ماژول امکان افزودن زبانهای دیگر هم بوجود می آید. و سایت شما قابلیت چند زبانگی پیدا می کند.</div>
+		<div class="row cell10">
+			<input id="translator" name="translator" type="checkbox" class="checkBox" value="0" onchange="price('translator');">
+			<input id="translatorCount" name="translatorCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="translatorFI" class="row cell10">3000000</div>
+	</div>
+	
+	<div id="step19" class="h30 even" style="clear: both;">
+		<div class="row cell10">آمار</div>
+		<div class="row cell70">این ماژول امکان نمایش آمار بازدید و بسیاری آمار مفید دیگر در رابطه با بهینه سازی سایت به شما ارائه میدهد.</div>
+		<div class="row cell10">
+			<input id="stat" name="stat" type="checkbox" class="checkBox" value="0" onchange="price('stat');">
+			<input id="statCount" name="statCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="statFI" class="row cell10">500000</div>
+	</div>
+	
+	<div id="step20" class="h30 odd" style="clear: both;">
+		<div class="row cell10">بهینه سازی</div>
+		<div class="row cell70">افزودن قابلیت بهینه سازی وبسایت به شما امکان بهتر دیده شدن در موتورهای جستجو همچون گوگل را میدهد. این بسته در کنار سرویس بهینه سازی شرکت که بصورت جداگانه ارائه میگردد تکمیل می شود.</div>
+		<div class="row cell10">
+			<input id="seo" name="seo" type="checkbox" class="checkBox" value="0" onchange="price('seo');">
+			<input id="seoCount" name="seoCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="seoFI" class="row cell10">2000000</div>
+	</div>
+	
+	<div id="step21" class="h30 even" style="clear: both;">
+		<div class="row cell10">فرم تماس با ما</div>
+		<div class="row cell70">امکان نمایش، دریافت و ارسال اطلاعات تماس با ما توسط فرم از پیش تعیین شده که توانایی ارسال اطلاعات را به ایمیل بانک پیام ها را دارا می باشد.</div>
+		<div class="row cell10">
+			<input id="contactUs" name="contactUs" type="checkbox" class="checkBox" value="0" onchange="price('contactUs');">
+			<input id="contactUsCount" name="contactUsCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="contactUsFI" class="row cell10">200000</div>
+	</div>
+	
+	<div id="step22" class="h30 odd" style="clear: both;">
+		<div class="row cell10">صفحات عمومی</div>
+		<div class="row cell70">تولید صفحاتی همچون تماس با ما، درباه ما، قوانین و غیره با متون دلخواه شما</div>
+		<div class="row cell10">
+			<input id="pageLoader" name="pageLoader" type="checkbox" class="checkBox" value="0" onchange="price('pageLoader');">
+			<input id="pageLoaderCount" name="pageLoaderCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="pageLoaderFI" class="row cell10">200000</div>
+	</div>
+	
+	<div id="step23" class="h30 even" style="clear: both;">
+		<div class="row cell10">ایمیل مارکتینگ</div>
+		<div class="row cell70">بوسیله این ماژول قابلیت ارسال تبلیغات توسط رایانامه یا پست الکترونیکی فراهم آمده، این ماژول قابلیت ارسال ایمیل بدون اینکه درون اسپم قرار گیرد را دارا می باشد.</div>
+		<div class="row cell10">
+			<input id="emailMarketing" name="emailMarketing" type="checkbox" class="checkBox" value="0" onchange="price('emailMarketing');">
+			<input id="emailMarketingCount" name="emailMarketingCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="emailMarketingFI" class="row cell10">4000000</div>
+	</div>
+	
+	<div id="step24" class="h150 odd" style="clear: both;">
+		<div class="row cell10">توضیحات</div>
+		<div class="row cell50">در صورتی که نیاز به ارسال توضیحات بیشتر دارید میتوانید از این فیلد استفاده نمایید.</div>
+		<div class="row cell20">
+			<textarea id="description" name="description" rows="10" cols="40"></textarea>
+		</div>
+		<div class="row cell20" style="text-align: center; padding-top: 10px;">
+			<img src="theme/{$settings.theme}/img/discount.png">
+		</div>
+	</div>
+	<br>
+	<div class="curvedFull shadowFull" style="font-weight: bolder; font-size: 15px; height: 28px; padding: 6px 4px 0px 4px;">
+		<div class="row cell60" style="text-align: left;">
+			<button style="width: 90%;" onclick="
+				$('#content').farajax('loader', '/formBuilder/c_addData', 
+						   '&formId=1::شماره فرم<>Number<>1<>ce<>6' +
+						   '&domainName=' + document.getElementById('domainName').value + '::نام دامنه<>Multi<>1<>nce<>100' +
+						   '&hostCount=' + document.getElementById('hostCount').value + '::ثبت هاست<>Number<>1<>nce<>100' +
+						   '&sliderMdoule=' + document.getElementById('sliderMdoule').value + '::هدر انیمیشن<>Number<>1<>nce<>1' +
+						   '&multiTheme=' + document.getElementById('multiTheme').value + '::چند قالبی<>Number<>1<>nce<>1' +
+						   '&customTheme=' + document.getElementById('customTheme').value + '::طراحی قالب<>Number<>1<>nce<>1' +
+						   '&editTheme=' + document.getElementById('editTheme').value + '::ویرایش قالب<>Number<>1<>nce<>1' +
+						   '&signUp=' + document.getElementById('signUp').value + '::امکان عضوگیری<>Number<>1<>nce<>1' +
+						   '&profile=' + document.getElementById('profile').value + '::پروفایل کاربران<>Number<>1<>nce<>1' +
+						   '&access=' + document.getElementById('access').value + '::دسته بندی کاربران<>Number<>1<>nce<>1' +
+						   '&shop=' + document.getElementById('shop').value + '::فروشگاه ساز<>Number<>1<>nce<>1' +
+						   '&transport=' + document.getElementById('transport').value + '::ماژول حمل و نقل<>Number<>1<>nce<>1' +
+						   '&gallery=' + document.getElementById('gallery').value + '::گالری محصولات<>Number<>1<>nce<>1' +
+						   '&lottery=' + document.getElementById('lottery').value + '::قرعه کشی<>Number<>1<>nce<>1' +
+						   '&article=' + document.getElementById('article').value + '::مقالات<>Number<>1<>nce<>1' +
+						   '&news=' + document.getElementById('news').value + '::اخبار<>Number<>1<>nce<>1' +
+						   '&download=' + document.getElementById('download').value + '::دانلود<>Number<>1<>nce<>1' +
+						   '&poll=' + document.getElementById('poll').value + '::نظرسنجی<>Number<>1<>nce<>1' +
+						   '&translator=' + document.getElementById('translator').value + '::مترجم<>Number<>1<>nce<>1' +
+						   '&stat=' + document.getElementById('stat').value + '::آمار<>Number<>1<>nce<>1' +
+						   '&seo=' + document.getElementById('seo').value + '::بهینه سازی<>Number<>1<>nce<>100' +
+						   '&contactUs=' + document.getElementById('contactUs').value + '::فرم تماس با ما<>Number<>1<>nce<>1' +
+						   '&pageLoader=' + document.getElementById('pageLoader').value + '::صفحات عمومی<>Number<>1<>nce<>1' +
+						   '&permission=111101000000::{$lang.permission}<>Number<>1<>ce<>12' +
+						   '&description=' + document.getElementById('description').value + '::{$lang.description}<>Multi<>1<>nce<>9000000'
+					);
+			">
+				<span style="font-weight: bolder;">ثبت سفارش</span>
+			</button>
+		</div>
+		<div class="row cell10" style="text-align: left;">مجموع: </div>
+		<div id="totalPrice" class="row cell20" style="text-align: center;">0</div>
+		<div class="row cell10">ریال</div>
+	</div>
+	<br>
+	
+</div>

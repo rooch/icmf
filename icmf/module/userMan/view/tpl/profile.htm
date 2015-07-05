@@ -1,0 +1,304 @@
+<div id="intrudoction" class="intrudoction redTrasparentFrame">test</div>
+{nocache}
+<div class="greyFrame curvedFull paddy10">
+	<div class="curvedFull clearFix boxShadow" style="background: #cecece; padding: 2px 10px">
+		<div class="row cell20 LH35 center">
+			{$userList.1.email}
+			&nbsp;
+		</div>
+		<div class="row cell15 LH35 center pointer">
+			<div id="systemInfoLink" style="border-left: dashed 1px #e7e7e7; border-right: dashed 1px #e7e7e7" class="hover">اطلاعات سیستمی</div>
+		</div>
+		<div class="row cell15 LH35 center pointer">
+			<div id="personalInfoLink" style="border-left: dashed 1px #e7e7e7" class="hover">اطلاعات شخصی</div>
+		</div>
+		<div class="row cell15 LH35 center pointer">
+			<div id="contactInfoLink" style="border-left: dashed 1px #e7e7e7" class="hover">اطلاعات ارتباطی</div>
+		</div>
+		<div class="row cell15 LH35 center pointer">
+			<div id="creditInfoLink" style="border-left: dashed 1px #e7e7e7" class="hover">امتیازها</div>
+		</div>
+		<div class="row cell10 LH35 center pointer">
+			<div id="changePasswordLink" style="border-left: dashed 1px #e7e7e7" class="hover">تغیر کلمه عبور</div>
+		</div>
+		<div id="mode" class="row cell10 LH35 center pointer hover orange">
+			<div id="editProfileLink">{$lang.edit}</div>
+			<div id="showProfileLink" class="displayNone">{$lang.show}</div>
+		</div>	
+	</div>
+	<br>
+	<div class="clearFix">
+		<div class="row cell80">
+			{foreach name=user key=userKey item=userItem from=$userList}
+			<div id="systemInfo">
+				<input id="profileId" name="profileId" value="{$userItem.id}" type="hidden">
+				<div class="clearFix displayNone">
+					<div class="row cell20 bold LH35">{$lang.id}:</div> 
+					<div class="row cell80 LH35"><em>{$userItem.id}</em></div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.status}:</div> 
+					<div class="row cell80 LH35"><em>{$userItem.active}</em></div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.registerTime}:</div> 
+					<div class="row cell80 LH35"><em>{$userItem.timeStamp}</em></div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.userName}:</div> 
+					<div class="row cell80 LH35">
+						<em>
+							
+							{if !empty($userItem.userName)}
+							{$userItem.userName} [<a href="http://{$settings.domainName}/{$userItem.userName}" target="_blank">{$lang.yourPersonalPage}</a>] [<span id="editPersonalPage" class="link">{$lang.editPersonalPage}</span>]
+							{else}
+							<a href="userMan/v_userNameActivation" target="activateArea">{$lang.userNameActivation}</a>
+							{/if}
+							
+						</em>
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.activated}:</div> 
+					<div class="row cell80 LH35">
+						
+						{if !isset($userItem.email) || $userItem.showEmail == 0}
+						<em><a href="userMan/v_emailActivation" target="activateArea">{$lang.emailActivation}</a></em>
+						{else}
+						<em class="green">{$userItem.email}</em>
+						{/if}
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						{if !isset($userItem.mobile) || $userItem.showMobile == 0}
+						<em><a href="userMan/v_mobileActivation" target="activateArea">{$lang.mobileActivation}</a></em>
+						{else}
+						<em class="green">{$userItem.mobile}</em>
+						{/if}
+						
+					</div>
+				</div>
+				<br>
+				<div id="activateArea"></div>
+			</div>
+			<div id="personalInfo" class="displayNone">
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.firstName}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.firstName}</em>
+						<input class="editProfile" id="firstName" name="firstName" maxlength="45" value="{$userItem.firstName}">
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.lastName}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.lastName}</em>
+						<input class="editProfile" id="lastName" name="lastName" maxlength="45" value="{$userItem.lastName}">
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.fatherName}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.fatherName}</em>
+						<input class="editProfile" id="fatherName" name="fatherName" maxlength="45" value="{$userItem.fatherName}">
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.gender}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.gender}</em>
+						<input id="genderId" name="genderId" type="hidden" maxlength="45" value="{$userItem.genderId}">
+						<span class="editProfile" id="genderSelectBox"></span>
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.idNumber}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.idNumber}</em>
+						<input class="editProfile" id="idNumber" name="idNumber" maxlength="45" value="{$userItem.idNumber}">
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.nationalCode}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.nationalCode}</em>
+						<input class="editProfile" id="nationalCode" name="nationalCode" maxlength="10" value="{$userItem.nationalCode}">
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.religion}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.religion}</em>
+						<input id="religionId" name="religionId" type="hidden" maxlength="45" value="{$userItem.religionId}">
+						<span class="editProfile" id="religionSelectBox"></span>
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.level}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.level}</em>
+						<input id="levelId" name="levelId" type="hidden" maxlength="45" value="{$userItem.levelId}">
+						<span class="editProfile" id="levelSelectBox"></span>
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.nationality}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.nationality}</em>
+						<input id="nationalityId" name="nationalityId" type="hidden" maxlength="45" value="{$userItem.nationalityId}">
+						<span class="editProfile" id="nationalitySelectBox"></span>
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.financialStatus}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.financialStatus}</em>
+						<input id="financialStatusId" name="financialStatusId" type="hidden" maxlength="45" value="{$userItem.financialStatusId}">
+						<span class="editProfile" id="statusSelectBox"></span>
+					</div>
+				</div>
+			</div>
+			<div id="contactInfo" class="displayNone">
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.mobile}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.mobile}</em>
+						<input class="editProfile" id="mobile" name="mobile" maxlength="11" value="{$userItem.mobile}">
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.phone}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.phone}</em>
+						<input class="editProfile" id="phone" name="phone" maxlength="14" value="{$userItem.phone}">
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.email}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35"><a href="mailto:{$userItem.email}" rel="nofollow">{$userItem.email}</a></em>
+						<em class="editProfile LH35"><a href="mailto:{$userItem.email}" rel="nofollow">{$userItem.email}</a></em>
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.googlePlus}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.googlePlus}</em>
+						<input class="editProfile" id="googlePlus" name="googlePlus" maxlength="100" value="{$userItem.googlePlus}">
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.facebook}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.facebook}</em>
+						<input class="editProfile" id="facebook" name="facebook" maxlength="100" value="{$userItem.facebook}">
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.twitter}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.twitter}</em>
+						<input class="editProfile" id="twitter" name="twitter" maxlength="100" value="{$userItem.twitter}">
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.state}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.state}</em>
+						<input id="stateId" name="stateId" type="hidden" maxlength="45" value="{$userItem.stateId}">
+						<span class="editProfile" id="stateSelectBox"></span>
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.city}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.issued}</em>
+						<input id="cityId" name="cityId" type="hidden" maxlength="45" value="{$userItem.issuedId}">
+						{if $userItem.issued != ''}
+						<span class="editProfile" id="citySelectBox">{$userItem.issued} <span onclick="$('#citySelectBox').farajax('loader', '/htmlElements/v_selectCity', 'name=city1&sid=' + $('#stateId').val() + '&selected={$userItem.issued}');">[ویرایش]</span></span>
+						{else}
+						<span class="editProfile" id="citySelectBox">ابتدا استان خود را انتخاب نمایید</span>
+						{/if}
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.region}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.region}</em>
+						<input id="regionId" name="regionId" type="hidden" maxlength="45" value="{$userItem.regionId}">
+						{if $userItem.region != ''}
+						<span class="editProfile" id="regionSelectBox">{$userItem.region} <span onclick="$('#regionSelectBox').farajax('loader', '/htmlElements/v_selectRegion', 'name=region1&selected=' + $('#regionId').val() + '&selected={$userItem.region}');">[ویرایش]</span></span>
+						{else}
+						<span class="editProfile" id="regionSelectBox">ابتدا شهر خود را انتخاب نمایید</span>
+						{/if}
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.district}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.district}</em>
+						<input id="districtId" name="districtId" type="hidden" maxlength="45" value="{$userItem.districtId}">
+						{if $userItem.districtId != ''}
+						<span class="editProfile" id="districtSelectBox">{$userItem.district} <span onclick="$('#districtSelectBox').farajax('loader', '/htmlElements/v_selectDistrict', 'name=district1&selected=' + $('#districtId').val() + '&selected={$userItem.district}');">[ویرایش]</span></span>
+						{else}
+						<span class="editProfile" id="districtSelectBox">ابتدا منطقه خود را انتخاب نمایید</span>
+						{/if}
+					</div>
+				</div>
+				
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.zipcode}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.zipcode}</em>						
+						<input class="editProfile" id="zipcode" name="zipcode" maxlength="10" value="{$userItem.zipcode}">
+					</div>
+				</div>
+				<div class="clearFix">
+					<div class="row cell20 bold LH35">{$lang.address}:</div> 
+					<div class="row cell80">
+						<em class="showProfile LH35">{$userItem.address}</em>
+						<textarea class="editProfile" id="address" name="address" rows="5" cols="40">{$userItem.address}</textarea>
+					</div>
+				</div>
+			</div>
+			<div id="creditInfo" class="displayNone"></div>
+			<div id="changePassword" class="displayNone"></div>
+			<div id="personalPage" class="displayNone"></div>
+			{/foreach}
+		</div>
+		<div class="row cell20 left">
+			<img id="show-image-single-path1" class="whiteFrame pointer" src="{$userItem.userPic}" onclick="browseServer('image-single-path1');" width="200" height="250">
+			<input id="image-single-path1" name="image-path1" type="hidden" size="15" value="{$entity.imagePath}">
+		</div>
+	</div>
+	<div id="submitProfile" style="display: none;">
+		<button onclick="$('#content').farajax('loader', '/userMan/c_edit',
+					   'id={$userItem.id}' +
+					   '&userPic=' + $('#image-single-path1').val() + '::{$lang.fileName}<>Multi<>1<>nce<>150' +
+					   '&nationalCode=' + $('#nationalCode').val() + '::{$lang.nationalCode}<>Multi<>1<>nce<>11' +
+					   '&firstName=' + $('#firstName').val() + '::{$lang.firstName}<>Multi<>1<>ce<>45' +
+					   '&lastName=' + $('#lastName').val() + '::{$lang.lastName}<>Multi<>1<>ce<>45' +
+					   '&fatherName=' + $('#fatherName').val() + '::{$lang.fatherName}<>Multi<>1<>nce<>45' +
+					   '&gender=' + $('#gender').val() + '::{$lang.gender}<>Number<>1<>ce<>1' +
+					   '&idNumber=' + $('#idNumber').val() + '::{$lang.idNumber}<>Multi<>1<>nce<>16' +
+					   '&nationality=' + $('#nationality').val() + '::{$lang.nationality}<>Number<>1<>nce<>3' +
+					   '&religion=' + $('#religion').val() + '::{$lang.religion}<>Number<>1<>nce<>2' +
+					   '&financialStatus=' + $('#financialStatus').val() + '::{$lang.financialStatus}<>Number<>1<>nce<>2' +
+					   '&level=' + $('#level').val() + '::{$lang.level}<>Number<>1<>nce<>2' +
+					   '&googlePlus=' + $('#googlePlus').val() + '::{$lang.googlePlus}<>Multi<>1<>nce<>100' +
+					   '&facebook=' + $('#facebook').val() + '::{$lang.facebook}<>Multi<>1<>nce<>100' +
+					   '&twitter=' + $('#twitter').val() + '::{$lang.twitter}<>Multi<>1<>nce<>100' +
+					   '&state=' + $('#state1').val() + '::{$lang.state}<>Number<>1<>nce<>2' +
+					   '&city=' + $('#city1').val() + '::{$lang.city}<>Number<>1<>nce<>5' +
+					   '&region=' + $('#region1').val() + '::{$lang.region}<>Number<>1<>nce<>2' +
+					   '&district=' + $('#district1').val() + '::{$lang.district}<>Number<>1<>nce<>11' +
+					   '&zipcode=' + $('#zipcode').val() + '::{$lang.zipcode}<>Number<>1<>nce<>10' +
+					   '&mobile=' + $('#mobile').val()	+ '::{$lang.mobile}<>Multi<>1<>ce<>11<>09100000000<>09999999999' +
+					   '&phone=' + $('#phone').val()	+ '::{$lang.phone}<>Multi<>1<>nce<>14' +
+					   '&address=' + $('#address').val()	+ '::{$lang.address}<>Multi<>1<>nce<>500'
+				);
+				">
+			{$lang.submit}
+		</button>
+	</div>
+</div>
+{/nocache}
+<commands value="changePosition('#mode', '#intrudoction');">

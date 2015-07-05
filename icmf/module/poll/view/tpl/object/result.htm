@@ -1,0 +1,8 @@
+<ul style="padding-right: 4px;">
+	{nocache}
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	<li>{$entityItem.answer}</li>
+	<li>{$entityItem.count}</li>
+	{/foreach}
+	{/nocache}
+</ul>

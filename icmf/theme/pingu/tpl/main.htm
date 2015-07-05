@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{$settings.siteName}</title>
+	
+	<meta name="Generator" content="{$settings.author}"></meta>
+	<meta name="Keywords" content="فروشگاه,خرید تهران,چاره خرید,یافتم,فروشگاه,فرار ترافیک,کیفیت کالا,خرید آسان,فروشگاه ایران،فروشگاه اینترنتی بازار تکنولوژی،فروشگاه اینترنتی،فروش اینترنتی،فروشگاه الکترونیک،فروشگاه الکترونیکی،فروش آنلاین،خرید آنلاین"></meta>
+	<meta name="Description" content="فروشگاه  اینترنتی و آنلاین بازار تکنولوژی با هزاران کالا، همراه شما در هر جای ایران برای خرید مطمئن کالاهای با کیفیت مطلوب"></meta>
+	<meta name="Robots" content="{$settings.robots}"></meta>
+	<meta name="Author"	content="{$settings.author}"></meta>
+	<meta name="Copyright" content="{$settings.copyright}"></meta>
+	<meta name="viewport" content="initial-scale=1"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+	
+	<link rel="SHORTCUT ICON" href="theme/{$settings.theme}/img/icon/favicon.gif"></link>
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/global.css" type="text/css"></link>
+	<!-- Commet Chat -->
+	<!-- <link rel="stylesheet" href="{$settings.libraryAddress}/xorg/cometchat/cometchatcss.php" type="text/css"></link> -->
+	<!-- /Commet Chat -->
+	<!-- TipTip -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/tipTip/tipTip.css" type="text/css"></link>
+	<!-- /TipTip -->
+	<!-- jqplot -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/jqplot/jquery.jqplot.css" type="text/css"></link>
+	<!-- /jqplot -->
+	<!-- print -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/print.css" media="print" type="text/css"></link>
+	<!-- /print -->
+	<!-- <script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/google.js"></script> -->
+	<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/global/global.js"></script>
+	<!-- jQuery -->
+	<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/jquery-1.6.3.min.js"></script>
+	<!-- /jQuery -->
+	<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/swfobject.js"></script>
+	<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/easing.js"></script>
+	<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/queryLoader.js"></script>
+	<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/main.js"></script>
+	<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/page-turn.js"></script>
+	<!-- spritely -->
+	<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/spritely/jquery.spritely-0.6.js"></script>
+	<!-- /spritely -->
+</head>
+<body id="body">
+<!-- <a href="kernel/lib/xorg/ajax/ajax.php?op=contact&mode=v_contactUs" target="bar" data="page=no1">salaaaam</a> -->
+<div id="modalMask" class="modalMask"></div>  
+<div id="modalWindow" class="modalWindow"></div>
+
+<!-- holder -->
+<div class="holder">
+	<!-- border -->
+  	<div class="b_left"></div>
+  	<div class="b_top"></div>
+  	<div class="b_bottom"></div>
+  	<div class="b_right"></div>
+  	<!-- /border -->
+  	<!-- main -->
+  	<div id="main">
+  		<h1>Jon Hickley Web/Motion Graphics Designer &amp; Developer based in Hampshire</h1>
+    	<div id="penguin"></div>
+    	<div class="eye"></div>
+    	<div id="line"></div>
+    	<!-- buttons -->
+	    <!-- <div class="profileBtn"></div>
+	    <div class="showreelBtn"></div>
+	    <div class="interactiveBtn"></div>
+	    <div class="animationBtn"></div> -->
+	    <div class="newsBtn" onclick="loader('POST', '', 'newsContent', 'op=draw&mode=c_showResult');"></div>
+	    <!-- <div class="contactBtn"></div> -->
+	    <div class="btnBlocker"></div>
+	    <!-- /buttons -->
+    	<div id="fishUp"></div>
+    	<!-- content -->
+    	
+    	<!-- profile -->
+        <div id="profile">
+			
+    	</div>
+    	<!-- /profile -->
+    	
+    	<!-- interactive -->
+    	<div id="interactive">
+
+    	</div>
+    	<!-- /interactive-->
+    	
+    	<!-- animation -->
+    	<div id="animation">
+	    	
+    	</div>
+    	<!-- /animation-->
+    	
+    	<!-- news -->
+    	<div id="news">
+			<div id="newsContent" style="font: 80px bolder; margin: auto atuo;"></div>
+    	</div>
+    	<!-- /news -->
+    	
+		<!-- contact -->
+    	<div id="contact">
+
+    	</div>
+    	<!-- /contact-->
+    	
+    	<!-- video -->
+    	<div id="video">
+
+    	</div>
+    	<!-- /video -->
+    	
+    	<div class="lever"></div>
+    	
+    	<div id="twitterBox">
+      		<div id="tweet"></div>
+    	</div>
+
+    </div>
+ 	<!-- /main -->
+</div>
+<!-- /holder-->
+
+<!-- footer -->
+<div id="footer">
+	
+</div>
+<!-- /footer-->
+
+<script type="text/javascript">
+	QueryLoader.selectorPreload = "body";
+	QueryLoader.init();
+	var func_Obj = new main();
+	pageTurn();
+	function hitVideo(arg1, arg2){
+		func_Obj.downToVideo(arg1, arg2);
+	}
+</script>
+
+<!-- Ajax -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/ajax/ajax.js"></script>
+<!-- /Ajax -->
+<!-- scrollTo -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/scrollTo/jquery.scrollTo-min.js"></script>
+<!-- /scrollTo -->
+<!-- modalWindow -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/modal/modal.js"></script>
+<!-- /modalWindow -->
+<!-- tipTip -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/tipTip/jquery.tipTip.minified.js"></script>
+<!-- /tipTip -->
+<!-- jqplot -->
+<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/jqplot/excanvas.js"></script><![endif]-->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/jqplot/jquery.jqplot.min.js"></script> 
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/jqplot/plugins/jqplot.cursor.min.js"></script> 
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/jqplot/plugins/jqplot.dateAxisRenderer.min.js"></script>
+<!-- /jqplot -->
+<!-- Cometchat -->
+<!-- <script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/cometchat/cometchatjs.php"></script> -->
+<!-- Cometchat -->
+<!-- Custom -->
+<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/custom.js"></script>
+<!-- /Custom -->
+<!-- StartUp -->
+<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/startUp.js"></script>
+<!-- /StartUp -->
+{nocache}
+<img src="theme/{$settings.theme}/img/icon/s.png" onload="startUp({$sysVar.op}, {$sysVar.mode}, {$sysVar.RefNum}, {$sysVar.MID}, {$sysVar.State}, {$sysVar.ResNum});">
+{/nocache}
+</body>
+</html>

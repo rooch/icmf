@@ -1,0 +1,49 @@
+<section>
+	{nocache}
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	<section>
+		<div class="simpleBox" id="row{$entityItem.id}">
+			<div class="clearFix paddy3">
+				<div class="center">
+					{if $entityItem.contentType == 'video'}
+					<div class="leanback-player-video cell100">
+					    <video preload="none" controls>
+					        <source src="{$entityItem.contentPath}" type='video/webm; codecs="vp8, vorbis"'>
+					    </video>    
+					</div>
+					<div class="right">
+						{assign var="title" value="`$entityItem.title|truncate:60:'...':true`"}
+						<h4 class="title"><a href="/post/c_showListObject/{$entityItem.id}_{$entityItem.title|replace:' ':'-'}" title="{$title}">{$title}</a></h4>
+					</div>
+					{elseif $entityItem.contentType == 'voice'}
+					<div class="leanback-player-audio cell100">
+						<audio preload="none" controls>
+							<source src="{$entityItem.contentPath}" type='audio/ogg; codecs="vorbis"'>
+						</audio>
+					</div>
+					<div class="right">
+						{assign var="title" value="`$entityItem.title|truncate:60:'...':true`"}
+						<h4 class="title"><a href="/post/c_showListObject/{$entityItem.id}_{$entityItem.title|replace:' ':'-'}" title="{$title}">{$title}</a></h4>
+					</div>
+					{else}
+					<div class="right">
+						{assign var="title" value="`$entityItem.title|truncate:60:'...':true`"}
+						<h4 class="title"><a href="/post/c_showListObject/{$entityItem.id}_{$entityItem.title|replace:' ':'-'}" title="{$title}">{$title}</a></h4>
+					</div>
+					{/if}
+				</div>					
+			</div>
+		</div>
+	</section>
+	<br>
+	{assign var="contentType" value=$entityItem.contentType}
+	{/foreach}
+	{/nocache}
+	<div class="center">
+		{if $contentType == 'voice'}
+		<a href="http://digiseo.ir/post/c_showListObject/contentType=voice" title="فایلهای صوتی آموزش صوتی">همه فایلهای صوتی آموزش سئو</a>
+		{elseif $contentType == 'video'}
+		<a href="http://digiseo.ir/post/c_showListObject/contentType=video" title="فایلهای تصویری آموزش صوتی">همه فایلهای تصویری آموزش سئو</a>
+		{/if}
+	</div>
+</section>

@@ -1,0 +1,34 @@
+{nocache}
+{foreach name=entity key=entityKey item=entityItem from=$entityList}
+{assign var=title value=$entityItem.title|replace:' ':'-'}
+<div id="row{$entityItem.id}" class="clearFix blockquote boxShadow" style="margin-bottom: 3px;">
+	<div class="paddy2 clearFix curvedFull" style="background: #e9e9e9;">
+		<div class="row cell95">
+			{if isset($entityItem.firstName) || isset($entityItem.lastName)}
+			{$entityItem.firstName} {$entityItem.lastName}
+			{else}
+			{$entityItem.email}
+			{/if}
+		</div>
+		<div class="row cell5 left">
+			{if $entityItem.op == 'crm'}
+			&nbsp;
+			{else}
+			<a href="{$entityItem.op}/c_showListObject/{$entityItem.opid}_{$title}" class="fa fa-arrow-left x1_5" title="{$lang.readMore}"></a>
+			{/if}
+		</div>
+	</div>
+	<div>
+		<p>
+			{if $entityItem.op == 'crm'}
+			{$entityItem.text}
+			{else}
+			{$entityItem.text|truncate:100:" ...":true}
+			{/if}
+		</p>
+	</div>
+	<div class="left thin">
+		{$entityItem.timeStamp}
+	</div>
+</div>
+{/foreach}

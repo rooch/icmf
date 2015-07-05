@@ -1,0 +1,21 @@
+<div id="pageIn" class="pageIn">
+	<h1>{$lang.contactUs}</h1>
+	<p>
+		دفتر مرکزی :  تهران  جردن  نبش خیابان  طاهری 
+	   2   واحد  11  طبقه  
+	</p>
+	<p>
+		تلفن: ۲۶۲۱۲۳۴۳-۰۲۱<br>
+		۰۲۱-۲۶۲۱۲۳۸۳<br>
+		۰۲۱-۲۶۲۱۲۳۹۳<br>
+		۰۲۱-۲۶۲۱۲۶۶۱<br>
+		۰۲۱-۲۶۲۱۲۶۶۲<br>
+		۰۲۱-۲۶۲۱۲۴۱.
+	</p>
+	<br>
+	<div class="boxShadow curvedFull" style="padding: 10px;">
+		<!-- <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?ll=35.688202,51.365955&amp;spn=0.011119,0.01929&amp;t=m&amp;z=16&amp;msa=0&amp;msid=218262673903928427963.0004b80ad7a480a9bb33b"></iframe><br /><small>نمایش <a href="http://maps.google.com/maps/ms?ll=35.688202,51.365955&amp;spn=0.011119,0.01929&amp;t=m&amp;z=16&amp;msa=0&amp;msid=218262673903928427963.0004b80ad7a480a9bb33b&amp;source=embed" style="color:#0000FF;text-align:left">شرکت فراگامان شریف</a> در نقشه بزرگتر</small> -->
+		<img src="theme/{$settings.theme}/img/icon/s.png" onload="$('#contactForm').farajax('loader', '/contact/v_sendMessage');">
+		<div id="contactForm"></div>
+	</div>
+</div>

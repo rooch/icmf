@@ -1,0 +1,40 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.pollList}</h1>
+	<table id="resultBox" class="listFull">
+		<tr class="listHeader">
+			<td width="5%">#</td>
+			<td width="10%">{$lang.id}</td>
+			<td width="20%">{$lang.name}</td>
+			<td width="50%">{$lang.question}</td>
+			<td width="15%">{$lang.properties}</td>
+		</tr>
+		{nocache}
+		{foreach name=entity key=entityKey item=entityItem from=$entityList}
+		<tr class="blockquote" id="row{$entityItem.id}">
+			<td>{$entityItem.num}</td>
+			<td>{$entityItem.id}</td>
+			<td>{$entityItem.name}</td>
+			<td>{$entityItem.question}</td>
+			<td align="center">
+				<a href="/poll/c_resultObject/id={$entityItem.id}">
+					<img src="theme/{$settings.theme}/img/icon/information.png">
+				</a>
+				<img src="theme/{$settings.theme}/img/icon/delete.png">
+				<img src="theme/{$settings.theme}/img/icon/edit.png">
+				{if $entityItem.active == 1}
+				<a href="/poll/c_deactivateObject/id={$entityItem.id}"> 
+					<img alt="{$deAtivate}" alt="{$deAtivate}" src="theme/{$settings.theme}/img/icon/powerOn.png">
+				</a>
+				{else}
+				<a href="/poll/c_activateObject/id={$entityItem.id}">
+					<img alt="{$ativate}" alt="{$ativate}" src="theme/{$settings.theme}/img/icon/powerOff.png">
+				</a>
+				{/if}
+			</td>
+		</tr>
+		{/foreach}
+		{/nocache}
+	</table>
+	<br>
+	<div class="blockquote">{$navigation}</div>
+</div>

@@ -1,0 +1,18 @@
+<h1>جایگاه سایت در نتایج گوگل</h1>
+<br><br><br><br>
+<div class="blockquote paddy40 cell60 centerObject center">
+	<br><br>
+	<h2 class="dastnevisFont x2">
+		می‌خواهید بدانید به ازای هر کلمه کلیدی چه جایگاهی در نتایج گوگل دارید؟
+	</h2>
+	<br><br><br>
+	<input id="keywordSerp" name="keywordSerp" class="cell90 centerObject LH45 h60 x2" placeholder="کلید واژه خود را اینجا وارد کنید">
+	<br><br>
+	<input id="domainSerp" name="domainSerp" class="cell90 centerObject LH45 h60 x2" placeholder="نام سایت خود را اینجا وارد کنید">
+	<br><br><br>
+	<button class="cell30 h50 x1_5 dastnevisFont" onclick="$('#serpResultScope').farajax('loader', '/seo/c_serp', 'keyword=' + $('#keywordSerp').val() + '::{$lang.keyword}<>Multi<>1<>ce<>200' + '&domain=' + $('#domainSerp').val() + '::{$lang.domain}<>Multi<>1<>ce<>100');">
+		پیدا کن
+	</button>
+	<br>
+	<div id="serpResultScope"></div>
+</div>

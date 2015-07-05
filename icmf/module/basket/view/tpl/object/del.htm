@@ -1,0 +1,16 @@
+<div>
+	{nocache}
+	{$text}
+	<div style="text-align: center;">
+		<button onclick="$('#content').farajax('loader', '/basket/c_delObject', 
+			'id={$entity.id}::{$lang.id}<>Number<>1<>ce<>11'	
+			);
+			$('#td{$entity.id}').fadeOut('slow');
+			$('#invoiceRecord{$entity.id}').fadeOut('slow');
+			setTimeout('$(\'#finalInvoice\').farajax(\'loader\', \'/basket/c_calculate\');', 2000);
+			">
+			<span>{$lang.approve}</span>
+		</button>
+	</div>
+	{/nocache}
+</div>

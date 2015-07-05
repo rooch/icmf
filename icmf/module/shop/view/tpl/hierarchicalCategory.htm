@@ -1,0 +1,13 @@
+{nocache}
+{foreach name=hierarchical key=hierarchicalKey item=hierarchicalItem from=$hierarchicalList}
+{if $smarty.foreach.hierarchical.first}
+<span class="link">{$hierarchicalItem}</span> 
+{else}
+{if $smarty.foreach.hierarchical.last}
+<span class="link">{$hierarchicalItem}</span>
+{else}
+<span class="link">{$hierarchicalItem}</span>&nbsp;&gt;
+{/if}
+{/if}
+{/foreach}
+{/nocache}

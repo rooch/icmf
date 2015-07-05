@@ -1,0 +1,24 @@
+<h1>ارسال کد فعالسازی</h1>
+<div>
+	<div class="curvedFull paddy10">
+		<div class="clearFix">
+			<div class="row cell25 LH35">{$lang.email}:</div>
+			<div class="row cell75 LH35"><input id="userName" name="userName" class="input" type="hidden" size="30" maxlength="100" value="{$email}">{$email}</div>
+		</div>
+		<div id="verificationCodeSection" class="clearFix">
+			<div class="row cell25 LH35">{$lang.code}:</div>
+			<div class="row cell75"><input id="verificationCode" name="verificationCode" class="input" type="text" size="30" maxlength="16"></div>
+		</div>
+		<br><br><br><br>
+		<div class="paddy1 center">
+			<button onclick="
+				$('#content').farajax('loader', '/userMan/c_emActivation',
+					   'userName=' + $('#userName').val() + '::{$lang.userName}<>Multi<>1<>ce<>100' +
+					   '&verificationCode=' + $('#verificationCode').val() + '::{$lang.code}<>Multi<>1<>nce<>8'
+				);
+			">
+			ارسال کد / فعالسازی
+			</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,61 @@
+<div class="blockquote">
+	<h2>{nocache}{$lang.shop}</h2>
+	<br>
+	<div class="listHeader center">
+		<div class="row cell5">#</div>
+		<div class="row cell5">{$lang.id}</div>
+		<!-- <div class="row cell10">{$lang.image}</div> -->
+		<div class="row cell10">{$lang.name}</div>
+		<div class="row cell10">{$lang.model}</div>
+		<!-- <div class="row cell9">{$lang.company}</div> -->
+		<div class="row cell10">{$lang.category}</div>
+		<div class="row cell5">{$lang.count}</div>
+		<div class="row cell15">{$lang.basePrice}</div>
+		<div class="row cell5">{$lang.discount}%</div>
+		<div class="row cell5">{$lang.tax}%</div>
+		<div class="row cell10">{$lang.shopProfile}</div>
+		<div class="row cell10">{$lang.sellPrice}</div>
+		<div class="row cell10">{$lang.properties}{/nocache}</div>
+		<br class="clear">
+	</div>
+	{nocache}
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	<div class="blockquote" id="row{$entityItem.id}">
+		<div class="row cell5">{$entityItem.num}&nbsp;</div>
+		<div class="row cell5">{$entityItem.id}&nbsp;</div>
+		<!-- <div class="row cell10"><img width="80" height="60" src="{$entityItem.imagePath}"></div> -->
+		<div class="row cell10">{$entityItem.name}&nbsp;</div>
+		<div class="row cell10">{$entityItem.model}&nbsp;</div>
+		<!-- <div class="row cell9">{$entityItem.company}&nbsp;</div> -->
+		<div class="row cell10">{$entityItem.category}&nbsp;</div>
+		<div class="row cell5">{$entityItem.count}&nbsp;</div>
+		<div class="row cell15 center">{$entityItem.basePrice}&nbsp;</div>
+		<div class="row cell5">{$entityItem.discount}&nbsp;</div>
+		<div class="row cell5">{$entityItem.tax}&nbsp;</div>
+		<div class="row cell10">{$entityItem.shopCategory}&nbsp;</div>
+		<div class="row cell10 center">{$entityItem.sellPrice}&nbsp;</div>
+		<div class="row cell10 center">
+			<!-- <img src="theme/{$settings.theme}/img/icon/information.png">
+			<a href="/shop/v_delObject/id={$entityItem.id}">
+				<img src="theme/{$settings.theme}/img/icon/delete.png">
+			</a> -->
+			{if $entityItem.active == 1}
+			<!-- <a href="/produc/v_editObject/id={$entityItem.id}">
+				<img src="theme/{$settings.theme}/img/icon/edit.png">
+			</a> -->
+			<a href="/shop/c_deactivateObject/id={$entityItem.id}">
+				<img alt="{$deAtivate}" src="theme/{$settings.theme}/img/icon/powerOn.png">
+			</a>
+			{else}
+			<a href="/shop/c_activateObject/id={$entityItem.id}">
+				<img alt="{$ativate}" src="theme/{$settings.theme}/img/icon/powerOff.png">
+			</a>
+			{/if}
+		</div>
+		<br class="clear">
+	</div>
+	{/foreach}
+	<br>
+	<div class="blockquote">{$navigation}</div>
+	{/nocache}
+</div>

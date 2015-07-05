@@ -1,0 +1,15 @@
+{nocache}
+<div id="searchBar"></div>
+<table class="listFull" style="border: 0px;">
+	<tr>
+		<td width="10%">{$lang.count}: {$totalRows}<td>
+		<td width="80%" dir="ltr" align="center">{$renderFirst} &nbsp; {$renderPrev} &nbsp; {$renderNav} &nbsp; {$renderNext} &nbsp; {$renderLast}</td>
+		<td width="10%">
+			<img style="cursor: pointer;" alt="{$lang.search}" title="{$lang.search}" src="theme/{$settings.theme}/img/icon/search.png" width="16" height="16" onclick="loader('POST', '', 'searchBar', 'op={$op}&mode=v_search');">
+			<img style="cursor: pointer;" alt="" title="" src="theme/{$settings.theme}/img/icon/excel.png" width="16" height="16">
+			<img style="cursor: pointer;" alt="" title="" src="theme/{$settings.theme}/img/icon/pdf.png" width="16" height="16">
+			<input type="hidden" id="filter" name="filter" size="40" maxlength="100">
+		</td>
+	</tr>
+</table>
+{/nocache}

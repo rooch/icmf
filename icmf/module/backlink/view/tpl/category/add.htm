@@ -1,0 +1,19 @@
+<div class="clearFix">
+	<h2 class="title">{$lang.categoryAdd}</h2>
+	<div class="row cell10">{$lang.categoryName}:</div>
+	<div class="row cell30"><input id="name" name="name" class="cell90" type="text" maxlength="100"></div>
+	<div class="row cell10">{$lang.categoryDescription}:</div>
+	<div class="row cell40"><textarea id="description" name="description" class="cell90" rows="3" cols="20"></textarea></div>
+	<div class="row cell10">
+		<button onclick="
+			$('#content').farajax('loader', '/backlink/c_addCategory', 
+				   'name=' + $('#name').val() + '::{$lang.name}<>Multi<>1<>ce<>200' +
+				   '&description=' + $('#description').val() + '::{$lang.description}<>Multi<>1<>nce<>500'		   				   
+			); 
+		$('#add').farajax('loader', '/backlink/v_addCategory');	
+		$('#list').farajax('loader', '/backlink/c_listCategory');
+		">
+		<span>{$lang.submit}</span>
+		</button>
+	</div>
+</div>

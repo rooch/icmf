@@ -1,0 +1,54 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.trasactionList}</h1>
+	{nocache}
+	<div class="blockquote">{$navigation}</div>
+	{/nocache}
+	<br>
+	<table id="resultBox" class="listFull">
+		<tr class="listHeader">
+			<td width="5%">#</td>
+			<td width="10%">{$lang.id}</td>
+			<td width="10%">{$lang.active}</td>
+			<td width="10%">{$lang.timeStamp}</td>
+			<td width="10%">{$lang.batchNumber}</td>
+			<td width="10%">{$lang.amount}</td>
+			<td width="5%">{$lang.user}</td>
+			<td width="10%">{$lang.transactionType}</td>
+			<td width="10%">{$lang.bankName}</td>
+			<td width="10%">{$lang.payTime}</td>
+			<td width="10%">{$lang.properties}</td>
+		</tr>
+		{nocache}
+		{foreach name=entity key=entityKey item=entityItem from=$entityList}
+		<tr class="blockquote" id="row{$entityItem.id}">
+			<td>{$entityItem.num}</td>
+			<td>{$entityItem.id}</td>
+			<td>
+				{if $entityItem.active == 1}
+				{$lang.active}
+				{else}
+				{$lang.notActive}
+				{/if}
+			</td>
+			<td align="center">{$entityItem.timeStamp}</td>
+			<td>{$entityItem.batchNumber}</td>
+			<td>{$entityItem.amount}</td>
+			<td><a href="/userMan/v_profile/id={$entityItem.uid}">{$entityItem.userName}</a></td>
+			<td>{$entityItem.transType}</td>
+			<td>{$entityItem.bankName}</td>
+			<td align="center">{$entityItem.payTime}</td>
+			<td align="center">
+				<a href="/financial/c_invoiceViewer/invoiceNumber={$entityItem.invoiceNumber}"><img src="theme/{$settings.theme}/img/icon/information.png"></a>
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/delete.png">
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/edit.png">
+				{if $entityItem.actvie == '1'} 
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/powerOn.png">
+				{else}
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/powerOff.png">
+				{/if}
+			</td>
+		</tr>
+	{/foreach}
+	{/nocache}
+	</table>
+</div>

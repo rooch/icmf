@@ -1,0 +1,107 @@
+<section id="containerpost" class="container curvedFull relative clearFix">
+	<div id="tiker">
+		<div class="right-ticker"></div>
+		<div class="ticker-text">
+        	{include file="theme/`$settings.theme`/tpl/customise/ticker2.htm"}
+        </div>    
+</div>
+	<section id="rightBox" class="row cell69">
+		<div class="blockquote curvedFull" style="margin:37px 20px;background: none;">
+		
+		
+		
+				<!-- tabs -->
+			<div class="sky-tabs sky-tabs-amount-4 sky-tabs-pos-top-justify sky-tabs-anim-flip sky-tabs-response-to-icons">
+				<input type="radio" name="sky-tabs" checked id="sky-tab1" class="sky-tab-content-1">
+				<label for="sky-tab1"><span><span>شرکتی و تجاری</span></span></label>
+				
+				<input type="radio" name="sky-tabs" id="sky-tab2" class="sky-tab-content-2">
+				<label for="sky-tab2"><span><span>خبری و مقالات</span></span></label>
+				
+				<input type="radio" name="sky-tabs" id="sky-tab3" class="sky-tab-content-3">
+				<label for="sky-tab3"><span><span>اینفوگرافی و شخصی</span></span></label>
+				
+				<input type="radio" name="sky-tabs" id="sky-tab4" class="sky-tab-content-4">
+				<label for="sky-tab4"><span><span>قالب های خاص</span></span></label>
+				
+				<ul>
+					<li class="sky-tab-content-1">					
+						<div class="typography">
+							<h1>قالب های شرکتی و تجاری</h1>
+							<p>
+								<ul class="themeSimple">
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خطتوضیح مشخصات این تم در حد یک خطتوضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+								</ul>
+							</p>
+						</div>
+					</li>
+					
+									
+					<li class="sky-tab-content-2">
+						<div class="typography">
+							<h1>قالب های خبری مخصوص سایت های بلاگی</h1>
+							<p>
+								<ul class="themeSimple">
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خطتوضیح مشخصات این تم در حد یک خطتوضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+								</ul>	
+							</p>
+						</div>
+					</li>
+					
+					<li class="sky-tab-content-3">
+						<div class="typography">
+							<h1>قالب های شخصی و اینفوگرافی</h1>
+							<p>
+								<ul class="themeSimple">
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خطتوضیح مشخصات این تم در حد یک خطتوضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+								</ul>	
+							</p>
+						</div>
+					</li>	
+					
+					<li class="sky-tab-content-4">
+						<div class="typography">
+							<h1>قالب های خاص و متفاوت</h1>
+							<p>
+								<ul class="themeSimple">
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خطتوضیح مشخصات این تم در حد یک خطتوضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+									<li><a href="#" alt="" title=""><img src="theme/{$settings.theme}/img/theme-pic/absolution.jpg"><h6>مشاهده این تم</h6></a><h5>توضیح مشخصات این تم در حد یک خط</h5></li>
+								</ul>	
+							</p>
+						</div>
+					</li>					
+				</ul>
+			</div>
+			<!-- end tabs  -->
+		
+		
+		
+		
+		
+	</div>
+	</section>
+	<section id="leftBox" style="margin-top:2%;" class="row cell29">
+		<h2 class="zeroDis">leftBox</h2>
+		<aside id="asideContent" class="asideContent">
+			{nocache}{include file="theme/`$settings.theme`/tpl/customise/leftBox.htm"}{/nocache}
+		</aside>
+	</section>
+</section>

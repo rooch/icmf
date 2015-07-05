@@ -1,0 +1,29 @@
+<h1>{$lang.signUp}</h1>
+<br>
+<div class="margin1">
+	<input id="signupEmail" class="cell94" name="signupEmail" placeholder="{$lang.email}" type="email" maxlength="100" pattern="{literal}^[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[@]{1}[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[.]{1}[A-Za-z]{2,5}${/literal}" title="لطفا ایمیل خود را به درستی وارد نمایید" required="required">
+</div>
+<div class="margin1">
+	<input id="signupPassword" class="cell94 rtl" name="signupPassword" placeholder="{$lang.password}" type="password" maxlength="20" data-typetoggle="#show-password" required="required" onmouseover="$(this).prop('type', 'text');" onmouseleave="$(this).prop('type', 'password');">
+</div>
+<div class="margin1">
+	{nocache}
+	<input id="securityQuestion" class="cell94" name="securityQuestion" placeholder="{$securityQuestion.question}" type="text" maxlength="200" required="required">
+	<input id="securityId" class="cell94" name="securityId" value="{$securityQuestion.id}" type="hidden" maxlength="11">
+	{/nocache}
+</div>
+<div class="margin1">
+	<button onclick="
+		$('#content').farajax('loader', '/userMan/c_signUp',
+				'email=' + $('#signupEmail').val() + '::{$lang.email}<>Mail<>1<>ce<>100' +
+			   	'&password=' + $('#signupPassword').val() + '::{$lang.password}<>Multi<>1<>ce<>45' + 
+			   	'&securityQuestion=' + $('#securityQuestion').val() + '::{$lang.securityQuestion}<>Multi<>1<>ce<>100' +
+			   	'&securityId=' + $('#securityId').val() + '::{$lang.securityId}<>Multi<>1<>nce<>11'
+		);
+	">{$lang.submit}
+	</button>
+</div>
+<br><br>
+<div class="margin1">
+	[<a href="pageLoader/v_load/rules" rel="nofollow">{$lang.rules}</a>] 
+</div>

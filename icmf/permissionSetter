@@ -1,0 +1,7 @@
+#!/bin/bash
+find . -type d -exec chmod 755 {} ';'
+find . -type f -exec chmod 644 {} ';'
+chmod 777 templates_c/ tmp/cache/ home/ -R
+rm -rf templates_c/* tmp/cache/*
+mkdir tmp/cache/img
+chmod 777 tmp/cache/img

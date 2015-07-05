@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<![endif]-->
+<html lang="fa">
+<head>
+	{nocache}
+	<title>{$title}</title>
+	<base href="http://127.0.0.1/icmf/">
+	<meta charset="utf-8">
+	
+	<meta name="Description" content="{$description|strip_tags:false|truncate:150:'':true}">
+	<meta name="Publisher" content="{$settings.author}">
+	<meta name="Generator" content="{$settings.author}">
+	<meta name="Keywords" content="{$keywords}">
+	<meta name="Robots" content="{$settings.robots}">
+	<meta name="Author"	content="{$settings.author}">
+		
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://{$settings.domain}{$smarty.server.REQUEST_URI}">
+	<meta property="og:image" content="{$thumbnail}">
+	<meta property="og:title" content="{$title}">
+	<meta property="og:description" content="{$description|strip_tags:false|truncate:150:'':true}">
+	{/nocache}
+	
+	<link rel="shortcut icon" href="theme/{$settings.theme}/img/icon/favicons/favicon.png">
+	
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/style.php" type="text/css">	
+	{include file="theme/`$settings.theme`/tpl/common/googleAnalytic.htm"}
+	
+	<!--[if lt IE 9]>
+   	<script src="kernel/lib/xorg/global/fixHtml5.js" async></script>
+   	<script src="kernel/lib/xorg/global/fixPng.js" async></script>
+	<![endif]-->
+</head>
+<body id="body" style="direction: {$lang.direction};">
+<div class="search-hide">
+	<input type="text" dir="rtl" name="h-search" id="h-search" placeholder="جست و جو ..." />
+</div>
+<div id="modalMask" class="modalMask"></div>  
+<div id="modalWindow" class="modalWindow"></div>
+<div id="temp"></div>
+<div id="goTop" class="goTop curvedLeft boxShadow">^</div>
+<section id="panel" class="panel">{nocache}{include file="theme/`$settings.theme`/tpl/common/panel.htm"}{/nocache}</section>
+<br /><br /><br /><br /><br />
+<section id="slider">
+        	{include file="theme/`$settings.theme`/tpl/common/slider.htm"}
+</section>
+<!-- Wrapper -->
+<section id="wrapper" class="wrapper">
+	<h2 class="zeroDis">wrapper</h2>
+	<section id="container" class="container curvedFull relative clearFix">
+        <div id="content" class="content">
+				{include file="theme/`$settings.theme`/tpl/customis/main.htm"}
+			</div>
+	</section>
+</section>
+<!--/Wrapper-->
+<footer id="footer" class="footer">{include file="theme/`$settings.theme`/tpl/common/footer.htm"}</footer>
+{nocache}
+<script src="theme/{$settings.theme}/js/js.php"></script>
+{include file="theme/`$settings.theme`/tpl/common/googlePlus.htm"}
+</body>
+</html>

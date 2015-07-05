@@ -1,0 +1,30 @@
+{nocache}
+<div id="messageBar" class="messageBar curvedFull shadowFull">
+	<div class="curvedTop" style="text-align:right; padding: 5px; background-color: {$color};">
+		{if isset($icon)}
+		<img src='theme/{$settings.theme}/img/icon/{$icon}'>&nbsp;
+		{/if}
+		<b>{$title}</b><span style="display: none;">- {$code}</span>
+	</div>
+	<br>
+	<div style="text-align:right; padding: 10px;">
+		<ol>
+			{foreach key=messageKey item=messageItem from=$message}
+ 				<li>{$messageItem}</li>
+ 				{/foreach}
+ 				
+ 				
+ 		</ol>
+ 		<br>
+ 		<div style="text-align: center;">
+ 		{if isset($button)}
+  			{foreach key=buttonKey item=buttonItem from=$button}
+  			<button onclick="$('#modalWindow').faraModal('closeModal', 'modalWindow');">
+  				<span>{$lang.close}</span>
+  			</button>
+  			{/foreach}
+ 		{/if}
+ 		</div>
+	</div>
+</div> 
+{/nocache}

@@ -1,0 +1,49 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.lotteryEntityList}</h1>
+	<table id="resultBox" class="listFull">
+		<tr class="listHeader">
+			<td width="5%">#</td>
+			<td width="10%">{$lang.id}</td>
+			<td width="20%">{$lang.name}</td>
+			<td width="10%">{$lang.price}</td>
+			<td width="10%">{$lang.specialOffer}</td>
+			<td width="5%">{$lang.capacity}</td>
+			<td width="10%">{$lang.prize}</td>
+			<td width="10%">{$lang.startTime}</td>
+			<td width="10%">{$lang.endTime}</td>
+			<td width="10%">{$lang.properties}</td>
+		</tr>
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+		<tr class="blockquote">
+			<td>{$entityItem.count}</td>
+			<td>{$entityItem.lId}</td>
+			<td>{$entityItem.lName}</td>
+			<td>{$entityItem.price}</td>
+			<td>
+				{if $entityItem.specialOffer == 1}
+				{$lang.yes}
+				{else}
+				{$lang.no}
+				{/if}
+			</td>
+			<td>{$entityItem.capacity}</td>
+			<td>{$entityItem.pName}</td>
+			<td>{$entityItem.startTime}</td>
+			<td>{$entityItem.endTime}</td>
+			<td>
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/information.png" title="{$entityItem.lDescription}" alt="{$entityItem.lDescription}">
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/edit.png" onclick="loader('POST', '', 'content', 'op=lottery&mode=v_entityEdit&id={$entityItem.lId}', 1);">
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/delete.png" onclick="loader('POST', '', 'content', 'op=lottery&mode=c_entityDel&id={$entityItem.lId}', 1); loader('POST', '', 'content', 'op=lottery&mode=c_entityList&id={$entityItem.lId}', 1);">
+				{if $entityItem.lActvie == '1'} 
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/powerOn.png">
+				{else}
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/powerOff.png">
+				{/if}
+			</td>
+		</tr>
+	{/foreach}
+	</table>
+	<br>
+	<div class="blockquote">{$navigation}</div>
+	
+</div>

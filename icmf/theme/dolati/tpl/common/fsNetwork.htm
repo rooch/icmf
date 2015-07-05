@@ -1,0 +1,44 @@
+<h2 class="zeroDis">fsNetwork</h2>
+<div class="clearFix" style="padding: 5px 0px">
+	<div class="row cell50" style="direction: ltr;">
+		<div id="langSelector" class="centerObject flagsSprite flags-Iran curvedTop">
+			&nbsp;
+			<div class="displayNone curvedNoTopLeft">
+				<ul style="padding-left: 20px;">
+					<li class="flagsSprite flags-UnitedStatesofAmericaUSA">
+					<li class="flagsSprite flags-Germany">
+					<li class="flagsSprite flags-India">
+					<li class="flagsSprite flags-Italy">
+					<li class="flagsSprite flags-SaudiArabia">
+					<li class="flagsSprite flags-Turkey">
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row cell50">
+		{nocache}
+		{if isset($smarty.session.uid) && $smarty.session.uid != 2}
+			<div class="clearFix">
+				<div class="row cell30">
+					<div style="padding-top: 2px;">
+						<div class="toolsSpriteWhite white24-User24 pointer centerObject" onclick="$('#cPanel').slideToggle('slow');">&nbsp;</div>
+					</div>
+				</div>
+				<div class="row cell70" style="line-height: 27px;">
+					<a href="/userMan/c_logout" rel="nofollow" onclick="setTimeout('location.href=\'/\';', 5000);"></a>
+				</div>
+			</div>
+		{else}
+			<div style="padding-top: 2px;">
+				<div class="toolsSpriteWhite white24-Login_in24 pointer centerObject" onclick="$('#cPanel').slideToggle('slow');">&nbsp;</div>
+			</div>
+		{/if}
+		{/nocache}
+	</div>
+</div>
+<!-- cPanel -->
+<div id="cPanel" class="cPanel paddy5">
+	<div id="login" class="login" style="padding-right: 10px;">{nocache}{$login}{nocache}</div>
+	<div id="accessories" class="accessories" style="display: none; padding-right: 10px;"></div>
+</div>
+<!-- /cPanel -->

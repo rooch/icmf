@@ -1,0 +1,229 @@
+{nocache}
+{foreach name=entity key=entityKey item=entityItem from=$entityList}
+<article class="blockquote curvedFull">
+	<header>
+	<h1>{$entityItem.name} {$entityItem.model}</h1>
+	<header>
+	<div class="clearFix">
+		<section class="row cell45 center">
+			<div class="paddy10">
+				<h2 class="zeroDis">{$entityItem.name} {$lang.image}</h2>
+				<div class="curvedFull h300 paddy10" style="background: #f7f7f7;">
+					{$entityItem.imageGallery}
+				</div>
+			</div>
+		</section>
+		<section class="row cell50">
+			<h2 class="zeroDis">{$entityItem.name} {$lang.description}</h2>
+			<div id="td{$entityItem.id}" class="paddy10">
+				<div id="cell{$entityItem.id}">
+					<ul class="paddy0">
+						<li><b>{$entityItem.name}</b></li>
+						<li><b>{$lang.model}:</b> {$entityItem.model}</li>
+						{if isset($entityItem.announceDate) && $entityItem.announceDate != 0}
+						<li><b>{$lang.announceDate}:</b> {$entityItem.announceDate}</li>
+						{/if}
+						{if isset($entityItem.dimension) && $entityItem.dimension != ''}
+						<li><b>{$lang.dimension}:</b> {$entityItem.dimension}</li>
+						{/if}
+						{if isset($entityItem.weight) && $entityItem.weight != 0}
+						<li><b>{$lang.weight}:</b> {$entityItem.weight}</li>
+						{/if}
+						{if isset($entityItem.color) && $entityItem.color != ''}
+						<li><b>{$lang.color}:</b> {$entityItem.color}</li>
+						{/if}
+						{if isset($entityItem.link) && $entityItem.link != ''}
+						<li><b>{$lang.link}:</b> <a href="{$entityItem.link}">{$entityItem.link}</a></li>
+						{/if}
+						{if isset($entityItem.keyWords) && $entityItem.keyWords != ''}
+						<li><b>{$lang.keyWords}:</b> {$entityItem.keyWords}</li>
+						{/if}
+						{if isset($entityItem.filePath) && $entityItem.filePath != ''}
+						<li><b>{$lang.files}:</b> <a href="{$entityItem.filePath}">{$lang.download}</a></li>
+						{/if}
+						{if isset($entityItem.company) && $entityItem.company != ''}
+						<li><b>{$lang.company}:</b> {$entityItem.company}</li>
+						{/if}
+						{if isset($entityItem.category) && $entityItem.category != 0}
+						<li><b>{$lang.category}:</b> {$entityItem.category}</li>
+						{/if}
+						{if isset($entityItem.rpm)}
+						<li><b>{$lang.rpm}:</b> {$entityItem.rpm}</li>
+						{/if}
+						{if isset($entityItem.tav)}
+						<li><b>{$lang.tav}:</b> {$entityItem.tav}</li>
+						{/if}
+						{if isset($entityItem.voltage)}
+						<li><b>{$lang.voltage}:</b> {$entityItem.voltage}</li>
+						{/if}
+						{if isset($entityItem.amper)}
+						<li><b>{$lang.amper}:</b> {$entityItem.amper}</li>
+						{/if}
+						<!-- <li><b>{$lang.electricType}:</b> {$entityItem.electricType}</li> -->
+						{if isset($entityItem.power)}
+						<li><b>{$lang.power}:</b> {$entityItem.power}</li>
+						{/if}
+						{if isset($entityItem.code)}
+						<li><b>{$lang.code}:</b> {$entityItem.code}</li>
+						{/if}
+						{if isset($entityItem.usage)}
+						<li><b>{$lang.usage}:</b> {$entityItem.usage}</li>
+						{/if}
+						{if isset($entityItem.warranty)}
+						<li><b>{$lang.warranty}:</b> {$entityItem.warranty}</li>
+						{/if}
+						{if isset($entityItem.cpu)}
+						<li><b>{$lang.cpu}:</b> {$entityItem.cpu}</li>
+						{/if}
+						{if isset($entityItem.cache)}
+						<li><b>{$lang.cache}:</b> {$entityItem.cache}</li>
+						{/if}
+						{if isset($entityItem.ram)}
+						<li><b>{$lang.ram}:</b> {$entityItem.ram}</li>
+						{/if}
+						{if isset($entityItem.hdd)}
+						<li><b>{$lang.hdd}:</b> {$entityItem.hdd}</li>
+						{/if}
+						{if isset($entityItem.screen)}
+						<li><b>{$lang.screen}:</b> {$entityItem.screen}</li>
+						{/if}
+						{if isset($entityItem.vga)}
+						<li><b>{$lang.vga}:</b> {$entityItem.vga}</li>
+						{/if}
+						{if isset($entityItem.os)}
+						<li><b>{$lang.os}:</b> {$entityItem.os}</li>
+						{/if}
+						{if isset($entityItem.modem)}
+						{if $entityItem.modem > 0}
+						<li><b>{$lang.modem}:</b> <font color="green">{$lang.yes}</font></li>
+						{else}
+						<li><b>{$lang.modem}:</b> <font color="red">{$lang.no}</font></li>
+						{/if}
+						{/if}
+						{if isset($entityItem.wireless)}
+						{if $entityItem.wireless > 0}
+						<li><b>{$lang.wireless}:</b> <font color="green">{$lang.yes}</font></li>
+						{else}
+						<li><b>{$lang.wireless}:</b> <font color="red">{$lang.no}</font></li>
+						{/if}
+						{/if}
+						{if isset($entityItem.trackingTechnology)}
+						<li><b>{$lang.trackingTechnology}:</b> {$entityItem.trackingTechnology}</li>
+						{/if}
+						{if isset($entityItem.chargeable)}
+						{if $entityItem.chargeable > 0}
+						<li><b>{$lang.chargeable}:</b> <font color="green">{$lang.yes}</font></li>
+						{else}
+						<li><b>{$lang.chargeable}:</b> <font color="red">{$lang.no}</font></li>
+						{/if}
+						{/if}
+						{if isset($entityItem.chargeLife)}
+						<li><b>{$lang.chargeLife}:</b> {$entityItem.chargeLife}</li>
+						{/if}
+						{if isset($entityItem.transceiverLength)}
+						<li><b>{$lang.transceiverLength}:</b> {$entityItem.transceiverLength}</li>
+						{/if}
+						{if isset($entityItem.button)}
+						<li><b>{$lang.button}:</b> {$entityItem.button}</li>
+						{/if}
+						{if isset($entityItem.scroll)}
+						<li><b>{$lang.scroll}:</b> {$entityItem.scroll}</li>
+						{/if}
+						{if isset($entityItem.avgBatteryLife)}
+						<li><b>{$lang.avgBatteryLife}:</b> {$entityItem.avgBatteryLife}</li>
+						{/if}
+						{if isset($entityItem.range)}
+						<li><b>{$lang.range}:</b> {$entityItem.range}</li>
+						{/if}
+						{if isset($entityItem.ferquencyResponse)}
+						<li><b>{$lang.ferquencyResponse}:</b> {$entityItem.ferquencyResponse}</li>
+						{/if}
+						{if isset($entityItem.impedance)}
+						<li><b>{$lang.impedance}:</b> {$entityItem.impedance}</li>
+						{/if}
+						{if isset($entityItem.sensitivity)}
+						<li><b>{$lang.sensitivity}:</b> {$entityItem.sensitivity}</li>
+						{/if}
+						{if isset($entityItem.cableLengthRange)}
+						<li><b>{$lang.cableLengthRange}:</b> {$entityItem.cableLengthRange}</li>
+						{/if}
+						{if isset($entityItem.interface)}
+						<li><b>{$lang.interface}:</b> {$entityItem.interface}</li>
+						{/if}
+						{if isset($entityItem.noiseCancelling)}
+						<li><b>{$lang.noiseCancelling}:</b> {$entityItem.noiseCancelling}</li>
+						{/if}
+						{if $entityItem.count > 0}
+						<li><b>{$lang.exist}:</b> <font color="green">{$lang.yes}</font></li>
+						{else}
+						<li><b>{$lang.exist}:</b> <font color="red">{$lang.no}</font></li>
+						{/if}
+						{if isset($entityItem.sellPrice)}
+						<li><b>{$lang.sellPrice}:</b> <font color="green">{$entityItem.sellPrice} {$lang.currencySign}</font></li>
+						{/if}
+						{if $entityItem.discount != 0}
+						<li><b>{$lang.discount}:</b> {$entityItem.discount}%</li>
+						{/if}
+						{if $entityItem.tax != 0}
+						<li><b>{$lang.tax}:</b> {$entityItem.tax}%</li>
+						{/if}
+						{if isset($entityItem.totalPrice)}
+						<li><b>{$lang.totalPrice}:</b> <font color="green">{$entityItem.totalPrice} {$lang.currencySign}</font></li>
+						{/if}
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="row cell5 center">
+			{if $entityItem.count > 0}
+			<a href="/basket/v_addObject/objectId={$entityItem.id}">
+				<img src="theme/{$settings.theme}/img/icon/basketIcon.png" alt="{$lang.addToBasket}" title="{$lang.addToBasket}">
+				<br>{$lang.buy}<br>
+			</a>
+			{/if}
+			<br>
+			{if $entityItem.filePath}
+			<a href="{$entityItem.filePath}" title="{$entityItem.name} {$entityItem.model}">
+				<img src="theme/{$settings.theme}/img/icon/dataSheetIcon.png" alt="{$lang.dataSheet}" title="{$lang.dataSheet}">
+				<br>{$lang.dataSheet}<br>
+			</a>
+			{/if}
+		</section>
+	</div>
+	<div style="margin-top: 40px;">
+		<div class="clearFix">
+			<div class="row cell10 center">
+				<div class="curvedTop LH20 paddy5 greyFrame" style="border-bottom-style: none;">{$lang.description}</div>
+			</div>
+			<div class="row cell10 center">&nbsp;</div>
+			<div class="row cell10 center">&nbsp;</div>
+			<div class="row cell70 center">&nbsp;</div>
+		</div>
+		<div class="paddy5 h200" style="border-top: 1px solid #cecece;">
+			<p>{$entityItem.description}</p>
+		</div>
+	</div>
+	<br><br>
+	<div class="shareCommentBox" style="margin-right: -5px;">
+		<div class="center" style="padding: 2px;">
+			<h4>{$lang.shareComment}</h4>
+		</div>
+		<div id="shareBox{$entityItem.id}" class="shareBox">						
+			<div id="facebookShare{$entityItem.id}" class="facebook share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Facebook"></div>
+			<div id="googleplusShare{$entityItem.id}" class="googleplus share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="+Google"></div>
+			<div id="twitterShare{$entityItem.id}" class="twitter share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Twitter"></div>
+			<div id="stumbleuponShare{$entityItem.id}" class="stumbleupon share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Stumble"></div>
+			<div id="deliciousShare{$entityItem.id}" class="delicious share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Delicious"></div>
+			<div id="linkedinShare{$entityItem.id}" class="linkedin share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Linkedin"></div>
+			<div id="pinterestShare{$entityItem.id}" class="pinterest share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Pinterest"></div>
+		</div>
+		<div id="commentBox{$entityItem.id}" class="commentBox">
+			<div id="comments{$entityItem.id}"></div>
+		</div>
+	</div>
+</article>
+{/foreach}
+{/nocache}
+{literal}
+<commands value="$('.masterImage').elevateZoom({scrollZoom : true, zoomWindowPosition: 9, borderSize: 0, easing:true, responsive:true})">
+{/literal}

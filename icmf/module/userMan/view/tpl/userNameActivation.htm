@@ -1,0 +1,18 @@
+<div>
+	<div class="curvedFull paddy10">
+		<div class="clearFix">
+			<div class="row cell25 LH35">{$lang.userName}:</div>
+			<div class="row cell75"><input id="setUserName" name="setUserName" class="input" type="text" size="30" maxlength="100"></div>
+		</div>
+		<br><br><br><br>
+		<div class="paddy1 center">
+			<button onclick="
+				$('#content').farajax('loader', '/userMan/c_emActivation',
+					   'setUserName=' + $('#setUserName').val() + '::{$lang.userName}<>String<>1<>ce<>45'
+				);
+			">
+			ثبت نام کاربری
+			</button>
+		</div>
+	</div>
+</div>

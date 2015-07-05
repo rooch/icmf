@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<![endif]-->
+<html lang="fa">
+<head>
+	{nocache}
+	<title>{$title}</title>
+	<base href="http://{$settings.domain}/">
+	<meta charset="utf-8">
+	
+	<meta name="Description" content="{$description|strip_tags:false|truncate:150:'':true}">
+	<meta name="Publisher" content="{$settings.author}">
+	<meta name="Generator" content="{$settings.author}">
+	<meta name="Keywords" content="{$keywords}">
+	<meta name="Robots" content="{$settings.robots}">
+	<meta name="Author"	content="{$settings.author}">
+	
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	
+	<meta property="og:image" content="{$thumbnail}">
+	<meta property="og:title" content="{$title}">
+	<meta property="og:description" content="{$description|strip_tags:false|truncate:150:'':true}">
+	{/nocache}
+	
+	<link rel="shortcut icon" href="theme/{$settings.theme}/img/icon/favicons/favicon.png">
+	
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/style.php" type="text/css">
+	{$googleAnalytic}
+	<!--[if lt IE 9]>
+   	<script src="kernel/lib/xorg/global/fixHtml5.js"></script>
+   	<script src="kernel/lib/xorg/global/fixPng.js"></script>
+	<![endif]-->
+</head>
+<body id="body" style="direction: {$lang.direction};">
+<div id="modalMask" class="modalMask"></div>  
+<div id="modalWindow" class="modalWindow"></div>
+<div id="temp"></div>
+<!-- Wrapper -->
+<section id="wrapper" class="wrapper">
+	<section id="menu" class="menu">{nocache}{$menu}{/nocache}</section>
+	<section id="panel" class="panel">{nocache}{$panel}{/nocache}</section>
+	<section id="header" class="header">{nocache}{$header}{/nocache}</section>
+	<section id="container" class="container">
+		<section id="content" class="content">{nocache}{$main}{/nocache}</section>
+		<section id="copyright" class="copyright boxShadow center curvedTop">{$copyright}</section>
+	</section>
+</section>
+<!--/Wrapper-->
+<div id="goTop" class="goTop curvedFull boxShadow">^</div>
+<script src="theme/{$settings.theme}/js/js.php"></script>
+</body>
+</html>

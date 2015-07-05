@@ -1,0 +1,33 @@
+#blob {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	background: #FF4300;
+	background: -moz-linear-gradient(top, #FF6600, #FF3300);
+	background: -webkit-gradient(linear, left top, left bottom, from(#FF6600), to(#FF3300) );
+	behavior: url("../img/border-radius.htc");
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-moz-box-shadow: 2px 3px 10px #011331;
+	-webkit-box-shadow: 2px 3px 10px #011331;
+}
+
+#nav {
+	position: relative;
+	float: right;
+}
+
+#nav li {
+	float: right;
+	list-style: none;
+}
+
+#nav li a {
+	color: #e3e3e3;
+	position: relative;
+	float: right;
+	text-decoration: none;
+	padding: 5px 8px;
+	z-index: 2;
+}

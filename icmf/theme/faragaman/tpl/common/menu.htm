@@ -1,0 +1,17 @@
+<nav class="topNav">
+	<ul>
+		<li class="n1"><a title="projects" href="">{$lang.projects}</a></li>
+	    <li class="n2"><a title="about us" href="pageLoader/v_load/aboutUs">{$lang.aboutUs}</a></li>
+	    <li class="n3"><a title="contact us" href="contact/v_contactUs">{$lang.contactUs}</a></li>
+	    <li class="quebec">&nbsp;</li>
+	</ul>
+</nav>
+<nav id="respoNav" class="respoNav">  
+    <select onchange="location = this.options[this.selectedIndex].value;">
+       <option value=""> ... </option>
+       <option value="/">Home</option>
+       <option value="projects">{$lang.projects}</option>
+       <option value="aboutus">{$lang.aboutUs}</option>
+        <option value="contact/v_contactUs">{$lang.contactUs}</option>
+    </select>
+</nav>

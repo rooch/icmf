@@ -1,0 +1,14 @@
+<div id="pageIn" class="pageIn">
+	{nocache}
+	<h1>{$item.title}</h1>
+	<div style="text-align: center;">
+		{if $item.imagePath != ''}
+			<img width="400" height="350" style="border: 1px solid #e5e5e5; padding: 2px;" title="{$item.title}" alt="{$item.title}" src="{$item.imagePath|replace:",":""}">
+		{/if}
+	</div>
+	{$item.description}
+	<br>
+	<div id="shareLink{$item.id}" class="shareLink" data-url="http://{$settings.domain}/post/c_showObject/id={$item.id}" data-title="{$item.title}" data-text="{$item.description|strip_tags:false|truncate:600:"...":true}"></div>
+	{/nocache}
+</div>
+<commands value="startShare();">

@@ -1,0 +1,67 @@
+/************************/
+/*        Basket        */
+/************************/
+
+.basket {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	z-index: 1050;
+}
+
+.basketHandler {
+	width: 5%;
+	margin-right: 3%;
+	padding: 2px 5px;
+	background: #000;
+	color: #910039;
+	text-align: center;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.basketContent {
+	position: relative;
+	font-size: 10px;
+	background: #000;
+	overflow: auto;
+	height: 0px;
+}
+
+.basketContent .basketEDelivery {
+	overflow: auto;
+	height: 20px;
+	margin-right: -5px;
+	width: 100%;
+	position: absolute;
+	background: rgba(85, 161, 232, 0.9);
+	bottom: 0px;
+	z-index: 1010;
+}
+
+.basketObject .title {
+}
+
+.basketObject .title:hover .description {
+	max-height: 214px;
+}
+
+.basketObject .description {
+	display: block;
+	background: rgba(255, 255, 255, 0.9);
+	width: 100%;
+	right: 0px;
+	top: 14px;
+	position: absolute;
+	overflow: auto;
+	max-height: 0;
+	transition: max-height 1s ease-in;
+	-webkit-transition: max-height 1s ease-in;
+	-moz-transition: max-height 1s ease-in;
+	-o-transition: max-height 1s ease-in;
+	-ms-transition: max-height 1s ease-in;
+}

@@ -1,0 +1,127 @@
+{nocache}
+<div class="paddy20">
+	<div class="center">
+		{if $result.err_num > 20}
+		<h1 class="x3 white">اوه، سایت شما خیلی کار داره!</h1>
+		{else if $result.err_num > 15 && $result.err_num <= 20}
+		<h1 class="x3 white">وضعیت سایتت زیاد جالب نیست. به فکرش باش</h1>
+		{else if $result.err_num > 10 && $result.err_num <= 15}
+		<h1 class="x3 white">این تعداد خطا زیاد جالب نیستا!</h1>
+		{else if $result.err_num > 5 && $result.err_num <= 10}
+		<h1 class="x3 white">بهتره به تعداد خطاها توجه کنی، حیف نیست؟</h1>
+		{else if $result.err_num > 0 && $result.err_num <= 5}
+		<h1 class="x3 white">تعداد خطاهایی که سایتت داره کمه، تبریک میگم.</h1>
+		{else if $result.err_num == 0}
+		<h1 class="x3 white">تبریک میگم، سایت خوبی دارید</h1>
+		{/if}
+	</div>
+	<br><br>
+	<!-- 
+	<div class="center">
+		<img src="{$result.image}" width="192" height="153" class="curvedFull">
+	</div> -->
+	<br><br><br><br><br>
+	<div class="clearFix specialFont x4 center cell50 centerObject">
+		<div class="row cell50">
+			<div class="paddy5 white thin">خطاها</div>
+			<div class="paddy10">
+				<div class="paddy5 whiteFrame curvedFull boxShadow red LH100">
+					{$result.err_num}
+					<input id="err_num" value="{$result.err_num}" type="hidden">
+				</div>
+			</div>
+		</div>
+		<div class="row cell50">
+			<div class="paddy5 white thin">هشدارها</div>
+			<div class="paddy10">
+				<div class="paddy5 whiteFrame curvedFull boxShadow orange LH100">
+					{$result.warn_num}
+					<input id="warn_num" value="{$result.warn_num}" type="hidden">
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<br>
+	<div class="clearFix">
+		<div class="row cell45">
+			<div class="h200 right paddyUpDown20 dastnevisFont x2 white">
+				<p>در حال حاضر روزانه چند نفر بازدید کننده دارید؟</p>
+				<br>
+				<div class="center">
+					<input id="realVisit" class="curvedFull blockqoute x1 center"> ؟
+				</div>
+			</div>
+		</div>
+		<div class="row cell25">
+			<div class="h200" style="background: url('theme/{$settings.theme}/img/dashed2.png') no-repeat center center;">&nbsp;</div>
+		</div>
+		<div class="row cell30">
+			<div class="circle200 centerObject" style="background: url('theme/{$settings.theme}/img/team/.jpg') no-repeat center center;"></div>
+		</div>	
+	</div>
+	<br>
+	<div class="clearFix">
+		<div class="row cell45">
+			<div class="h200 right paddyUpDown20 dastnevisFont x2 white">
+				<p>دوست داری به چه عددی برسه؟</p>
+				<br>
+				<div class="center">
+					<input id="goalVisit" class="curvedFull blockqoute x1 center"> ؟
+				</div>
+			</div>
+		</div>
+		<div class="row cell25">
+			<div class="h200" style="background: url('theme/{$settings.theme}/img/dashed.png') no-repeat center center;">&nbsp;</div>
+		</div>
+		<div class="row cell30 center">
+			<span class="fa fa-rocket fa-10x white rotate90m"></span>
+		</div>	
+	</div>
+	<br>
+	<hr>
+	<br>
+	<div class="specialFont white x2 center LH40">
+		اگر بخوای ما می‌تونیم کمک کنیم تا بازدید کننده بیشتر و از اون بهتر سود بیشتری از وبسایتت داشته باشه. پس لطفا اطلاعات فرم زیر رو پر کن. <br>
+		تا حداکثر بعد از ۴۸ ساعت یک گزارش کامل از وضعیت کنونی سایتت دریافت کنی.
+	</div>
+	<br><br>
+	<icmfForm>
+		<div id="analysisRegForm" class="analysisRegForm cell60 centerObject redFrame curvedFull paddy20">
+			<div class="paddy5">
+				<div class="paddy5 whiteFrame curvedFull clearFix">
+					<div class="row cell90"><input id="analysisFirstName" name="analysisFirstName" class="cell96 x2" placeholder="{$lang.firstName}"></div>
+					<div class="row cell10 center"><span class="fa fa-user fa-3x"></span></div>
+				</div>
+				<br>
+				<div class="paddy5 whiteFrame curvedFull clearFix">
+					<div class="row cell90"><input id="analysisLastName" name="analysisLastName" class="cell96 x2" placeholder="{$lang.lastName}"></div>
+					<div class="row cell10 center"><span class="fa fa-users fa-3x"></span></div>
+				</div>
+				<br>
+				<div class="paddy5 whiteFrame curvedFull clearFix">
+					<div class="row cell90"><input id="analysisEmail" name="analysisEmail" class="cell96 x2" placeholder="{$lang.email}"></div>
+					<div class="row cell10 center"><span class="fa fa-envelope-o fa-3x"></span></div>
+				</div>
+				<br>
+				<div class="paddy5 whiteFrame curvedFull clearFix">
+					<div class="row cell90"><input id="analysisMobile" name="analysisMobile" class="cell96 x2" placeholder="{$lang.mobile}"></div>
+					<div class="row cell10 center"><span class="fa fa-mobile fa-3x"></span></div>
+				</div>
+				<br><br>
+				<div class="relative cell20 centerObject">
+					<div class="circle100 x2 LH100 center specialFont pointer hover" onclick="$('#content').farajax('loader', '/crm/c_addObject',
+						'subject=درخواست گزارش رایگان::{$lang.subject}<>Multi<>1<>ce<>45' +
+						'&website=' + $('#websiteUrl').val() + '::{$lang.website}<>Multi<>1<>ce<>200' + 
+						'&firstName=' + $('#analysisFirstName').val() + '::{$lang.firstName}<>Multi<>1<>ce<>100' + 
+						'&lastName=' + $('#analysisLastName').val() + '::{$lang.lastName}<>Multi<>1<>nce<>100' + 
+						'&email=' + $('#analysisEmail').val() + '::{$lang.email}<>Mail<>1<>ce<>100' + 
+						'&mobile=' + $('#analysisMobile').val() + '::{$lang.mobile}<>Number<>1<>ce<>11<>09100000000<>09999999999'
+					);">ارسال</div>
+				</div>
+			</div>
+		</div>
+	</icmfForm>
+</div>
+{/nocache}
+<commands value="afterAnalysis();">

@@ -1,0 +1,185 @@
+<div id="upl">
+	<table class="listFull">
+		<tr>
+			<td width="15%" style="vertical-align: top;">
+				<table class="listFull">
+					<tr>
+						<td id="imgLister" align="center">
+							<img src="theme/{$settings.theme}/img/yellowButton.png" onclick="createUploader('img', 'imgLister');">
+							<input id="ImagePath" name="ImagePath" type="hidden" size="15"><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<hr>
+						</td>
+					</tr>
+					<tr>
+						<td id="fileLister" align="center">
+							<img src="theme/{$settings.theme}/img/goldButton.png" onclick="createUploader('file', 'fileLister');">
+							<input id="FilePath" name="FilePath" type="hidden" size="15"><br>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td width="85%" style="vertical-align: top;">
+				<table class="listFull">
+					<tr>
+						<td width="15%">{$lang.name}:</td>
+						<td width="35%"><input id="name" name="name" class="input" type="text" size="40" maxlength="100"></td>
+						<td width="15%">{$lang.rpm}:</td>
+						<td width="35%"><input id="rpm" name="rpm" class="input" type="text" size="40" maxlength="45"></td>
+					</tr>
+					<tr>
+						<td>{$lang.model}:</td>
+						<td><input id="model" name="model" class="input" type="text" size="40" maxlength="100"></td>
+						<td>{$lang.tav}:</td>
+						<td><input id="tav" name="tav" class="input" type="text" size="40" maxlength="45"></td>
+					</tr>
+					<tr>
+						<td>{$lang.company}:</td>
+						<td>
+							{nocache}
+							<select id="company" name="company">
+								{foreach name=company key=companyKey item=companyItem from=$company}
+									{if $companyKey == $company.selected}
+										<option value="{$companyKey}" selected="selected">{$companyItem}</option>
+									{else}
+										{if $companyKey == "selected" || !isset($companyItem)}
+											<option value=""> ... </option>
+										{else}
+								  			<option value="{$companyKey}">{$companyItem}</option>
+								  		{/if}
+								  	{/if}
+							  	{/foreach}
+					  		</select>
+					  		{/nocache}
+						</td>
+						<td>{$lang.voltage}:</td>
+						<td><input id="voltage" name="voltage" class="input" type="text" size="40" maxlength="45"></td>
+					</tr>
+					<tr>
+						<td>{$lang.announceDate}:</td>
+						<td><input id="announceDate" name="announceDate" class="input" type="text" size="40" maxlength="100"></td>
+						<td>{$lang.amper}:</td>
+						<td><input id="amper" name="amper" class="input" type="text" size="40" maxlength="45"></td>
+					</tr>
+					<tr>
+						<td>{$lang.dimension}:</td>
+						<td><input dir="ltr" id="dimension" name="dimension" class="input" type="text" size="40" maxlength="100" value="   X   X   "></td>
+						<td>{$lang.electricType}:</td>
+						<td>
+							<select id="electricType" name="electricType">
+								<option value=""> .. </option>
+								<option value="AC"> AC </option>
+								<option value="DC"> DC </option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>{$lang.weight}:</td>
+						<td><input id="weight" name="weight" class="input" type="text" size="40" maxlength="100"></td>
+						<td>{$lang.power}:</td>
+						<td><input id="power" name="power" class="input" type="text" size="40" maxlength="45"></td>
+					</tr>
+					<tr>
+						<td>{$lang.color}:</td>
+						<td><input id="color" name="color" class="input" type="text" size="40" maxlength="100"></td>
+						<td>{$lang.code}:</td>
+						<td><input id="code" name="code" class="input" type="text" size="40" maxlength="45"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>{$lang.link}:</td>
+						<td><input dir="ltr" id="link" name="link" class="input" type="text" size="40" maxlength="100"></td>
+						<td>{$lang.usage}:</td>
+						<td><input id="usage" name="usage" class="input" type="text" size="40" maxlength="100"></td>
+					</tr>
+					<tr>
+						<td>{$lang.keyWords}:</td>
+						<td><input id="keyWords" name="keyWords" class="input" type="text" size="40" maxlength="200"></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>{$lang.buyPrice}:</td>
+			  			<td><input id="buyPrice" name="buyPrice" class="input" type="text" size="40" maxlength="10"></td>
+			  			<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>{$lang.count}:</td>
+			  			<td><input id="productCount" name="productCount" class="input" type="text" size="40" maxlength="10"></td>
+			  			<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>{$lang.category}:</td>
+						<td>
+						{nocache}
+						<select id="category" name="category">
+							{foreach name=category key=categoryKey item=categoryItem from=$category}
+								{if $categoryKey == $category.selected}
+									<option value="{$categoryKey}" selected="selected">{$categoryItem}</option>
+								{else}
+									{if $categoryKey == "selected" || !isset($categoryItem)}
+										<option value=""> ... </option>
+									{else}
+							  			<option value="{$categoryKey}">{$categoryItem}</option>
+							  		{/if}
+							  	{/if}
+						  	{/foreach}
+				  		</select>
+				  		{/nocache}
+			  			</td>
+			  			<td></td>
+						<td></td>
+					</tr>
+			  		<tr>
+			  			<td>
+			  			{$lang.description}:
+			  			</td>
+			  			<td colspan="3">
+						<textarea id="description" name="description" rows="5" cols="40"></textarea>							
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<button onclick="
+								$('#add').farajax('loader', '/product/c_addObject',
+									   'ImagePath=' + document.getElementById('ImagePath').value + '::{$lang.fileName}<>Multi<>1<>nce<>500' +
+									   '&FilePath=' + document.getElementById('FilePath').value + '::{$lang.fileName}<>Multi<>1<>nce<>500' +
+									   '&name=' + document.getElementById('name').value + '::{$lang.name}<>Multi<>1<>ce<>45' +
+									   '&model=' + document.getElementById('model').value + '::{$lang.model}<>Multi<>1<>ce<>45' +
+									   '&company=' + document.getElementById('company').value + '::{$lang.company}<>Number<>1<>ce<>5' +
+									   '&announceDate=' + document.getElementById('announceDate').value + '::{$lang.announceDate}<>Multi<>1<>nce<>11' +
+									   '&dimension=' + document.getElementById('dimension').value + '::{$lang.dimension}<>Multi<>1<>nce<>45' +
+									   '&weight=' + document.getElementById('weight').value + '::{$lang.weight}<>Number<>1<>nce<>10' +
+									   '&color=' + document.getElementById('color').value + '::{$lang.color}<>Multi<>1<>nce<>45' +
+									   '&link=' + document.getElementById('link').value + '::{$lang.link}<>Multi<>1<>nce<>200' +
+									   '&keyWords=' + document.getElementById('keyWords').value + '::{$lang.keyWords}<>Multi<>1<>nce<>200' +
+									   '&buyPrice=' + document.getElementById('buyPrice').value + '::{$lang.buyPrice}<>Number<>1<>nce<>11' +
+									   '&count=' + document.getElementById('productCount').value + '::{$lang.count}<>Number<>1<>nce<>5' +
+									   '&category=' + document.getElementById('category').value + '::{$lang.category}<>Number<>1<>ce<>5' +
+									   '&description=' + document.getElementById('description').value + '::{$lang.description}<>Multi<>1<>nce<>70000' +
+									   '&rpm=' + document.getElementById('rpm').value	+ '::{$lang.rpm}<>Multi<>1<>nce<>45' +
+									   '&tav=' + document.getElementById('tav').value	+ '::{$lang.tav}<>Multi<>1<>nce<>45' +
+									   '&voltage=' + document.getElementById('voltage').value	+ '::{$lang.voltage}<>Multi<>1<>nce<>45' +
+									   '&amper=' + document.getElementById('amper').value	+ '::{$lang.amper}<>Multi<>1<>nce<>45' +
+									   '&electricType=' + document.getElementById('electricType').value	+ '::{$lang.electricType}<>String<>1<>nce<>2' +
+									   '&power=' + document.getElementById('power').value	+ '::{$lang.power}<>Multi<>1<>nce<>45' +
+									   '&code=' + document.getElementById('code').value	+ '::{$lang.code}<>Multi<>1<>nce<>45' +
+									   '&usage=' + document.getElementById('usage').value	+ '::{$lang.usage}<>Multi<>1<>nce<>100'
+								);
+							$('#add').farajax('loader', '/product/v_addObject');
+							$('#list').farajax('loader', '/product/c_listObject');
+							">
+					<span>{$lang.submit}</span>
+				</button>
+			</td>
+		</tr>
+	</table>
+</div>

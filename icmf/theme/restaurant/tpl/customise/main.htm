@@ -1,0 +1,63 @@
+<div class="clearFix">
+	<div class="row cell33 right-box">
+		<div class="paddy30">
+			<h1 class="specialFont">Products</h1>
+			<ul style="margin-left: 60px;">
+				<li>Pepperoni Pizza</li>
+				<li>Full House Pizza</li>
+				<li>Veggie Pizza</li>
+				<li>Fit Pizza</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row cell67 left-box">
+		<div class="paddy30">
+			<h1 class="specialFont">Welcome</h1>
+			<p>
+				AranBia Ltd trading as Queen Margherita, baking pizza is our passion. We use only the finest and freshest ingredients to create Halal pizza that will fill your belly and warm your heart. Come and visit - your taste buds will thank you!
+			</p>
+			<br><br>
+			<span style="font-family: mr de haviland,cursive;">Freddie Khandan</span><br><br>
+			<span style="font-family: mr de haviland,cursive;">Tom Bazleh</span>
+		</div>
+	</div>
+</div>
+<div class="clearFix" style="margin-top: 6px;">
+	<div class="row cell33 box">
+		<div class="paddy30">
+			<h1 class="specialFont">Newsletter</h1>
+			<div id="human0" class="clearFix">
+				<div class="paddy1 clearFix">
+					<div class="row cell75"><input id="firstName0" name="firstName0" maxlength="45" class="cell70" style="height: 20px"></div>
+					<div class="row cell25 LH25">* Name:</div>
+				</div>
+				<div class="paddy1 clearFix">
+					<div class="row cell75"><input id="email0" name="email0" maxlength="100" class="cell70" style="height: 20px"></div>
+					<div class="row cell25 LH25">Email:</div>
+				</div>
+			</div>
+			<br>
+			<div>
+				<button style="margin: 0 auto;" onclick="
+					$('#content').farajax('loader', 'humanResource/c_addObject', 
+						   'type0=newsletter' +
+						   '&firstName0=' + document.getElementById('firstName0').value + '::Name<>Multi<>1<>ce<>100' +
+						   '&email0=' + document.getElementById('email0').value + '::Email<>Mail<>1<>nce<>100'
+					);
+				">
+				<span>Submit</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="row cell33 box">
+		<div class="paddy30">
+			<h1>Title</h1>
+		</div>
+	</div>
+	<div class="row cell33 box" style="background-position: left;">
+		<div class="paddy30">
+			<h1>Title</h1>
+		</div>
+	</div>
+</div>

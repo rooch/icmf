@@ -1,0 +1,66 @@
+<h2 class="zeroDis">fsNetwork</h2>
+<div class="row cell75 holdingCell">
+	<ul class="row inlineDisplay holding">
+		<li><b><a href="http://fsnet.ir" title="FSNet" class="tip">&#174; FSNet</a></b></li>
+		<li><b><a href="http://digiwebdesign.ir" title="برنامه نویسی و طراحی سایت" class="tip">دیجی وب دیزاین</a></b></li>
+		<li><b><a href="http://digiseo.ir" title="سئو و بهینه سازی وب" class="tip">دیجی سئو</a></b></li>
+		<li><b><a href="http://mimgraphic.ir" title="خانه طراحی و چاپ حرفه ای ایران" class="tip">میم گرافیک</a></b></li>
+	</ul>
+</div>
+<div class="row cell10 ltr contactCell">
+	<div id="tinyContact" class="LH25 left curvedTop phoneTop">
+		۰۲۱-۸۸۸۹۴۹۳۶
+		<div class="displayNone curvedNoTopLeft">
+			<div class="right">دفتر فروش</div>
+			<ul>
+				<li>Phone: ۰۲۱-۸۸۸۹۴۹۳۶</li>
+				<li>Email: sales@digiseo.ir</li>
+			</ul>
+			<div class="right">دفتر فنی</div>
+			<ul>
+				<li>Phone: ۰۲۱-۶۶۳۷۸۸۵۸</li>
+				<li>Email: technical@digiseo.ir</li>
+			</ul>
+			<div class="center">
+				<img class="curvedFull" src="theme/{$settings.theme}/img/digiseoSalesQRCode.png" alt="QR Code دیجی سئو" title="QR Code دیجی سئو" width="147" height="147">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row cell5 ltr languageCell">
+	<div id="langSelector" class="centerObject flagsSprite flags-Iran curvedTop"></div>
+</div>
+<div class="row cell10 loginCell">
+	{nocache}
+	{if isset($smarty.session.uid) && $smarty.session.uType != 1}
+		<div class="clearFix">
+			<div class="row cell30 icon">
+				<div style="padding-top: 2px;">
+					<div class="fa fa-user fa-1_5x pointer centerObject" onclick="$('#cPanel').slideToggle('slow');"></div>
+				</div>
+			</div>
+			<div class="row cell70 LH30 text">
+				<a href="/userMan/c_logout" rel="nofollow" onclick="setTimeout('location.href=\'/\';', 5000);">{$lang.logout}</a>
+			</div>
+		</div>
+	{else}
+		<div class="clearFix">
+			<div class="row cell30 icon">
+				<div style="padding-top: 2px;">
+					<div class="fa fa-sign-in fa-1_5x pointer centerObject" onclick="$('#cPanel').slideToggle('slow');"></div>
+				</div>
+			</div>
+			<div class="row cell70 LH30 text">
+				<a class="tip" href="/userMan/v_signUp" title="{$lang.signUpHere}">{$lang.signUp}</a>
+			</div>
+		</div>		
+	{/if}
+	{/nocache}
+</div>
+<br class="clear">
+<!-- cPanel -->
+<div id="cPanel" class="displayNone cPanel paddy5">
+	<div id="login" class="login" style="padding-right: 10px;">{nocache}{$login}{nocache}</div>
+	<div id="accessories" class="accessories displayNone" style="padding-right: 10px;"></div>
+</div>
+<!-- /cPanel -->

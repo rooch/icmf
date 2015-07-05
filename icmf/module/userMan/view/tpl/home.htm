@@ -1,0 +1,83 @@
+{nocache}
+{foreach name=user key=userKey item=userItem from=$userList}
+<section id="userInfo" class="whiteFrame curvedFull paddy10">
+	<h1 class="title">
+		خانه کاربر
+		{if !empty($userItem.userName)}
+		{$userItem.userName}
+		{elseif !empty($userItem.firstName) || !empty($userItem.lastName)}
+		{$userItem.firstName} {$userItem.lastName}
+		{else}
+		{$userItem.email}
+		{/if}
+	</h1>
+	<div class="clearFix">
+		<div class="row cell75">
+			<ul>
+				<li>{$lang.name}: {$userItem.firstName} {$userItem.lastName}</li>
+				<li>{$lang.fatherName}: {$userItem.fatherName}</li>
+				<li>{$lang.nationality}: {$userItem.nationality}</li>
+				<li>{$lang.city}: {$userItem.issued}</li>
+				<li>{$lang.level}: {$userItem.level}</li>
+				{if $userItem.showEmail == 1}
+				<li>{$lang.email}: <a href="mailto:{$userItem.email}">{$userItem.email}</a></li>
+				{elseif empty($userItem.firstName) && empty($userItem.lastName) && empty($userItem.lastName)}
+				<li>{$lang.email}: <a href="mailto:{$userItem.email}">{$userItem.email}</a></li>
+				{/if}
+				{if $userItem.showMobile == 1}
+				<li>{$lang.mobile}: {$userItem.mobile}</li>
+				{/if}
+			</ul>
+		</div>
+		<div class="row cell5">
+			<ul>
+				{if $userItem.showMobile == 1}
+				<li class="center"><span class="fa fa-mobile fa-2x tip" title="{$userItem.mobile}"></span></li>
+				{/if}
+				{if $userItem.showEmail == 1}
+				<li class="center"><a class="fa fa-envelope-o fa-2x" href="mailto:{$userItem.email}"></a></li>
+				{/if}
+				{if !empty($userItem.googlePlus)}
+				<li class="center"><a class="red fa fa-google-plus-square fa-2x" href="{$userItem.googlePlus}"></a></li>
+				{/if}
+				{if !empty($userItem.facebook)}
+				<li class="center"><a class="blue fa fa-facebook-square fa-2x" href="{$userItem.facebook}"></a></li>
+				{/if}
+				{if !empty($userItem.twitter)}
+				<li class="center"><a class="blue fa fa-twitter-square fa-2x" href="{$userItem.twitter}"></a></li>
+				{/if}
+				<li>&nbsp;</li>
+			</ul>
+		</div>
+		<div class="row cell20">
+			<img id="show-image-single-path1" class="whiteFrame curvedFull" src="{$userItem.userPic}" width="200" height="250">
+		</div>
+	</div>
+</section>
+<br>
+<section id="personalPage" class="whiteFrame curvedFull paddy10">
+	{$personalPage}
+</section>
+{/foreach}
+<br>
+<div class="whiteFrame curvedFull paddy10">
+	<div class="clearFix">
+		<div class="row cell70">
+			<div class="paddy5">
+				<section id="userPosts" class="whiteFrame curvedFull paddy10">
+					<h2>مطالب این کاربر</h2>
+					<div id="postList">{$postList}</div>
+				</section>
+			</div>
+		</div>
+		<div class="row cell30">
+			<div class="paddy5">
+				<section id="userComments" class="whiteFrame curvedFull paddy10">
+					<h2>نظرات این کاربر</h2>
+					<div id="commentList">{$commentList}</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+{/nocache}

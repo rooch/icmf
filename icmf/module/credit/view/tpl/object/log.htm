@@ -1,0 +1,20 @@
+<h2>{$lang.list}</h2>
+<br>
+<div class="listHeader clearFix center">
+	<div class="row cell5">#</div>
+	<div class="row cell10">{$lang.id}</div>
+	<div class="row cell15">{$lang.date}</div>
+	<div class="row cell30">{$lang.agent}</div>
+	<div class="row cell40">{$lang.log}</div>
+</div>
+{nocache}
+{foreach name=entity key=entityKey item=entityItem from=$entityList}
+<div class="blockquote clearFix" id="row{$entityItem.id}">
+	<div class="row cell5">{$entityItem.num}</div>
+	<div class="row cell10">{$entityItem.id}</div>
+	<div class="row cell15">{$entityItem.timeStamp}</div>
+	<div class="row cell30 center">{$entityItem.agent}&nbsp;</div>
+	<div class="row cell40"><ul class="discListStyle">{$entityItem.log}</ul>&nbsp;</div>
+</div>
+{/foreach}
+{/nocache}

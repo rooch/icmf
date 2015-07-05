@@ -1,0 +1,35 @@
+<div id="pageIn" class="pageIn">
+	<h1>{$lang.fileAdd}</h1>
+	<br>
+	<div style="padding: 1px 0px;">
+		<div class="row cell10">
+			<b>{$lang.title}:</b>
+		</div>
+		<div class="row cell90">
+			<input id="title" name="title" class="input" type="text" size="86" maxlength="500">
+		</div>
+		<br style="clear: both">
+	</div>
+	<div style="padding: 1px 0px;">
+		<div class="row cell10">
+			<b>{$lang.message}:</b>
+		</div>
+		<div class="row cell90">
+			<div id="editorFullText"></div>
+			<div id="textcontents" style="display: none">
+				<!-- This div will be used to display the editor contents. -->
+				<div id="description"></div>
+			</div>
+			<textarea id="fullText" name="fullText" rows="10" cols="84" onclick=" this.style.display='none';" onfocus="createEditor('description', 'editorFullText'); this.style.display='none';"></textarea>
+		</div>
+		<br style="clear: both;">
+	</div>
+	<br>
+	<button style="height: 40px; width: 180px;" onclick="$('#content').farajax('loader', '/designer/c_add', 
+																																'title=' + encodeURIComponent(document.getElementById('title').value) + '::{$lang.title}<>Multi<>1<>ce<>200' +
+																																'&description=' + encodeURIComponent(getText('description')) + '::{$lang.description}<>Multi<>1<>ce<>1000000000'
+																																);
+	">
+	<span>{$lang.save}</span>
+	</button>
+</div>

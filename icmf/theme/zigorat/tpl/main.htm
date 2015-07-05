@@ -1,0 +1,215 @@
+{nocache}
+{if $sysVar.browserType == 'MSIE'}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+{else}
+<html>
+{/if}
+{/nocache}
+<head>
+	<title>{$settings.siteName}</title>
+	
+	<meta name="Generator" content="{$settings.author}"></meta>
+	<meta name="Keywords" content="فروشگاه ساز قدرتمند شرکت فراگامان شریف"></meta>
+	<meta name="Description" content="فروشگاه ساز قدرتمند شرکت فراگامان شریف"></meta>
+	<meta name="Robots" content="{$settings.robots}"></meta>
+	<meta name="Author"	content="{$settings.author}"></meta>
+	<meta name="Copyright" content="{$settings.copyright}"></meta>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+	
+	<link rel="SHORTCUT ICON" href="theme/{$settings.theme}/img/icon/favicon.gif"></link>
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/global.css" type="TEXT/CSS"></link>
+	<!-- superfish Menu -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/superFishMenu/superfish.css" type="TEXT/CSS"></link>
+	<!-- /superfish Menu -->
+	<!-- simple Tree Menu -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/simpleTreeMenu/jquery-simpleTreeMenu-1.2.0.css" type="TEXT/CSS"></link>
+	<!-- /simple Tree Menu -->
+	<!-- micro Gallery -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/microGallery/style.css" type="TEXT/CSS"></link>
+	<!-- /micro Gallery -->
+	<!-- nivo slider -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/nivoSlider/themes/default/default.css" type="TEXT/CSS"></link>
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/nivoSlider/themes/nivo-slider.css" type="TEXT/CSS"></link>
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/nivoSlider/themes/style.css" type="TEXT/CSS"></link>
+	<!-- /nivo slider -->
+	<!-- Commet Chat -->
+	<link rel="stylesheet" href="{$settings.libraryAddress}/xorg/cometchat/cometchatcss.php" type="TEXT/CSS"></link>
+	<!-- /Commet Chat -->
+	<!-- TipTip -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/tipTip/tipTip.css" type="TEXT/CSS"></link>
+	<!-- /TipTip -->
+	<!-- newsTicker -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/newsTicker/style.css" type="TEXT/CSS"></link>
+	<!-- /newsTicker -->
+	<!-- print -->
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/print.css" media="print" type="TEXT/CSS"></link>
+	<!-- /print -->
+	<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/google.js"></script>
+	<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/ajax/ajax.js"></script>
+	<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/global/global.js"></script>
+	<!-- <script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/cometchat/cometchatjs.php"></script> -->
+	<!--[if lte IE 6]>
+	<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/global/fixPng.js"></script>
+	<![endif]-->
+</head>
+<body id="body">
+<div id="loading" class="loading opacity7">
+	<img src="theme/{$settings.theme}/img/loading.gif"></img>
+</div>
+<div id="temp" class="temp"></div>
+<!-- Wrapper -->
+<div id="wrapper" class="wrapper">
+	<!-- Logo -->
+	<div id="logo" class="logo">
+		<div style="text-align: left;"><img alt="Zigorat" title="Zigorat" src="theme/{$settings.theme}/img/favarayanLogo.png" onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=main', 1);"></img></div>
+		<div style="text-align: right;"><img alt="Zigorat" title="Zigorat" src="theme/{$settings.theme}/img/zigoratLogo.png" onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=main', 1);"></img></div>
+	</div>
+	<!-- /Logo -->
+	<!-- Login -->
+	<div id="login" class="login curvedTop shadowTop"></div>
+	<!-- /Login -->
+	<div id="headBox" class="headBox curvedFull shadowFull">
+		<!-- Menu -->
+		<div id="menu" class="menu">{$menu}</div>
+		<!-- /Menu -->
+		<!-- Date Sign -->
+		<!-- <div id="dateSign" class="dateSign"></div> -->
+		<!-- /Date Sign -->
+		<!-- Header -->
+		<div id="header" class="header">
+			<div class="slider-wrapper theme-default">
+				{nocache}
+				{if $smarty.session.uid == 1}
+				<div style="position: absolute; left: 145px; z-index: 9999999999">
+					<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/plus.png" onclick="BrowseServer();"></img>
+				</div>
+				{/if}
+				{/nocache}
+				<div class="ribbon"></div>
+				<div class="nivoSlider">
+					<div id="slider" class="nivoSlider">{$slider}</div>
+				</div>
+				<div id="htmlcaption" class="nivo-html-caption">&nbsp;</div>
+			</div>
+		</div>
+		<!-- /Header -->
+		<!-- Toolbar -->
+		<div id="toolbar" class="toolbar">{$toolbar}</div>
+		<!-- /Toolbar -->
+	</div>
+	<!-- Container -->
+	<div id="container" class="container">
+		<!-- Left Side -->
+		<div id="leftSide" class="leftSide">
+			<div class="simpleFrame curvedFull shadowFull">
+				<h1 class="title">نظر سنجی</h1>
+				<div id="activePoll"></div>
+			</div>
+			<div class="simpleFrame curvedFull shadowFull">
+				<h1 class="title">آمار</h1>
+				<div id="simpleStat"></div>
+			</div>
+			<div class="simpleFrame curvedFull shadowFull">
+				<h1 class="title">تقویم</h1>
+				{$lang.today} {$dateJalali} {$lang.equalTo}<br>{$dateGregorian}
+			</div>
+			<div class="simpleFrame curvedFull shadowFull" style="text-align: left;">
+				<h1 class="title">لینکهای مرتبط</h1>
+				<div id="links">{$links}</div>
+			</div>
+		</div>
+		<!-- /Left Side -->
+		<!-- Content -->
+		<div id="content" class="content">{$main}</div>
+		<!-- /Content -->
+		<!-- Right Side -->
+		<div id="rightSide" class="rightSide">
+			<div class="simpleFrame curvedFull shadowFull">
+				<h1 class="title">محصولات</h1>
+				<div id="productCategory">{$category}</div>
+				<div class="link" onclick="$('#productTreeMenu').simpleTreeMenu('expandAll')">{$lang.expandAllNodes}</div>
+				<div class="link" onclick="$('#productTreeMenu').simpleTreeMenu('closeAll')">{$lang.closeAllNodes}</div>
+			</div>
+			<div class="simpleFrame curvedFull shadowFull">
+				<h1 class="title">لیست قیمت</h1>
+				<a href="home/1/files/priceList/pricelist.pdf" target="_blank">
+					<img border="0" src="theme/{$settings.theme}/img/btn-pricelist-intro.png"></img>
+				</a>
+			</div>
+			<div class="simpleFrame curvedFull shadowFull">
+				<h1 class="title">دانلود</h1>
+				<img style="cursor: pointer;" border="0" src="theme/{$settings.theme}/img/btn-download-driver-intro.png" onclick="loader('POST', '', 'content', 'op=download&mode=c_readDownloadDir', 1);"></img>
+			</div>
+			<div class="simpleFrame curvedFull shadowFull">
+				<h1 class="title">سرویس تگ</h1>
+				<a href="http://support.dell.com/support/topics/global.aspx/support/my_systems_info/details?c=us&l=en&s=gen&~tab=1&~ck=mn" target="_blank">
+					<img border="0" src="theme/{$settings.theme}/img/btn-service-tag-intro.png"></img>
+				</a>
+			</div>
+			<div class="simpleFrame curvedFull shadowFull">
+				<h1 class="title">مدیا پلیر</h1>
+				<div style="text-align: center;"> 
+					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="165" height="38" id="niftyPlayer1" align="">
+						<param name=movie value="{$settings.libraryAddress}/xorg/player/music/niftyplayer.swf?file=home/1/files/music/1.mp3&as=0">
+						<param name=quality value=high>
+						<param name=bgcolor value=#FFFFFF>
+						<embed src="{$settings.libraryAddress}/xorg/player/music/niftyplayer.swf?file=home/1/files/music/1.mp3&as=0" quality=high bgcolor=#FFFFFF width="165" height="38" name="niftyPlayer1" align="" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
+					</object>
+				</div>
+			</div>
+		</div>
+		<!-- /Right Side -->
+	</div>
+	<!-- k3dCarousel -->
+	<div id="k3dCarousel" class="k3dCarousel curvedFull shadowFull"></div>
+	<!-- /k3dCarousel -->
+	<!-- /Container -->
+	<!-- Footer -->
+	<div id="footer" class="footer">
+		کلیه حقوق این وبسایت متعلق به شرکت فاوارایان زیگورات می باشد.<br>
+		کلیه حقوق این نرم افزار متعلق به شرکت <a href="{$settings.authorWebsite}"><b>{$settings.author}</b></a> میباشد. <br>
+		نرم افزار <a href="http://www.icmf.ir"><b>فرا پورتال</b></a>
+		نسخه: {$settings.version}
+		<br>
+		{$lang.lastUpdate} {$lastUpdate}
+	</div>
+	<!-- Footer -->
+</div>
+<!--/Wrapper-->
+<!-- jQuery -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/jquery-1.5.2.min.js"></script>
+<!-- /jQuery -->
+<!-- menu -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/superFishMenu/hoverIntent.js"></script>
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/superFishMenu/superfish.js"></script>
+<!-- /menu -->
+<!-- k3Carousel -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/k3Carousel/jquery.k3dCarousel.min.js"></script>
+<!-- /k3Carousel -->
+<!-- tab -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/idTab/jquery.idTabs.min.js"></script>
+<!-- /tab -->
+<!-- scrollTo -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/scrollTo/jquery.scrollTo-min.js"></script>
+<!-- /scrollTo -->
+<!-- nivo slider -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/nivoSlider/jquery.nivo.slider.pack.js"></script>
+<!-- /nivo slider -->
+<!-- simple Tree Menu -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/simpleTreeMenu/jquery-simpleTreeMenu-1.2.0.js"></script>
+<!-- /simple Tree Menu -->
+<!-- sticky -->
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/jQuery/plugin/stickyFloat/stickyFloat.js"></script>
+<!-- /sticky -->
+<!-- StartUp -->
+<script language="javascript" type="text/javascript" src="theme/{$settings.theme}/js/startUp.js"></script>
+<!-- /StartUp -->
+{nocache}
+<img src="theme/{$settings.theme}/img/icon/s.png" onload="startUp({$sysVar.op}, {$sysVar.mode}, {$sysVar.RefNum}, {$sysVar.MID}, {$sysVar.State}, {$sysVar.ResNum});">
+{/nocache}
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/coding/base64.js"></script>
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/editor/ckeditor.js"></script>
+<script language="javascript" type="text/javascript" src="{$settings.libraryAddress}/xorg/finder/ckfinder.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<fieldset>
+	<legend>{$lang.productCount}</legend>
+	{nocache}
+	<ul>
+		<li>
+			<label>{$lang.count}: </label>
+			<input id="productCount{$objectId}" name="productCount{$objectId}" class="input" type="text" size="5" maxlength="6" value="1" onchange="if(this.value > {$objectCount}){ alert('تعداد درخواستی شما در انبار موجود نمی باشد. حداکثر می توانید {$objectCount} عدد از این محصول را انتخاب نمایید.'); } this.value = {$objectCount};">		
+		</li>
+		<li>&nbsp;</li>
+		<li>
+			<button onclick="$('#td{$objectId}').farajax('loader', '/shop/c_addToBasket', 'objectId={$objectId}::{$lang.id}<>Number<>1<>ce<>11&count=' + document.getElementById('productCount{$objectId}').value + '::{$lang.productCount}<>Number<>1<>nce<>6<>0<>999999'); addToBasket('{$objectId}');">{$lang.addToBasket}</button>
+		</li>
+	</ul>
+	{/nocache}
+</fieldset>

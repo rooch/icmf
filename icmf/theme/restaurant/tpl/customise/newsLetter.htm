@@ -1,0 +1,31 @@
+<article class="brownFrame paddy10">
+	<div class="centerObject orangeFrame paddy20 cell20 center">
+		<h1>Newletter</h1>
+	</div>
+	<br>
+	<p>
+		Enter your data to receive our newsletter
+	</p>
+	<div id="human0" class="boxShadow clearFix paddy10 brownFrame">
+		<div class="paddy1 clearFix">
+			<div class="row cell90"><input id="firstName0" name="firstName0" maxlength="45" class="cell70"></div>
+			<div class="row cell10 LH35">* Name:</div>
+		</div>
+		<div class="paddy1 clearFix">
+			<div class="row cell90"><input id="email0" name="email0" maxlength="100" class="cell70"></div>
+			<div class="row cell10 LH35">Email:</div>
+		</div>
+	</div>
+	<br>
+	<div>
+		<button style="margin: 0 auto; padding: 20px 60px;" onclick="
+			$('#content').farajax('loader', '/humanResource/c_addObject', 
+				   'type0=newsletter' +
+				   '&firstName0=' + document.getElementById('firstName0').value + '::Name<>Multi<>1<>ce<>100' +
+				   '&email0=' + document.getElementById('email0').value + '::Email<>Mail<>1<>nce<>100'
+			);
+		">
+		<span>Submit</span>
+		</button>
+	</div>
+</article>

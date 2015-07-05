@@ -1,0 +1,18 @@
+/*=================================*/
+.theme-default #slider {
+    margin: 0px auto 0 auto;
+    width: 980px; /* Make sure your images are the same size */
+    height:550px; /* Make sure your images are the same size */
+	background:#FFF;
+}
+.theme-pascal.slider-wrapper,
+.theme-orman.slider-wrapper {
+    margin-top:150px;
+}
+
+/*====================*/
+/*=== Other Styles ===*/
+/*====================*/
+.clear {
+	clear:both;
+}

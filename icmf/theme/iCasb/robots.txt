@@ -1,0 +1,29 @@
+User-Agent: *
+Disallow: 
+Disallow: /home
+Disallow: /cgi-bin
+Disallow: /config
+Disallow: /kernel
+Disallow: /module
+Disallow: /templates_c
+Disallow: /theme
+Disallow: /tmp
+Disallow: /basket
+Disallow: /comment
+Disallow: /cPanel
+Disallow: /designer
+Disallow: /draw
+Disallow: /financial
+Disallow: /formBuilder
+Disallow: /helpDesk
+Disallow: /humanResource
+Disallow: /mta
+Disallow: /payPerClick
+Disallow: /product
+Disallow: /sms
+Disallow: /userMan
+Disallow: /watchDog
+Disallow: /transport
+Disallow: /translator
+
+Sitemap: http://icasb.com/sitemap.xml

@@ -1,0 +1,38 @@
+<div class="clearFix">
+	<div class="row cell5">&nbsp;</div>
+	<div class="row cell70">
+		{nocache}
+		{if isset($smarty.session.uid) && $smarty.session.uid != 2}
+			<div class="clearFix">
+				<div class="row cell5">
+					<div style="padding-top: 2px;">
+						<img src="theme/{$settings.theme}/img/icon/User24.png" style="cursor: pointer;" alt="{$smarty.session.uid}" onclick="$('#cPanel').slideToggle('slow');" width="24" height="24">
+					</div>
+				</div>
+				<div class="row cell95" style="line-height: 27px;">
+					<a class="tip bold" href="/userMan/c_logout" rel="nofollow" title="{$lang.logout}" onclick="setTimeout('location.href=\'/\';', 5000);">{$lang.logout}</a>
+				</div>
+			</div>
+		{else}
+			<div class="clearFix">
+				<div class="row cell5">
+					<div style="padding-top: 2px;">
+						<img class="tip pointer" src="theme/{$settings.theme}/img/icon/Login_in24.png" alt="{$lang.login}" title="{$lang.login}" onclick="$('#cPanel').slideToggle('slow');"  width="24" height="24">
+					</div>
+				</div>
+				<div class="row cell95 LH30">
+					<a class="tip bold" href="/userMan/v_signUp" rel="nofollow" title="{$lang.signUpHere}">{$lang.signUp}</a>
+				</div>
+			</div>		
+		{/if}
+		{/nocache}
+	</div>
+	<div class="row cell20">
+		<h2>تلفن تماس: ۵۵۷۴۴۳۳۹-۰۲۱</h2>
+	</div>
+	<div class="row cell5">&nbsp;</div>
+</div>
+<div id="cPanel" class="cPanel paddy5">
+	<div id="login" class="login" style="padding-right: 10px;">{nocache}{$login}{nocache}</div>
+	<div id="accessories" class="accessories"></div>
+</div>

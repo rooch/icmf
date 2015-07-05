@@ -1,0 +1,76 @@
+<div class="clearFix">
+	<div class="row cell85">&nbsp;</div>
+	<div class="row cell10 ">
+		<div id="footerHandler" class="footerHandler LH40 curvedTop">{$lang.read}</div>
+	</div>
+	<div class="row cell5">&nbsp;</div>
+</div>
+<section id="footerContent" class="footerContent clearFix">
+	<section class="row cell30">
+		<article class="footerCol">
+			<h1>{$lang.aboutUs}</h1>
+			<br>
+			<p>
+				{nocache}{$lang.aboutUsDescription|strip_tags:false|truncate:700:"...":true}{/nocache}
+			</p>
+		</article>
+	</section>
+	<section class="row cell30">
+		<article class="footerCol">
+			<h1>{$lang.contactUs}</h1>
+			<br>
+			<div>
+				{$contactUs}
+			</div>
+		</article>
+	</section>
+	<section class="row cell40">
+		<article class="footerCol" style="border-left-style: none;">
+			<h1>{$lang.contactUs}</h1>
+			<br>
+			<div class="bold" style="border-bottom: 1px dashed #dddddd;">{$lang.phone}: {$lang.contactNumber}</div>
+			<br>
+			<div class="bold" style="border-bottom: 1px dashed #dddddd;">{$lang.email}: info@halfco.com</div>
+			<br>
+			<div class="bold" style="border-bottom: 1px dashed #dddddd;">{$lang.address}:<br>{$lang.halfAddress}</div>
+			<br>
+			<div class="clearFix">
+				<div class="row cell15">
+					<a href="">
+						<img class="tip" src="theme/{$settings.theme}/img/icon/twitter.png" width="32" height="32" alt={$lang.twitterPage} title="{$lang.twitterPage}">
+					</a>
+				</div>
+				<div class="row cell85 LH30">
+					<a href="">
+						<b>{$lang.twitterPage}</b>
+					</a>
+				</div>
+			</div>
+			<div class="clearFix">
+				<div class="row cell15">
+					<a href="https://www.facebook.com/halfcompany">
+						<img class="tip" src="theme/{$settings.theme}/img/icon/facebook.png" width="32" height="32" alt="{$lang.facebookPage}" title="{$lang.facebookPage}">
+					</a>
+				</div>
+				<div class="row cell85 LH30">
+					<a href="https://www.facebook.com/halfcompany">
+						<b>{$lang.facebookPage}</b>
+					</a>
+				</div>
+			</div>
+			<div class="clearFix" style="border-bottom: 1px dashed #dddddd;">
+				<div class="row cell15">
+					<a href="skype:half.company?userinfo">
+						<img class="tip" src="theme/{$settings.theme}/img/icon/skype.png" alt="{$lang.skype}" title="{$lang.skype}">
+					</a>
+				</div>
+				<div class="row cell85 LH30">
+					<a href="skype:half.company?userinfo">
+						<b>{$lang.skype}</b>
+					</a>
+				</div>
+			</div>
+		</article>
+	</section>
+</section>
+<section id="copyright" class="copyright paddy10 ">{$copyright}</section>

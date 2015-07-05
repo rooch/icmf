@@ -1,0 +1,29 @@
+<nav class="topNav centerObject cell80">
+    <ul>
+        <li class="fa fa-cutlery">
+        	<a title="غذاها" href="shop/v_vitrin" class="specialFont">غذاها</a>
+        </li>
+        <li class="fa fa-shopping-cart">
+        	<a title="سبد خرید" href="basket/v_object" class="specialFont">سبد خرید</a>
+        </li>
+        <li class="fa fa-pencil-square-o">
+			<a title="بلاگ" href="http://{$settings.domainName}/blog" class="specialFont">بلاگ</a>
+        </li>
+        <li class="fa fa-phone">
+			<a title="تماس با ما" href="contact/v_contactUs" class="specialFont">تماس</a>
+        </li>
+        <li class="fa fa-heart-o">
+			<a title="درباره ما" href="http://{$settings.domainName}/aboutus" class="specialFont">درباره ما</a>
+		</li>
+    </ul>
+</nav>
+<nav id="respoNav" class="respoNav">  
+    <select onchange="location = this.options[this.selectedIndex].value;">
+       <option value=""> ... </option>
+       <option value="/">خانه</option>
+       <option value="shop/v_vitrin">غذاها</option>
+       <option value="blog">بلاگ</option>
+       <option value="contact/v_contactUs">تماس با ما</option>
+       <option value="aboutus">درباره ما</option>
+    </select>
+</nav>

@@ -1,0 +1,114 @@
+/************************/
+/*         Shop         */
+/************************/
+.shop {
+	
+}
+
+.category {
+	background: #fff;
+	display: none;
+	position: absolute;
+	width: 100%;
+	z-index: 1000;
+}
+
+.search {
+	background: #fff;
+	display: none;
+	position: absolute;
+	width: 100%;
+	z-index: 1000;
+}
+
+.glassOverlay {
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	right: 0px;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.glassOverlay .tools {
+	padding: 10px;
+}
+
+.product {
+	width: 289.7px;
+	margin-bottom: 10px;
+}
+
+.product .w2 {
+	width: 220px;
+}
+
+.product .w3 {
+	width: 260px;
+}
+
+.product .w4 {
+	width: 320px;
+}
+
+.product .title {
+	border: 1px #e7e7e7;
+	border-style: solid solid none solid;
+	background: #fff;
+}
+
+.product .title:hover .description {
+	max-height: 400px;
+}
+
+.product .cell {
+	border: 1px solid #e7e7e7;
+}
+
+.product .description {
+	display: block;
+	width: 100%;
+	right: 0px;
+	top: 82px;
+	position: absolute;
+	background: rgba(255, 255, 225, 0.8);
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 1s ease-in;
+	-webkit-transition: max-height 1s ease-in;
+	-moz-transition: max-height 1s ease-in;
+	-o-transition: max-height 1s ease-in;
+	-ms-transition: max-height 1s ease-in;
+}
+
+.product .toolBox {
+	position: absolute;
+	border: 2px #cecece;
+	border-style: dashed dashed dashed none;
+	padding: 25px 1px;
+	left: 0px;
+	width: 32px;
+	top: 140px;
+}
+
+.product .close {
+	margin-top: 15px;
+	margin: 0 auto;
+	width: 24px;
+	height: 24px;
+	margin-bottom: 5px;
+}
+
+.product .addToBasket {
+	margin: 0 auto;
+	width: 24px;
+	height: 24px;
+	margin-bottom: 5px;
+}
+
+.product .dataSheet {
+	margin: 0 auto;
+	width: 24px;
+	height: 24px;
+}

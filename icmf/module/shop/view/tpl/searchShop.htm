@@ -1,0 +1,89 @@
+<table class="listFull" style="border: 0px">
+	<tr>
+		<td width="5%">{nocache}{$lang.name}{/nocache}:</td>
+		<td width="25%"><input id="searchName" name="searchName" class="input" type="text" size="10" maxlength="100"></td>
+		<td width="5%">{nocache}{$lang.model}{/nocache}:</td>
+		<td width="25%"><input id="searchModel" name="searchModel" class="input" type="text" size="10" maxlength="100"></td>
+		<td>{nocache}{$lang.category}{/nocache}:</td>
+		<td>
+			{nocache}
+			<select id="productCategory" name="productCategory">
+				{foreach name=productCtegory key=productCategoryKey item=productCategoryItem from=$productCategory}
+					{if $productCategoryKey == $productCategory.selected}
+						<option value="{$productCategoryKey}" selected="selected">{$productCategoryItem}</option>
+					{else}
+						{if $productCategoryKey == "selected" || !isset($productCategoryItem)}
+							<option value=""> ... </option>
+						{else}
+				  			<option value="{$productCategoryKey}">{$productCategoryItem}</option>
+				  		{/if}
+				  	{/if}
+			  	{/foreach}
+	  		</select>
+	  		{/nocache}
+		</td>
+		<td width="10%" rowspan="3">
+			<button style="width: 90px; height: 80px;" onclick="$('#listProductShop').farajax('loader', '/shop/c_listProductShop', 
+																																		'filter=' +
+																																		'base.name=' + document.getElementById('searchName').value +
+																																		',model=' + document.getElementById('searchModel').value +
+																																		',company=' + document.getElementById('searchCompany').value +
+																																		/*',rpm=' + document.getElementById('searchRpm').value + 
+																																		',tav=' + document.getElementById('searchTav').value + */
+																																		',category=' + document.getElementById('searchProductCategory').value +
+																																		/*',voltage=' + document.getElementById('searchVoltage').value +
+																																		',amper=' + document.getElementById('searchAmper').value +
+																																		',electricType=' + document.getElementById('searchElectricType').value +
+																																		',power=' + document.getElementById('searchPower').value +
+																																		',code=' + document.getElementById('searchcode').value +
+																																		',usage_w=' + document.getElementById('searchUsage').value + */'::{$lang.filter}<>Multi<>1<>nce<>500'
+																																		);">{nocache}{$lang.search}{/nocache}</button>
+		</td>
+	</tr>
+	<tr>
+		<td><!-- {$lang.rpm}: --></td>
+		<td><!-- <input id="searchRpm" name="searchRpm" class="input" type="text" size="30" maxlength="5"> --></td>
+		<td><!-- {$lang.tav}: --></td>
+		<td><!-- <input id="searchTav" name="searchTav" class="input" type="text" size="30" maxlength="5"> --></td>
+		<td>{$lang.company}:</td>
+		<td>
+			{nocache}
+			<select id="company" name="company">
+				{foreach name=company key=companyKey item=companyItem from=$company}
+					{if $companyKey == $company.selected}
+						<option value="{$companyKey}" selected="selected">{$companyItem}</option>
+					{else}
+						{if $companyKey == "selected" || !isset($companyItem)}
+							<option value=""> ... </option>
+						{else}
+				  			<option value="{$companyKey}">{$companyItem}</option>
+				  		{/if}
+				  	{/if}
+			  	{/foreach}
+	  		</select>
+	  		{/nocache}
+		</td>		
+	</tr>
+	<tr>
+		<td><!-- {$lang.voltage}: --></td>
+		<td><!-- <input id="searchVoltage" name="searchVoltage" class="input" type="text" size="30" maxlength="3"> --></td>
+		<td><!-- {$lang.amper}: --></td>
+		<td><!-- <input id="searchAmper" name="searchAmper" class="input" type="text" size="30" maxlength="3"> --></td>
+		<td><!-- {$lang.electricType}: --></td>
+		<td>
+			<!-- <select id="electricType" name="electricType">
+				<option value=""> .. </option>
+				<option value="AC"> AC </option>
+				<option value="DC"> DC </option>
+			</select> -->
+		</td>
+	</tr>
+	<tr>
+		<td><!-- {$lang.power}: --></td>
+		<td><!-- <input id="searchPower" name="searchPower" class="input" type="text" size="30" maxlength="6"> --></td>
+		<td><!-- {$lang.code}: --></td>
+		<td><!-- <input id="searchCode" name="searchCode" class="input" type="text" size="30" maxlength="45"> --></td>
+		<td><!-- {$lang.usage}: --></td>
+		<td><!-- <input id="searchUsage" name="usage" class="input" type="text" size="30" maxlength="100"> --></td>
+	</tr>
+</table>

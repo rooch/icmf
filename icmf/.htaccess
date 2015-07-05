@@ -1,0 +1,123 @@
+AddDefaultCharset UTF-8
+
+####################
+# Cache            #
+####################
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresByType text/xml "access plus 0 seconds"
+	ExpiresByType text/javascript "access plus 14 days"
+	ExpiresByType application/x-javascript "access plus 14 days"
+	ExpiresByType image/ico "access 1 year"
+	ExpiresByType image/jpg "access 1 year"
+	ExpiresByType image/jpeg "access 1 year"
+	ExpiresByType image/gif "access 1 year"
+	ExpiresByType image/png "access 1 year"
+	ExpiresByType image/svg+xml "access plus 1 month"
+	ExpiresByType text/html "access plus 14 days"
+	ExpiresByType video/ogg "access plus 1 month"
+	ExpiresByType audio/ogg "access plus 1 month"
+	ExpiresByType video/mp4  "access plus 1 month"
+	ExpiresByType video/webm "access plus 1 month"
+	ExpiresByType application/x-font-woff  "access plus 1 month"
+	ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+	ExpiresByType application/xml  "access plus 0 seconds"
+	ExpiresByType application/json "access plus 0 seconds"
+	ExpiresByType application/rss+xml   "access plus 1 hour"
+	ExpiresByType application/atom+xml  "access plus 1 hour"
+	ExpiresByType text/css "access 1 month"
+	ExpiresByType application/pdf "access 1 month"
+	ExpiresByType text/x-javascript "access 1 month"
+	ExpiresByType application/x-shockwave-flash "access 1 month"
+	ExpiresByType image/x-icon "access 1 year"
+	ExpiresDefault "access 2 days"	
+</IfModule>
+
+####################
+# Restriction      #
+####################
+<Files ^(*.php|*.phps)>
+	order deny,allow
+	deny from all
+</Files>
+
+####################
+# GZIP COMPRESSION #
+####################
+# compress text, HTML, JavaScript, CSS, and XML
+<ifmodule mod_deflate.c>
+	SetOutputFilter DEFLATE
+	AddOutputFilterByType DEFLATE text/plain
+	AddOutputFilterByType DEFLATE text/html
+	AddOutputFilterByType DEFLATE text/xml
+	AddOutputFilterByType DEFLATE text/css
+	AddOutputFilterByType DEFLATE application/xml
+	AddOutputFilterByType DEFLATE application/xhtml+xml
+	AddOutputFilterByType DEFLATE application/rss+xml
+	AddOutputFilterByType DEFLATE application/javascript
+	AddOutputFilterByType DEFLATE application/x-javascript
+
+	# remove browser bugs
+	BrowserMatch ^Mozilla/4 gzip-only-text/html
+	BrowserMatch ^Mozilla/4\.0[678] no-gzip
+	BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+	#Header append Vary User-Agent
+</ifmodule>
+####################
+# Rewrite Rule     #
+####################
+RewriteEngine on
+IndexIgnore *
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteRule ^(forum)(/.*)?$ - [L]
+RewriteRule ^(tmp)(/.*)?$ - [L]
+
+RewriteRule ^/?analysis$ /pageLoader/v_load/analysis
+RewriteRule ^/?blog$ /post/c_showListObject
+RewriteRule ^/?services$ /pageLoader/v_load/services
+RewriteRule ^/?aboutus$ /pageLoader/v_load/aboutus
+RewriteRule ^/?university$ /pageLoader/v_load/university
+RewriteRule ^/?contact$ /contact/v_contactUs
+RewriteRule ^/?camp$ /pageLoader/v_load/camp
+RewriteRule ^/?tools$ /pageLoader/v_load/tools
+RewriteRule ^/?seminars$ /pageLoader/v_load/seminars
+RewriteRule ^/?ebiz$ /pageLoader/v_load/کسب-و-کار-آنلاین
+RewriteRule ^/?استخدام$ /pageLoader/v_load/استخدام
+RewriteRule ^/?job$ /pageLoader/v_load/استخدام
+
+RewriteRule ^([^/\.]+)/?$ /index.php?op=userMan&mode=c_home&filter=match_userName=$1 [L]
+RewriteRule ^([^/\.]+)/([^/\.]+)/?$ /index.php?op=$1&mode=$2 [L]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/]+)/?$ /index.php?op=$1&mode=$2&filter=$3 [L]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/]+)/([^/\.]+)/?$ /index.php?op=$1&mode=$2&filter=$3&p=$4 [L]
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/]+)/([^/\.]+)/([^/\.]+)/?$ /index.php?op=$1&mode=$2&filter=$3&p=$4&f=$5 [L]
+
+####################
+# Expire & Etag    #
+####################
+<FilesMatch "\.(html|htm|txt|text|php)(\.gz)?$">
+	ExpiresDefault "access plus 1 day"
+</FilesMatch>
+
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|ogg|mp4|woff|ttf)(\.gz)?$">
+	ExpiresActive On
+	ExpiresDefault "access plus 1 month"
+	FileETag None
+</FilesMatch>
+
+####################
+# Keep Alive       #
+####################
+<ifModule mod_headers.c>
+	Header set Connection keep-alive
+	<FilesMatch "\.(js|css|xml|gz)$">
+		Header append Vary: Accept-Encoding
+	</FilesMatch>
+</ifModule>
+
+####################
+# 404              #
+####################
+#ErrorDocument 404 http://icasb.com/404.html
+
+ServerSignature Off

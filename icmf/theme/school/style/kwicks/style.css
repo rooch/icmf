@@ -1,0 +1,111 @@
+.kwicks {
+	margin: 0px auto;
+	list-style: none;
+	position: relative;
+	padding: 0;
+	background-image: url('../img/no_flicker.jpg');
+}
+
+.kwicks li {
+	display: block;
+	overflow: hidden;
+	padding: 0;
+	cursor: pointer;
+	float: left;
+	width: 140px;
+	height: 40px;
+	margin-right: 0px;
+	background-image: url('../img/kwicks_sprite.jpg');
+	background-repeat: no-repeat;
+}
+
+.kwicks a {
+	display: block;
+	height: 40px;
+	text-indent: -9999px;
+	outline: none;
+}
+
+#kwick1 {
+	background-position: 0px 0px;
+}
+
+#kwick2 {
+	background-position: -200px 0px;
+}
+
+#kwick3 {
+	background-position: -400px 0px;
+}
+
+#kwick4 {
+	background-position: -600px 0px;
+}
+
+#kwick5 {
+	background-position: -800px 0px;
+}
+
+#kwick6 {
+	background-position: -1000px 0px;
+}
+
+#kwick7 {
+	background-position: -1200px 0px;
+}
+
+#kwick8 {
+	background-position: -1400px 0px;
+}
+
+#kwick1.active,#kwick1:hover {
+	background-position: 0 bottom;
+}
+
+#kwick2.active,#kwick2:hover {
+	background-position: -200px bottom;
+}
+
+#kwick3.active,#kwick3:hover {
+	background-position: -400px bottom;
+}
+
+#kwick4.active,#kwick4:hover {
+	background-position: -600px bottom;
+}
+
+#kwick5.active,#kwick5:hover {
+	background-position: -800px bottom;
+}
+
+#kwick6.active,#kwick6:hover {
+	background-position: -1000px bottom;
+}
+
+#kwick7.active,#kwick7:hover {
+	background-position: -1200px bottom;
+}
+
+#kwick8.active,#kwick8:hover {
+	background-position: -1400px bottom;
+}
+
+#kwick1 a {
+	background-image: url('../img/end.jpg');
+	background-repeat: no-repeat;
+	background-position: left 0px;
+}
+
+#kwick1 a:hover {
+	background-position: left -80px;
+}
+
+#kwick7 a {
+	background-image: url('../img/end.jpg');
+	background-repeat: no-repeat;
+	background-position: right -40px;
+}
+
+#kwick7 a:hover {
+	background-position: right -120px;
+}

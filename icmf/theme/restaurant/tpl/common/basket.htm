@@ -1,0 +1,16 @@
+<div class="clearFix">
+	{nocache}
+	{if $smarty.session.uid == 2}
+	<div class="row cell5 pointer" onclick="$('#basketContent').farajax('loader', '/basket/v_object');">
+	{else}
+	<div class="row cell5 pointer" onclick="$('#basketContent').farajax('loader', '/basket/v_object'); $('#basketContent').fadeToggle('slow')">
+	{/if}
+		<img src="theme/{$settings.theme}/img/greenBasket.png" alt="{$lang.basket}">
+	</div>
+	<div class="row cell95">
+		<div id="basketContent" class="basketContent paddy5">
+			{$basketContent}
+		</div>
+	</div>
+	{/nocache}
+</div>

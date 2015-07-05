@@ -1,0 +1,85 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">اعطای نمایندگی</h1>
+	<div class="curvedFull" style="background-color: #F4B413; padding: 15px;">
+		<p>
+			شرکت فراگان شریف به منظور گسترش حوزه فعالیت خود در تولید و پخش نرم افزار فروشگاه ساز تحت وب خود از سرتاسر ایران نمایندگی فعال می پذیرد. درصورت تمایل به پذیرش نمایندگی فروش این محصول را دارید پس از مطالعه شرایط ذیل اطلاعات مربوط به خود را در فرم زیر وارد و ارسال نمایید.
+			یکی از کارشناسان شرکت در کمتر از ۴۸ ساعت با شما تماس خواهد گرفت.
+		</p>
+		<h3>مزایا</h3>
+		<ol>
+			<li>اعطای ۱۰٪ از کل قرارداد به عنوان کارمزد به پس از عقد قرارداد</li>
+			<li>همکاری مالی بصورت توافقی در قردادی رسمی انجام خواهد گردید.</li>
+			<li>شرایط اختصاصی برای شرکتهای بزرگ و نمایندگان ویژه وجود خواهد داشت</li>
+			<li>محدودیت سنی و مالی برای اعطای نمایندگی وجود نداشته و کلیه افراد حقیقی یا حقوقی امکان دریافت نمایندگی را دارا می باشند.</li>
+		</ol>
+		<h3>شرایط</h3>
+		<ol>
+			<li>اعطای نمایندگی در مرحله اول بصورت محدود می باشد.</li>
+			<li>همکاری مالی بصورت توافقی در قردادی رسمی انجام خواهد گردید.</li>
+			<li>شرایط اختصاصی برای شرکتهای بزرگ و نمایندگان ویژه وجود خواهد داشت</li>
+			<li>محدودیت سنی و مالی برای اعطای نمایندگی وجود نداشته و کلیه افراد حقیقی یا حقوقی امکان دریافت نمایندگی را دارا می باشند.</li>
+		</ol>
+	</div>
+	<br>
+	<div class="h30 odd" style="clear: both;">
+		<div class="row cell15">* {$lang.firstName}</div>
+		<div class="row cell85"><input id="firstName" name="firstName" type="text" size="20" maxlength="100"></div>
+	</div>
+	<div class="h30 even" style="clear: both;">
+		<div class="row cell15">* {$lang.lastName}</div>
+		<div class="row cell85"><input id="lastName" name="lastName" type="text" size="20" maxlength="100"></div>
+	</div>
+	<div class="h30 odd" style="clear: both;">
+		<div class="row cell15">* {$lang.email}</div>
+		<div class="row cell85"><input id="email" name="email" type="text" size="20" maxlength="100" onchange="document.getElementById('resellerCode').value = '<iframe src=\'http://faragamane-sharif.com/reseller/index.php?resellerEmail=' + this.value + '\' width=\'970\' height=\'600\' farameborder=\'1\' scrolling=\'auto\'></iframe>'"></div>
+	</div>
+	<div class="h30 even" style="clear: both;">
+		<div class="row cell15">* {$lang.phone}</div>
+		<div class="row cell85"><input id="phone" name="phone" type="text" size="20" maxlength="100"></div>
+	</div>
+	<div class="h30 odd" style="clear: both;">
+		<div class="row cell15">{$lang.fax}</div>
+		<div class="row cell85"><input id="fax" name="fax" type="text" size="20" maxlength="100"></div>
+	</div>
+	<div class="h30 even" style="clear: both;">
+		<div class="row cell15">{$lang.mobile}</div>
+		<div class="row cell85"><input id="mobile" name="mobile" type="text" size="20" maxlength="100"></div>
+	</div>
+	<div class="h30 odd" style="clear: both;">
+		<div class="row cell15">* {$lang.state}</div>
+		<div class="row cell85"><input id="state" name="state" type="text" size="20" maxlength="100"></div>
+	</div>
+	<div class="h30 even" style="clear: both;">
+		<div class="row cell15">* {$lang.city}</div>
+		<div class="row cell85"><input id="city" name="city" type="text" size="20" maxlength="100"></div>
+	</div>
+	<div class="h30 odd" style="clear: both;">
+		<div class="row cell15">* {$lang.address}</div>
+		<div class="row cell85"><input id="address" name="address" type="text" size="20" maxlength="3000"></div>
+	</div>
+	<div style="text-align: center;">
+		<button onclick="
+			$('#content').farajax('loader', '/formBuilder/c_addData', 
+					   'formId=2::شماره فرم<>Number<>1<>ce<>6' +
+					   '&firstName=' + document.getElementById('firstName').value + '::{$lang.firstName}<>Multi<>1<>ce<>100' +
+					   '&lastName=' + document.getElementById('lastName').value + '::{$lang.lastName}<>Multi<>1<>ce<>100' +
+					   '&email=' + document.getElementById('email').value + '::{$lang.email}<>Mail<>1<>ce<>100' +
+					   '&phone=' + document.getElementById('phone').value + '::{$lang.phone}<>Multi<>1<>ce<>45' +
+					   '&fax=' + document.getElementById('fax').value + '::{$lang.fax}<>Multi<>1<>nce<>45' +
+					   '&mobile=' + document.getElementById('mobile').value + '::{$lang.mobile}<>Number<>1<>nce<>45<>09100000000<>09999999999' +
+					   '&state=' + document.getElementById('state').value + '::{$lang.state}<>Multi<>1<>ce<>45' +
+					   '&city=' + document.getElementById('city').value + '::{$lang.city}<>Multi<>1<>ce<>45' +
+					   '&address=' + document.getElementById('address').value + '::{$lang.address}<>Multi<>1<>ce<>3000' +
+					   '&permission=111101000000::{$lang.permission}<>Number<>1<>ce<>12'
+				);
+		">
+			<span style="font-weight: bolder;">ثبت اطلاعات</span>
+		</button>
+	</div>
+	<br>
+	<div class="curvedFull" style="direction:ltr; background-color: #99CCCC; padding: 15px; text-align: center;">
+		<h3>تکه کد زیر را در وبسایت خود قرار دهید</h3>
+		<br>
+		<textarea id="resellerCode" name="resellerCode" style="text-align: left; direction: left;" rows="15" cols="120"></textarea>
+	</div>
+</div>

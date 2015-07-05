@@ -1,0 +1,29 @@
+<div id="pageIn" class="pageIn">
+	<div class="blockquote">
+		{$fileAdd}
+	</div>
+	<br>
+	{foreach name=dir key=dirKey item=dirItem from=$fileList}
+	<div id="{$dirItem}" class="blockquote">
+		<h1>{$dirKey}</h1>
+		<table>
+			{foreach name=file key=fileKey item=fileItem from=$dirItem}
+			<td style="padding: 10px;">
+				<div style="border: 1px solid #f2f2f2; padding: 3px; width: 150px; height: 180px;">
+					<div style="height: 90%;">
+						{$fileKey}
+					</div>
+					<div style="height: 10%;">
+						<a href="/designer/v_edit/dir={$dirKey},file={$fileKey}">{$lang.edit}</a>
+					</div>
+				</div>
+			</td>
+			{if $smarty.foreach.file.index is div by 4}
+		  	<tr>
+			{/if}
+			{/foreach}
+		</table>
+	</div>
+	<br>
+	{/foreach}
+</div>

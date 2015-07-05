@@ -1,0 +1,9 @@
+{nocache}
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.listProductShop}</h1>
+	<div id="k3dCarousel" class="k3dCarousel"></div>
+	<img src="theme/{$settings.theme}/img/icon/s.png" onload="$('#k3dCarousel').farajax('loader', '/shop/c_carousel', '&filter={$smarty.post.filter}'); $('#listProductShop').farajax('loader', '/shop/c_listProductShop', 'filter={$smarty.post.filter}&p={$smarty.post.p}');">
+	<div>{$hierarchicalCategory}</div>
+	<div id="listProductShop"></div>
+</div>
+{/nocache}

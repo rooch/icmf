@@ -1,0 +1,121 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.lotteryAdd}</h1>
+	<div style="margin-top: -30px;">
+		<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/edit.png" onclick="loader('POST', '', 'content', 'op=designer&mode=v_edit&id=lottery/entityAdd.htm', 1);">
+	</div>
+	<br>
+	<ul style="padding: 0px;">
+		<li>
+			<div id="lottery">
+				<table class="listFull">
+					<tr>
+						<td width="20%" valign="top">
+							<div id="prizeList" class="listFull2" style="height: 300px; overflow: auto; text-align: center; vertical-align: top;"></div>
+						</td>
+						<td width="80%">
+							<label>{$lang.name}:</label>
+							<input id="name" name="name" class="input" type="text" size="15" maxlength="45"><br>
+							<label>{$lang.description}:</label><br>
+							<textarea id="description" name="description" rows="5" cols="40"></textarea><br>
+							<label>{$lang.price}:</label>
+							<input id="price" name="price" class="input" type="text" size="15" maxlength="10"> {$lang.currencySign}<br>
+							<label>{$lang.capacity}: </label>
+							<select id="capacity" name="capacity">
+								{section name="capacity" loop=201}
+									<OPTION value="{$smarty.section.capacity.index}">{$smarty.section.capacity.index}</OPTION>
+								{/section}
+							</select> {$lang.person}<br>
+							<label>{$lang.startTime}: </label>
+							<select id="startDay" name="startDay">
+								{section name=startDay start=1 loop=32}
+									<OPTION value="{$smarty.section.startDay.iteration}">{$smarty.section.startDay.iteration}</OPTION>
+								{/section}
+							</select>
+							<select id="startMonth" name="startMonth">
+								{section name=startMonth start=1 loop=13}
+									<OPTION value="{$smarty.section.startMonth.iteration}">{$smarty.section.startMonth.iteration}</OPTION>
+								{/section}
+							</select>
+							<select id="startYear" name="startYear">
+								{section name=startYear start=1390 loop=1401}
+									<OPTION value="{$smarty.section.startYear.index}">{$smarty.section.startYear.index}</OPTION>
+								{/section}
+							</select>
+							{$lang.hour}: 
+							<select id="startMinute" name="startMinute">
+								{section name="startMinute" loop=60}
+									<OPTION value="{$smarty.section.startMinute.index}">{$smarty.section.startMinute.index}</OPTION>
+								{/section}
+							</select>
+							:
+							<select id="startHour" name="startHour">
+								{section name="startHour" loop=24}
+									<OPTION value="{$smarty.section.startHour.index}">{$smarty.section.startHour.index}</OPTION>
+								{/section}
+							</select>
+							<br>
+							<label>{$lang.endTime}: </label>
+							<select id="endDay" name="endDay">
+								{section name=endDay start=1 loop=32}
+									<OPTION value="{$smarty.section.endDay.iteration}">{$smarty.section.endDay.iteration}</OPTION>
+								{/section}
+							</select>
+							<select id="endMonth" name="endMonth">
+								{section name=endMonth start=1 loop=13}
+									<OPTION value="{$smarty.section.endMonth.iteration}">{$smarty.section.endMonth.iteration}</OPTION>
+								{/section}
+							</select>
+							<select id="endYear" name="endYear">
+								{section name=endYear start=1390 loop=1401}
+									<OPTION value="{$smarty.section.endYear.index}">{$smarty.section.endYear.index}</OPTION>
+								{/section}
+							</select>
+							{$lang.hour}: 
+							<select id="endMinute" name="endMinute">
+								{section name="endMinute" loop=60}
+									<OPTION value="{$smarty.section.endMinute.index}">{$smarty.section.endMinute.index}</OPTION>
+								{/section}
+							</select>
+							:
+							<select id="endHour" name="endHour">
+								{section name="endHour" loop=24}
+									<OPTION value="{$smarty.section.endHour.index}">{$smarty.section.endHour.index}</OPTION>
+								{/section}
+							</select>
+							<br>
+							<label>{$lang.prizeType}: </label>
+							<select id="prizeType" name="prizeType" onchange="loader('POST', '', 'prizeList', 'op=lottery&mode=c_prizeList&prizeType=' + this.value);">
+								<option value=""> ... </option>
+								<option value="productEntity">{$lang.product}</option>
+							</select>
+							<input id="prize" name="prize" class="input" type="hidden" size="15" maxlength="10"><br>
+							<input id="specialOffer" type="checkbox" value="0" onchange="checkBoxToggle('specialOffer');">{$lang.specialOffer}<br>
+							<br><br>
+							<button onclick="
+								loader('POST', '', 'content', 'op=lottery&mode=c_entityAdd' +
+									   '&name=' + document.getElementById('name').value + '::{$lang.name}<>Multi<>1<>ce<>45' +
+									   '&description=' + document.getElementById('description').value	+ '::{$lang.description}<>Multi<>1<>nce<>500' +
+									   '&price=' + document.getElementById('price').value + '::{$lang.price}<>Number<>1<>ce<>10' +
+									   '&capacity=' + document.getElementById('capacity').value + '::{$lang.capacity}<>Number<>1<>ce<>2' +
+									   '&startDay=' + document.getElementById('startDay').value + '::{$lang.startDay}<>Number<>1<>ce<>2' +
+									   '&startMonth=' + document.getElementById('startMonth').value + '::{$lang.startMonth}<>Number<>1<>ce<>2' +
+									   '&startYear=' + document.getElementById('startYear').value + '::{$lang.startYear}<>Number<>1<>ce<>4' +
+									   '&startMinute=' + document.getElementById('startMinute').value + '::{$lang.startMinute}<>Number<>1<>nce<>2' +
+									   '&startHour=' + document.getElementById('startHour').value + '::{$lang.startHour}<>Number<>1<>nce<>2' +
+									   '&endDay=' + document.getElementById('endDay').value + '::{$lang.endDay}<>Number<>1<>ce<>2' +
+									   '&endMonth=' + document.getElementById('endMonth').value + '::{$lang.endMonth}<>Number<>1<>ce<>2' +
+									   '&endYear=' + document.getElementById('endYear').value + '::{$lang.endYear}<>Number<>1<>ce<>4' +
+									   '&endMinute=' + document.getElementById('endMinute').value + '::{$lang.endMinute}<>Number<>1<>nce<>2' +
+									   '&endHour=' + document.getElementById('endHour').value + '::{$lang.endHour}<>Number<>1<>nce<>2' +
+									   '&prizeType=' + document.getElementById('prizeType').value + '::{$lang.prizeType}<>Alphabet<>1<>ce<>13' +
+									   '&prize=' + document.getElementById('prize').value + '::{$lang.prize}<>Number<>1<>ce<>10' +
+									   '&specialOffer=' + document.getElementById('specialOffer').value + '::{$lang.specialOffer}<>Number<>1<>nce<>1'
+								);
+							">{$lang.submit}</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</li>
+	</ul>
+</div>

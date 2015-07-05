@@ -1,0 +1,15 @@
+{nocache}
+<div id="today" class="today">{$lang.today} {$dateJalali}</div>
+<div id="tools" class="tools">
+	<div id="lang" class="lang">
+		<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/flags/24/Iran.png" onclick="loader('POST', '', 'content', 'op=userMan&mode=c_setSettings&name=lang&value=1'); setTimeout('window.location.reload();', 3000);">
+		<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/flags/24/United States of America(USA).png" onclick="loader('POST', '', 'content', 'op=userMan&mode=c_setSettings&name=lang&value=2'); setTimeout('window.location.reload();', 3000);">
+	</div>
+</div>
+<!-- 
+<div id="search" class="search">
+	<input id="searchPhrase" name="searchPhrase" type="text" size="18" maxlength="100"></input>
+	<button style="padding-top: 4px;"><span>{$lang.search}</span></button>
+</div>
+-->
+{/nocache}

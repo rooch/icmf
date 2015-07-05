@@ -1,0 +1,36 @@
+<section class="row cell10">
+	<div>
+		{nocache}
+		{if isset($smarty.session.uid) && $smarty.session.uid != 2}
+			<div class="paddy2">
+				<img src="theme/{$settings.theme}/img/icon/User24.png" style="cursor: pointer;" alt="{$smarty.session.uid}" onclick="$('#cPanel').slideToggle('slow');" width="24" height="24"><br>
+				<a href="/userMan/c_logout" rel="nofollow" onclick="setTimeout('location.href=\'/\';', 5000);">{$lang.logout}</a>
+			</div>
+		{else}
+			<div class="paddy2">
+				<img class="tip" src="theme/{$settings.theme}/img/icon/Login_in24.png" style="cursor: pointer;" alt="{$lang.login}" title="{$lang.login}" onclick="$('#cPanel').slideToggle('slow');"  width="24" height="24"><br>
+				<a class="tip" href="/userMan/v_signUp" title="{$lang.signUpHere}">{$lang.signUp}</a>
+			</div>	
+		{/if}
+		{/nocache}
+	</div>
+</section>
+<section class="row cell35">
+	{$menu}
+</section>
+<section class="row cell50 relative">
+	<div class="paddy5">
+		<input id="searchList" name="searchList" class="cell100" type="search" size="15" placeholder="{$lang.search}" required>
+		<div id="searchResult" class="searchResult cell100"></div>
+	</div>
+</section>
+<section class="row cell5">
+	&nbsp;
+</section>
+<br class="clear">
+<!-- cPanel -->
+<div id="cPanel" class="cPanel paddy5">
+	<div id="login" class="login" style="padding-right: 10px;">{nocache}{$login}{nocache}</div>
+	<div id="accessories" class="accessories" style="display: none; padding-right: 10px;"></div>
+</div>
+<!-- /cPanel -->

@@ -1,0 +1,78 @@
+{nocache}
+{foreach name=entity key=entityKey item=entityItem from=$entityList}
+<div id="td{$entityItem.id}" class="row cell{$settings.columnWidth} product relative">
+	<div id="cell{$entityItem.id}" class="blockquote relavite">
+		<ul style="padding: 0px;">
+			<li>&nbsp;</li>
+			<li>
+				<div class="center h100">
+					<a href="/shop/v_descriptionVitrin/objectId={$entityItem.id}" title="{$entityItem.name} {$entityItem.model}">
+						{iimg src=$entityItem.singleImage width=120 height=100 class=tip alt=$entityItem.model title=$entityItem.model}
+					</a>
+				</div>
+			</li>
+			<li>&nbsp;</li>
+			<li><b>{$entityItem.name|truncate:30:"...":true}</b></li>
+			<li>{$lang.model}: <em>{$entityItem.model}</em></li>
+			{if $entityItem.count > 0}
+			<li>{$lang.exist}: <em class="green">{$lang.yes}</em></li>
+			{else}
+			<li>{$lang.exist}: <em class="red">{$lang.no}</em></li>
+			{/if}
+			<li>{$lang.basePrice}: <em class="green">{$entityItem.basePrice} {$lang.currencySign}</em></li>
+			<li>{$lang.discount}: <em>{$entityItem.discount}%</em></li>
+			
+			<li>{$lang.shopProfile}: <em>{$entityItem.shopCategory}</em></li>
+			<li>{$lang.sellPrice}: <em class="green">{$entityItem.sellPrice} {$lang.currencySign}</em></li>
+			<li>&nbsp;</li>
+			<li><span id="moreDataLinkShow{$entityItem.id}" class="link" onclick="show('moreData{$entityItem.id}'); hide('moreDataLinkShow{$entityItem.id}');">{$lang.more}</span></li>		
+		</ul>
+		<ul id="moreData{$entityItem.id}" class="displayNone">
+			<li>{$lang.company}: <em>{$entityItem.company}</em></li>
+			<!-- <li>{$lang.category}: <em>{$entityItem.category}</em></li> -->
+			<li>&nbsp;</li>
+			<li><span id="moreDataLinkHide{$entityItem.id}" class="link" onclick="hide('moreData{$entityItem.id}'); show('moreDataLinkShow{$entityItem.id}');">{$lang.less}</span></li>
+			<li>&nbsp;</li>
+		</ul>
+		<div id="shareLink{$entityItem.id}" class="shareLink" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="$entityItem.name"></div>
+	</div>
+	<div id="glassOverlay{$entityItem.id}" class="glassOverlay">
+		<div class="tools opacity7 center cell100">
+			{if $entityItem.count > 0}
+			<a href="/basket/v_addObject/objectId={$entityItem.id}" class="fa fa-shopping-cart" title="{$lang.addToBasket}"></a>
+			{/if}
+			{if $entityItem.filePath}
+			<a href="{$entityItem.filePath}" title="{$entityItem.name} {$entityItem.model}" class="fa fa-file-pdf-o"></a>
+			{/if}
+		</div>
+	</div>
+	<br>
+	<div class="shareCommentBox">
+		<div class="center" style="padding: 2px;">
+			<h4>{$lang.shareComment}</h4>
+		</div>
+		<div id="shareBox{$entityItem.id}" class="shareBox">						
+			<div id="facebookShare{$entityItem.id}" class="facebook share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Facebook"></div>
+			<div id="googleplusShare{$entityItem.id}" class="googleplus share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="+Google"></div>
+			<div id="twitterShare{$entityItem.id}" class="twitter share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Twitter"></div>
+			<div id="stumbleuponShare{$entityItem.id}" class="stumbleupon share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Stumble"></div>
+			<div id="deliciousShare{$entityItem.id}" class="delicious share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Delicious"></div>
+			<div id="linkedinShare{$entityItem.id}" class="linkedin share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Linkedin"></div>
+			<div id="pinterestShare{$entityItem.id}" class="pinterest share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Pinterest"></div>
+		</div>
+		<div id="commentBox{$entityItem.id}" class="commentBox">
+			<div id="comments{$entityItem.id}"></div>
+		</div>
+	</div>
+</div>
+{if $entityKey is div by $settings.showPerRow}
+ 	<br class="clear">
+ 	<br>
+{/if}
+{/foreach}
+{/nocache}
+<br class="clear">
+<br>
+{nocache}
+<div class="blockquote curvedFull clearFix">{$navigation}</div>
+{/nocache}

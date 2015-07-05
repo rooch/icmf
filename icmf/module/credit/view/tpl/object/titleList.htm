@@ -1,0 +1,7 @@
+<ul>
+	{nocache}
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	    <li><a href="/post/c_showObject/id={$entityItem.id}"><b>{$entityItem.title}</b></a></li>	
+	{/foreach}
+	{/nocache}
+</ul>

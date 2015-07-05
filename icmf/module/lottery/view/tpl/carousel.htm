@@ -1,0 +1,13 @@
+{nocache}
+{foreach name=carousel key=carouselKey item=carouselItem from=$carouselList}
+{if $carouselItem.memberCount <= $carouselItem.capacity}
+<img style="cursor: pointer;" width="200" height="140" title="{$carouselItem.name}" alt="{$carouselItem.name}" src="{$carouselItem.imagePath}" onclick="loader('POST', '', 'content', 'op=lottery&mode=v_join&lotteryId={$carouselItem.id}' + '::{$lang.id}<>Number<>1<>ce<>11' + '&filter=base.id={$carouselItem.objectId},' + '::{$lang.filter}<>Multi<>1<>nce<>200'); {literal} $.scrollTo('#page', {duration:3000});{/literal}">
+{else}
+<img width="150" height="110" title="{$carouselItem.name}" alt="{$carouselItem.name}" src="{$carouselItem.imagePath}">
+{/if}
+<!-- <div class="carousel-caption">
+	<div style="font-size: 10px; font-weight: normal; color: #ffffff;"><b>[{$lang.price}: {$carouselItem.totalPrice} {$lang.currency}]</b></div>
+</div> -->
+{/foreach}
+<img src="theme/{$settings.theme}/img/icon/s.png" onload="{literal}$('#k3dCarousel').k3dCarousel();"{/literal}">
+{/nocache}

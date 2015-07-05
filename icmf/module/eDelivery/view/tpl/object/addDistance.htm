@@ -1,0 +1,64 @@
+<div class="clearFix">
+	<div class="row cell45">
+		<div class="blockquote">
+			<div class="paddy1 clearFix">
+				<div class="row cell20">{$lang.state}:</div>
+				<div class="row cell80">{$state1}</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell20">{$lang.city}:</div>
+				<div id="citySection1" class="row cell80"><input id="city1" type="hidden" disabled="disabled"></div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell20">{$lang.region}:</div>
+				<div id="regionSection1" class="row cell80">{$region1}</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell20">{$lang.district}:</div>
+				<div id="districtSection1" class="row cell80"><input id="district1" type="hidden" disabled="disabled"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row cell10">&nbsp;</div>
+	<div class="row cell45">
+		<div class="blockquote">
+			<div class="paddy1 clearFix">
+				<div class="row cell20">{$lang.state}:</div>
+				<div class="row cell80">{$state2}</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell20">{$lang.city}:</div>
+				<div id="citySection2" class="row cell80"><input id="city2" type="hidden" disabled="disabled"></div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell20">{$lang.region}:</div>
+				<div id="regionSection2" class="row cell80">{$region2}</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell20">{$lang.district}:</div>
+				<div id="districtSection2" class="row cell80"><input id="district2" type="hidden" disabled="disabled"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<div class="blockquote clearFix">
+	<div class="row cell5 specialFont LH35">{$lang.distance}: </div>
+	<div class="row cell50"><input id="distance" name="distance" placeholder="{$lang.distance}" style="width: 96%;" maxlength="45" required></div>
+	<div class="row cell5 specialFont right LH35">{$lang.kilometer}</div>
+	<div class="row cell40 right">
+		<button onclick="
+			$('#content').farajax('loader', '/eDelivery/c_addDistance',
+				   'city1=' + document.getElementById('city1').value + '::{$lang.city}1<>Number<>1<>ce<>6' +
+				   '&region1=' + document.getElementById('region1').value + '::{$lang.region}1<>Number<>1<>nce<>2' +
+				   '&district1=' + document.getElementById('district1').value + '::{$lang.district}1<>Number<>1<>nce<>6' +
+				   '&city2=' + document.getElementById('city2').value + '::{$lang.city}2<>Number<>1<>ce<>6' +
+				   '&region2=' + document.getElementById('region2').value + '::{$lang.region}2<>Number<>1<>ce<>2' +
+				   '&district2=' + document.getElementById('district2').value + '::{$lang.district}2<>Number<>1<>nce<>6' +
+				   '&distance=' + document.getElementById('distance').value + '::{$lang.distance}<>Number<>1<>ce<>4'
+			);
+		">
+		{$lang.submit}
+	</button>
+	</div>
+</div>

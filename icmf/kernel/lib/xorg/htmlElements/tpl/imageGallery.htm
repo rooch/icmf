@@ -1,0 +1,32 @@
+{nocache}
+<div id="{$galleryId}">
+	{if $entityList.mode == h}
+	<div>
+		{iimg id=$entityList.1.id src=$entityList.1.url width=400 height=400 class="tip masterImage" alt=$entityList.1.name title=$entityList.1.name}
+	</div>
+	<br>
+	{/if}
+	<div class="whiteFrame" style="overflow: auto;">
+		{foreach name=entity key=entityKey item=entityItem from=$entityList}
+		{if $entityList.mode == h}
+		<div class="row cell19" style="margin-right: 1px;">
+		{else}
+		<div style="margin-right: 1px;">
+		{/if}
+			<div class="hover paddy2 greyFrame pointer">
+				{iimg id={$entityItem.id} src={$entityItem.url} width=80 height=80 class="tip otherImage" alt={$entityItem.name} title={$entityItem.name}}
+			</div>
+			<div class="displayNone">
+				{iimg id={$entityItem.id} src={$entityItem.url} width=400 height=400 class="tip otherImage" alt={$entityItem.name} title={$entityItem.name}}
+			</div>
+	  	</div>
+	  	{if $entityList.mode == h}
+	  	{if $entityKey is div by 5}
+	 	<br class="clear">
+	 	<br>
+		{/if}
+		{/if}
+		{/foreach}
+	</div>
+</div>
+{/nocache}

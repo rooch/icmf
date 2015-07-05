@@ -1,0 +1,58 @@
+{nocache}
+{foreach name=entity key=entityKey item=entityItem from=$entityList}
+<div id="td{$entityItem.id}" class="product curvedFull boxShadow hover">
+	<div class="paddy10">
+		<div id="cell{$entityItem.id}" class="productImage relative">
+			{iimg src=$entityItem.singleImage width=240 height=240 class=tip alt=$entityItem.model title=$entityItem.model}
+			<div class="glassOverlay">
+				<!-- <div class="shareBox">
+					<div class="center bold paddy2">
+						{$lang.shareComment}
+					</div>
+					<div id="shareBox{$entityItem.id}" class="shareBox">						
+						<div id="facebookShare{$entityItem.id}" class="facebook share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Facebook"></div>
+						<div id="googleplusShare{$entityItem.id}" class="googleplus share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="+Google"></div>
+						<div id="twitterShare{$entityItem.id}" class="twitter share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Twitter"></div>
+						<div id="stumbleuponShare{$entityItem.id}" class="stumbleupon share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Stumble"></div>
+						<div id="deliciousShare{$entityItem.id}" class="delicious share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Delicious"></div>
+						<div id="linkedinShare{$entityItem.id}" class="linkedin share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Linkedin"></div>
+						<div id="pinterestShare{$entityItem.id}" class="pinterest share" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="{$entityItem.description|strip_tags:false|truncate:200:'...':true}" data-title="Pinterest"></div>
+					</div>
+				</div>
+				<div id="commentBox{$entityItem.id}" class="commentBox">
+					<div id="comments{$entityItem.id}"></div>
+				</div> -->
+				<div class="toolBox paddy10">
+					<a href="shop/v_descriptionVitrin/objectId={$entityItem.id}" title="{$entityItem.name} {$entityItem.model}">
+						<span class="curvedFull whiteFrame paddy1x5 margin1">
+							<span class="fa fa-mail-forward"></span>
+						</span>
+					</a>
+					{if $entityItem.count > 0}
+					<span class="curvedFull whiteFrame paddy1x5 margin1 pointer" onclick="$('#basketContent').animate({ height:'290px' }, { queue:false, duration:500 }); $('#basketContent').farajax('loader', 'basket/v_addObject/objectId={$entityItem.id}')">
+						<span class="fa fa-plus"></span>
+						<span class="fa fa-shopping-cart"></span>
+					</span>
+					{/if}
+					{if $entityItem.filePath}
+					<a href="{$entityItem.filePath}" title="{$entityItem.name} {$entityItem.model}">
+						<span class="curvedFull whiteFrame paddy1x5 margin1">
+							<span class="fa fa-file-pdf-o"></span>
+						</span>
+					</a>
+					{/if}
+				</div>
+			</div>
+		</div>
+		<div>	
+			<ul class="paddy10">
+				<li><a href="shop/v_descriptionVitrin/objectId={$entityItem.id}" title="{$entityItem.name} {$entityItem.model}">{$entityItem.name} {$entityItem.model}</a></li>
+				<li>{$entityItem.sellPrice} {$lang.currencySign}</li>		
+			</ul>
+			<div id="shareLink{$entityItem.id}" class="shareLink" data-url="http://{$settings.domain}/shop/v_descriptionVitrin/objectId={$entityItem.id}" data-text="$entityItem.name"></div>
+		</div>
+	</div>
+</div>
+{/foreach}
+{/nocache}
+<commands value="masonry()">

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<![endif]-->
+{nocache}
+{if $sysVar.op ==  'post'}
+<html lang="fa" itemscope itemtype="http://schema.org/Article">
+{assign var=type value=Article}
+{elseif $sysVar.op == 'shop'}
+<html lang="fa" itemscope itemtype="http://schema.org/Product">
+{assign var=type value=Product}
+{else}
+<html lang="fa" itemscope itemtype="http://schema.org/WebPage">
+{assign var=type value=WebPage}
+{/if}
+<head>
+	<title>{$title}</title>
+	<base href="http://{$settings.domain}/">
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	
+	<link rel="shortcut icon" href="theme/{$settings.theme}/img/icon/favicons/favicon.png">
+
+	{assign var=description value=$description|strip_tags:false|truncate:150:'':true}
+	<meta name="description" content="{$description}">
+	<meta name="publisher" content="{$settings.author}">
+	<meta name="generator" content="{$settings.author}">
+	<meta name="keywords" content="{$keywords}">
+	<meta name="robots" content="{$settings.robots}">
+	<meta name="author"	content="{$settings.author}">
+	 
+	<link rel="author" href="{$googleAuthor}/posts">
+	<link rel="publisher" href="{$settings.googlePublisher}">
+	
+	{if $type == 'Article'}
+	<meta itemprop="name" content="{$title}"> 
+	<meta itemprop="description" content="{$description}"> 
+	<meta itemprop="image" content="{$image}">
+	
+	<meta name="twitter:card" content="summary_large_image"> 
+	<meta name="twitter:site" content="@{$settings.twitterPublisher}"> 
+	<meta name="twitter:title" content="{$title}"> 
+	<meta name="twitter:description" content="{$description}"> 
+	<meta name="twitter:creator" content="@"> 
+	<meta name="twitter:image:src" content="{$image}">
+	{/if}
+	{if $type ==  'Product'}
+	<meta name="twitter:data1" content="$3"> 
+	<meta name="twitter:label1" content="Price"> 
+	<meta name="twitter:data2" content="Black"> 
+	<meta name="twitter:label2" content="Color">
+	{/if}
+	{if $type ==  'Article'}
+	<meta property="og:title" content="{$title}">
+	<meta property="og:type" content="{$type}"> 
+	<meta property="og:url" content="http://{$settings.domain}{$smarty.server.REQUEST_URI}">
+	<meta property="og:image" content="{$image}">
+	<meta property="og:description" content="{$description}">
+	<meta property="og:site_name" content="{$settings.domainName}">
+	
+	<meta property="article:published_time" content=""> 
+	<meta property="article:modified_time" content=""> 
+	<meta property="article:section" content=""> 
+	<meta property="article:tag" content="">
+	{elseif $type == 'Product'}
+	<meta property="og:price:amount" content=""> 
+	<meta property="og:price:currency" content="">
+	{/if}
+	<meta property="fb:admins" content="{$settings.facebookAdminID}">
+	{/nocache}
+	
+	<link rel="stylesheet" href="theme/{$settings.theme}/style/style.php" type="text/css">
+	{include file="theme/`$settings.theme`/tpl/common/googleAnalytic.htm"}
+</head>

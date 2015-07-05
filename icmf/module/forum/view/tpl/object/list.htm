@@ -1,0 +1,10 @@
+{nocache}
+{foreach name=entity key=entityKey item=entityItem from=$entityList}
+<div id="row{$entityItem.id}" class="blockquote" style="margin-bottom: 2px">
+	<a href="http://digiseo.ir/forum/showthread.php?tid={$entityItem.tid}" title="{$entityItem.subject}" target="_blank"><h4>{$entityItem.subject}</h4></a>
+	<span style="font-size: 9px">آخرین پاسخ توسط <a href="http://digiseo.ir/forum/member.php?action=profile&uid={$entityItem.uid}" target="_blank">{$entityItem.lastposter}</a></span><span style="font-size: 8px"> در تاریخ {$entityItem.lastpost}</span>
+</div>
+{/foreach}
+<br>
+<a title="انجمن سئو" class="paddy5 greyFrame" href="http://digiseo.ir/forum" target="_blank">انجمن سئو</a>
+{/nocache}

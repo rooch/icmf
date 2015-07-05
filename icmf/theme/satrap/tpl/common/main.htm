@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	{nocache}
+	<base href="http://{$settings.domain}/"></base>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+	<meta name="Generator" content="{$settings.author}"></meta>
+	<meta name="Keywords" content="{$keywords}"></meta>
+	<meta name="Description" content="{$description}"></meta>
+	<meta name="Robots" content="{$settings.robots}"></meta>
+	<meta name="Author"	content="{$settings.author}"></meta>
+	<meta name="Copyright" content="{$settings.copyright}"></meta>
+	<title>{$title}</title>
+	{/nocache}
+	
+	<link rel="shorcut icon" href="theme/{$settings.theme}/img/icon/favicons/favicon.png">
+	<!-- Call all CSS files -->
+	{$css}
+	<!-- /Call all CSS files -->
+	<!-- Google Analytic -->
+	{$googleAnalytic}
+	<!-- /Google Analytic -->
+</head>
+<body id="body" style="direction: {$lang.direction};">
+<div id="modalMask" class="modalMask"></div>  
+<div id="modalWindow" class="modalWindow"></div>
+<div id="temp"></div>
+<!-- Panel -->
+<div id="panel" class="panel">{nocache}{$panel}{/nocache}</div>
+<!-- /Panel -->
+<div class="boxShadow">
+	<!-- Menu -->
+	<div id="menu" class="menu">{nocache}{$menu}{/nocache}</div>
+	<!-- /Menu -->
+	<!-- Header -->
+	<div id="header" class="header">{nocache}{$header}{/nocache}</div>
+	<!-- /Header -->
+	<!-- News -->
+	<div id="newsTicker" class="newsTicker">{nocache}{$news}{/nocache}</div>
+	<!-- /News -->
+</div>
+<!-- Wrapper -->
+<div id="wrapper" class="wrapper curvedFull boxShadow">
+	<!-- Container -->
+	<div id="container" class="container">
+		<!-- Content -->
+		<div id="content" class="content">{nocache}{$main}{/nocache}</div>
+		<!-- /Content -->
+	</div>
+	<!-- Link list -->
+	<!-- <div id="linkList" class="linkList curvedFull">{$linkList}</div> -->
+	<!-- /Link list -->
+	<!-- /Container -->
+</div>
+<!--/Wrapper-->
+<!-- Footer -->
+<div id="footer" class="footer">{$footer}</div>
+<!-- Footer -->
+<div class="copyright">
+	کلیه حقوق این وبسایت متعلق به شرکت تجارت ساتراپ می‌باشد<br>
+</div>
+<!-- Call all JS files -->
+{$js}
+<!-- /Call all JS files -->
+</body>
+</html>

@@ -1,0 +1,46 @@
+<aside>
+	<div class="blockquote curvedFull center">
+		<h1>خبرنامه سئو</h1>
+		<input id="signUpType0" name="signUpType0" class="cell90" type="hidden" maxlength="45" value="newsletter">
+		<input id="firstName0" name="firstName0" class="cell90" type="text" maxlength="45" placeholder="{$lang.firstName}"><br>
+		<input id="lastName0" name="lastName0" class="cell90" type="text" maxlength="45" placeholder="{$lang.lastName}"><br>
+		<input id="email0" name="email0" class="cell90" type="text" maxlength="100" placeholder="{$lang.email}"><br>
+		<br>
+		<button style="margin: 0 auto; padding: 20px 60px;" onclick="
+			$('#content').farajax('loader', '/contactBook/c_addObject', 
+				   'type0=' + document.getElementById('signUpType0').value + '::{$lang.type}<>Multi<>1<>ce<>100' +
+				   '&firstName0=' + document.getElementById('firstName0').value + '::{$lang.firstName}<>Multi<>1<>ce<>100' +
+				   '&lastName0=' + document.getElementById('lastName0').value + '::{$lang.lastName}<>Multi<>1<>nce<>100' +
+				   '&email0=' + document.getElementById('email0').value + '::{$lang.email}<>Mail<>1<>nce<>100' +
+				   '&receiveEmail0=1::{$lang.receiveEmail}<>Number<>1<>nce<>1'
+			);
+		">
+		<span>عضو شو!</span>
+		</button>
+	</div>
+	<br>
+	<div class="blockquote curvedFull center">
+		<a href="http://{$settings.domainName}/pageLoader/v_load/camp" title="کمپ آموزش سئو">
+			<img src="theme/{$settings.theme}/img/vertical-camp.png" alt="دومین کمپ تخصصی آموزش سئو">
+		</a>
+	</div>
+	<br>
+	<div class="blockquote curvedFull">
+		<div class="tabs">
+			<div class="subTab1 subTabCss curvedTop" id="tRadio"><b>رادیو سئو</b></div>
+			<div class="subTab1 subTabCss curvedTop" id="tCinema"><b>سینما سئو</b></div>
+			<div class="subTab1 subTabCss curvedTop" id="tCinema"><b>سئو باکس</b></div>
+			<!-- <div class="subTab2 subTabCss curvedTop" id="tUni">آموزش سئو (دانشگاه سئو)</div> -->
+		</div>
+		<div id="tabContent1" class="tabConetentSytle curvedFull">{nocache}{$voicePost}{/nocache}</div>
+	</div>
+	<br>
+	<div class="blockquote curvedFull">
+		<div class="tabs">
+			<div class="subTab2 subTabCss curvedTop" id="tComment"><b>نظرات</b></div>
+			<div class="subTab2 subTabCss curvedTop" id="tForum"><b>انجمن</b></div>
+			<div class="subTab2 subTabCss curvedTop" id="tTopPost"><b>مطالب برتر</b></div>
+		</div>
+		<div id="tabContent2" class="tabConetentSytle curvedFull">{nocache}{$lastComment}{/nocache}</div>
+	</div>
+</aside>

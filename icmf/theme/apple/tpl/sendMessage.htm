@@ -1,0 +1,56 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.sendMessage}</h1>
+	<div class="formArranger">
+		<ul>
+			<li>
+				<p style="border: 1px solid #cecece; padding: 4px; text-align: center;">
+					از طریق فرم زیر می توانید پیشنهادات، انتقادات و سئوالات خود را مطرح کنید.<br>
+					در ضمن می توانید جوایز مورد نظر خود را پیشنهاد کنید!<br>
+					جوایز با بیش از ۱۰ پیشنهاد، به لیست مسابقه اضافه میشود.<br>
+				</p>
+			</li>
+			<li>
+				&nbsp;
+			</li>
+			{if $smarty.session.uid == 2}
+			<li>
+				<label>{$lang.userName}:</label><br>
+				<input id="userName" name="userName" class="input" type="text" size="40" maxlength="45">
+			</li>
+			<li>
+				<label>{$lang.email}:</label><br>
+				<input id="email" name="email" class="input" type="text" size="40" maxlength="100">
+			</li>
+			{/if}
+			<li>
+				<label>{$lang.subject}:</label><br>
+				<input id="subject" name="subject" class="input" type="text" size="40" maxlength="100">
+			</li>
+			<li>
+				<label>{$lang.message}:</label><br>
+				<textarea id="message" name="message" class="input" rows="5" cols="40"></textarea>
+			</li>
+			<li>
+				<label>{$lang.carbonCopy}:</label>
+				<input id="carbonCopy" name="carbonCopy" class="input" type="checkbox" value="0" onchange="checkBoxToggle('carbonCopy');">
+			</li>
+			<li>
+				&nbsp;
+			</li>
+			<li>
+				<p style="border: 1px solid #cecece; padding: 4px; text-align: center;">*** حتما نام جایزه را با اطلاعات کامل ذکر کنید. ***</p>
+			</li>
+			<li>
+				<button onclick="
+								loader('POST', 'lib/ajax/ajax.php', 'page', 'op=contact&mode=c_sendMessage' +
+										'&userName=' + document.getElementById('userName').value + '::{$lang.userName}<>Multi<>1<>nce<>45' +
+										'&email=' + document.getElementById('email').value + '::{$lang.email}<>Mail<>1<>nce<>45' +
+									   	'&subject=' + document.getElementById('subject').value	+ '::{$lang.subject}<>Multi<>1<>ce<>100' +
+									   	'&message=' + document.getElementById('message').value + '::{$lang.message}<>Multi<>1<>ce<>1000' +
+									   	'&carbonCopy=' + document.getElementById('carbonCopy').value + '::{$lang.carbonCopy}<>Number<>1<>nce<>1'
+								);
+							">{$lang.submit}</button>
+			</li>
+		</ul>
+	</div>
+</div>

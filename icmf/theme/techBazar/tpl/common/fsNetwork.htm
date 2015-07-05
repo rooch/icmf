@@ -1,0 +1,69 @@
+<h2 class="zeroDis">fsNetwork</h2>
+<div class="row cell75">
+	<ul class="row inlineDisplay">
+		<li><b><a href="http://fsnet.ir" title="شبکه تجارت الکترونیک متن باز ایران" class="tip">&#174;شتاما</a></b></li>
+		<li><b><a href="http://brand-saz.com" title="برند سازی شما در دنیای تجارت الکترونیک" class="tip">برند ساز</a></b></li>
+		<li><b><a href="http://icasb.com" title="آی کسب راهی به سوی شروع کسب و کار الکترونیک" class="tip">آی کسب</a></b></li>
+		<li style="color: #fff;"><b>دیجی سئو</b></li>
+	</ul>
+</div>
+<div class="row cell10" style="direction: ltr;">
+	<div id="tinyContact" class="LH25 left curvedTop">
+		۰۲۱-۸۸۸۹۴۹۳۶
+		<div class="displayNone curvedNoTopLeft">
+			<ul>
+				<li>Email: info@digiseo.ir</li>
+				<li>Site: www.digiseo.ir</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="row cell5" style="direction: ltr;">
+	<div id="langSelector" class="centerObject flagsSprite flags-Iran curvedTop">
+		&nbsp;
+		<div class="displayNone curvedNoTopLeft">
+			<ul style="padding-left: 20px;">
+				<li class="flagsSprite flags-UnitedStatesofAmericaUSA">
+				<li class="flagsSprite flags-Germany">
+				<li class="flagsSprite flags-India">
+				<li class="flagsSprite flags-Italy">
+				<li class="flagsSprite flags-SaudiArabia">
+				<li class="flagsSprite flags-Turkey">
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="row cell10">
+	{nocache}
+	{if isset($smarty.session.uid) && $smarty.session.uid != 2}
+		<div class="clearFix">
+			<div class="row cell30">
+				<div style="padding-top: 2px;">
+					<div class="toolsSpriteWhite white24-User24 pointer centerObject" onclick="$('#cPanel').slideToggle('slow');">&nbsp;</div>
+				</div>
+			</div>
+			<div class="row cell70" style="line-height: 27px;">
+				<a href="/userMan/c_logout" rel="nofollow" onclick="setTimeout('location.href=\'/\';', 5000);">{$lang.logout}</a>
+			</div>
+		</div>
+	{else}
+		<div class="clearFix">
+			<div class="row cell30">
+				<div style="padding-top: 2px;">
+					<div class="toolsSpriteWhite white24-Login_in24 pointer centerObject" onclick="$('#cPanel').slideToggle('slow');">&nbsp;</div>
+				</div>
+			</div>
+			<div class="row cell70" style="line-height: 27px;">
+				<a class="tip" href="/userMan/v_signUp" title="{$lang.signUpHere}">{$lang.signUp}</a>
+			</div>
+		</div>		
+	{/if}
+	{/nocache}
+</div>
+<br class="clear">
+<!-- cPanel -->
+<div id="cPanel" class="cPanel paddy5">
+	<div id="login" class="login" style="padding-right: 10px;">{nocache}{$login}{nocache}</div>
+	<div id="accessories" class="accessories" style="display: none; padding-right: 10px;"></div>
+</div>
+<!-- /cPanel -->

@@ -1,0 +1,25 @@
+ul.topnav {
+	list-style: none;
+	padding: 0 20px;
+	margin: 0;
+	float: right;
+	width: 920px;
+	font-size: 12px;
+	font-family: yekan;
+}
+
+ul.topnav li {
+	float: right;
+	margin: 0;
+	padding: 0 6px 0 0;
+	position: relative;
+}
+
+ul.topnav li a {
+	padding: 0px 5px;
+	line-height: 30px;
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	float: right;
+}

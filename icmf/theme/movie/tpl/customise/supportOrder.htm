@@ -1,0 +1,353 @@
+<div id="pageIn" class="pageIn" style="color: #000;">
+	<h1 class="title">{$lang.order}</h1>
+	
+	{if $smarty.session.uid > 0}
+	<div class="curvedFull" style="font-size: 14px; background-color: #F4B413; text-align: center; font-weight: bold; height: 24px;">اطلاعات تماس شما</div>
+	<br>
+	<img src="theme/{$settings.theme}/img/icon/s.png" onload="loader('POST', '', 'contactInfo', 'op=userMan&mode=v_signUp&viewMode=signUpHorizental');">
+	<div class="curvedFull shadowFull" style="height: 200px; padding: 7px;">
+		<p style="color: red;">در صورتی که عضو سایت می باشید نیازی به پر کردن این اطلاعات نیست فقط کافی است با نام کاربری خود به سایت وارد شوید.</p>
+		<p>لطفا به منظور برقراری ارتباط و سهولت در انجام امور قراردادی کلیه فیلدهای مربوطه را با دقت و کامل پر نمایید. به موجب تکمیل این فرم ثبت نام شما بطور اتوماتیک در سایت صورت خواهد گرفت.
+		فرم مذکور در همین قسمت تکمیل و پس از کلیک دکلمه ارسال توسط شما ثبت نام تکمیل شده و بصورت پنجره ای مجزا نمایش داده خواهد شد. پس از ثبت نام لطفا فرم سفارش را تکمیل نمایید و سپس دکمه ارسال فرم درخواست را کلیک نمایید.</p>
+		<div id="contactInfo"></div>
+	</div>
+	<br>
+	{/if}
+	<div class="curvedFull" style="font-size: 14px; background-color: #F4B413; text-align: center; font-weight: bold; height: 24px;">بهینه‌سازی وب ‌سایت</div>
+	<br>
+	<div class="h30 curvedTop" style="text-align: center; font-weight: bolder; background-color: #81B2C1;">
+		<div class="row cell10">عنوان</div>
+		<div class="row cell60">توضیحات</div>
+		<div class="row cell20">انتخاب</div>
+		<div class="row cell10">هزینه(ریال)</div>
+	</div>
+	
+	<div id="step1" class="h30 odd" style="clear: both;">
+		<div class="row cell10">بارگذاری سریع‌تر صفحات</div>
+		<div class="row cell60">از طریق این مورد، صفحات وب‌سایت با سرعت بالاتری روی رایانه‌ی کاربر بارگذاری می‌شوند و کاربر مدت زمان کمی را باید برای مشاهده‌ی کامل وب‌سایت، به انتظار بنشیند. این مسئله زمانی حائز اهمیت می‌گردد که کاربر در حال استفاده از سرویس‌های اینترنتی با سرعت پایین، همانند اتصال از طریق خطوط تلفن (Dial up) باشد.<br><br></div>
+		<div class="row cell20">
+			<input id="speedLoad" name="speedLoad" type="checkbox" class="checkBox" value="0" onchange="price('speedLoad');">
+			<input id="speedLoadCount" name="speedLoadCount" type="text" size="15" maxlength="5" style="display: none;" value="1" onclick="this.value='';">
+		</div>
+		<div id="speedLoadFI" class="row cell10">400000</div>
+	</div>
+	
+	<div id="step2" class="h30 even" style="clear: both;">
+		<div class="row cell10">بهینه‌سازی صفحات</div>
+		<div class="row cell60">منظور، بهینه‌سازی صفحات دارای برنامه‌نویسی از لحاظ کد می‌باشد. بدین ترتیب، با بهبود کد مرتبط با صفحه، سرعت بارگذاری، پردازش و بازیابی اطلاعات و صفحات افزایش می‌یابد.</div>
+		<div class="row cell20">
+			<input id="optimize" name="optimize" type="checkbox" class="checkBox" value="0" onchange="price('optimize');">
+			<input id="optimizeCount" name="optimizeCount" type="text" size="15" maxlength="5" style="display: none;" value="1">
+		</div>
+		<div id="optimizeFI" class="row cell10">200000</div>
+	</div>
+	<br>
+	<div class="curvedFull" style="font-size: 14px; background-color: #F4B413; text-align: center; font-weight: bold; height: 24px;">به‌سازی برای موتورهای جست‌وجو (SEO)</div>
+	<br>
+	<div class="h30 curvedTop" style="text-align: center; font-weight: bolder; background-color: #81B2C1;">
+		<div class="row cell10">عنوان</div>
+		<div class="row cell70">توضیحات</div>
+		<div class="row cell10">انتخاب</div>
+		<div class="row cell10">هزینه(ریال)</div>
+	</div>
+	
+	<div id="step3" class="h30 odd" style="clear: both;">
+		<div class="row cell10">ایجاد سیاست بهینه‌سازی</div>
+		<div class="row cell70">به واسطه‌ی این مورد، سیاستی برحسب کاربری و محتویات وب‌سایت و کاربران مراجعه‌کننده به آن برای تبلیغات هر چه بهتر و کارآتر در موتورهای جست‌وجو، اتخاذ می‌گردد تا رتبه‌ی وب‌سایت برای نمایش در موتورهای جست‌وجو افزایش یابد.<br><br></div>
+		<div class="row cell10">
+			<input id="optimizePolitic" name="optimizePolitic" type="checkbox" class="checkBox" value="0" onchange="price('optimizePolitic');">
+			<input id="optimizePoliticCount" name="optimizePoliticCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="optimizePoliticFI" class="row cell10">100000</div>
+	</div>
+	
+	<div id="step4" class="h30 even" style="clear: both;">
+		<div class="row cell10">بهبود ساختار</div>
+		<div class="row cell70">با انجام این مورد، ساختار تبلیغات در موتورهای جست‌وجو برحسب تغییرات احتمالی یا در برخی موارد در آینده، بهینه‌سازی می‌گردد. بدین ترتیب، نحوه‌ی تبلیغات انعطاف‌پذیر می‌گردد و در صورتی که تغییراتی ایجاد گردند، به راحتی روند تبلیغات هم، متناسب با آن به دلیل پیش‌بینی‌های انجام شده‌ی قبلی، به سرعت تغییر می‌کند.<br><br></div>
+		<div class="row cell10">
+			<input id="optimizeArchitecture" name="optimizeArchitecture" type="checkbox" class="checkBox" value="0" onchange="price('optimizeArchitecture');">
+			<input id="optimizeArchitectureCount" name="optimizeArchitectureCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="optimizeArchitectureFI" class="row cell10">100000</div>
+	</div>
+	
+	<div id="step5" class="h30 odd" style="clear: both;">
+		<div class="row cell10">ایجاد سیاست تبلیغاتی</div>
+		<div class="row cell70">به واسطه‌ی این مورد، سیاستی برحسب کاربری و محتویات وب‌سایت و کاربران مراجعه‌کننده به آن برای تبلیغات هر چه بهتر و کارآتر در موتورهای جست‌وجو، اتخاذ می‌گردد تا رتبه‌ی وب‌سایت برای نمایش در موتورهای جست‌وجو افزایش یابد.<br><br></div>
+		<div class="row cell10">
+			<input id="adsPolitic" name="adsPolitic" type="checkbox" class="checkBox" value="0" onchange="price('adsPolitic');">
+			<input id="adsPoliticCount" name="adsPoliticCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="adsPoliticFI" class="row cell10">100000</div>
+	</div>
+	
+	<div id="step6" class="h30 even" style="clear: both;">
+		<div class="row cell10">بهبود ساختار</div>
+		<div class="row cell70">با انجام این مورد، ساختار تبلیغات در موتورهای جست‌وجو برحسب تغییرات احتمالی یا در برخی موارد در آینده، بهینه‌سازی می‌گردد. بدین ترتیب، نحوه‌ی تبلیغات انعطاف‌پذیر می‌گردد و در صورتی که تغییراتی ایجاد گردند، به راحتی روند تبلیغات هم، متناسب با آن به دلیل پیش‌بینی‌های انجام شده‌ی قبلی، به سرعت تغییر می‌کند.<br><br></div>
+		<div class="row cell10">
+			<input id="optimizeArchitecture" name="optimizeArchitecture" type="checkbox" class="checkBox" value="0" onchange="price('optimizeArchitecture');">
+			<input id="optimizeArchitectureCount" name="optimizeArchitectureCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="optimizeArchitectureFI" class="row cell10">200000</div>
+	</div>
+	
+	<div id="step7" class="h30 odd" style="clear: both;">
+		<div class="row cell10">ایجاد سیاست برای نمایش در تلفن‌های همراه</div>
+		<div class="row cell70">برای مشاهده‌ی وب‌سایت از طریق تلفن‌های همراه به کار می‌رود. باید توجه داشت که امروزه مردم در زمانی که در محلی نیستند تا به رایانه‌ای که به اینترنت متصل باشد، دسترسی داشته باشند، از طریق تلفن‌های همراهشان به اینترنت متصل می‌گردند و به مشاهده‌ی صفحات وب می‌پردازند. به همین دلیل، تغییر وب‌سایت متناسب با نمایش در انواع مختلف تلفن‌های همراه، باعث افزایش رتبه در موتورهای جست‌وجو می‌گردد.<br><br></div>
+		<div class="row cell10">
+			<input id="mobilePolitic" name="mobilePolitic" type="checkbox" class="checkBox" value="0" onchange="price('mobilePolitic');">
+			<input id="mobilePoliticCount" name="mobilePoliticCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="mobilePoliticFI" class="row cell10">300000</div>
+	</div>
+	
+	<div id="step8" class="h30 even" style="clear: both;">
+		<div class="row cell10">انتخاب نام مناسب برای هر صفحه</div>
+		<div class="row cell70">بدین‌گونه، با انتخاب نام‌هایی مناسب، منحصر به فرد و خلاصه که متناسب با محتویات همان صفحه از وب‌سایت می‌باشند و به خوبی مفهومی اجمالی را از محتویات آن به مخاطب می‌رسانند، رتبه‌ی وب‌سایت در موتورهای جست‌وجو افزایش می‌یابد.<br><br></div>
+		<div class="row cell10">
+			<input id="pageTitle" name="pageTitle" type="checkbox" class="checkBox" value="0" onchange="price('pageTitle');">
+			<input id="pageTitleCount" name="pageTitleCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="pageTitleFI" class="row cell10">100000</div>
+	</div>
+	
+	<div id="step9" class="h30 odd" style="clear: both;">
+		<div class="row cell10">بهینه‌سازی محتوا</div>
+		<div class="row cell70">محتویات تمامی صفحات وب‌سایت بررسی می‌گردند و به صورت حرفه‌ای و تخصصی مورد ارزیابی و بازبینی قرار می‌گیرند؛ تا در صورت نیاز، تغییرات لازم برای بهتر شدن اطلاعات آورده شده درون آن‌ها، اعمال گردند. با انجام این کار، رتبه‌ی وب‌سایت به صورت چشم‌گیری در موتورهای جست‌وجو افزایش خواهد یافت.<br><br></div>
+		<div class="row cell10">
+			<input id="optimizeContent" name="optimizeContent" type="checkbox" class="checkBox" value="0" onchange="price('optimizeContent');">
+			<input id="optimizeContentCount" name="optimizeContentCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="optimizeContentFI" class="row cell10">100000</div>
+	</div>
+	
+	<div id="step10" class="h30 even" style="clear: both;">
+		<div class="row cell10">بهینه‌سازی تصاویر</div>
+		<div class="row cell70">تصاویر قرار گرفته درون صفحات وب‌سایت، مورد بررسی و ارزیابی قرار می‌گیرند تا به خوبی برای مشاهده از سوی کاربران و متناسب شدن با محتویات صفحه‌ی مربوطه‌یشان، آماده گردند. بدین‌گونه، تصاویر در جای مناسب، مفهومی عینی را در رابطه با اطلاعات درج شده در صفحه، در ذهن مخاطب تداعی می‌کنند و باعث افزایش رتبه‌ی وب‌سایت در موتورهای جست‌وجو می‌گردند.<br><br></div>
+		<div class="row cell10">
+			<input id="optimizeImage" name="optimizeImage" type="checkbox" class="checkBox" value="0" onchange="price('optimizeImage');">
+			<input id="optimizeImageCount" name="optimizeImageCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="optimizeImageFI" class="row cell10">100000</div>
+	</div>
+	
+	<div id="step10" class="h30 odd" style="clear: both;">
+		<div class="row cell10">مشروح‌سازی صفحات</div>
+		<div class="row cell70">با این کار، محتویات صفحات با حفظ اصل و مفهوم اطلاعات درج شده، به گونه‌ای تغییر می‌کنند که برای بازدیدکنندگان وب‌سایت، مناسب باشند. در حقیقت، محتویات مندرج یا برای رساندن بهتر مفهوم، کوتاه‌تر می‌گردند و یا اطلاعات آورده شده، قدری بسط داده می‌شوند. این کار، افزایش رتبه‌ی وب‌سایت را در موتورهای جست‌وجو در پی دارد.<br><br></div>
+		<div class="row cell10">
+			<input id="descriptionPage" name="descriptionPage" type="checkbox" class="checkBox" value="0" onchange="price('descriptionPage');">
+			<input id="descriptionPageCount" name="descriptionPageCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="descriptionPageFI" class="row cell10">100000</div>
+	</div>
+	
+	<div id="step11" class="h30 even" style="clear: both;">
+		<div class="row cell10">منحصر به فردسازی محتویات صفحات برای کاربران</div>
+		<div class="row cell70">در این حالت، محتویات درج شده در صفحات با یک‌دیگر مورد مقایسه قرار می‌گیرند. سپس، موارد تکراری و زائد از آن‌ها حذف می‌گردند؛ و در صورتی که نیاز باشد برخی اطلاعات تکمیلی به آن‌ها اضافه می‌گردند. هم‌چنین، ساختار صفحات از نظر آرایش متنی، متناسب با محتویات آن صفحه، اصلاح  می‌گردد. بدینسان، رتبه‌ی وب‌سایت در موتورهای جست‌وجو افزایش می‌یابد.<br><br></div>
+		<div class="row cell10">
+			<input id="costumPage" name="costumPage" type="checkbox" class="checkBox" value="0" onchange="price('costumPage');">
+			<input id="costumPageCount" name="costumPageCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="costumPageFI" class="row cell10">100000</div>
+	</div>
+	
+	<div id="step12" class="h30 odd" style="clear: both;">
+		<div class="row cell10">بهینه‌سازی کلمات مورد جست‌وجو</div>
+		<div class="row cell70">کلمات مورد جست‌وجو برای یافت شدن وب‌سایت شما از طریق موتورهای جست‌وجو مورد بررسی قرار می‌گیرند. سپس، کلماتی که متناسب با کاربرد و محتویات وب‌سایت، و بازدیدکنندگان آن، و هم‌چنین، تا حد ممکن منحصر به فرد و بیش‌تر مورد استفاده‌ی بازدیدکنندگان برای جست‌وجو باشند، برای وب‌سایت انتخاب می‌گردند. بدین ترتیب، بازدیدکنندگان در صورت جست‌وجو در موتورهای جست‌وجو، وب‌سایت را در موارد ابتدایی‌ای که توسط موتورهای جست‌وجو در صفحات ابتدایی آورده می‌شوند، مشاهده خواهند نمود. بدین‌گونه، وب‌سایت پربیننده‌تر خواهد گردید و متعاقباً، رتبه‌اش در موتورهای جست‌وجو افزایش خواهد یافت.<br><br></div>
+		<div class="row cell10">
+			<input id="optimizeWord" name="optimizeWord" type="checkbox" class="checkBox" value="0" onchange="price('optimizeWord');">
+			<input id="optimizeWordCount" name="optimizeWordCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="optimizeWordFI" class="row cell10">100000</div>
+	</div>
+	
+	<div id="step13" class="h30 even" style="clear: both;">
+		<div class="row cell10">شاخص‌گذاری</div>
+		<div class="row cell70">موتورهای جست‌جو، دارای تعدادی برنامه‌ی شاخص‌ساز (Crawler) هستند. این برنامه‌ها براساس زمان‌بندی خاصی، به وب‌سایت شما مراجعه می‌کنند و اطلاعات درون آن را پیمایش و سپس، اطلاعاتی را در مورد وب‌سایت برای موتورهای جست‌وجو ارسال می‌کنند. اطلاعات ارسالی آن‌ها در افزایش یا کاهش رتبه‌ی شما در موتورهای جست‌وجو تأثیر دارد. با انجام این کار، محتویات صفحات وب‌سایت متناسب با نوع کاربری و مراجعه‌کنندگان به آن، به گونه‌ای شاخص‌گذاری می‌گردند که در صورت مراجعه‌ی برنامه‌های شاخص‌ساز موتورهای جست‌وجو، اطلاعات ارسالی آن‌ها به موتورهای جست‌وجویشان، باعث افزایش رتبه‌ی وب‌سایت می‌گردد.<br><br></div>
+		<div class="row cell10">
+			<input id="index" name="index" type="checkbox" class="checkBox" value="0" onchange="price('index');">
+			<input id="indexCount" name="indexCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="indexFI" class="row cell10">100000</div>
+	</div>
+	
+	<div id="step14" class="h30 odd" style="clear: both;">
+		<div class="row cell10">بهبود پیوندها</div>
+		<div class="row cell70">با انجام این مورد، تمامی لینک‌های درونی و بیرونی موجود در صفحات وب‌سایت مورد بررسی قرار می‌گیرند. سپس، فقط لینک‌های متناسب با کاربری وب‌سایت و مناسب برای آن و بازدیدکنندگان، باقی می‌مانند و لینک‌های اضافی و زائد، و یا لینک‌های اشتباه و معیوب از صفحات حذف می‌گردند و یا مورد اصلاح قرار می‌گیرند.<br><br></div>
+		<div class="row cell10">
+			<input id="optimizeLink" name="optimizeLink" type="checkbox" class="checkBox" value="0" onchange="price('optimizeLink');">
+			<input id="optimizeLinkCount" name="optimizeLinkCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="optimizeLinkFI" class="row cell10">100000</div>
+	</div>
+	
+	<div id="step15" class="h30 even" style="clear: both;">
+		<div class="row cell10">ایجاد سلسله‌مراتب</div>
+		<div class="row cell70">منظور، ایجاد ساختاری ساخت‌یافته برای کاربری هر چه بهتر وب‌سایت برای مراجعین به آن می‌باشد. بدین‌گونه، همانند نمودارهای سازمانی در ادارات و سازمان‌ها، وب‌سایت هم دارای ساختاری نموداری مشابه نمودارهای سازمانی می‌گردد که دسترسی کاربر را به صورت اصولی و بر پایه‌ی مجموعه‌ای از قوانین تعیین‌شده، به بخش‌های مختلف وب‌سایت تسهیل می‌بخشد. انجام این کار، در افزایش رتبه‌ی وب‌سایت در موتورهای جست‌وجو تأثیر خوبی دارد.<br><br></div>
+		<div class="row cell10">
+			<input id="hierarchical" name="hierarchical" type="checkbox" class="checkBox" value="0" onchange="price('hierarchical');">
+			<input id="hierarchicalCount" name="hierarchicalCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="hierarchicalFI" class="row cell10">100000</div>
+	</div>
+	
+	<div id="step16" class="h30 odd" style="clear: both;">
+		<div class="row cell10">ایجاد نقشه‌ی سایت</div>
+		<div class="row cell70">منظور از نقشه‌ی سایت، اطلاعاتی است که بخش‌های مختلف سایت را مشخص می‌سازد. نقشه‌ی سایت همانند راهنمای نقشه‌های جغرافیایی است. یک وب‌سایت برای هدایت بهتر کاربران به بخش‌ها و صفحات مختلف، باید دارای بخشی باشد تا کاربران به راحتی از طریق آن بتوانند از هر بخشی از وب‌سایت به هر بخش دیگری که می‌خواهند، بروند. این مورد تنها با طراحی یک نقشه‌ی سایت خوب میسر می‌باشد. با انجام این کار، رتبه‌ی وب‌سایت در موتورهای جست‌وجو افزایش می‌یابد.<br><br></div>
+		<div class="row cell10">
+			<input id="siteMap" name="siteMap" type="checkbox" class="checkBox" value="0" onchange="price('siteMap');">
+			<input id="siteMapCount" name="siteMapCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="siteMapFI" class="row cell10">100000</div>
+	</div>
+	
+	<div id="step17" class="h30 even" style="clear: both;">
+		<div class="row cell10">ثبت در موتورهای جست‌وجو</div>
+		<div class="row cell70">برای مشاهده‌ی وب‌سایت به واسطه‌ی اشخاص گوناگون و افزایش تعداد بازدیدکنندگان، مهم‌ترین کار که در رأس همه‌ی کارها قرار دارد، ثبت وب‌سایت در موتورهای جست‌وجو می‌باشد. با این کار، در صورتی که شخصی در یکی از موتورهای جست‌وجویی که وب‌سایت درون آن ثبت شده است، اقدام به جست‌وجوی کلمات کلیدی‌ای که برای وب‌سایت در نظر گرفته شده‌اند و یا کلمات خاص و منحصر به فردی که در محتویات صفحات وب‌سایت قرار دارند، نماید، وب‌سایت در یکی از موارد یافت‌شده از سوی موتور جست‌وجو درون یکی از صفحات، حتماً یافت خواهد شد.<br><br></div>
+		<div class="row cell10">
+			<input id="searchEngine" name="searchEngine" type="checkbox" class="checkBox" value="0" onchange="price('searchEngine');">
+			<input id="searchEngineCount" name="searchEngineCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="searchEngineFI" class="row cell10">200000</div>
+	</div>
+	
+	<div id="step18" class="h30 odd" style="clear: both;">
+		<div class="row cell10">افزایش حجم گردش اطلاعات</div>
+		<div class="row cell70">افزایش حجم گردش اطلاعات، زمانی روی می‌دهد که تعداد بازدیدکنندگان از وب‌سایت، افزایش یابند. بدین ترتیب، با انجام این مورد، سیاست‌هایی اتخاذ می‌گردند و به اجرا درمی‌آیند که منجر به افزایش تعداد بازدیدکنندگان، ترافیک سایت و رتبه‌ی وب‌سایت در موتورهای جست‌وجو می‌گردد.<br><br></div>
+		<div class="row cell10">
+			<input id="increaseTraffic" name="increaseTraffic" type="checkbox" class="checkBox" value="0" onchange="price('increaseTraffic');">
+			<input id="increaseTrafficCount" name="increaseTrafficCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="increaseTrafficFI" class="row cell10">100000</div>
+	</div>
+	
+	<br>
+	<div class="curvedFull" style="font-size: 14px; background-color: #F4B413; text-align: center; font-weight: bold; height: 24px;">بهینه‌سازی وب ‌سایت</div>
+	<br>
+	
+	<div id="step19" class="h30 even" style="clear: both;">
+		<div class="row cell10">طراحی قالب‌ جدید</div>
+		<div class="row cell70">به مرور زمان، قالب طراحی شده برای وب‌سایت، برای مراجعین به آن، تکراری و خسته‌کننده می‌گردد. بدین ترتیب، مراجعین امکان دارد به دلیل آن‌که یک طراحی را درون وب‌سایت برای مدت زیادی مشاهده نموده‌اند، دیگر تمایلی به مراجعه به آن نداشته باشند که منجر به کاهش تعداد بازدیدکنندگان از وب‌سایت می‌گردد. حال آن‌که با استفاده‌ی مناسب و به موقع از این مورد، هم می‌توان طراحی مناسبی را براساس مناسبت‌های مختلف یا روی‌دادهای گوناگون و مواردی از این دست ایجاد نمود تا در زمان مناسب وب‌سایت با آن قالب بارگذاری گردد و یادآور آن مورد به خصوص برای بازدیدکنندگان گردد و هم می‌توان جذابیت گرافیکی بیش‌تری به وب‌سایت داد که باعث راضی نگاه داشتن مخاطبین به لحاظ زیبایی می‌شود. باید توجه داشت که یکی از نکات مهم در حفظ بازدیدکنندگان قبلی و هم‌چنین، افزایش آن‌ها، اهمیت قائل شدن برای آنچه که مخاطبان مشاهده می‌کنند، می‌باشد؛ زیرا یک وب‌سایت اگر تنها بر محتویات متنی اتکا کند و به این نکته توجه نداشته باشد، به مرور به دلیل عادی و خسته‌کننده شدن طراحی، مراجعین خود را از دست خواهد داد.<br><br></div>
+		<div class="row cell10">
+			<input id="newTemplate" name="newTemplate" type="checkbox" class="checkBox" value="0" onchange="price('newTemplate');">
+			<input id="newTemplateCount" name="newTemplateCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="newTemplateFI" class="row cell10">300000</div>
+	</div>
+	
+	<div id="step20" class="h30 odd" style="clear: both;">
+		<div class="row cell10">طراحی تصاویر جدید برای قالبها</div>
+		<div class="row cell70">در قالب‌های طراحی شده، معمولاً ساختار، یکسان است که منجر می‌شود قالب جدیدی که برای وب‌سایت طراحی می‌گردد، دارای همان عناصر باشد، تنها با این تفاوت که طراحی آن‌ها دست‌خوش تغییر می‌گردد و یا با موردی متناسب با طراحی جدید، تغییر می‌کنند. سرانجام پس از مدتی، ساختار وب‌سایت برای بازدیدکنندگان از آن تکراری می‌گردد؛ زیرا براساس روند تغییر قالب‌ها در آن، پس از مدتی تا حدی می‌توانند پیش‌بینی کنند که در چه مناسبتی، حدوداً کدام قسمت‌های وب‌سایت و یا چه مواردی به جای کدام موارد موجود در قالب فعلی آن، تغییر خواهند نمود. حتی احتمال دارد به دلیل آن‌که قالب‌های متفاوت وب‌سایت را در بیش‌تر مناسبت‌ها و یا روی‌دادها و … دیده‌اند، بتوانند حدس بزنند که کدام قالب‌ها در مناسبت‌های آتی، حتی اگر اندکی هم تغییر کرده باشند، دوباره با قالب فعلی وب‌سایت جای‌گزین خواهند شد. بدین ترتیب احتمال از دست دادن برخی مراجعه‌کنندگان وجود دارد. پس باید توجه داشت که در کنار افزایش تعداد بازدیدکنندگان، حفظ کاربرانی که تا به حال برای به دست آوردنشان تلاش زیادی صورت گرفته هم، به همان اندازه مهم است. با استفاده از این قابلیت، می‌توان کمی تغییرات در قالب‌های طراحی شده که گه‌گاه جای‌گزین یک‌دیگر می‌گردند، با افزودن عناصر بصری جدید و خاصِ متناسب با محتویات صفحات وب‌سایت و قالب آن، ایجاد نمود. بدین ترتیب، تا حد زیادی می‌توان در هر بار که قالب وب‌سایت تغییر می‌کند، بینندگان را غافل‌گیر کرد و از پیش‌بینی طراحی در دفعات بعدی و یک‌نواختی‌ای که به مرور از لحاظ گرافیکی برای آنان ایجاد خواهد شد، جلوگیری نمود. مهم‌ترین اثر این کار، آن است که لااقل از کاهش تعداد بازدیدکنندگان وب‌سایت تا حد زیادی جلوگیری خواهد کرد<br></div>
+		<div class="row cell10">
+			<input id="newImage" name="newImage" type="checkbox" class="checkBox" value="0" onchange="price('newImage');">
+			<input id="newImageCount" name="newImageCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="newImageFI" class="row cell10">200000</div>
+	</div>
+	
+	<br><br><br><br><br><br><br><br><br><br>
+	<div class="curvedFull" style="font-size: 14px; background-color: #F4B413; text-align: center; font-weight: bold; height: 24px;">پشتیبان‌گیری</div>
+	<br>
+	
+	<div id="step21" class="h30 even" style="clear: both;">
+		<div class="row cell10">داده‌های بانک اطلاعاتی</div>
+		<div class="row cell70">پشتیبان گیری از بانک اطلاعاتی و داده های وارد شده یکی از حیاتی ترین امور مربوط به یک وبسایت می باشد. این عمل باعث می گردد تا زمان بروز اتفاقات احتمالی اطلاعات سایت از بین نرود. تهیه نسخه پشتیبان به صورت روزانه انجام میگیرد.</div>
+		<div class="row cell10">
+			<input id="sqlBackUp" name="sqlBackUp" type="checkbox" class="checkBox" value="0" onchange="price('sqlBackUp');">
+			<input id="sqlBackUpCount" name="sqlBackUpCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="sqlBackUpFI" class="row cell10">200000</div>
+	</div>
+	
+	<div id="step22" class="h30 odd" style="clear: both;">
+		<div class="row cell10">فایل‌های سرویس میزبانی</div>
+		<div class="row cell70">به مرور زمان فایلها و اطلاعات وارد شده توسط کاربران و مدیران سیستم بجایی می رسد که نیاز به تهیه نسخه پشتیبان دارند. این عمل باعث می گردد تا در صورت بروز اتفاقات ناگوار فایلها و اطلاعات سایت از بین نروند. تهیه نسخه پشتیبان به صورت روزانه انجام میگیرد.</div>
+		<div class="row cell10">
+			<input id="fileBackUp" name="fileBackUp" type="checkbox" class="checkBox" value="0" onchange="price('fileBackUp');">
+			<input id="fileBackUpCount" name="fileBackUpCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="fileBackUpFI" class="row cell10">400000</div>
+	</div>
+	
+	<br>
+	<div class="curvedFull" style="font-size: 14px; background-color: #F4B413; text-align: center; font-weight: bold; height: 24px;">به‌روزرسانی</div>
+	<br>
+	
+	<div id="step23" class="h30 even" style="clear: both;">
+		<div class="row cell10">ماژول‌ها</div>
+		<div class="row cell70">ماژولها و امکانات نصب شده بر روی وبسایت شما بطور قطع پس از سفارش شما بروز رسانی شده و دارای قابلیت های جدید می شوند. در صورت سفارش بروز رسانی ماژولها در قسمت پشتیبانی، اعمال این تغییرات بصورت رایگان انجام خواهد گرفت.</div>
+		<div class="row cell10">
+			<input id="moduleUpdate" name="moduleUpdate" type="checkbox" class="checkBox" value="0" onchange="price('moduleUpdate');">
+			<input id="moduleUpdateCount" name="moduleUpdateCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="moduleUpdateFI" class="row cell10">400000</div>
+	</div>
+	
+	<br>
+	<div class="curvedFull" style="font-size: 14px; background-color: #F4B413; text-align: center; font-weight: bold; height: 24px;">رفع اشکال</div>
+	<br>
+	
+	<div id="step24" class="h30 odd" style="clear: both;">
+		<div class="row cell10">رفع اشکالات احتمالی یا رخ داده</div>
+		<div class="row cell70">با سفارش این گزینه در صورت رخداد اشکالی در سیستم، پشتیبانی و رفع اشکال بصورت رایگان انجام خواهد گرفت. دقت فرمایید که فقط اشکالات سیستمی بصورت رایگان انجام خواهند شد. مواردی که اشکالات انسانی (آدمین وبسایت) در میان باشد شامل هزینه جداگانه خواهد بود.</div>
+		<div class="row cell10">
+			<input id="bugFix" name="bugFix" type="checkbox" class="checkBox" value="0" onchange="price('bugFix');">
+			<input id="bugFixCount" name="moduleUpdateCount" type="text" size="15" maxlength="1" style="display: none;" value="1">
+		</div>
+		<div id="bugFixFI" class="row cell10">400000</div>
+	</div>
+	
+	<div id="step25" class="h150 even" style="clear: both;">
+		<div class="row cell10">توضیحات</div>
+		<div class="row cell50">در صورتی که نیاز به ارسال توضیحات بیشتر دارید میتوانید از این فیلد استفاده نمایید.</div>
+		<div class="row cell20">
+			<textarea id="description" name="description" rows="10" cols="40"></textarea>
+		</div>
+		<div class="row cell20" style="text-align: center; padding-top: 10px;">
+			<img src="theme/{$settings.theme}/img/discount.png">
+		</div>
+	</div>
+	<br>
+	<div class="curvedFull shadowFull" style="font-weight: bolder; font-size: 15px; height: 28px; padding: 6px 4px 0px 4px;">
+		<div class="row cell60" style="text-align: left;">
+			<button style="width: 90%;" onclick="
+				$('#content').farajax('loader', '/formBuilder/c_addData', 
+						   'formId=2::شماره فرم<>Number<>1<>ce<>6' +
+						   '&speedLoad=' + document.getElementById('speedLoad').value + '::بارگذاری سریع صفحات<>Number<>1<>nce<>100' +
+						   '&optimize=' + document.getElementById('optimize').value + '::بهینه سازی صفحات<>Number<>1<>nce<>1' +
+						   '&optimizePolitic=' + document.getElementById('optimizePolitic').value + '::سیاست بهینه سازی<>Number<>1<>nce<>1' +
+						   '&optimizeArchitecture=' + document.getElementById('optimizeArchitecture').value + '::بهبود ساختار<>Number<>1<>nce<>1' +
+						   '&adsPolitic=' + document.getElementById('adsPolitic').value + '::سیاست تبلیغاتی<>Number<>1<>nce<>1' +
+						   '&optimizeArchitecture=' + document.getElementById('optimizeArchitecture').value + '::بهبود ساختار<>Number<>1<>nce<>1' +
+						   '&mobilePolitic=' + document.getElementById('mobilePolitic').value + '::نمایش در موبایل<>Number<>1<>nce<>1' +
+						   '&pageTitle=' + document.getElementById('pageTitle').value + '::عنوان مناسب هر صفحه<>Number<>1<>nce<>1' +
+						   '&optimizeContent=' + document.getElementById('optimizeContent').value + '::بهینه سازی محتوا<>Number<>1<>nce<>1' +
+						   '&optimizeImage=' + document.getElementById('optimizeImage').value + '::بهینه سازی تصاویر<>Number<>1<>nce<>1' +
+						   '&descriptionPage=' + document.getElementById('descriptionPage').value + '::مشروح صفحات<>Number<>1<>nce<>1' +
+						   '&costumPage=' + document.getElementById('costumPage').value + '::انحصار صفحات<>Number<>1<>nce<>1' +
+						   '&optimizeWord=' + document.getElementById('optimizeWord').value + '::بهینه سازی کلمات کلیدی<>Number<>1<>nce<>1' +
+						   '&index=' + document.getElementById('index').value + '::شاخص گذاری<>Number<>1<>nce<>1' +
+						   '&optimizeLink=' + document.getElementById('optimizeLink').value + '::بهبود لینکها<>Number<>1<>nce<>1' +
+						   '&hierarchical=' + document.getElementById('hierarchical').value + '::ایجاد سلسله مراتب<>Number<>1<>nce<>1' +
+						   '&siteMap=' + document.getElementById('siteMap').value + '::نقشه سایت<>Number<>1<>nce<>1' +
+						   '&searchEngine=' + document.getElementById('searchEngine').value + '::ثبت در موتورهای جستجو<>Number<>1<>nce<>1' +
+						   '&increaseTraffic=' + document.getElementById('increaseTraffic').value + '::افزایش حجم گردش اطلاعات<>Number<>1<>nce<>100' +
+						   '&newTemplate=' + document.getElementById('newTemplate').value + '::طراحی قالب جدید<>Number<>1<>nce<>1' +
+						   '&newImage=' + document.getElementById('newImage').value + '::طراحی تصویر جدید<>Number<>1<>nce<>1' +
+						   '&sqlBackUp=' + document.getElementById('sqlBackUp').value + '::پشتیبانگیری بانک اطلاعاتی<>Number<>1<>nce<>1' +
+						   '&fileBackUp=' + document.getElementById('fileBackUp').value + '::پشتیبانگیری فایلها<>Number<>1<>nce<>1' +
+						   '&moduleUpdate=' + document.getElementById('moduleUpdate').value + '::بروز رسانی مآژولها<>Number<>1<>nce<>1' +
+						   '&permission=111101000000::{$lang.permission}<>Number<>1<>ce<>12' +
+						   '&description=' + document.getElementById('description').value + '::{$lang.description}<>Multi<>1<>nce<>9000000'
+					);
+			">
+				<span style="font-weight: bolder;">ثبت سفارش</span>
+			</button>
+		</div>
+		<div class="row cell10" style="text-align: left;">مجموع: </div>
+		<div id="totalPrice" class="row cell20" style="text-align: center;">0</div>
+		<div class="row cell10">ریال</div>
+	</div>
+	<br>
+	
+</div>

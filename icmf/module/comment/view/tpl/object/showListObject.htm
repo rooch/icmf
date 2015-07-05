@@ -1,0 +1,30 @@
+{nocache}
+{foreach name=entity key=entityKey item=entityItem from=$entityList}
+<div id="row{$entityItem.id}" class="commentStyle2 curvedFull boxShadow" style="border-color: #e0e0e0; background: url('theme/{$settings.theme}/img/openquote4.gif') no-repeat left top;">
+	<div class="cell30 curvedLeft" style="margin-right: -15px; background: #e0e0e0">
+		<div class="paddy5 clearFix">
+			<div class="row cell30">
+				{if isset($entityItem.commentorImage)}
+				{iimg src=$entityItem.commentorImage width=32 height=32 class=tip alt=$entityItem.lastName title=$entityItem.lastName}
+				{else}
+				<div class="center">
+					<img src="theme/{$settings.theme}/img/icon/mini/User32.png" width="32" height="32">
+				</div>
+				{/if}
+			</div>
+			<div class="row cell70 right LH40">
+				{if isset($entityItem.firstName) || isset($entityItem.lastName)}
+				{$entityItem.firstName} {$entityItem.lastName}
+				{else}
+				{$entityItem.email}
+				{/if}
+			</div>
+		</div>
+	</div>
+	<div class="paddy15"><p>{$entityItem.text}&nbsp;</p></div>
+	<div class="clearFix">
+		<div class="row cell60">&nbsp;</div>
+		<div class="row cell40 left thin">{$entityItem.timeStamp}</div>
+	</div>
+</div>
+{/foreach}

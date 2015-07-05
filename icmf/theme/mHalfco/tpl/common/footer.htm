@@ -1,0 +1,68 @@
+<div class="clearFix specialFont">
+	<div class="row cell40">
+		<div id="storyDiv" class="paddy5" style="border-left: 1px dashed #cecece;">
+			<h1>{$lang.aboutUs}</h1>
+			<br>
+			<p>
+				{nocache}{$lang.aboutUsDescription|strip_tags:false|truncate:700:"...":true}{/nocache}
+			</p>
+		</div>
+	</div>
+	<div class="row cell35">
+		<div id="consultantDiv" class="paddy5" style="border-left: 1px dashed #cecece;">
+			<h2>{$lang.contactUs}</h2>
+			<div class="bold paddy5"></div>
+			<div class="bold paddy5"></div>
+			<br>
+			<div id="contactUs">{$contactUs}</div>
+		</div>
+	</div>
+	<div class="row cell25">
+		<div id="contactDiv" class="paddy5">
+			<h1>{$lang.contactUs}</h1>
+			<br>
+			<div class="bold" style="border-bottom: 1px dashed #dddddd;">{$lang.phone}: {$lang.contactNumber}</div>
+			<br>
+			<div class="bold" style="border-bottom: 1px dashed #dddddd;">{$lang.email}: info@halfco.com</div>
+			<br>
+			<div class="bold" style="border-bottom: 1px dashed #dddddd;">{$lang.address}:<br>{$lang.halfAddress}</div>
+			<br>
+			<div class="clearFix">
+				<div class="row cell15 center">
+					<a href="">
+						<img class="tip" src="theme/{$settings.theme}/img/icon/twitter.png" alt="{$lang.twitterPage}" title="{$lang.twitterPage}">
+					</a>
+				</div>
+				<div class="row cell85 LH30">
+					<a href="">
+						<b>{$lang.twitterPage}</b>
+					</a>
+				</div>
+			</div>
+			<div class="clearFix">
+				<div class="row cell15 center">
+					<a href="https://www.facebook.com/halfcompany">
+						<img class="tip" src="theme/{$settings.theme}/img/icon/facebook.png" alt="{$lang.facebookPage}" title="{$lang.facebookPage}">
+					</a>
+				</div>
+				<div class="row cell85 LH30">
+					<a href="https://www.facebook.com/halfcompany">
+						<b>{$lang.facebookPage}</b>
+					</a>
+				</div>
+			</div>
+			<div class="clearFix">
+				<div class="row cell15 center">
+					<a href="skype:half.company?userinfo">
+						<img class="tip" src="theme/{$settings.theme}/img/icon/skype.png" alt="{$lang.skype}" title="{$lang.skype}">
+					</a>
+				</div>
+				<div class="row cell85 LH30">
+					<a href="skype:half.company?userinfo">
+						<b>{$lang.skype}</b>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

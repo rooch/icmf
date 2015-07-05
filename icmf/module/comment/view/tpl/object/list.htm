@@ -1,0 +1,41 @@
+<div class="pageIn">
+	<h2>{$lang.commentList}</h2>
+	<br>
+	<div class="listHeader clearFix">
+		<div class="row cell5 center">#</div>
+		<div class="row cell5 center">{$lang.id}</div>
+		<div class="row cell15 center">{$lang.date}</div>
+		<div class="row cell10 center">{$lang.op}&nbsp;</div>
+		<div class="row cell20 center">{$lang.firstName} {$lang.lastName}</div>
+		<div class="row cell25 center">{$lang.title}</div>
+		<div class="row cell20 center">{$lang.properties}</div>
+	</div>
+	{nocache}
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	<div class="blockquote clearFix" id="row{$entityItem.id}">
+		<div class="row cell5">{$entityItem.num}</div>
+		<div class="row cell5">{$entityItem.id}</div>
+		<div class="row cell15 thin">{$entityItem.timeStamp}</div>
+		<div class="row cell10">{$entityItem.op}</div>
+		<div class="row cell20 right">{$entityItem.firstName} {$entityItem.lastName}&nbsp;</div>
+		<div class="row cell25 right"><a href="post/c_showListObject/{$entityItem.opid}_">{$entityItem.title}&nbsp;</a></div>
+		<div class="row cell20" align="center">
+			<a href="/comment/c_showListObject/id={$entityItem.id}">
+				<img src="theme/{$settings.theme}/img/icon/information.png" class="tip" title="{$entityItem.text}">
+			</a>
+			<img src="theme/{$settings.theme}/img/icon/delete.png" class="pointer" title="{$lang.delete}" alt="{$lang.delete}" onclick="$('#content').farajax('loader', '/comment/v_delObject/id={$entityItem.id}')">
+			<a href="/comment/v_editObject/id={$entityItem.id}">
+				<img src="theme/{$settings.theme}/img/icon/edit.png" title="{$lang.edit}" alt="{$lang.edit}">
+			</a>
+			{if $entityItem.active == '1'} 
+			<img src="theme/{$settings.theme}/img/icon/powerOn.png" class="pointer" onclick="$('#content').farajax('loader', '/comment/c_deactivateObject', 'id={$entityItem.id}')">
+			{else}
+			<img src="theme/{$settings.theme}/img/icon/powerOff.png" class="pointer" onclick="$('#content').farajax('loader', '/comment/c_activateObject', 'id={$entityItem.id}')">
+			{/if}
+		</div>
+	</div>
+	{/foreach}
+	<br>
+	<div class="blockquote">{$navigation}</div>
+	{/nocache}
+</div>

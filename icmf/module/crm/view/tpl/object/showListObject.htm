@@ -1,0 +1,71 @@
+<div id="pageIn" class="pageIn">
+	{nocache}
+	<div>
+		<div class="row cell49">
+		{foreach name=entity key=entityKey item=entityItem from=$entityList}
+			{if $entityItem.id is div by 2}
+			<div class="blockquote" id="row{$entityItem.id}">
+				<h2><a href="/post/c_showObject/id={$entityItem.id}" title="{$entityItem.title}">{$entityItem.title}</a></h2>
+				<br>
+				<div style="text-align: center; border-top: dashed #e7e7e7 1px; padding-top: 6px;">
+					{if $entityItem.imagePath != ''}
+					<img width="250" height="220" style="border: 1px solid #e5e5e5; padding: 2px;" title="{$entityItem.title}" alt="{$entityItem.title}" src="{$entityItem.imagePath}">
+					{/if}
+				</div>
+				<p>{$entityItem.description|strip_tags:false|truncate:600:"...":true}</p>
+				<div><a href="/post/c_showObject/id={$entityItem.id}" title="{$entityItem.title}">{$lang.readMore}</a></div>
+				<br>
+				<div style="border-top: 1px dashed #e7e7e7; padding: 5px;">
+					<div class="row cell60">
+						<span>{$lang.author}: {$entityItem.author}</span>
+						&nbsp;
+						<span>{$lang.date}: {$entityItem.startTime}</span>	
+					</div>
+					<div class="row cell40">
+						<div id="shareLink{$entityItem.id}" class="shareLink" data-url="http://{$settings.domain}/post/c_showObject/id={$entityItem.id}" data-title="{$entityItem.title}" data-text="{$item.description}"></div>
+					</div>
+					<br style="clear: both;">
+				</div>
+			</div>
+			<br>
+			{/if}
+		{/foreach}
+		</div>
+		<div class="row cell2">&nbsp;</div>
+		<div class="row cell49">
+			{foreach name=entity key=entityKey item=entityItem from=$entityList}
+			{if $entityItem.id is not div by 2}
+			<div class="blockquote" id="row{$entityItem.id}">
+				<h2><a href="/post/c_showObject/id={$entityItem.id}" title="{$entityItem.title}">{$entityItem.title}</a></h2>
+				<br>
+				<div style="text-align: center; border-top: dashed #e7e7e7 1px; padding-top: 6px;">
+					{if $entityItem.imagePath != ''}
+					<img width="250" height="220" style="border: 1px solid #e5e5e5; padding: 2px;" title="{$entityItem.title}" alt="{$entityItem.title}" src="{$entityItem.imagePath}">
+					{/if}
+				</div>
+				<p>{$entityItem.description|strip_tags:false|truncate:600:"...":true}</p>
+				<div><a href="/post/c_showObject/id={$entityItem.id}" title="{$entityItem.title}">{$lang.readMore}</a></div>
+				<br>
+				<div style="border-top: 1px dashed #e7e7e7; padding: 5px;">
+					<div class="row cell60">
+						<span>{$lang.author}: {$entityItem.author}</span>
+						&nbsp;
+						<span>{$lang.date}: {$entityItem.startTime}</span>
+					</div>
+					<div class="row cell40">
+						<div id="shareLink{$entityItem.id}" class="shareLink" data-url="http://{$settings.domain}/post/c_showObject/id={$entityItem.id}" data-title="{$entityItem.title}"  data-text="{$item.description}"></div>
+					</div>
+					<br style="clear: both;">
+				</div>
+			</div>
+			<br>
+			{/if}
+			{/foreach}
+		</div>
+		<br style="clear: both;">
+	</div>
+	<br>
+	<div class="blockquote">{$navigation}</div>
+	{/nocache}
+</div>
+<commands value="startShare();">

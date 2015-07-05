@@ -1,0 +1,28 @@
+<ul class="sf-menu">
+	{if $smarty.session.uid == 2}
+	<li class="current">
+		<a onclick="loader('POST', '', 'content', 'op=userMan&mode=v_signUp', 1);" href="#">ثبت نام</a>
+	</li>
+	{/if}
+	<li class="current">
+		<a onclick="loader('POST', '', 'content', 'op=shop&mode=v_shop', 1);" href="#">فروشگاه</a>
+	</li>
+	<li class="current">
+		<a onclick="loader('POST', '', 'content', 'op=contact&mode=v_contactUs', 1);" href="#">تماس با ما</a>
+	</li>
+	<li class="current">
+		<a onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=FAQ', 1);" href="#">{$lang.FAQ}</a>
+	</li>
+	<li class="current">
+		<a onclick="loader('POST', '', 'content', 'op=article&amp;mode=c_list', 1);" href="#">مقالات</a>
+	</li>
+	<li class="current">
+		<a onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=news', 1);" href="#">اخبار و تازه ها</a>
+	</li>
+	<li class="current">
+		<a onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=aboutUs', 1);" href="#">درباره فاوارایان</a>
+	</li>
+	<li class="current">
+		<a onclick="loader('POST', '', 'content', 'op=pageLoader&mode=v_load&page=main', 1);" href="#">صفحه اول</a>
+	</li>
+</ul>

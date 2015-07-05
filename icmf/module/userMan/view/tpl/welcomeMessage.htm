@@ -1,0 +1,17 @@
+{nocache}
+<div class="clearFix">
+	<div class="row cell20">
+		{iimg src="{$userPic}" width="80" height="100"}
+	</div>
+	<div class="row cell80">
+		<div class="LH40">
+			{$welcomeMessage}
+			&nbsp;&nbsp;&nbsp;
+			[<a href="/cPanel/c_list" rel="nofollow" target="accessories" onclick="$('#accessories').slideToggle('slow')">{$lang.cPanel}</a>]
+			[<a href="/userMan/c_logout" rel="nofollow" title="{$lang.logout}" onclick="setTimeout('location.href=\'/\';', 5000);">{$lang.logout}</a>]
+			<script src="kernel/lib/xorg/editor/ckeditor.js"></script>
+			<script src="kernel/lib/xorg/finder/ckfinder.js"></script>
+		</div>
+	</div>
+</div> 
+{/nocache}

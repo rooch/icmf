@@ -1,0 +1,9 @@
+{foreach name=prize key=prizeKey item=prizeItem from=$prizeList}
+	<div id="prizeContainer" style="padding: 3px;" onclick="document.getElementById('prize').value='{$prizeItem.id}'; this.style.border='1px solid #000'">
+		<img style="cursor: pointer;" src="{$prizeItem.imagePath}" width="98%" height="100">
+		<div style="padding: 2px;">
+			<div style="cursor: pointer; background-color: #E8E9EA">{$prizeItem.name}</div>
+		</div>
+		</div>
+	<br>
+{/foreach}

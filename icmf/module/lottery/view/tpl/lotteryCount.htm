@@ -1,0 +1,16 @@
+<fieldset>
+	<legend>{$lang.lotteryCount}</legend>
+	<ul>
+		<li>
+			<label>{$lang.count}: </label>
+			<input id="lotteryCount{$objectId}" name="lotteryCount{$objectId}" class="input" type="text" size="5" maxlength="6" value="1">		
+		</li>
+		<li>&nbsp;</li>
+		<li>
+			<button onclick="loader('POST', '', 'lotteryInfo', 'op=lottery&mode=c_addToBasket' +
+																										'&objectId={$objectId}' + '::{$lang.id}<>Number<>1<>ce<>11' +
+																									   	'&count=' + document.getElementById('lotteryCount{$objectId}').value + '::{$lang.lotteryCount}<>Number<>1<>nce<>6<>0<>999999'
+																									); addToBasket('lotteryInfo');">{$lang.submit}</button>
+		</li>
+	</ul>
+</fieldset>

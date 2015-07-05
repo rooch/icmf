@@ -1,0 +1,18 @@
+/* MAIN */
+  Develop & Main Design: Ali Hosseini
+  Twitter: @fsnet
+  Site: http://www.fsnet.ir
+
+/* SITE */
+  Last update: 11/016/2013
+  Doctype: HTML5
+  IDE: Eclipse
+
+/* SPECIAL THANKS */
+  Designer: Alireza Teymoorian
+  Twitter: @teymoorian
+
+  Usability: Elham Hosseini
+  Twitter: @eHosseini
+
+  And, of course, all humanstxt.org team!

@@ -1,0 +1,16 @@
+{nocache}
+<div class="clearFix whiteFrame paddy5 curvedFull">
+	<div class="row cell10">
+		{$contentType}
+	</div>
+	<div class="row cell20">
+		{$category}
+	</div>
+	<div class="row cell10">
+		<button onclick="$('#content').farajax('loader', '/post/c_listObject/' + 'contentType=' + $('#contentType').val() + ',category=' + $('#category').val());">
+			فیلتر
+		</button>
+	</div>
+</div>
+{/nocache}
+<br>

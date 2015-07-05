@@ -1,0 +1,42 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.addHelpDesk}</h1>
+	<ul>
+		<li>
+			<div class="row cell20">{$lang.title}: </div>
+			<div class="row cell80"><input id="title" name="title" class="input" type="text" size="30" maxlength="500"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.priority}: </div>
+			<div class="row cell80">
+				<select id="priority" name="priority">
+					<option value=""> ... </option>
+					<option value="1">{$lang.lowPriority}</option>
+					<option value="2">{$lang.normal}</option>
+					<option value="3">{$lang.important}</option>
+					<option value="4">{$lang.emergency}</option>
+				</select>
+			</div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.description}: </div>
+			<div class="row cell80">
+				<textarea id="description" name="description" rows="20" cols="70"></textarea>
+			</div>
+		</li>
+		<li>
+			&nbsp;
+		</li>
+		<li>
+			<div style="text-align: center;">
+				<button onclick="
+					$('#content').farajax('loader', '/helpDesk/c_add', 
+						   'title=' + document.getElementById('title').value + '::{$lang.title}<>Multi<>1<>ce<>500' +
+						   '&priority=' + document.getElementById('priority').value + '::{$lang.priority}<>Number<>1<>ce<>1' +
+						   '&description=' + document.getElementById('description').value + '::{$lang.description}<>Multi<>1<>ce<>900000'
+					);">
+					<span>{$lang.submit}</span>
+				</button>
+			</div>
+		</li>
+	</ul>
+</div>

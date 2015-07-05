@@ -1,0 +1,32 @@
+{nocache}
+<div id="messageBar" class="messageBar curvedFull boxShadow">
+	<div class="curvedTop clearFix right paddy5 h20" style="background-color: {$color};">
+		<div class="row cell90 clearFix">
+			<div class="row cell5">
+				{if isset($icon)}
+				<img src='theme/{$settings.theme}/img/icon/{$icon}'>&nbsp;
+				{/if}
+			</div>
+			<div class="row cell80">
+				<h3>{$title}</h3>
+			</div>
+			<div class="row cell15">
+				<span style="display: none;">- {$code}</span>
+			</div>
+		</div>
+		<div class="row cell10 left">
+			<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/close.png" alt="{$lang.close}" title="{$lang.close}" onclick="$('#modalWindow').faraModal('closeModal', 'modalWindow');">
+		</div>
+	</div>
+	<div class="paddy10">
+		<div>{$content}</div>
+ 		<div class="center">
+ 		{if isset($button)}
+  			{foreach key=buttonKey item=buttonItem from=$button}
+  			{/foreach}
+ 		{/if}
+		</div>
+	</div>
+</div> 
+{/nocache}
+<commands value="$('#messageBar').draggable();{$command}">

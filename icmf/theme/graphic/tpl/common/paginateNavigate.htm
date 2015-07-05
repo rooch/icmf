@@ -1,0 +1,18 @@
+{nocache}
+<div id="searchBar"></div>
+<div>
+	<div id="paginateCount" class="row cell10 right">{$lang.count}: {$totalRows}</div>
+	<div id="paginatePage" class="row cell80 center paginateNavigate"> {$renderLast} &nbsp; {$renderNext} &nbsp; {$renderNav} &nbsp; {$renderPrev} &nbsp; {$renderFirst} </div>
+	<div id="paginateTools" class="row cell10 clearFix">
+		<div class="row cell5">&nbsp;</div>
+		<div class="row cell5">&nbsp;</div>
+		<div class="row cell5">&nbsp;</div>
+		<div id="ptSearch" class="row cell85">
+			<img class="pointer" alt="{$lang.search}" title="{$lang.search}" src="theme/{$settings.theme}/img/icon/search.png" width="16" height="16">
+			<input id="universalSearch" name="universalSearch" class="cell100 displayNone" type="search" placeholder="جستجو">
+		</div>
+		<!-- <img style="cursor: pointer;" alt="" title="" src="theme/{$settings.theme}/img/icon/excel.png" width="16" height="16"> -->
+		<!-- <img style="cursor: pointer;" alt="" title="" src="theme/{$settings.theme}/img/icon/pdf.png" width="16" height="16"> -->
+	</div>
+</div>
+{/nocache}

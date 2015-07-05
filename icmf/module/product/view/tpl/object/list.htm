@@ -1,0 +1,45 @@
+{nocache}
+<div class="blockquote">
+	<h2>{$lang.productList}</h2>
+	<br>
+	<div class="listHeader clearFix">
+		<div class="row cell5 center">#</div>
+		<div class="row cell10 center">{$lang.id}</div>
+		<div class="row cell15 center">{$lang.name}</div>
+		<div class="row cell15 center">{$lang.category}</div>
+		<div class="row cell10 center">{$lang.model}</div>
+		<div class="row cell10 center">{$lang.buyPrice}</div>
+		<div class="row cell10 center">{$lang.count}</div>
+		<div class="row cell25 center">{$lang.properties}</div>
+	</div>
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	<div class="blockquote clearFix" id="row{$entityItem.id}">
+		<div class="row cell5">{$entityItem.num}</div>
+		<div class="row cell10">{$entityItem.id}</div>
+		<div class="row cell15">{$entityItem.name}</div>
+		<div class="row cell15">{$entityItem.category}</div>
+		<div class="row cell10">{$entityItem.model}</div>
+		<div class="row cell10">{$entityItem.buyPrice}</div>
+		<div class="row cell10">{$entityItem.count}</div>
+		<div class="row cell25" align="center">
+			<a href="/product/c_infoObject/id={$entityItem.id}" rel="nofollow">
+				<img src="theme/{$settings.theme}/img/icon/information.png" title="{$entityItem.description}" alt="{$entityItem.description}">
+			</a>
+			<a href="/product/v_delObject/id={$entityItem.id}" rel="nofollow">
+				<img src="theme/{$settings.theme}/img/icon/delete.png" title="{$lang.delete}" alt="{$lang.delete}">
+			</a>
+			<a href="/product/v_editObject/id={$entityItem.id}" rel="nofollow" target="add">
+				<img src="theme/{$settings.theme}/img/icon/edit.png" title="{$lang.edit}" alt="{$lang.edit}">
+			</a>
+			{if $entityItem.actvie == '1'} 
+			<img src="theme/{$settings.theme}/img/icon/powerOn.png">
+			{else}
+			<img src="theme/{$settings.theme}/img/icon/powerOff.png">
+			{/if}
+		</div>
+	</div>
+	{/foreach}
+	<br>
+	<div class="blockquote">{$navigation}</div>
+</div>
+{/nocache}

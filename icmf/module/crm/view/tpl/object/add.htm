@@ -1,0 +1,307 @@
+{nocache}
+<div class="greyFrame curvedFull paddy10 LH35">
+	<div id="clientInfo" class="clearFix whiteFrame paddy10 curvedFull">
+		<h2 class="x1_5">اطلاعات کاربر</h2>
+		<div class="row cell50">
+			<div class="paddy1 clearFix">
+				<div class="row cell25">* {$lang.firstName}:</div>
+				<div class="row cell75"><input id="firstName" name="firstName" class="input" type="text" size="20" maxlength="45" value="{$clientInfo.firstName}"></div>
+			</div>
+			{if $smarty.get.filter == 'full'}
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.birthday}:</div>
+				<div class="row cell75">
+					<select id="birthdayDay" name="birthdayDay">
+							{section name=birthdayDay start=1 loop=32}
+							{if $smarty.section.birthdayDay.iteration == $birthdayDay}
+							<option value="{$smarty.section.birthdayDay.iteration}" selected="selected">{$smarty.section.birthdayDay.iteration}</option>
+							{else}
+							<option value="{$smarty.section.birthdayDay.iteration}">{$smarty.section.birthdayDay.iteration}</option>
+							{/if}
+							{/section}
+						</select>
+						<select id="birthdayMonth" name="birthdayMonth">
+							{section name=birthdayMonth start=1 loop=13}
+							{if $smarty.section.birthdayMonth.iteration == $birthdayMonth}
+							<option value="{$smarty.section.birthdayMonth.iteration}" selected="selected">{$smarty.section.birthdayMonth.iteration}</option>
+							{else}
+							<option value="{$smarty.section.birthdayMonth.iteration}">{$smarty.section.birthdayMonth.iteration}</option>
+							{/if}
+							{/section}
+						</select>
+						<select id="birthdayYear" name="birthdayYear">
+							{section name=birthdayYear start=1393 loop=1401}
+							{if $smarty.section.birthdayYear.index == $birthdayYear}
+							<option value="{$smarty.section.birthdayYear.index}" selected="selected">{$smarty.section.birthdayYear.index}</option>
+							{else}
+							<option value="{$smarty.section.birthdayYear.index}">{$smarty.section.birthdayYear.index}</option>
+							{/if}
+							{/section}
+						</select><br>
+						{$lang.hour}: 
+						<select id="birthdayMinute" name="birthdayMinute">
+							{section name="birthdayMinute" loop=60}
+							{if $smarty.section.birthdayMinute.index == $birthdayMinute}
+							<option value="{$smarty.section.birthdayMinute.index}" selected="selected">{$smarty.section.birthdayMinute.index}</option>
+							{else}
+							<option value="{$smarty.section.birthdayMinute.index}">{$smarty.section.birthdayMinute.index}</option>
+							{/if}
+							{/section}
+						</select>
+						:
+						<select id="birthdayHour" name="birthdayHour">
+							{section name="birthdayHour" loop=24}
+							{if $smarty.section.birthdayHour.index == $birthdayHour}
+							<option value="{$smarty.section.birthdayHour.index}" selected="selected">{$smarty.section.birthdayHour.index}</option>
+							{else}
+							<option value="{$smarty.section.birthdayHour.index}">{$smarty.section.birthdayHour.index}</option>
+							{/if}
+							{/section}
+						</select>
+				</div>
+			</div>
+			{/if}
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.mobile}:</div>
+				<div class="row cell75"><input id="mobile" name="mobile" class="input" type="text" size="20" maxlength="11" value="{$clientInfo.mobile}"></div>
+			</div>
+			{if $smarty.get.filter == 'full'}
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.eduBranch}:</div>
+				<div class="row cell75">
+					{$eduBranch}
+				</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.company}:</div>
+				<div class="row cell75">
+					{$company}
+				</div>
+			</div>
+			{/if}
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.email}:</div>
+				<div class="row cell75"><input id="email" name="email" class="input" type="text" size="20" maxlength="100" value="{$clientInfo.email}"></div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell25"> {$lang.receiveEmail}:</div>
+				<div class="row cell75"><input id="receiveEmail" name="receiveEmail" class="input" type="checkbox" checked="checked" value="1" onclick="checkBoxToggle('receiveEmail');"></div>
+			</div>
+		</div>
+		<div class="row cell50">
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.lastName}:</div>
+				<div class="row cell75"><input id="lastName" name="lastName" class="input" type="text" size="20" maxlength="45" value="{$clientInfo.lastName}"></div>
+			</div>
+			{if $smarty.get.filter == 'full'}
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.state}:</div>
+				<div class="row cell75">
+					<select id="state" name="state" onchange="$('#citySelector').farajax('loader', '/crm/v_city/id=' + this.value + ',num=0');">
+						{foreach name=state key=stateKey item=stateItem from=$state}
+							{if $stateKey == $state.selected}
+								<option value="{$stateKey}" selected="selected">{$stateItem}</option>
+							{else}
+								{if $stateKey == "selected" || !isset($stateItem)}
+									<option value=""> ... </option>
+								{else}
+						  			<option value="{$stateKey}">{$stateItem}</option>
+						  		{/if}
+						  	{/if}
+					  	{/foreach}
+			  		</select>
+			  	</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.phone}:</div>
+				<div class="row cell75"><input id="phoneNumber" name="phoneNumber" class="input" type="text" size="12" maxlength="8" value="{$clientInfo.phoneNumber}"> - <input id="phoneCode" name="phoneCode" class="input" type="text" size="3" maxlength="4" value="{$clientInfo.phoneCode}"></div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.level}:</div>
+				<div class="row cell75">
+					{$eduLevel}
+			  	</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.jobTitle}:</div>
+				<div class="row cell75">
+					{$jobTitle}
+				</div>
+			</div>
+			{/if}
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.website}:</div>
+				<div class="row cell75"><input id="website" name="website" class="input" type="text" size="20" maxlength="100" value="{$clientInfo.website}"></div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell25"> {$lang.receiveSms}:</div>
+				<div class="row cell75"><input id="receiveSms" name="receiveSms" class="input" type="checkbox" checked="checked" value="1" onclick="checkBoxToggle('receiveEmail');"></div>
+			</div>
+		</div>
+	</div>
+	<div id="taskInfo" class="clearFix whiteFrame paddy10 curvedFull" style="margin-top: 10px">
+		<h2 class="x1_5">اطلاعات کار</h2>
+		<div class="row cell50">
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.subject}</div>
+				<div class="row cell75">
+					<input id="subject" name="subject" size="40" maxlength="45" value="{$smarty.get.filter}">
+				</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.priority}:</div>
+				<div class="row cell75">{$priority}</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.status}:</div>
+				<div class="row cell75">{$status}</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.department}:</div>
+				<div class="row cell75">{$department}</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.agent}:</div>
+				<div class="row cell75">
+					<select id="agent" name="agent">
+						{nocache}
+						{foreach name=agent key=agentKey item=agentItem from=$agent}
+							{if $agentKey == $agent.selected}
+								<option value="{$agentKey}" selected="selected">{$agentItem}</option>
+							{else}
+								{if $agentKey == "selected" || !isset($agentItem)}
+									<option value=""> ... </option>
+								{else}
+						  			<option value="{$agentKey}">{$agentKey} - {$agentItem}</option>
+						  		{/if}
+						  	{/if}
+					  	{/foreach}
+					  	{/nocache}
+			  		</select>
+				</div>
+			</div>
+		</div>
+		<div class="row cell50">
+			<div class="paddy1 clearFix">&nbsp;</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.deadline}:</div>
+				<div class="row cell75">
+					<select id="deadlineDay" name="deadlineDay">
+						{section name=deadlineDay start=1 loop=32}
+						{if $smarty.section.deadlineDay.iteration == $deadlineDay}
+						<option value="{$smarty.section.deadlineDay.iteration}" selected="selected">{$smarty.section.deadlineDay.iteration}</option>
+						{else}
+						<option value="{$smarty.section.deadlineDay.iteration}">{$smarty.section.deadlineDay.iteration}</option>
+						{/if}
+						{/section}
+					</select>
+					<select id="deadlineMonth" name="deadlineMonth">
+						{section name=deadlineMonth start=1 loop=13}
+						{if $smarty.section.deadlineMonth.iteration == $deadlineMonth}
+						<option value="{$smarty.section.deadlineMonth.iteration}" selected="selected">{$smarty.section.deadlineMonth.iteration}</option>
+						{else}
+						<option value="{$smarty.section.deadlineMonth.iteration}">{$smarty.section.deadlineMonth.iteration}</option>
+						{/if}
+						{/section}
+					</select>
+					<select id="deadlineYear" name="deadlineYear">
+						{section name=deadlineYear start=1393 loop=1401}
+						{if $smarty.section.deadlineYear.index == $deadlineYear}
+						<option value="{$smarty.section.deadlineYear.index}" selected="selected">{$smarty.section.deadlineYear.index}</option>
+						{else}
+						<option value="{$smarty.section.deadlineYear.index}">{$smarty.section.deadlineYear.index}</option>
+						{/if}
+						{/section}
+					</select><br>
+					{$lang.hour}: 
+					<select id="deadlineMinute" name="deadlineMinute">
+						{section name="deadlineMinute" loop=60}
+						{if $smarty.section.deadlineMinute.index == $deadlineMinute}
+						<option value="{$smarty.section.deadlineMinute.index}" selected="selected">{$smarty.section.deadlineMinute.index}</option>
+						{else}
+						<option value="{$smarty.section.deadlineMinute.index}">{$smarty.section.deadlineMinute.index}</option>
+						{/if}
+						{/section}
+					</select>
+					:
+					<select id="deadlineHour" name="deadlineHour">
+						{section name="deadlineHour" loop=24}
+						{if $smarty.section.deadlineHour.index == $deadlineHour}
+						<option value="{$smarty.section.deadlineHour.index}" selected="selected">{$smarty.section.deadlineHour.index}</option>
+						{else}
+						<option value="{$smarty.section.deadlineHour.index}">{$smarty.section.deadlineHour.index}</option>
+						{/if}
+						{/section}
+					</select>
+				</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell25">{$lang.progress}:</div>
+				<div class="row cell75">{$progress} %</div>
+			</div>
+			<div class="paddy1 clearFix">
+				<div class="row cell20">
+					<div class="clearFix">
+						<div class="row cell70"> {$lang.sendEmail}:</div>
+						<div class="row cell30"><input id="sendEmail" name="sendEmail" class="input" type="checkbox" checked="checked" value="1" onclick="checkBoxToggle('sendEmail');"></div>
+					</div>
+				</div>
+				<div class="row cell20">
+					<div class="clearFix">
+						<div class="row cell70"> {$lang.sendSms}:</div>
+						<div class="row cell30"><input id="sendSms" name="sendSms" class="input" type="checkbox" checked="checked" value="1" onclick="checkBoxToggle('sendEmail');"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="paddy5 clearFix">
+			<div class="paddy1 clearFix">
+				<div class="row cell10">{$lang.description}:</div>
+				<div class="row cell90">
+					<textarea rows="5" class="cell90"></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<div>
+	<button style="margin: 0 auto; padding: 20px 60px;" onclick="
+		$('#content').farajax('loader', '/crm/c_addObject', 
+			   'subject=' + document.getElementById('subject').value + '::{$lang.subject}<>Multi<>1<>ce<>200' +
+			   '&firstName=' + document.getElementById('firstName').value + '::{$lang.firstName}<>Multi<>1<>ce<>100' +
+			   '&lastName=' + document.getElementById('lastName').value + '::{$lang.lastName}<>Multi<>1<>nce<>100' +
+			   {if $smarty.get.filter == 'full'}
+			   '&gender=' + document.getElementById('gender').value + '::{$lang.gender}<>Number<>1<>nce<>1' +
+			   '&day=' + document.getElementById('day').value + '::{$lang.day}<>Number<>1<>nce<>2' +
+			   '&month=' + document.getElementById('month').value + '::{$lang.month}<>Number<>1<>nce<>2' +
+			   '&year=' + document.getElementById('year').value + '::{$lang.year}<>Number<>1<>nce<>4' +
+			   '&state=' + document.getElementById('state').value + '::{$lang.state}<>Number<>1<>nce<>6' +
+			   '&city=' + document.getElementById('city').value + '::{$lang.city}<>Number<>1<>nce<>6' +
+			   {/if}
+			   '&mobile=' + document.getElementById('mobile').value + '::{$lang.mobile}<>Number<>1<>nce<>11<>09100000000<>09999999999' +
+			   '&receiveSms=' + document.getElementById('receiveSms').value + '::{$lang.receiveSms}<>Number<>1<>nce<>1' +
+			   {if $smarty.get.filter == 'full'}
+			   '&phoneCode=' + document.getElementById('phoneCode').value + '::{$lang.phoneCode}<>Number<>1<>nce<>5' +
+			   '&phoneNumber=' + document.getElementById('phoneNumber').value + '::{$lang.phoneNumber}<>Number<>1<>nce<>8' +
+			   '&fax=' + document.getElementById('fax').value + '::{$lang.fax}<>Number<>1<>nce<>8' +
+			   '&eduBranch=' + document.getElementById('eduBranch').value + '::{$lang.eduBranch}<>Number<>1<>nce<>2' +
+			   '&eduLevel=' + document.getElementById('eduLevel').value + '::{$lang.eduLevel}<>Number<>1<>nce<>1' +
+			   '&company=' + document.getElementById('company').value + '::{$lang.company}<>Multi<>1<>nce<>200' +
+			   '&jobTitle=' + document.getElementById('jobTitle').value + '::{$lang.jobTitle}<>Multi<>1<>nce<>200' +
+			   '&post=' + document.getElementById('post').value + '::{$lang.post}<>Multi<>1<>nce<>200' +
+			   {/if}
+			   '&email=' + document.getElementById('email').value + '::{$lang.email}<>Mail<>1<>nce<>100' +
+			   '&receiveEmail=' + document.getElementById('receiveEmail').value + '::{$lang.receiveEmail}<>Number<>1<>nce<>1' +
+			   '&website=' + document.getElementById('website').value + '::{$lang.website}<>Multi<>1<>nce<>200'
+			   {if $smarty.get.filter == 'full'}
+			   +
+			   '&address=' + document.getElementById('address').value + '::{$lang.address}<>Multi<>1<>nce<>4000' +
+			   '&description=' + document.getElementById('description').value + '::{$lang.description}<>Multi<>1<>nce<>10000'
+			   {/if}
+		);
+	">
+	<span>{$lang.submit}</span>
+	</button>
+</div>
+{/nocache}

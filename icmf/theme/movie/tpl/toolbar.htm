@@ -1,0 +1,13 @@
+{nocache}
+<div id="today" class="today">{$lang.today} {$dateJalali}</div>
+<div id="tools" class="tools">
+	<div id="lang" class="lang">
+		<g:plusone size="medium" annotation="inline" width="130"></g:plusone>
+		<img src="theme/{$settings.theme}/img/icon/support.png"></img>
+		<img src="theme/{$settings.theme}/img/icon/help.png"></img>
+		<img src="theme/{$settings.theme}/img/icon/protection.png"></img>
+		<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/flags/24/Iran.png" onclick="loader('POST', '', 'content', 'op=userMan&mode=c_setSettings&name=lang&value=1'); setTimeout('window.location.reload();', 3000);">
+		<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/flags/24/United States of America(USA).png" onclick="loader('POST', '', 'content', 'op=userMan&mode=c_setSettings&name=lang&value=2'); setTimeout('window.location.reload();', 3000);">
+	</div>
+</div>
+{/nocache}

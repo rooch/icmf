@@ -1,0 +1,7 @@
+.shareLink {
+	min-height: 14px;
+}
+.shareLink .button {
+	float: right;
+	width: 80px;
+}

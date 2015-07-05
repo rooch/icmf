@@ -1,0 +1,38 @@
+<div class="curvedFull paddy5">
+	{nocache}
+	{if $smarty.session.uid == 2}
+	<div class="clearFix">
+		<div class="row cell22">
+			<input id="commentFirstName" name="commentFirstName" placeholder="{$lang.firstName}">
+		</div>
+		<div class="row cell22">
+			<input id="commentLastName" name="commentLastName" placeholder="{$lang.lastName}">
+		</div>
+		<div class="row cell22">
+			<input id="commentEmail" name="commentEmail" placeholder="{$lang.email}">
+		</div>
+	</div>
+	{/if}
+	<div class="clearFix">
+		<div class="row cell90">
+			<textarea id="commentText" name="commentText" rows="4" cols="40" class="cell98" placeholder="نظر شما"></textarea>
+		</div>
+		<div class="row cell10">
+			<button class="LH45" onclick="
+				$('#content').farajax('loader', '/comment/c_addObject',
+					'&op={$op}' +
+					'&opid={$opid}' +
+					{if $smarty.session.uid == 2}
+					'&firstName=' + document.getElementById('commentFirstName').value + '::{$lang.firstName}<>Multi<>1<>nce<>45' +
+					'&lastName=' + document.getElementById('commentLastName').value + '::{$lang.lastName}<>Multi<>1<>nce<>45' +
+					'&email=' + document.getElementById('commentEmail').value + '::{$lang.email}<>Mail<>1<>ce<>100' +
+					{/if}
+					'&text=' + document.getElementById('commentText').value + '::{$lang.comment}<>Multi<>1<>ce<>2000'
+				);
+			">
+			{$lang.submit}
+			</button>
+		</div>
+	</div>
+	{/nocache}
+</div>

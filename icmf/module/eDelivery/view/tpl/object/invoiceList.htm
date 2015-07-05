@@ -1,0 +1,32 @@
+<div class="center bold LH30" style="border: 1px #000; border-style: solid solid none solid">
+	{$lang.eDeliveryServices}
+</div>
+{foreach name=entity key=entityKey item=entityItem from=$entityList}
+<div id="invoiceRecord{$entityItem.id}" class="clearFix">
+	<div class="row cell5">
+		<div class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+			{$entityItem.num}
+		</div>
+	</div>
+	<div class="row cell10">
+		 <div class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+			{$entityItem.id}
+		</div>
+	</div>
+	<div class="row cell30">
+		<div style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+			{$lang.deliveryType}: {$entityItem.eDeliveryType}
+		</div>
+	</div>
+	<div class="row cell35">
+		<div class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+			{$entityItem.distance} {$lang.kilometer}
+		</div>
+	</div>
+	<div class="row cell20">
+		<div id="invoiceProductCount{$entityItem.id}" class="center" style="border: 1px #000; border-style: solid solid none solid; padding: 3px;">
+			{$entityItem.price}
+		</div>
+	</div>
+</div>
+{/foreach}

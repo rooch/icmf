@@ -1,0 +1,20 @@
+<section>
+	<article>
+		<div id="{$item.id}" class="blockquote curvedFull">
+			{nocache}
+			<h1>{$item.title}</h1>
+			<div class="center">
+				{if $item.imagePath != ''}
+					<img width="400" height="350" style="border: 1px solid #e5e5e5; padding: 2px;" title="{$item.title}" alt="{$item.title}" src="{$item.imagePath|replace:",":""}">
+				{/if}
+			</div>
+			<p>{$item.description}</p>
+			<div style="padding: 10px 0px 2px 0px; font-size: 10px; color: #cecece;">{$item.startTime}</div>
+			<div style="border-top: 1px dashed #e7e7e7; padding: 5px;">
+				<div id="shareLink{$entityItem.id}" class="shareLink" data-url="http://{$settings.domain}/post/c_showObject/id={$entityItem.id}" data-title="{$entityItem.title}" data-text="{$entityItem.description|strip_tags:false|truncate:600:'...':true}"></div>
+			</div>
+			{/nocache}
+		</div>
+	</article>
+</section>
+<commands value="startShare();">

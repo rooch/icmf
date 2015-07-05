@@ -1,0 +1,29 @@
+<div class="row cell10">
+	<a href="" class="tip" title="شبکه تجارت الکترونیک متن باز ایران" onclick="window.location='http://fsnet.ir';"><img class="tip" alt="شبکه تجارت الکترونیک متن باز ایران" title="شبکه تجارت الکترونیک متن باز ایران" src="theme/{$settings.theme}/img/fsnetLogoSmall.png"></a>
+</div>
+<div class="row cell90">
+	<div class="row cell10" style="line-height: 28px;"><b>برند ساز</b></div>
+	<div class="row cell10" style="line-height: 28px;"><b><a href="http://icasb.com" class="tip" title="شتاب دهنده کسب و کار">آی کسب</a></b></div>
+	<div class="row cell10" style="line-height: 28px;">&nbsp;</div>
+	<div class="row cell10" style="line-height: 28px;">&nbsp;</div>
+	<div class="row cell10" style="line-height: 28px;">&nbsp;</div>
+	<div class="row cell10" style="line-height: 28px;">&nbsp;</div>
+	<div class="row cell10" style="line-height: 28px;">&nbsp;</div>
+	<div class="row cell10" style="line-height: 28px;">&nbsp;</div>
+	<div class="row cell10" style="line-height: 28px;">&nbsp;</div>
+	<div class="row cell10" style="line-height: 28px;">
+		{if isset($smarty.session.uid) && $smarty.session.uid != 2}
+			<img src="theme/{$settings.theme}/img/icon/User24.png" style="cursor: pointer;" onclick="$('#cPanel').slideToggle('slow');">
+		{else}
+			<img src="theme/{$settings.theme}/img/icon/Login_in24.png" style="cursor: pointer;" onclick="$('#cPanel').slideToggle('slow');">
+		{/if}
+	</div>
+	<br style="clear: both;">
+</div>
+<br style="clear: both;">
+<!-- cPanel -->
+<div id="cPanel" class="cPanel">
+	<div id="login" class="login" style="padding-right: 10px;">{nocache}{$login}{nocache}</div>
+	<div id="accessories" class="accessories" style="display: none; padding-right: 10px;"></div>
+</div>
+<!-- /cPanel -->

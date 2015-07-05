@@ -1,0 +1,30 @@
+<div class="blockquote">
+	<h2>{$lang.addShop}</h2>
+	<br>
+	<div id="addShop">
+		<div class="row cell50">
+			{$lang.increase}:<br>
+			<input id="increase" name="increase" class="input" type="text" size="40" maxlength="10" value="0"> {$lang.currencySign}<br>
+			{$lang.decrease}:<br>
+			<input id="decrease" name="decrease" class="input" type="text" size="40" maxlength="10" value="0"> {$lang.currencySign}<br>
+			{$lang.discount}:<br>
+			<input id="discount" name="discount" class="input" type="text" size="40" maxlength="3" value="0"> %<br>
+			{$lang.tax}:<br>
+			<input id="tax" name="tax" class="input" type="text" size="40" maxlength="3" value="0"> %<br>
+		</div>
+		<div class="row cell50">
+			{$lang.shopName}:<br>
+			<input id="name" name="name" class="input" type="text" size="40" maxlength="100"><br><br><br>
+			<button onclick="
+				$('#addShop').farajax('loader', '/shop/c_addCategory',
+					   'name=' + document.getElementById('name').value + '::{$lang.name}<>Multi<>1<>ce<>45' +
+					   '&increase=' + document.getElementById('increase').value + '::{$lang.increase}<>Number<>1<>nce<>10' +
+					   '&decrease=' + document.getElementById('decrease').value + '::{$lang.decrease}<>Number<>1<>nce<>10' +
+					   '&discount=' + document.getElementById('discount').value + '::{$lang.discount}<>Number<>1<>nce<>3' +
+					   '&tax=' + document.getElementById('tax').value + '::{$lang.tax}<>Number<>1<>nce<>3'		   				   
+				);
+			">{$lang.submit}</button>
+		</div>
+	</div>
+	<br class="clear"><br>
+</div>

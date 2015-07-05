@@ -1,0 +1,332 @@
+<div id="level1">
+	<div class="clearFix">
+		<div class="row cell60"><h3>{$lang.level1}- {$lang.yourShopping}</h3></div>
+		<div class="row cell20">&nbsp;</div>
+		<div class="row cell20 next center bold" onclick="$('#level1').slideUp('slow'); $('#level2').slideDown('slow');">{$lang.next} »</div>
+	</div>	
+	<br>
+	{nocache}
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	{if $entityKey is div by 3 || $entityKey <= 3}
+	<div id="td{$entityItem.id}" class="row cell33 clearFix">
+	{else}
+	<div id="td{$entityItem.id}" class="row cell33">
+	{/if}
+		<div class="paddy1">
+			<div class="basketObject blockquote">
+				<div class="relative">
+					<div class="clearFix">
+						<div class="row cell10 right">
+							<a href="/basket/v_delObject/id={$entityItem.id}">
+								<img src="theme/{$settings.theme}/img/icon/delete.png" class="tip" alt="{$lang.delete}" title="{$lang.delete}" width="14" height="14">
+							</a>
+						</div>
+						<div class="row cell90 title h20 LH15">
+							<span><b>{$entityItem.name}</b></span> [<span class="thin orange">{$lang.eDeliveryType}</span>]
+							<div class="description displayNone">
+								<div class="clearFix">
+									<div class="row cell25 bold LH30">
+										{$lang.deliveryType}:
+									</div>
+									<div class="row cell75">
+										{$eDeliveryType}
+									</div>
+								</div>
+								<div class="clearFix">
+									<div class="row cell25 bold LH30">{$lang.receiver}:</div>
+									<div class="row cell75">
+										<input class="input h20 cell90" id="receiver" name="receiver" placeholder="{$lang.receiver}" maxlength="100" value="{$userInfo.firstName} {$userInfo.lastName}" required>
+									</div>
+								</div>
+								<div class="clearFix">
+									<div class="row cell25 bold LH30">{$lang.mobile}:</div>
+									<div class="row cell75">
+										<input class="input h20 cell90" id="mobile" name="mobile" placeholder="{$lang.mobile}" maxlength="11" value="{$userInfo.mobile}" required>
+									</div>
+								</div>
+								<div class="clearFix">
+									<div class="row cell25 bold LH30">{$lang.state}:</div>
+									<div class="row cell75">{$state}</div>
+								</div>
+								<div class="clearFix">
+									<div class="row cell25 bold LH30">{$lang.city}:</div>
+									<div class="row cell75 citySection">{$city}</div>
+								</div>
+								<div class="clearFix">
+									<div class="row cell25 bold LH30">{$lang.region}:</div>
+									<div class="row cell75">{$region}</div>
+								</div>
+								<div class="clearFix">
+									<div class="row cell25 bold LH30">{$lang.district}:</div>
+									<div class="row cell75 districtionSection">{$district}</div>
+								</div>
+								<div class="clearFix">
+									<div class="row cell25 bold LH30">{$lang.address}:</div>
+									<div class="row cell75">
+										<input class="input h20 cell90" id="address" name="address" placeholder="{$lang.address}" maxlength="300" value="{$userInfo.address}" required>
+									</div>
+								</div>
+								<div class="clearFix">
+									<div class="row cell25 bold LH30">{$lang.zipcode}:</div>
+									<div class="row cell75">
+										<input class="input h20 cell90" id="zipcode" name="zipcode" placeholder="{$lang.zipcode}" maxlength="10" value="{$userInfo.zipcode}">
+									</div>
+								</div>
+								<div class="clearFix">
+									<div class="row cell25 bold LH30">
+										{$lang.date}:
+									</div>
+									<div class="row cell75">
+										<select class="input" id="day" name="day" class="input">
+											{section name=day start=$dayNumber+1 loop=32}
+											<option value="{$smarty.section.day.index}">{$smarty.section.day.index}</option>
+											{/section}
+										</select>
+										<select class="input" id="month" name="month">
+											{section name=month start=$monthNumber loop=13}
+											<option value="{$smarty.section.month.index}">{$smarty.section.month.index}</option>
+											{/section}
+										</select>
+										<select class="input" id="year" name="year">
+											{section name=year start=$yearNumber loop=1401}
+											<option value="{$smarty.section.year.index}">{$smarty.section.year.index}</option>
+											{/section}
+										</select>
+									</div>
+								</div>
+								<div class="clearFix">
+									<div class="row cell25 bold LH30">
+										{$lang.from}:
+									</div>
+									<div class="row cell75">
+										{$lang.hour}: 
+										<select class="input" id="startMinute" name="startMinute" class="input">
+											{section name="startMinute" loop=60}
+											<option value="{$smarty.section.startMinute.index}">{$smarty.section.startMinute.index}</option>
+											{/section}
+										</select>
+										:
+										<select class="input" id="startHour" name="startHour">
+											{section name="startHour" start=10 loop=21}
+											<option value="{$smarty.section.startHour.index}">{$smarty.section.startHour.index}</option>
+											{/section}
+										</select>
+									</div>
+								</div>
+								<div class="clearFix">
+									<div class="row cell25 bold LH30">
+										{$lang.to}:
+									</div>
+									<div class="row cell75">
+										{$lang.hour}: 
+										<select class="input" id="endMinute" name="endMinute" class="input">
+											{section name="endMinute" loop=60}
+											<option value="{$smarty.section.endMinute.index}">{$smarty.section.endMinute.index}</option>
+											{/section}
+										</select>
+										:
+										<select class="input" id="endHour" name="endHour">
+											{section name="endHour" start=11 loop=21}
+											<option value="{$smarty.section.endHour.index}">{$smarty.section.endHour.index}</option>
+											{/section}
+										</select>
+									</div>
+								</div>
+								<input id="serialize" name="serialize" type="hidden">
+								<button id="confirmButton" class="centerObject" style="margin-top: 5px" disabled="disabled" onclick="
+									$('#content').farajax('loader', 'eDelivery/c_addObject',
+										'&objectId={$entityItem.objectId}' +
+										'&receiver=' + document.getElementById('receiver').value + '::{$lang.receiver}<>Multi<>1<>ce<>100' +
+									   	'&mobile=' + document.getElementById('mobile').value + '::{$lang.mobile}<>Multi<>1<>ce<>11<>09100000000<>09999999999' + 
+									   	'&state=' + document.getElementById('state').value + '::{$lang.state}<>Number<>1<>ce<>2' +
+									   	'&city=' + document.getElementById('city').value + '::{$lang.city}<>Multi<>1<>ce<>5' +
+									   	'&region=' + document.getElementById('region').value + '::{$lang.region}<>Number<>1<>ce<>2' +
+									   	'&district=' + document.getElementById('district').value + '::{$lang.district}<>Number<>1<>ce<>6' +
+									   	'&address=' + document.getElementById('address').value + '::{$lang.address}<>Multi<>1<>ce<>500' +
+									   	'&zipcode=' + document.getElementById('zipcode').value + '::{$lang.zipcode}<>Number<>1<>ce<>10' +
+									   	'&day=' + document.getElementById('day').value + '::{$lang.day}<>Number<>1<>ce<>2' + 
+									   	'&month=' + document.getElementById('month').value + '::{$lang.month}<>Number<>1<>ce<>2' +
+									   	'&year=' + document.getElementById('year').value + '::{$lang.year}<>Number<>1<>ce<>4' +
+									   	'&startMinute=' + document.getElementById('startMinute').value + '::{$lang.startMinute}<>Number<>1<>nce<>2' + 
+									   	'&startHour=' + document.getElementById('startHour').value + '::{$lang.startHour}<>Number<>1<>ce<>2' +
+									   	'&endMinute=' + document.getElementById('endMinute').value + '::{$lang.endMinute}<>Number<>1<>nce<>2' +
+									   	'&endHour=' + document.getElementById('endHour').value + '::{$lang.endHour}<>Number<>1<>ce<>2' +
+									   	'&eDeliveryType=' + document.getElementById('eDeliveryType').value + '::{$lang.eDeliveryType}<>Number<>1<>ce<>1'
+									);
+								setTimeout('$(\'#eDeliveryInvoice\').farajax(\'loader\', \'eDelivery/c_invoiceObject\');', 2000);
+								setTimeout('$(\'#finalInvoice\').farajax(\'loader\', \'basket/c_calculate\');', 3000);
+								">{$lang.confirm}</button>
+							</div>
+						</div>
+					</div>
+					<div class="h200">
+						<div class="center">
+							<a href="/shop/v_descriptionVitrin/base.id={$entityItem.objectId}">
+								{iimg src=$entityItem.singleImage width=90 height=90 class=tip alt=$entityItem.name title=$entityItem.name}
+							</a>
+						</div>
+						<div class="LH25">
+							<b>{$lang.model}</b>: {$entityItem.model}
+						</div>
+						<div class="LH25">
+							<b>{$lang.count}</b>:
+							<input class="input" id="productCount{$entityItem.id}" name="productCount{$entityItem.id}" style="width: 10%" maxlength="4" value="{$entityItem.count}" onchange="
+																																																  this.value = parseInt(this.value);
+																																																  document.getElementById('invoiceProductCount{$entityItem.id}').innerHTML = parseInt(this.value); 
+																																																  document.getElementById('invoiceTotalMulPrice{$entityItem.id}').innerHTML = parseInt(this.value)*parseInt(document.getElementById('totalOnePrice{$entityItem.id}').innerHTML); 
+																																																  document.getElementById('totalMulPrice{$entityItem.id}').innerHTML = parseInt(this.value)*parseInt(document.getElementById('totalOnePrice{$entityItem.id}').innerHTML);
+																																																  $('#td{$entityItem.id}').farajax('loader', '/basket/c_addObject', 'objectId={$entityItem.objectId}&count=' + parseInt(this.value) + '::{$lang.productCount}<>Number<>1<>nce<>6<>0<>999999'); 
+																																																  setTimeout('$(\'#finalInvoice\').farajax(\'loader\', \'/basket/c_calculate\');', 2000);
+																																																 ">
+						</div>
+						<div class="LH25">
+							<b>{$lang.price}</b>:
+							<span id="totalOnePrice{$entityItem.id}">{$entityItem.sellPrice}</span> <span>{$lang.currencySign}</span>
+						</div>
+						<div class="LH25">
+							<b>{$lang.totalPrice}</b>:
+							<span id="totalMulPrice{$entityItem.id}" class="red bold">{$entityItem.totalMulPrice}</span> <span>{$lang.currencySign}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{/foreach}
+	{/nocache}
+</div>
+<div id="level2" class="displayNone">
+	<div class="clearFix">
+		<div class="row cell60"><h3>{$lang.level2}- {$lang.preInvoice}</h3></div>
+		<div class="row cell20 prev center bold" onclick="$('#level2').slideUp('slow'); $('#level1').slideDown('slow');">« {$lang.prev}</div>
+		<div class="row cell20 next center bold" onclick="$('#level2').slideUp('slow'); $('#level3').slideDown('slow');">{$lang.next} »</div>
+	</div>
+	<div class="center">
+		<b>(( {$lang.preInvoice} ))</b>
+	</div>
+	<div class="center">
+		<b>{$settings.siteName}</b>
+	</div>
+	<div class="clearFix">
+		<div class="row cell10 bpld">{$lang.userName}:</div>
+		<div class="row cell20">{$smarty.session.uid}</div>
+		<div class="row cell5">&nbsp;</div>
+		<div class="row cell10 bold">{$lang.date}:</div>
+		<div class="row cell20">{$currentTime}</div>
+		<div class="row cell5">&nbsp;</div>
+		<div class="row cell10 bold">{$lang.id}:</div>
+		<div class="row cell20">&nbsp;</div>
+	</div>
+	<br>
+	<div class="row cell5 bold">
+		<div class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+			{$lang.row}
+		</div>
+	</div>
+	<div class="row cell10 bold">
+		<div class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+			{$lang.id}
+		</div>
+	</div>
+	<div class="row cell20 bold">
+		<div class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+			{$lang.name}
+		</div>
+	</div>
+	<div class="row cell20 bold">
+		<div class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">	
+			{$lang.model}
+		</div>
+	</div>		
+	<div class="row cell5 bold">
+		<div class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+			{$lang.count}
+		</div>
+	</div>
+	<div class="row cell20 bold">
+		<div class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+			{$lang.price} ({$lang.currencySign})
+		</div>
+	</div>
+	<div class="row cell20 bold">
+		<div class="center" style="border: 1px #000; border-style: solid solid none solid; padding: 3px;">
+			{$lang.totalPrice} ({$lang.currencySign})
+		</div>
+	</div>
+	<br>
+	{nocache}
+	{foreach name=entity key=entityKey item=entityItem from=$entityList}
+	<div id="invoiceRecord{$entityItem.id}" class="clearFix">
+		<div class="row cell5">
+			<div class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+				{$entityItem.num}
+			</div>
+		</div>
+		<div class="row cell10">
+			 <div class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+				{$entityItem.id}
+			</div>
+		</div>
+		<div class="row cell20">
+			<div style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+				{$entityItem.name}
+			</div>
+		</div>
+		<div class="row cell20">
+			<div class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+				{$entityItem.model}
+			</div>
+		</div>
+		<div class="row cell5">
+			<div id="invoiceProductCount{$entityItem.id}" class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+				{$entityItem.count}
+			</div>
+		</div>
+		<div class="row cell20">
+			<div class="center" style="border: 1px #000; border-style: solid solid none none; padding: 3px;">
+				{$entityItem.sellPrice}
+			</div>
+		</div>
+		<div class="row cell20">
+			<div id="invoiceTotalMulPrice{$entityItem.id}" class="center" style="border: 1px #000; border-style: solid solid none solid; padding: 3px;">
+				{$entityItem.totalMulPrice}
+			</div>
+		</div>
+	</div>
+	{/foreach}
+	<div id="eDeliveryInvoice">
+		{$eDeliveryList}
+	</div>
+	<div class="clearFix">
+		<div class="row cell80">
+			<div class="left" style="border: 1px #000; border-style: solid solid solid none; padding: 3px;">
+				<b>{$lang.sum}</b>
+			</div>
+		</div>
+		<div class="row cell20">
+			<div id="finalInvoice" class="center" style="border: 1px #000; border-style: solid solid solid solid; padding: 3px;">
+				&nbsp;{$entityItem.totalAllPrice}
+			</div>
+		</div>
+	</div>
+	{/nocache}
+</div>
+<div id="level3" class="displayNone">
+	<div class="clearFix">
+		<div class="row cell60"><h3>{$lang.level3}- {$lang.payType}</h3></div>
+		<div class="row cell20 prev center bold" onclick="$('#level3').slideUp('slow'); $('#level2').slideDown('slow');">« {$lang.prev}</div>
+		<div class="row cell20 next center bold" onclick="$('#level3').slideUp('slow'); $('#level4').slideDown('slow');">{$lang.next} »</div>
+	</div>
+	<br>
+	<div id="paymentType"></div>
+</div>
+<div id="level4" class="displayNone">
+	<div class="clearFix">
+		<div class="row cell60"><h3>{$lang.level4}- {$lang.spend}</h3></div>
+		<div class="row cell20 prev center bold" onclick="$('#level4').slideUp('slow'); $('#level3').slideDown('slow');">« {$lang.prev}</div>
+		<div class="row cell20">&nbsp;</div>
+	</div>
+	<br>
+	<div id="spend"></div>
+</div>
+<commands value="$('#paymentType').farajax('loader', '/financial/v_ePay');">

@@ -1,0 +1,132 @@
+{nocache}
+<section id="pageSpeed" class="right">
+	<div class="greyFrame paddy5 margin1">
+		<h1>{$info.title}</h1>
+	</div>
+	<div class="greyFrame paddy5 margin1">
+		امتیاز: {$info.score}
+	</div>
+	<div class="greyFrame paddy5 margin1">
+		آمار		
+	</div>
+	<div class="whiteFrame paddy5 margin1">
+		<div class="clearFix">
+			<div class="row cell50">
+				تعداد درخواست‌ها: {$info.pageStats.numberResources}
+			</div>
+			<div class="row cell50">
+				تعداد هاست‌ها: {$info.pageStats.numberHosts}
+			</div>
+		</div>
+		<div class="clearFix">
+			<div class="row cell50">
+				حجم کل درخواست‌ها: {$info.pageStats.totalRequestBytes|filesize}
+			</div>
+			<div class="row cell50">
+				تعداد منابع ثابت: {$info.pageStats.numberStaticResources}
+			</div>
+		</div>
+		<div class="clearFix">
+			<div class="row cell50">
+				حجم htmlها: {$info.pageStats.htmlResponseBytes|filesize}
+			</div>
+			<div class="row cell50">
+				حجم cssها: {$info.pageStats.cssResponseBytes|filesize}
+			</div>
+		</div>
+		<div class="clearFix">
+			<div class="row cell50">
+				حجم عکس‌ها: {$info.pageStats.imageResponseBytes|filesize}
+			</div>
+			<div class="row cell50">
+				حجم جاوا اسکریپ‌ها: {$info.pageStats.javascriptResponseBytes|filesize}
+			</div>
+		</div>
+		<div class="clearFix">
+			<div class="row cell50">
+				تعداد جاوا اسکریپت‌ها: {$info.pageStats.numberJsResources}
+			</div>
+			<div class="row cell50">
+				تعداد cssها: {$info.pageStats.numberCssResources}
+			</div>
+		</div>
+	</div>
+</section>
+<div class="greyFrame paddy5 margin1">
+	زبان سایت: {$info.formattedResults.locale}
+</div>
+<div class="greyFrame paddy5 margin1">
+	{foreach name=ruleItemsArray key=ruleKey item=ruleItems from=$info.formattedResults.ruleResults}
+			<div class="whiteFrame paddy5 margin1 right">
+				<h2 id="{$ruleItems.localizedRuleName}" class="center">{$settings[$ruleItems.localizedRuleName]}</h2>
+				تاثیر مشکل: {$ruleItems.ruleImpact}<br>
+				{foreach name=bucketItemsArray key=bucketKey item=bucketItems from=$ruleItems.urlBlocks}
+					{foreach name=blockItemsArray key=blockKey item=blockItems from=$bucketItems}
+						{foreach name=byteItemsArray key=byteKey item=byteItems from=$blockItems}
+							{foreach name=bitItemsArray key=bitKey item=bitItems from=$byteItems}
+								{foreach name=miniBitiItemsArray key=miniBitiKey item=miniBitiItems from=$bitItems}
+									{foreach name=microBitiItemsArray key=microBitiKey item=microBitiItems from=$miniBitiItems}
+										{foreach name=nanoBitiItemsArray key=nanoBitiKey item=nanoBitiItems from=$microBitiItems}
+											{if $settings[$nanoBitiItems] != ''}
+												{if strstr($settings[$nanoBitiItems], 'https://developers.')}
+													<a href="{$settings[$nanoBitiItems]}" target="_blank">اینجا</a>
+												{else}
+													{$settings[$nanoBitiItems]}
+												{/if}
+											{else}
+												{if strstr($nanoBitiItems, 'https://developers.')}
+													<a href="{$nanoBitiItems}" target="_blank">اینجا</a>
+												{elseif strstr($nanoBitiItems, 'http://') || strstr($nanoBitiItems, 'https://')}
+													<div class="ltr left thin" style="overflow: auto;"><a href="{$nanoBitiItems}" target="_blank">{$nanoBitiItems}</a></div>
+												{elseif preg_match("/[0-9]KiB/", $nanoBitiItems)}
+													<br><br>
+													<div class="clearFix h100">
+														<div class="row cell50">
+															<div class="paddy5">
+																<div class="whiteFrame curveFull hover h100 paddy10">
+																	<p class="center">میزان حجم قابل کاهش</p>
+																	<p class="center x2 green">{$nanoBitiItems|replace:'KiB':' کیلوبایت'}</p>
+																</div>
+															</div>
+														</div>
+												{elseif preg_match("/[0-9]B/", $nanoBitiItems)}
+													<div class="clearFix h100">
+														<div class="row cell50">
+															<div class="paddy5">
+																<div class="whiteFrame curveFull hover h100 paddy10">
+																	<p class="center">میزان حجم قابل کاهش</p>
+																	<p class="center x2 green">{$nanoBitiItems|replace:'B':' بایت'}</p>
+																</div>
+															</div>
+														</div>
+												{elseif strstr($nanoBitiItems, '%')}
+														<div class="row cell50">
+															<div class="paddy5">
+																<div class="whiteFrame curveFull hover h100 paddy10">
+																	<p class="center">درصد حجم قابل کاهش</p>
+																	<p class="center x2 green">{$nanoBitiItems}</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													<br><br>
+													<hr width="60%">
+												{elseif preg_match("/[0-9] hours/", $nanoBitiItems)}
+													{$nanoBitiItems|replace:'hours':' ساعت<br><br>'}
+												{elseif preg_match("/[0-9] minutes/", $nanoBitiItems)}
+													{$nanoBitiItems|replace:'minutes':' دقیقه<br><br>'}
+												{elseif !in_array($nanoBitiItems, $settings.forbiddenWords)}
+													<p>{$nanoBitiItems}</p>
+												{/if}
+											{/if}
+										{/foreach}
+									{/foreach}
+								{/foreach}
+							{/foreach}
+						{/foreach}
+					{/foreach}
+				{/foreach}
+			</div>
+	{/foreach}
+</div>
+{/nocache}

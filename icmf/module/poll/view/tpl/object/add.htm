@@ -1,0 +1,129 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.addPoll}</h1>
+	<ul>
+		<li>
+			<div class="row cell20">{$lang.name}: </div>
+			<div class="row cell80"><input id="name" name="name" class="input" type="text" size="30" maxlength="45"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.question}: </div>
+			<div class="row cell80"><input id="question" name="question" class="input" type="text" size="60" maxlength="400"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;1: </div>
+			<div class="row cell80"><input id="answer1" name="answer1" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;2: </div>
+			<div class="row cell80"><input id="answer2" name="answer2" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;3: </div>
+			<div class="row cell80"><input id="answer3" name="answer3" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;4: </div>
+			<div class="row cell80"><input id="answer4" name="answer4" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;5: </div>
+			<div class="row cell80"><input id="answer5" name="answer5" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;6: </div>
+			<div class="row cell80"><input id="answer6" name="answer6" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;7: </div>
+			<div class="row cell80"><input id="answer7" name="answer7" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;8: </div>
+			<div class="row cell80"><input id="answer8" name="answer8" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;9: </div>
+			<div class="row cell80"><input id="answer9" name="answer9" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;10: </div>
+			<div class="row cell80"><input id="answer10" name="answer10" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;11: </div>
+			<div class="row cell80"><input id="answer11" name="answer11" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;12: </div>
+			<div class="row cell80"><input id="answer12" name="answer12" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;13: </div>
+			<div class="row cell80"><input id="answer13" name="answer13" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;14: </div>
+			<div class="row cell80"><input id="answer14" name="answer14" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;15: </div>
+			<div class="row cell80"><input id="answer15" name="answer15" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;16: </div>
+			<div class="row cell80"><input id="answer16" name="answer16" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;17: </div>
+			<div class="row cell80"><input id="answer17" name="answer17" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;18: </div>
+			<div class="row cell80"><input id="answer18" name="answer18" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;19: </div>
+			<div class="row cell80"><input id="answer19" name="answer19" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			<div class="row cell20">{$lang.answer}&nbsp;20: </div>
+			<div class="row cell80"><input id="answer20" name="answer20" class="input" type="text" size="35" maxlength="200"></div>
+		</li>
+		<li>
+			&nbsp;
+		</li>
+		<li>
+			<div style="text-align: center;">
+				<button onclick="
+					$('#content').farajax('loader', '/poll/c_addObject',
+						   'name=' + document.getElementById('name').value + '::{$lang.name}<>Multi<>1<>ce<>200' +
+						   '&question=' + document.getElementById('question').value + '::{$lang.question}<>Multi<>1<>ce<>400' +
+						   '&answer1=' + document.getElementById('answer1').value + '::{$lang.answer} 1<>Multi<>1<>ce<>200' +
+						   '&answer2=' + document.getElementById('answer2').value + '::{$lang.answer} 2<>Multi<>1<>ce<>200' +
+						   '&answer3=' + document.getElementById('answer3').value + '::{$lang.answer} 3<>Multi<>1<>nce<>200' +
+						   '&answer4=' + document.getElementById('answer4').value + '::{$lang.answer} 4<>Multi<>1<>nce<>200' +
+						   '&answer5=' + document.getElementById('answer5').value + '::{$lang.answer} 5<>Multi<>1<>nce<>200' +
+						   '&answer6=' + document.getElementById('answer6').value + '::{$lang.answer} 6<>Multi<>1<>nce<>200' +
+						   '&answer7=' + document.getElementById('answer7').value + '::{$lang.answer} 7<>Multi<>1<>nce<>200' +
+						   '&answer8=' + document.getElementById('answer8').value + '::{$lang.answer} 8<>Multi<>1<>nce<>200' +
+						   '&answer9=' + document.getElementById('answer9').value + '::{$lang.answer} 9<>Multi<>1<>nce<>200' +
+						   '&answer10=' + document.getElementById('answer10').value + '::{$lang.answer} 10<>Multi<>1<>nce<>200' +
+						   '&answer11=' + document.getElementById('answer11').value + '::{$lang.answer} 11<>Multi<>1<>nce<>200' +
+						   '&answer12=' + document.getElementById('answer12').value + '::{$lang.answer} 12<>Multi<>1<>nce<>200' +
+						   '&answer13=' + document.getElementById('answer13').value + '::{$lang.answer} 13<>Multi<>1<>nce<>200' +
+						   '&answer14=' + document.getElementById('answer14').value + '::{$lang.answer} 14<>Multi<>1<>nce<>200' +
+						   '&answer15=' + document.getElementById('answer15').value + '::{$lang.answer} 15<>Multi<>1<>nce<>200' +
+						   '&answer16=' + document.getElementById('answer16').value + '::{$lang.answer} 16<>Multi<>1<>nce<>200' +
+						   '&answer17=' + document.getElementById('answer17').value + '::{$lang.answer} 17<>Multi<>1<>nce<>200' +
+						   '&answer18=' + document.getElementById('answer18').value + '::{$lang.answer} 18<>Multi<>1<>nce<>200' +
+						   '&answer19=' + document.getElementById('answer19').value + '::{$lang.answer} 19<>Multi<>1<>nce<>200' +
+						   '&answer20=' + document.getElementById('answer20').value + '::{$lang.answer} 20<>Multi<>1<>nce<>200'
+					);">
+					<span>
+					{$lang.submit}
+					</span>
+				</button>
+			</div>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,30 @@
+<div class="clearFix paddy15">
+	<div class="row cell20 center miniToolsCell">
+		<ul class="LH55 x1_5">
+			<li class="tinySearch fa fa-search paddy5">
+				<div class="paddy5 relative displayNone" style="margin-right: -5px; margin-top: 5px;">
+					<input id="postSearchList" name="postSearchList" class="cell98" type="search" placeholder="جستجو" required="">
+					<div id="postSearchResult" class="postSearchResult cell93 curvedBottom boxShadow"></div>
+				</div>
+			</li>
+			<li class="tinyLike fa fa-thumbs-o-up paddy5">
+				<div class="paddy5 relative displayNone" style="margin-right: -5px; margin-top: 5px;">
+					<div class="g-plusone" data-annotation="inline" data-width="300"></div>
+				</div>
+			</li>
+			<li class="tinySendMessage fa fa-envelope-o paddy5">
+				<div class="paddy5 specialFont thin right relative displayNone" style="margin-right: -5px; margin-top: 5px;">
+					{include file="theme/`$settings.theme`/tpl/common/sendMessage.htm"}
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="row cell60 menuCell">
+		{include file="theme/`$settings.theme`/tpl/common/menu.htm"}
+	</div>
+	<div class="row cell20 center logoCell">
+		<a title="دیجی سئو" href="http://{$settings.domainName}/">
+			<img class="logo" src="theme/{$settings.theme}/img/logo.png" alt="دیجی سئو">
+		</a>
+	</div>
+</div>

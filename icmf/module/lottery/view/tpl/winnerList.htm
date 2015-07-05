@@ -1,0 +1,28 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.winnerList}</h1>
+	<table id="resultBox" class="listFull">
+		<tr class="listHeader">
+			<td width="5%">#</td>
+			<td width="10%">{$lang.transactionCode}</td>
+			<td width="10%">{$lang.mobile}</td>
+			<td width="10%">{$lang.email}</td>
+			<td width="10%">{$lang.timeStamp}</td>
+			<td width="10%">{$lang.properties}</td>
+		</tr>
+	{foreach name=winner key=winnerKey item=winnerItem from=$winnerList}
+		<tr class="blockquote">
+			<td>{$winnerItem.count}</td>
+			<td>{$winnerItem.id}</td>
+			<td>{$winnerItem.mobile}</td>
+			<td>{$winnerItem.email}</td>
+			<td>{$winnerItem.timeStamp}</td>
+			<td>
+				<img style="cursor: pointer;" src="theme/{$settings.theme}/img/icon/information.png" title="" alt="">
+			</td>
+		</tr>
+	{/foreach}
+	</table>
+	<br>
+	<div class="blockquote">{$navigation}</div>
+	
+</div>

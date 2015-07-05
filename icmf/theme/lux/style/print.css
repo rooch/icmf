@@ -1,0 +1,72 @@
+/* print styles */
+BODY {
+	color: black;
+	background: white;
+	font-family: Nazli, Elham, Titr, Mitra, Arial, Tahoma;
+	font-size: 10px;
+}
+
+A:link,A:visited {
+	background: white;
+	color: black;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+H1,H2,H3 {
+	background: white;
+	color: black;
+	padding-bottom: 1px;
+	border-bottom: 1px solid gray;
+}
+
+.header {
+	display: none;
+}
+
+.leftSide {
+	display: none;
+}
+
+.rightSide {
+	display: none;
+}
+
+.pageIn {
+	border: 0px;
+	width: 245mm;
+}
+
+.resultBox {
+	border: 0px;
+	height: auto;
+}
+
+.resulPage {
+	border: 0px;
+	height: 297mm;
+}
+
+.title {
+	display: none;
+}
+
+.subMenu {
+	display: none;
+}
+
+.listFull {
+	display: none;
+}
+
+.printChart{
+	
+}
+
+.pageBreak {
+	page-break-after: always;
+}
+
+.footer {
+	display: none;
+}

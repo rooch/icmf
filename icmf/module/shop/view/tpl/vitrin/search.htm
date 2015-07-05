@@ -1,0 +1,116 @@
+<div id="normalSearch">
+	<div>
+		<div class="row cell30">{$lang.name}:</div>
+		<div class="row cell70"><input id="searchName" name="searchName" maxlength="45"></div>
+		<br class="clear">
+	</div>
+	<div>
+		<div class="row cell30">{$lang.model}:</div>
+		<div class="row cell70"><input id="searchModel" name="searchModel" maxlength="45"></div>
+		<br class="clear">
+	</div>
+	<div>
+		<div class="row cell30">{$lang.category}:</div>
+		<div class="row cell70">
+			
+			<select id="searchCategory" name="searchCategory">
+				{foreach name=category key=categoryKey item=categoryItem from=$category}
+					{if $categoryKey == $category.selected}
+						<option value="{$categoryKey}" selected="selected">{$categoryItem}</option>
+					{else}
+						{if $categoryKey == "selected" || !isset($categoryItem)}
+							<option value=""> ... </option>
+						{else}
+				  			<option value="{$categoryKey}">{$categoryItem}</option>
+				  		{/if}
+				  	{/if}
+			  	{/foreach}
+	  		</select>
+  			
+		</div>
+		<br class="clear">
+	</div>
+	<div>
+		<div class="row cell30">{$lang.company}:</div>
+		<div class="row cell70">
+			
+			<select id="searchCompany" name="searchCompany">
+				{foreach name=company key=companyKey item=companyItem from=$company}
+					{if $companyKey == $company.selected}
+						<option value="{$companyKey}" selected="selected">{$companyItem}</option>
+					{else}
+						{if $companyKey == "selected" || !isset($companyItem)}
+							<option value=""> ... </option>
+						{else}
+				  			<option value="{$companyKey}">{$companyItem}</option>
+				  		{/if}
+				  	{/if}
+			  	{/foreach}
+	  		</select>
+  		
+		</div>
+		<br class="clear">
+	</div>
+	<br>
+	<div class="center">
+		<button onclick="$('#content').farajax('loader', '/shop/v_listVitrin',  'filter=' +
+																					   	'base.name=' + document.getElementById('searchName').value +
+																					   	',model=' + document.getElementById('searchModel').value +
+																					   	',base.category=' + document.getElementById('searchCategory').value +
+																					   	',company=' + document.getElementById('searchCompany').value
+																					   	);
+																						">
+																					   	<span>{$lang.search}</span>
+																					   	</button>
+	</div>
+	<div style="cursor: pointer;" onclick="$('#normalSearch').slideUp('fast'); $('#advanceSearch').slideDown('slow');">{$lang.advanceSearch}</div>
+</div>
+
+<!-- Advance Search -->
+
+<div id="advanceSearch" style="display: none;">
+	<div>
+		<div class="row cell30">{$lang.rpm}:</div>
+		<div class="row cell70"><input id="searchRpm" name="searchRpm" maxlength="45"></div>
+		<br class="clear">
+	</div>
+	<div>
+		<div class="row cell30">{$lang.tav}:</div>
+		<div class="row cell70"><input id="searchTav" name="searchTav" maxlength="45"></div>
+		<br class="clear">
+	</div>
+	<div>
+		<div class="row cell30">{$lang.voltage}:</div>
+		<div class="row cell70"><input id="searchVoltage" name="searchVoltage" maxlength="45"></div>
+		<br class="clear">
+	</div>
+	<div>
+		<div class="row cell30">{$lang.amper}:</div>
+		<div class="row cell70"><input id="searchAmper" name="searchAmper" maxlength="45"></div>
+		<br class="clear">
+	</div>
+	<div>
+		<div class="row cell30">{$lang.code}:</div>
+		<div class="row cell70"><input id="searchCode" name="searchCode" maxlength="45"></div>
+		<br class="clear">
+	</div>
+	<br>
+	<div class="center">
+		<button onclick="$('#content').farajax('loader', '/shop/v_listVitrin',  'filter=' +
+																					   	'ex.name=rpm' +
+																					   	',ex.value=' + document.getElementById('searchRpm').value +
+																					   	',ex.name=tav' +
+																					   	',ex.value=' + document.getElementById('searchTav').value +
+																					   	',ex.name=voltage' +
+																					   	',ex.value=' + document.getElementById('searchVoltage').value +
+																					   	',ex.name=amper' +
+																					   	',ex.value=' + document.getElementById('searchAmper').value +
+																					   	',ex.name=code' +
+																					   	',ex.value=' + document.getElementById('searchCode').value
+																					   	);
+																						">
+																					   	<span>{$lang.search}</span>
+																					   	</button>
+	</div>
+	<div style="cursor: pointer;" onclick="$('#advanceSearch').slideUp('fast'); $('#normalSearch').slideDown('slow');">{$lang.search} {$lang.normal}</div>
+</div>

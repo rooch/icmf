@@ -1,0 +1,253 @@
+<div id="pageIn" class="pageIn">
+	<h1 class="title">{$lang.productAdd}</h1>
+	<ul style="padding-right: 2px;">
+		<li>
+			<div id="upl">
+				<table class="listFull">
+					<tr>
+						<td width="15%" style="vertical-align: top;">
+							<table class="listFull">
+								<tr>
+									<td id="imgLister" align="center">
+										<img src="theme/{$settings.theme}/img/yellowButton.png" onclick="createUploader('img', 'imgLister');">
+										<input id="ImagePath" name="ImagePath" type="hidden" size="15"><br>
+									</td>
+								</tr>
+								<tr>
+									<td align="center">
+										<hr>
+									</td>
+								</tr>
+								<tr>
+									<td id="fileLister" align="center">
+										<img src="theme/{$settings.theme}/img/goldButton.png" onclick="createUploader('file', 'fileLister');">
+										<input id="FilePath" name="FilePath" type="hidden" size="15"><br>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td width="85%">
+							<table class="listFull">
+								<tr>
+									<td width="15%">{$lang.name}:</td>
+									<td width="35%"><input id="name" name="name" class="input" type="text" size="15" maxlength="100" dir="ltr"></td>
+									<td width="15%">{$lang.cpu}:</td>
+									<td width="35%"><input id="cpu" name="cpu" class="input" type="text" size="15" maxlength="45" dir="ltr"></td>
+								</tr>
+								<tr>
+									<td>{$lang.model}:</td>
+									<td><input id="model" name="model" class="input" type="text" size="15" maxlength="100" dir="ltr"></td>
+									<td>{$lang.cache}:</td>
+									<td><input id="cache" name="cache" class="input" type="text" size="15" maxlength="10" dir="ltr"></td>
+								</tr>
+								<tr>
+									<td>{$lang.company}:</td>
+									<td>
+										{nocache}
+										<select id="company" name="company">
+											{foreach name=company key=companyKey item=companyItem from=$company}
+												{if $companyKey == $company.selected}
+													<option value="{$companyKey}" selected="selected">{$companyItem}</option>
+												{else}
+													{if $companyKey == "selected" || !isset($companyItem)}
+														<option value=""> ... </option>
+													{else}
+											  			<option value="{$companyKey}">{$companyItem}</option>
+											  		{/if}
+											  	{/if}
+										  	{/foreach}
+								  		</select>
+								  		{/nocache}
+									</td>
+									<td>{$lang.ram}:</td>
+									<td><input id="ram" name="ram" class="input" type="text" size="15" maxlength="10" dir="ltr"></td>
+								</tr>
+								<tr>
+									<td>{$lang.announceDate}:</td>
+									<td><input id="announceDate" name="announceDate" class="input" type="text" size="15" maxlength="100"></td>
+									<td>{$lang.hdd}:</td>
+									<td><input id="hdd" name="hdd" class="input" type="text" size="15" maxlength="10" dir="ltr"></td>
+								</tr>
+								<tr>
+									<td>{$lang.dimension}:</td>
+									<td><input dir="ltr" id="dimension" name="dimension" class="input" type="text" size="15" maxlength="100" value="   X   X   "></td>
+									<td>{$lang.screen}:</td>
+									<td><input id="screen" name="screen" class="input" type="text" size="15" maxlength="20" dir="ltr"></td>
+								</tr>
+								<tr>
+									<td>{$lang.weight}:</td>
+									<td><input id="weight" name="weight" class="input" type="text" size="15" maxlength="100"></td>
+									<td>{$lang.vga}:</td>
+									<td><input id="vga" name="vga" class="input" type="text" size="15" maxlength="45" dir="ltr"></td>
+								</tr>
+								<tr>
+									<td>{$lang.color}:</td>
+									<td><input id="color" name="color" class="input" type="text" size="15" maxlength="100"></td>
+									<td>{$lang.os}:</td>
+									<td><input id="os" name="os" class="input" type="text" size="15" maxlength="45" dir="ltr"></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>{$lang.link}:</td>
+									<td><input dir="ltr" id="link" name="link" class="input" type="text" size="15" maxlength="100"></td>
+									<td>{$lang.modem}:</td>
+									<td><input id="modem" name="modem" class="input" type="checkbox" value="0" onchange="checkBoxToggle('modem');"></td>
+								</tr>
+								<tr>
+									<td>{$lang.keyWords}:</td>
+									<td><input id="keyWords" name="keyWords" class="input" type="text" size="15" maxlength="200"></td>
+									<td>{$lang.warranty}:</td>
+									<td>
+										<select id="warranty" name="warranty">
+											<option> ... </option>
+											<option> 1 </option>
+											<option> 2 </option>
+											<option> 3 </option>
+										</select> {$lang.year}
+									</td>
+								</tr>
+								<tr>
+									<td>{$lang.basePrice}:</td>
+						  			<td><input id="productPrice" name="productPrice" class="input" type="text" size="15" maxlength="10"></td>
+						  			<td>{$lang.wireless}:</td>
+									<td><input id="wireless" name="wireless" class="input" type="checkbox" value="0" onchange="checkBoxToggle('wireless');"></td>
+								</tr>
+								<tr>
+									<td>{$lang.count}:</td>
+						  			<td><input id="productCount" name="productCount" class="input" type="text" size="15" maxlength="10"></td>
+						  			<td>{$lang.trackingTechnology}:</td>
+									<td><input id="trackingTechnology" name="trackingTechnology" class="input" type="text" size="15" maxlength="45" dir="ltr"></td>
+								</tr>
+								<tr>
+									<td>{$lang.category}:</td>
+									<td>
+									{nocache}
+									<select id="productCategory" name="productCategory">
+										{foreach name=productCategory key=productCategoryKey item=productCategoryItem from=$productCategory}
+											{if $productCategoryKey == $productCategory.selected}
+												<option value="{$productCategoryKey}" selected="selected">{$productCategoryItem}</option>
+											{else}
+												{if $productCategoryKey == "selected" || !isset($productCategoryItem)}
+													<option value=""> ... </option>
+												{else}
+										  			<option value="{$productCategoryKey}">{$productCategoryItem}</option>
+										  		{/if}
+										  	{/if}
+									  	{/foreach}
+							  		</select>
+							  		{/nocache}
+						  			</td>
+						  			<td>{$lang.chargeable}:</td>
+									<td><input id="chargeable" name="chargeable" class="input" type="checkbox" value="0" onchange="checkBoxToggle('chargeable');"></td>
+						  		</tr>
+						  		<tr>
+									<td>{$lang.chargeLife}:</td>
+						  			<td><input id="chargeLife" name="chargeLife" class="input" type="text" size="15" maxlength="10" dir="ltr"></td>
+						  			<td>{$lang.transceiverLength}:</td>
+									<td><input id="transceiverLength" name="transceiverLength" class="input" type="text" size="15" maxlength="10" dir="ltr"></td>
+								</tr>
+								<tr>
+									<td>{$lang.button}:</td>
+						  			<td><input id="button" name="button" class="input" type="text" size="15" maxlength="3" dir="ltr"></td>
+						  			<td>{$lang.scroll}:</td>
+									<td><input id="scroll" name="scroll" class="input" type="text" size="15" maxlength="10" dir="ltr"></td>
+								</tr>
+								<tr>
+									<td>{$lang.avgBatteryLife}:</td>
+						  			<td><input id="avgBatteryLife" name="avgBatteryLife" class="input" type="text" size="15" maxlength="20" dir="ltr"></td>
+						  			<td>{$lang.range}:</td>
+									<td><input id="range" name="range" class="input" type="text" size="15" maxlength="10" dir="ltr"></td>
+								</tr>
+								<tr>
+									<td>{$lang.ferquencyResponse}:</td>
+						  			<td><input id="ferquencyResponse" name="ferquencyResponse" class="input" type="text" size="15" maxlength="30" dir="ltr"></td>
+						  			<td>{$lang.impedance}:</td>
+									<td><input id="impedance" name="impedance" class="input" type="text" size="15" maxlength="30" dir="ltr"></td>
+								</tr>
+								<tr>
+									<td>{$lang.sensitivity}:</td>
+						  			<td><input id="sensitivity" name="sensitivity" class="input" type="text" size="15" maxlength="30" dir="ltr"></td>
+						  			<td>{$lang.cableLengthRange}:</td>
+									<td><input id="cableLengthRange" name="cableLengthRange" class="input" type="text" size="15" maxlength="30" dir="ltr"></td>
+								</tr>
+								<tr>
+									<td>{$lang.interface}:</td>
+						  			<td><input id="interface" name="interface" class="input" type="text" size="15" maxlength="30" dir="ltr"></td>
+						  			<td>{$lang.noiseCancelling}:</td>
+									<td><input id="noiseCancelling" name="noiseCancelling" class="input" type="checkbox" value="0" onchange="checkBoxToggle('noiceCancelling');"></td>
+								</tr>
+								<tr>
+									<td>{$lang.other}:</td>
+						  			<td><input id="other" name="other" class="input" type="text" size="15" maxlength="100"></td>
+						  			<td></td>
+									<td></td>
+								</tr>
+						  		<tr>
+						  			<td>
+						  			{$lang.description}:
+						  			</td>
+						  			<td colspan="3">
+									<div id="editor"></div>
+									<div id="textcontents" style="display: none">
+										<!-- This div will be used to display the editor contents. -->
+										<div id="editorcontents1"></div>
+									</div>
+									
+									<textarea id="description" name="description" rows="5" cols="40" onclick=" this.style.display='none';" onfocus="createEditor('editorcontents1'); this.style.display='none';"></textarea>							
+									</td>
+								</tr>
+								<tr>
+									<td colspan="4" align="center">
+										<button onclick="
+											$('#content').farajax('loader', '/product/c_entityAdd' +
+												   '&ImagePath=' + document.getElementById('ImagePath').value + '::{$lang.fileName}<>Alphabet<>1<>nce<>150' +
+												   '&FilePath=' + document.getElementById('FilePath').value + '::{$lang.fileName}<>Alphabet<>1<>nce<>150' +
+												   '&name=' + document.getElementById('name').value + '::{$lang.name}<>Multi<>1<>ce<>100' +
+												   '&model=' + document.getElementById('model').value + '::{$lang.model}<>Multi<>1<>ce<>100' +
+												   '&company=' + document.getElementById('company').value + '::{$lang.company}<>Number<>1<>ce<>5' +
+												   '&announceDate=' + document.getElementById('announceDate').value + '::{$lang.announceDate}<>Multi<>1<>nce<>11' +
+												   '&dimension=' + document.getElementById('dimension').value + '::{$lang.dimension}<>Multi<>1<>nce<>45' +
+												   '&weight=' + document.getElementById('weight').value + '::{$lang.weight}<>Number<>1<>nce<>10' +
+												   '&color=' + document.getElementById('color').value + '::{$lang.color}<>Multi<>1<>nce<>45' +
+												   '&link=' + document.getElementById('link').value + '::{$lang.link}<>Multi<>1<>nce<>200' +
+												   '&keyWords=' + document.getElementById('keyWords').value + '::{$lang.keyWords}<>Multi<>1<>nce<>200' +
+												   '&basePrice=' + document.getElementById('productPrice').value + '::{$lang.basePrice}<>Number<>1<>nce<>11' +
+												   '&count=' + document.getElementById('productCount').value + '::{$lang.count}<>Number<>1<>ce<>5' +
+												   '&category=' + document.getElementById('productCategory').value + '::{$lang.category}<>Number<>1<>ce<>5' +
+												   '&description=' + getText('editorcontents1')	+ '::{$lang.description}<>Multi<>1<>nce<>70000' +
+												   '&cpu=' + document.getElementById('cpu').value	+ '::{$lang.cpu}<>Multi<>1<>nce<>45' +
+												   '&cache=' + document.getElementById('cache').value	+ '::{$lang.cache}<>Multi<>1<>nce<>45' +
+												   '&ram=' + document.getElementById('ram').value	+ '::{$lang.ram}<>Multi<>1<>nce<>45' +
+												   '&hdd=' + document.getElementById('hdd').value	+ '::{$lang.hdd}<>Multi<>1<>nce<>45' +
+												   '&screen=' + document.getElementById('screen').value	+ '::{$lang.screen}<>Multi<>1<>nce<>45' +
+												   '&vga=' + document.getElementById('vga').value	+ '::{$lang.vga}<>Multi<>1<>nce<>45' +
+												   '&os=' + document.getElementById('os').value	+ '::{$lang.os}<>Multi<>1<>nce<>45' +
+												   '&modem=' + document.getElementById('modem').value	+ '::{$lang.modem}<>Number<>1<>nce<>1' +
+												   '&wireless=' + document.getElementById('wireless').value	+ '::{$lang.wireless}<>Multi<>1<>nce<>45' +
+												   '&trackingTechnology=' + document.getElementById('trackingTechnology').value	+ '::{$lang.trackingTechnology}<>Multi<>1<>nce<>45' +
+												   '&chargeable=' + document.getElementById('chargeable').value	+ '::{$lang.chargeable}<>Multi<>1<>nce<>45' +
+												   '&chargeLife=' + document.getElementById('chargeLife').value	+ '::{$lang.chargeLife}<>Multi<>1<>nce<>45' +
+												   '&transceiverLength=' + document.getElementById('transceiverLength').value	+ '::{$lang.transceiverLength}<>Multi<>1<>nce<>45' +
+												   '&button=' + document.getElementById('button').value	+ '::{$lang.button}<>Multi<>1<>nce<>45' +
+												   '&scroll=' + document.getElementById('scroll').value	+ '::{$lang.scroll}<>Multi<>1<>nce<>45' +
+												   '&avgBatteryLife=' + document.getElementById('avgBatteryLife').value	+ '::{$lang.tav}<>Multi<>1<>nce<>45' +
+												   '&range=' + document.getElementById('range').value	+ '::{$lang.range}<>Multi<>1<>nce<>45' +
+												   '&ferquencyResponse=' + document.getElementById('ferquencyResponse').value	+ '::{$lang.ferquencyResponse}<>Multi<>1<>nce<>30' +
+												   '&impedance=' + document.getElementById('impedance').value	+ '::{$lang.impedance}<>Multi<>1<>nce<>30' +
+												   '&sensitivity=' + document.getElementById('sensitivity').value	+ '::{$lang.sensitivity}<>Multi<>1<>nce<>30' +
+												   '&cableLengthRange=' + document.getElementById('cableLengthRange').value	+ '::{$lang.cableLengthRange}<>Multi<>1<>nce<>30' +
+												   '&interface=' + document.getElementById('interface').value	+ '::{$lang.interface}<>Multi<>1<>nce<>30' +
+												   '&noiseCancelling=' + document.getElementById('noiseCancelling').value	+ '::{$lang.noiseCancelling}<>Number<>1<>nce<>1' +
+												   '&other=' + document.getElementById('other').value	+ '::{$lang.other}<>Multi<>1<>nce<>60'
+											);
+										">{$lang.submit}</button>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</li>
+	</ul>
+</div>
