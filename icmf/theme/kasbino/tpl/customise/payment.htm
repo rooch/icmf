@@ -1,0 +1,74 @@
+<article class="greyBlueFrame paddy10 curvedFull">
+	<h1>روش‌های پرداخت</h1>
+	<div class="clearFix">
+		<div class="row cell50">
+			<div class="paddy10">
+				<div id="paymenBox" class="relative paddy10 boxShadow h385" style="background: url('theme/{$settings.theme}/img/Saman-Bank.jpg') no-repeat center bottom #fff">
+					<div id="paymentConfirm" class="cell100 center h385 boxShadow displayNone" style="padding: 10px 0px; position: absolute; top: 0px; left: 0px; background: rgba(0,0,0,0.7); z-index: 1033; color: #fff;" onclick="$(this).fadeOut();">بزودی</div>
+					<h2>پرداخت آنلاین</h2>
+					<div class="paddy1">
+						<input id="paymentFirstName" name="paymentFirstName" class="cell96" maxlength="45" placeholder="{$lang.firstName}">
+					</div>
+					<div class="paddy1">
+						<input id="paymentLastName" name="paymentLastName" class="cell96" maxlength="45" placeholder="{$lang.lastName}">
+					</div>
+					<div class="paddy1">
+						<input id="paymentEmail" name="paymentEmail" class="cell96" maxlength="100" placeholder="{$lang.email}">
+					</div>
+					<div class="paddy1">
+						<input id="paymentMobile" name="paymentMobile" class="cell96" maxlength="20" placeholder="{$lang.mobile}">
+					</div>
+					<div class="paddy1">
+						<input id="paymentAmount" name="paymentAmount" class="cell96" maxlength="20" placeholder="مبلغ به ریال">
+					</div>
+					<div class="paddy10">
+						<button style="margin: 0 auto; padding: 20px 60px;" onclick="
+							$('#paymentConfirm').farajax('loader', 'financial/c_invoiceMaker',
+								   'transactionType=4' +
+								   '&bankId=1' +
+								   '&firstName=' + $('#paymentFirstName').val() + '::{$lang.firstName}<>Multi<>1<>ce<>45' +
+								   '&lastName=' + $('#paymentLastName').val() + '::{$lang.lastName}<>Multi<>1<>nce<>45' +
+								   '&email=' + $('#paymentEmail').val() + '::{$lang.email}<>Mail<>1<>ce<>100' +
+								   '&mobile=' + $('#paymentMobile').val() + '::{$lang.mobile}<>Multi<>1<>nce<>11<>09100000000<>09999999999' +
+								   '&amount=' + $('#paymentAmount').val() + '::{$lang.amount}<>Number<>1<>ce<>100'
+						);$('#paymentConfirm').fadeIn();">
+						<span>پرداخت</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row cell50">
+			<div class="paddy10">
+				<div class="whiteFrame paddy10 boxShadow h100">
+					<h2>شماره کارت</h2>
+					<span>
+						شماره کارت: ۶۲۱۹۸۶۱۰۰۸۴۰۹۸۸۹<br>
+						بانک: سامان<br>
+						بنام: سید علی حسینی
+					</span>
+				</div>
+			</div>
+			<div class="paddy10">
+				<div class="whiteFrame paddy10 boxShadow h100">
+					<h2>شماره حساب</h2>
+					<span>
+						شماره حساب: ۸۲۴۸۰۰۸۸۲۱۳۸۱<br>
+						بانک: سامان<br>
+						بنام: سید علی حسینی
+					</span>
+				</div>
+			</div>
+			<div class="paddy10">
+				<div class="whiteFrame paddy10 boxShadow h100">
+					<h2>شبا</h2>
+					<span>
+						شماره شبا: IR۶۸۰۵۶۰۰۸۲۴۸۰۰۰۰۹۹۲۱۳۸۰۰۱<br>
+						بانک: سامان<br>
+						بنام: سید علی حسینی
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>

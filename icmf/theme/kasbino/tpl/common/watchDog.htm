@@ -1,0 +1,32 @@
+{nocache}
+<div class="paddy5 clearFix curvedTop" style="background-color: {$color};">
+	<div class="row cell90">
+		<span>
+			{if isset($icon)}
+			<img src='theme/{$settings.theme}/img/icon/{$icon}'>&nbsp;
+			{/if}
+		</span>
+		<span class="specialFont">
+			{$title}
+		</span>
+		<span class="displayNone">
+			- {$code}
+		</span>
+	</div>
+	<div class="row cell10 left">
+		<img id="closeModal" class="pointer" src="theme/{$settings.theme}/img/icon/close.png" alt="{$lang.close}" title="{$lang.close}">
+	</div>
+</div>
+<div class="paddy10">
+	{foreach key=messageKey item=messageItem from=$message}
+	<div>{$messageItem}</div>
+	{/foreach}
+		<div class="center">
+		{if isset($button)}
+ 			{foreach key=buttonKey item=buttonItem from=$button}
+ 			{/foreach}
+		{/if}
+	</div>
+</div>
+<commands value="{$command}">
+{/nocache}
